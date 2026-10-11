@@ -7,6 +7,7 @@ import { applyReview, scheduleMisses, type ReviewQueue } from '../services/revie
 import { applySetResult, migrateUnitResult, type UnitResult } from '../services/sets';
 import { listening } from '../services/speech';
 import type { ItemResponse, Lang, MockResult, Placement, SpeechAttempt, SpeechConsent } from '../types';
+import { examConfig } from '../exams/current';
 
 export type { UnitResult } from '../services/sets';
 
@@ -85,7 +86,7 @@ function defaultLang(): Lang {
 export const freshData = (): AppData => ({
   lang: defaultLang(),
   name: '',
-  target: 700,
+  target: examConfig.defaultGoal,
   dailyGoalMin: 10,
   onboarded: false,
   placement: null,

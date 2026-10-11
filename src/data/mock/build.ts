@@ -1,7 +1,9 @@
-import type { Exercise, McqItem, MockTest, ToeicPart } from '../../types';
+import { examConfig } from '../../exams/current';
+import type { Exercise, McqItem, MockTest } from '../../types';
 import { x } from '../curriculum/build';
 
-const PART_ORDER: ToeicPart[] = ['L2', 'L3', 'L4', 'R5', 'R6', 'R7'];
+/** Parts in the order of the real exam. */
+const PART_ORDER = examConfig.parts.map((p) => p.id);
 
 const mcq = (exercise: Exercise): McqItem => {
   if (exercise.kind !== 'mcq') throw new Error('Mock tests only contain multiple-choice items');

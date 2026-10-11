@@ -1,4 +1,4 @@
-import type { ItemResponse, LevelEstimate, McqItem, MockResult, MockTest, SkillScore, ToeicPart } from '../types';
+import type { ExamPart, ItemResponse, LevelEstimate, McqItem, MockResult, MockTest, SkillScore } from '../types';
 import { levelEstimate, paramsOf, sectionOf } from './placement';
 
 export const mockItems = (mock: MockTest): McqItem[] => mock.sections.flatMap((s) => s.items);
@@ -34,7 +34,7 @@ export interface MockReport {
 export function scoreMock(mock: MockTest, answers: Record<string, number>, timeUsedSec: number, now = new Date()): MockReport {
   const responses = mockResponses(mock, answers);
   const estimate = levelEstimate(responses);
-  const byPart: Partial<Record<ToeicPart, SkillScore>> = {};
+  const byPart: Partial<Record<ExamPart, SkillScore>> = {};
   for (const section of mock.sections) {
     const score = byPart[section.part] ?? { correct: 0, total: 0 };
     section.items.forEach((item) => {

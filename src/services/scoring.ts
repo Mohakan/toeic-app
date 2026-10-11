@@ -1,41 +1,48 @@
 import type { Cefr, Section } from '../types';
 
-/**
- * TOEIC Listening & Reading scaled-score cut scores for CEFR levels, from the ETS mapping
- * study (Tannenbaum & Wylie, 2008, as published by ETS). Totals follow the same study.
- */
-export const CEFR_CUTS: Record<Section | 'total', [Cefr, number][]> = {
-  L: [['C1', 490], ['B2', 400], ['B1', 275], ['A2', 110]],
-  R: [['C1', 455], ['B2', 385], ['B1', 275], ['A2', 115]],
-  total: [['C1', 945], ['B2', 785], ['B1', 550], ['A2', 225]],
-};
+import type { ExamConfig } from '../exams/config';
+import { examConfig } from '../exams/current';
 
 /**
- * Ability values where the item bank places each CEFR boundary (midpoints between the
- * difficulty bands of items written for adjacent levels). Linking theta to the ETS cuts
- * through these anchors keeps the app's levels and the reported scaled scores aligned.
+ * Lowest score of each CEFR level, per section and for the whole exam, on the scale of the exam
+ * of this build (TOEIC: ETS mapping study; B2 First: Cambridge English Scale).
  */
-const ANCHORS: Record<Section, [theta: number, score: number][]> = {
-  L: [[-3.5, 5], [-1.8, 110], [-0.9, 275], [0, 400], [0.9, 490], [1.6, 495]],
-  R: [[-3.5, 5], [-1.8, 115], [-0.9, 275], [0, 385], [0.9, 455], [2.0, 495]],
-};
+export const CEFR_CUTS = examConfig.scoring.cefrCuts;
 
-export function scaledScore(section: Section, theta: number): number {
-  const points = ANCHORS[section];
+/**
+ * Section score for an ability value. The exam's anchors link the CEFR boundaries of the item
+ * bank to its cut scores, so the app's levels and the reported scores stay aligned.
+ */
+export function scaledScore(section: Section, theta: number, config: ExamConfig = examConfig): number {
+  const points = config.scoring.anchors[section];
+  const { step } = config.scoring.section;
   if (theta <= points[0][0]) return points[0][1];
   for (let i = 1; i < points.length; i += 1) {
     const [t1, s1] = points[i];
     if (theta <= t1) {
       const [t0, s0] = points[i - 1];
       const raw = s0 + ((theta - t0) / (t1 - t0)) * (s1 - s0);
-      return Math.round(raw / 5) * 5;
+      return Math.round(raw / step) * step;
     }
   }
   return points[points.length - 1][1];
 }
 
-export function cefrFor(scale: Section | 'total', score: number): Cefr {
-  for (const [level, cut] of CEFR_CUTS[scale]) if (score >= cut) return level;
+/** Whole-exam score from the two section scores: their sum (TOEIC) or their mean (Cambridge). */
+export function combineScores(l: number, r: number, config: ExamConfig = examConfig): number {
+  if (config.scoring.combine === 'sum') return l + r;
+  const { step } = config.scoring.section;
+  return Math.round((l + r) / 2 / step) * step;
+}
+
+/** Range of the whole-exam score: 10-990 for TOEIC, 122-190 for B2 First. */
+export function totalRange(config: ExamConfig = examConfig): { min: number; max: number } {
+  const { min, max } = config.scoring.section;
+  return { min: combineScores(min, min, config), max: combineScores(max, max, config) };
+}
+
+export function cefrFor(scale: Section | 'total', score: number, config: ExamConfig = examConfig): Cefr {
+  for (const [level, cut] of config.scoring.cefrCuts[scale]) if (score >= cut) return level;
   return 'A1';
 }
 

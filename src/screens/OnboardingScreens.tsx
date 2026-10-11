@@ -14,6 +14,7 @@ import { purchases } from '../services/purchases';
 import { useApp } from '../state/AppState';
 import { colors, fonts, radius, space } from '../theme';
 import type { Lang } from '../types';
+import { examConfig } from '../exams/current';
 
 const LANGS: Lang[] = ['fr', 'ar', 'es', 'en'];
 const accountAvailable = API_URL !== null;
@@ -133,7 +134,8 @@ export function WelcomeScreen({ navigation }: NativeStackScreenProps<RootStackPa
   );
 }
 
-const GOALS = [550, 700, 800, 900] as const;
+/** Score goals on the scale of the exam of this build. */
+const GOALS = examConfig.goals;
 const DAILY = [5, 10, 15] as const;
 const TOTAL_STEPS = 3;
 

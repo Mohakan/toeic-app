@@ -15,7 +15,7 @@ import { useApp } from '../state/AppState';
 import { useAccess } from '../state/useAccess';
 import { useAccessGuard } from '../state/useAccessGuard';
 import { colors, space } from '../theme';
-import type { ToeicPart } from '../types';
+import type { ExamPart } from '../types';
 import { SectionCard } from './ResultScreen';
 
 const XP_PER_CORRECT = 2;
@@ -29,7 +29,7 @@ export function MockTestScreen({ navigation, route }: NativeStackScreenProps<Roo
   const { t, tx, row } = useI18n();
   const items = useMemo(() => (mock ? mockItems(mock) : []), [mock]);
   const partOf = useMemo(() => {
-    const map: Record<string, ToeicPart> = {};
+    const map: Record<string, ExamPart> = {};
     mock?.sections.forEach((s) => s.items.forEach((i) => (map[i.id] = s.part)));
     return map;
   }, [mock]);

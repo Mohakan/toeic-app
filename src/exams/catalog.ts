@@ -58,8 +58,8 @@ export const EXAMS: Record<ExamId, ExamVariant> = {
     productId: 'toki_quest_b2_full',
     examLabel: 'Cambridge English B2 First',
     markOwner: 'Cambridge University Press & Assessment',
-    // Cambridge English Scale; B2 First reports 140 to 190 and passes from 160.
-    scale: { min: 140, max: 190, step: 1 },
+    // Cambridge English Scale; B2 First reports 122 to 190 and passes from 160.
+    scale: { min: 122, max: 190, step: 1 },
   },
   ieltsAcademic: {
     id: 'ieltsAcademic',

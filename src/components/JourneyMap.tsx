@@ -2,14 +2,13 @@ import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, View } from 'react-native';
 import { useI18n } from '../i18n';
 import type { StringKey } from '../i18n/strings';
-import { CEFR_CUTS } from '../services/scoring';
+import { CEFR_CUTS, totalRange } from '../services/scoring';
 import type { LevelView } from '../state/useLevel';
 import { colors, radius, space } from '../theme';
 import type { Cefr } from '../types';
 import { AppText, Card, EnglishText, ProgressBar } from './ui';
 
-const MIN = 10;
-const MAX = 990;
+const { min: MIN, max: MAX } = totalRange();
 /** Steps from a light tint to Bleu Ciel Toki (derived). */
 const BAND_COLORS: Record<Cefr, string> = {
   A1: '#E3F1FD',
@@ -19,7 +18,7 @@ const BAND_COLORS: Record<Cefr, string> = {
   C1: '#2E9BF0',
 };
 
-/** Total-score bands from the ETS CEFR cut scores. */
+/** Total-score bands from the exam's CEFR cut scores. */
 function bands(): { cefr: Cefr; from: number; to: number }[] {
   const cuts = [...CEFR_CUTS.total].reverse();
   const list: { cefr: Cefr; from: number; to: number }[] = [{ cefr: 'A1', from: MIN, to: cuts[0][1] }];

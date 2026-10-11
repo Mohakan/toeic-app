@@ -2,6 +2,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { View } from 'react-native';
 import { AdaptivePathChart } from '../components/AdaptivePathChart';
 import { Confetti } from '../components/Confetti';
+import { examConfig } from '../exams/current';
 import { JourneyMap } from '../components/JourneyMap';
 import { AppText, Button, Card, EnglishText, Mascot, Screen } from '../components/ui';
 import { units } from '../data/units';
@@ -41,7 +42,7 @@ export function SectionCard({ section, result }: { section: Section; result: Sec
       {measured ? (
         <>
           <EnglishText variant="h2" style={{ textAlign: 'center' }}>
-            {`${result.score} / 495`}
+            {`${result.score} / ${examConfig.scoring.section.max}`}
           </EnglishText>
           <CefrBadge cefr={result.cefr} />
           <EnglishText variant="label" color={colors.inkSoft} style={{ textAlign: 'center' }}>
