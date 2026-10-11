@@ -1,16 +1,14 @@
-/**
- * Toki, the falcon mascot, grows with the learner's estimated TOEIC score (10 to 990). The
- * thresholds follow the brief, roughly the TOEIC certificate levels (785 is the L&R "gold" level).
- */
-export type TokiStage = 'chick' | 'apprentice' | 'pro' | 'pilot' | 'golden';
+import { examConfig } from '../exams/current';
+import type { TokiStage } from '../exams/config';
 
-export const TOKI_STAGES: { stage: TokiStage; from: number }[] = [
-  { stage: 'chick', from: 10 },
-  { stage: 'apprentice', from: 300 },
-  { stage: 'pro', from: 550 },
-  { stage: 'pilot', from: 785 },
-  { stage: 'golden', from: 900 },
-];
+export type { TokiStage };
+
+/**
+ * Toki, the falcon mascot, grows with the learner's estimated score. Each exam sets the
+ * thresholds on its own scale (TOEIC: the brief, roughly the certificate levels; B2 First: the
+ * Cambridge grades), in src/exams/config.ts.
+ */
+export const TOKI_STAGES = examConfig.tokiStages;
 
 /** Stage for an estimated score; without an estimate yet, Toki shows his standard look. */
 export function tokiStage(score: number | null | undefined): TokiStage {

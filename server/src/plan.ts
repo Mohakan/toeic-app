@@ -1,4 +1,5 @@
 import type { Db } from './db.js';
+import type { ExamId } from './exams.js';
 
 export type PlanSource = 'store_ios' | 'store_android' | 'web_tn' | 'grant' | 'sabil';
 
@@ -42,14 +43,19 @@ export function choosePlan(entitlements: EntitlementRow[], sabil: SabilRow[]): P
 
 const cmp = (a: string | null, b: string | null) => (a ?? '').localeCompare(b ?? '');
 
-export async function planFor(db: Db, userId: string, email: string): Promise<Plan> {
+/**
+ * The plan of an account in one app of the family: each app sells its own full plan. The partner
+ * enrolments (Sabil) and the web payment are TOEIC offers.
+ */
+export async function planFor(db: Db, userId: string, email: string, exam: ExamId = 'toeic'): Promise<Plan> {
   const { rows: entitlements } = await db.query<EntitlementRow>(
     `SELECT source, to_char(starts_at AT TIME ZONE 'UTC', 'YYYY-MM-DD') AS since,
             to_char(ends_at AT TIME ZONE 'UTC', 'YYYY-MM-DD') AS until
        FROM entitlements
-      WHERE user_id = $1 AND status = 'active' AND starts_at <= now() AND (ends_at IS NULL OR ends_at > now())`,
-    [userId],
+      WHERE user_id = $1 AND exam = $2 AND status = 'active' AND starts_at <= now() AND (ends_at IS NULL OR ends_at > now())`,
+    [userId, exam],
   );
+  if (exam !== 'toeic') return choosePlan(entitlements, []);
   const { rows: sabil } = await db.query<SabilRow>(
     `SELECT to_char(created_at AT TIME ZONE 'UTC', 'YYYY-MM-DD') AS since, valid_until::text AS until
        FROM sabil_accounts

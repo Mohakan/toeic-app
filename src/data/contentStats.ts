@@ -1,4 +1,4 @@
-import type { Exercise, ToeicPart } from '../types';
+import type { ExamPart, Exercise } from '../types';
 import { mockTests } from './mock';
 import { documentTasks } from './speaking/documents';
 import { opinionTopics } from './speaking/opinions';
@@ -14,7 +14,26 @@ import { vocab } from './vocab';
  * is measured the same way every time content is added.
  */
 export const TIME_MODEL = {
-  minutesByPart: { L2: 1, L3: 2, L4: 2, R5: 1, R6: 1.5, R7: 1.5 } as Record<ToeicPart, number>,
+  minutesByPart: {
+    L2: 1,
+    L3: 2,
+    L4: 2,
+    R5: 1,
+    R6: 1.5,
+    R7: 1.5,
+    // B2 First: typed answers and longer texts take a little more time than a Part 5 item.
+    RU1: 1,
+    RU2: 1,
+    RU3: 1,
+    RU4: 1.5,
+    RU5: 2,
+    RU6: 2,
+    RU7: 1.5,
+    LI1: 1.5,
+    LI2: 1,
+    LI3: 1.5,
+    LI4: 1.5,
+  } as Record<ExamPart, number>,
   orderMinutes: 1,
   matchMinutes: 2,
   /** Reading time of a Part 6/7 text, counted once per distinct text (several questions can share one). */
@@ -85,8 +104,8 @@ export function contentStats(): ContentStats {
     unitsByLevel: tally(units, (u) => u.level) as unknown as Record<number, number>,
     sets: units.reduce((n, u) => n + u.sets.length, 0),
     exercises: exercises.length,
-    exercisesByLevel: tally(allExercises, (x) => (x.exercise.kind === 'mcq' ? x.exercise.item.level : x.unit.level)) as unknown as Record<number, number>,
-    exercisesByPart: tally(exercises, (e) => (e.kind === 'mcq' ? e.item.part : e.kind)),
+    exercisesByLevel: tally(allExercises, (x) => (x.exercise.kind === 'mcq' || x.exercise.kind === 'type' ? x.exercise.item.level : x.unit.level)) as unknown as Record<number, number>,
+    exercisesByPart: tally(exercises, (e) => (e.kind === 'mcq' || e.kind === 'type' ? e.item.part : e.kind)),
     mockTests: {
       full: realMocks.filter((m) => m.kind === 'full').length,
       mini: realMocks.filter((m) => m.kind === 'mini').length,

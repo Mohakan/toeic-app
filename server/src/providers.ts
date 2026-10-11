@@ -34,7 +34,7 @@ export interface GooglePurchase {
 
 export interface GooglePlay {
   /** The purchase as Google Play knows it, or null when the token is unknown. */
-  product(productId: string, purchaseToken: string): Promise<GooglePurchase | null>;
+  product(packageName: string, productId: string, purchaseToken: string): Promise<GooglePurchase | null>;
   /** Checks the OIDC token Pub/Sub sends with real-time developer notifications. */
   verifyPush(authorization: string | undefined): Promise<boolean>;
 }
@@ -60,13 +60,16 @@ const appleTransaction = (t: JWSTransactionDecodedPayload): AppleTransaction => 
   currency: t.currency ?? null,
 });
 
-/** Apple: production first (needs the App Store app id), then the sandbox used by TestFlight. */
+/**
+ * Apple: for each app of the family, production first (needs the App Store app id), then the
+ * sandbox used by TestFlight. The route then checks which app and product the transaction is for.
+ */
 export function appleVerifier(config: NonNullable<StoreConfig['apple']>): AppleVerifier {
   const roots = config.rootCertFiles.map((file) => readFileSync(file));
-  const verifiers = [
-    ...(config.appAppleId ? [new SignedDataVerifier(roots, true, Environment.PRODUCTION, config.bundleId, config.appAppleId)] : []),
-    new SignedDataVerifier(roots, true, Environment.SANDBOX, config.bundleId),
-  ];
+  const verifiers = config.apps.flatMap((app) => [
+    ...(app.appAppleId ? [new SignedDataVerifier(roots, true, Environment.PRODUCTION, app.bundleId, app.appAppleId)] : []),
+    new SignedDataVerifier(roots, true, Environment.SANDBOX, app.bundleId),
+  ]);
   const tryAll = async <T>(run: (v: SignedDataVerifier) => Promise<T>): Promise<T> => {
     let last: unknown;
     for (const v of verifiers) {
@@ -96,8 +99,8 @@ export function googlePlay(config: NonNullable<StoreConfig['google']>): GooglePl
   const auth = new GoogleAuth({ keyFile: config.serviceAccountFile, scopes: ['https://www.googleapis.com/auth/androidpublisher'] });
   const oidc = new OAuth2Client();
   return {
-    product: async (productId, token) => {
-      const url = `https://androidpublisher.googleapis.com/androidpublisher/v3/applications/${encodeURIComponent(config.packageName)}/purchases/products/${encodeURIComponent(productId)}/tokens/${encodeURIComponent(token)}`;
+    product: async (packageName, productId, token) => {
+      const url = `https://androidpublisher.googleapis.com/androidpublisher/v3/applications/${encodeURIComponent(packageName)}/purchases/products/${encodeURIComponent(productId)}/tokens/${encodeURIComponent(token)}`;
       const client = await auth.getClient();
       try {
         const res = await client.request<{ purchaseState?: number; orderId?: string; purchaseType?: number }>({ url });

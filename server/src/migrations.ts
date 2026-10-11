@@ -113,6 +113,16 @@ const MIGRATIONS: { version: number; sql: string }[] = [
       ALTER TABLE users ADD COLUMN last_active_at timestamptz NOT NULL DEFAULT now();
     `,
   },
+  {
+    // One app per exam (Toki Quest, Toki Quest B2…): purchases and rights belong to an exam.
+    // Everything sold before is a TOEIC plan.
+    version: 4,
+    sql: `
+      ALTER TABLE purchases ADD COLUMN exam text NOT NULL DEFAULT 'toeic';
+      ALTER TABLE entitlements ADD COLUMN exam text NOT NULL DEFAULT 'toeic';
+      CREATE INDEX entitlements_user_exam ON entitlements(user_id, exam);
+    `,
+  },
 ];
 
 export async function migrate(db: Db): Promise<number> {

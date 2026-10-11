@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { View } from 'react-native';
 import { ExerciseRunner, type RunResult } from '../components/ExerciseRunner';
 import { AppText, Button, Mascot, Screen } from '../components/ui';
-import { exerciseByKey } from '../data/units';
+import { exerciseByKey, exerciseKey } from '../data/units';
 import { useI18n } from '../i18n';
 import type { RootStackParamList } from '../navigation/types';
 import { practiceResponse } from '../services/practice';
@@ -57,7 +57,7 @@ export function ReviewScreen({ navigation }: NativeStackScreenProps<RootStackPar
     Object.entries(run.firstTry).forEach(([key, correct]) => recordReview(key, correct));
     addPracticeResponses(
       session.flatMap(({ exercise, unit }) => {
-        const key = exercise.kind === 'mcq' ? exercise.item.id : exercise.id;
+        const key = exerciseKey(exercise);
         const r = key in run.firstTry ? practiceResponse(exercise, run.firstTry[key], unit.level, 'review') : null;
         return r ? [r] : [];
       }),

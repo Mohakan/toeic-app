@@ -1,4 +1,6 @@
-import type { McqItem, MockTest, ToeicPart } from '../../types';
+import { currentExam, examConfig } from '../../exams/current';
+import { b2FirstMockTests } from '../exams/b2First/mock';
+import type { ExamPart, McqItem, MockTest } from '../../types';
 import { allExercises } from '../curriculum';
 import { full1 } from './full-1';
 import { full2 } from './full-2';
@@ -9,11 +11,11 @@ import { mini4 } from './mini-4';
 import { mini5 } from './mini-5';
 import { mini6 } from './mini-6';
 
-/** Number of items per part in a full test without Part 1 (photographs need real images). */
-export const FULL_TEST_BLUEPRINT: Partial<Record<ToeicPart, number>> = { L2: 25, L3: 39, L4: 30, R5: 30, R6: 16, R7: 54 };
-export const MINI_TEST_BLUEPRINT: Partial<Record<ToeicPart, number>> = { L2: 7, L3: 9, L4: 8, R5: 8, R6: 4, R7: 14 };
+/** Items per part in a full test and a mini test, from the exam's configuration. */
+export const FULL_TEST_BLUEPRINT = examConfig.blueprints.full;
+export const MINI_TEST_BLUEPRINT = examConfig.blueprints.mini;
 
-const lessonItems = (part: ToeicPart, count: number): McqItem[] =>
+const lessonItems = (part: ExamPart, count: number): McqItem[] =>
   allExercises
     .flatMap(({ exercise }) => (exercise.kind === 'mcq' && exercise.item.part === part ? [exercise.item] : []))
     .sort((a, b) => a.level - b.level || a.id.localeCompare(b.id))
@@ -43,10 +45,13 @@ const demoMini: MockTest = {
       ['R5', 6],
       ['R6', 2],
       ['R7', 2],
-    ] as [ToeicPart, number][]
+    ] as [ExamPart, number][]
   ).map(([part, count]) => ({ part, items: lessonItems(part, count) })),
 };
 
-export const mockTests: MockTest[] = [full1, full2, mini1, mini2, mini3, mini4, mini5, mini6, demoMini];
+export const toeicMockTests: MockTest[] = [full1, full2, mini1, mini2, mini3, mini4, mini5, mini6, demoMini];
+
+/** Mock tests of the exam of this build. */
+export const mockTests: MockTest[] = currentExam.id === 'b2First' ? b2FirstMockTests : toeicMockTests;
 
 export const mockById = Object.fromEntries(mockTests.map((m) => [m.id, m])) as Record<string, MockTest>;

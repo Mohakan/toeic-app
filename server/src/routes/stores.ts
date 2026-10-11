@@ -12,7 +12,8 @@ import { LinkedElsewhereError, planFromPurchase, recordPurchase, setPurchaseStat
 export function storeRoutes(app: FastifyInstance, { db, providers, stores }: { db: Db; providers: Providers; stores: StoreConfig }) {
   const answer = async (record: PurchaseRecord, userId: string | null, email: string | null) => {
     const { status, since } = await recordPurchase(db, record, userId);
-    return { status, plan: userId && email ? await planFor(db, userId, email) : planFromPurchase(record.source, status, since) };
+    // The plan of the app the purchase was made in.
+    return { status, plan: userId && email ? await planFor(db, userId, email, record.exam) : planFromPurchase(record.source, status, since) };
   };
 
   const linked = (error: unknown) => error instanceof LinkedElsewhereError;
@@ -29,13 +30,16 @@ export function storeRoutes(app: FastifyInstance, { db, providers, stores }: { d
         request.log.warn({ err: error }, 'Apple transaction rejected');
         return reply.code(400).send({ error: 'invalid_receipt' });
       }
-      if (tx.bundleId !== stores.apple.bundleId || tx.productId !== stores.apple.productId || !tx.originalTransactionId) return reply.code(400).send({ error: 'wrong_product' });
+      // The transaction must be the full plan of one of our apps.
+      const appleApp = stores.apple.apps.find((a) => a.bundleId === tx.bundleId && a.productId === tx.productId);
+      if (!appleApp || !tx.originalTransactionId) return reply.code(400).send({ error: 'wrong_product' });
       try {
         return await answer(
           {
             source: 'store_ios',
             transactionId: tx.originalTransactionId,
             productId: tx.productId,
+            exam: appleApp.exam,
             status: tx.revoked ? 'revoked' : 'valid',
             environment: tx.environment,
             amountMilli: tx.amountMilli,
@@ -65,8 +69,10 @@ export function storeRoutes(app: FastifyInstance, { db, providers, stores }: { d
     },
     async (request, reply) => {
       if (!providers.google || !stores.google) return reply.code(503).send({ error: 'store_unavailable' });
-      if (request.body.productId !== stores.google.productId) return reply.code(400).send({ error: 'wrong_product' });
-      const purchase = await providers.google.product(request.body.productId, request.body.purchaseToken);
+      // Each app sells its own product: the product says which app (and exam) the token belongs to.
+      const googleApp = stores.google.apps.find((a) => a.productId === request.body.productId);
+      if (!googleApp) return reply.code(400).send({ error: 'wrong_product' });
+      const purchase = await providers.google.product(googleApp.packageName, request.body.productId, request.body.purchaseToken);
       if (!purchase) return reply.code(400).send({ error: 'invalid_receipt' });
       try {
         return await answer(
@@ -74,6 +80,7 @@ export function storeRoutes(app: FastifyInstance, { db, providers, stores }: { d
             source: 'store_android',
             transactionId: request.body.purchaseToken,
             productId: request.body.productId,
+            exam: googleApp.exam,
             status: purchase.state === 'purchased' ? 'valid' : purchase.state === 'pending' ? 'pending' : 'revoked',
             environment: purchase.test ? 'Test' : 'Production',
             orderId: purchase.orderId,

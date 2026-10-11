@@ -7,10 +7,19 @@ export type Cefr = 'A1' | 'A2' | 'B1' | 'B2' | 'C1';
 /** TOEIC section a question is modelled on (L = Listening, R = Reading). */
 export type ToeicPart = 'L2' | 'L3' | 'L4' | 'R5' | 'R6' | 'R7';
 
+/**
+ * Cambridge English B2 First: Reading and Use of English Parts 1-7 (RU1-RU7) and Listening
+ * Parts 1-4 (LI1-LI4). Writing and Speaking are not modelled yet.
+ */
+export type B2Part = 'RU1' | 'RU2' | 'RU3' | 'RU4' | 'RU5' | 'RU6' | 'RU7' | 'LI1' | 'LI2' | 'LI3' | 'LI4';
+
+/** A part of any exam of the Toki Quest family; each exam lists its own in src/exams/config.ts. */
+export type ExamPart = ToeicPart | B2Part;
+
 export interface McqItem {
   id: string;
   skill: Skill;
-  part: ToeicPart;
+  part: ExamPart;
   /** 1 (A1) to 6 (C1+) */
   level: number;
   prompt: string;
@@ -22,7 +31,45 @@ export interface McqItem {
   explain: Localized;
   /** Overrides the provisional IRT parameters derived from `level`. */
   irt?: Partial<ItemParams>;
+  /**
+   * Options keep the authored order: True / False / Not Given, paragraphs A-G of a gapped text,
+   * sections of a multiple-matching text. The key is then given by `answer`, not by position 0.
+   */
+  fixedOrder?: boolean;
 }
+
+/**
+ * Answer typed by the learner: open cloze, word formation, key word transformation, sentence or
+ * form completion. Compared with the accepted answers after normalization (case, spaces,
+ * apostrophes, final punctuation): see src/services/typedAnswer.ts.
+ */
+export interface TypedItem {
+  id: string;
+  skill: Skill;
+  part: ExamPart;
+  /** 1 (A1) to 6 (C1+) */
+  level: number;
+  /** Sentence or text with "___" where the answer goes. */
+  prompt: string;
+  passage?: string;
+  /** Text read aloud by speech synthesis for listening items. */
+  audio?: string;
+  /** Key word transformation: the sentence to rewrite. */
+  lead?: string;
+  /** Word formation: the stem to change. Key word transformation: the word that must be used. */
+  cue?: string;
+  /** Accepted answers; the first one is shown as the correction. */
+  answers: string[];
+  /** Longest accepted answer in words (key word transformation: 5). */
+  maxWords?: number;
+  explain: Localized;
+  irt?: Partial<ItemParams>;
+}
+
+/** An item of a mock test: chosen among options or typed. */
+export type MockItem = McqItem | TypedItem;
+
+export const isTyped = (item: MockItem): item is TypedItem => 'answers' in item;
 
 export type VocabTheme =
   | 'office'
@@ -62,6 +109,7 @@ export interface UnitLesson {
 
 export type Exercise =
   | { kind: 'mcq'; item: McqItem }
+  | { kind: 'type'; item: TypedItem }
   | { kind: 'order'; id: string; words: string[]; answer: string[]; hint: Localized; explain: Localized }
   | { kind: 'match'; id: string; wordIds: string[]; explain: Localized };
 
@@ -99,7 +147,7 @@ export interface MockTest {
   durationMin: number;
   /** Assembled from lesson items to exercise the feature until dedicated mock content exists. */
   demo?: boolean;
-  sections: { part: ToeicPart; items: McqItem[] }[];
+  sections: { part: ExamPart; items: MockItem[] }[];
 }
 
 export interface MockResult {
@@ -109,7 +157,7 @@ export interface MockResult {
   correct: number;
   total: number;
   timeUsedSec: number;
-  byPart: Partial<Record<ToeicPart, SkillScore>>;
+  byPart: Partial<Record<ExamPart, SkillScore>>;
   listening: number | null;
   reading: number | null;
 }
@@ -119,7 +167,10 @@ export interface SkillScore {
   total: number;
 }
 
-/** TOEIC Listening & Reading reports two section scores (5-495 each). */
+/**
+ * The two measured sections. TOEIC reports them as Listening and Reading (5-495 each); B2 First
+ * maps them to its Listening and Reading and Use of English papers (Cambridge English Scale).
+ */
 export type Section = 'L' | 'R';
 
 export interface ItemParams {

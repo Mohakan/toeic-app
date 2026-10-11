@@ -1,4 +1,6 @@
 import type { Localized, McqItem } from '../types';
+import { currentExam } from '../exams/current';
+import { b2FirstAssessmentBank } from './exams/b2First/assessment';
 import { withShuffledOptions } from './shuffle';
 
 const L = (fr: string, ar: string, en: string, es: string): Localized => ({ fr, ar, en, es });
@@ -665,4 +667,7 @@ const rawBank: McqItem[] = [
   },
 ];
 
-export const assessmentBank: McqItem[] = rawBank.map(withShuffledOptions);
+export const toeicAssessmentBank: McqItem[] = rawBank.map(withShuffledOptions);
+
+/** Placement bank of the exam of this build. */
+export const assessmentBank: McqItem[] = currentExam.id === 'b2First' ? b2FirstAssessmentBank : toeicAssessmentBank;

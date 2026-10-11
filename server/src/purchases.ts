@@ -1,4 +1,5 @@
 import type { Db } from './db.js';
+import type { ExamId } from './exams.js';
 import type { Plan } from './plan.js';
 
 export type PurchaseSource = 'store_ios' | 'store_android' | 'web_tn';
@@ -9,6 +10,8 @@ export interface PurchaseRecord {
   /** Apple: original transaction id; Google: purchase token; Konnect: payment reference. */
   transactionId: string;
   productId: string;
+  /** The app the purchase was made in; it opens the full plan of that exam only. */
+  exam: ExamId;
   status: PurchaseStatus;
   environment?: string | null;
   orderId?: string | null;
@@ -30,8 +33,8 @@ export class LinkedElsewhereError extends Error {
  */
 export async function recordPurchase(db: Db, record: PurchaseRecord, userId: string | null): Promise<{ status: PurchaseStatus; since: string }> {
   const { rows } = await db.query<{ user_id: string | null; status: PurchaseStatus; since: string }>(
-    `INSERT INTO purchases (source, transaction_id, product_id, status, environment, order_id, amount_milli, currency, user_id)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+    `INSERT INTO purchases (source, transaction_id, product_id, status, environment, order_id, amount_milli, currency, user_id, exam)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
      ON CONFLICT (source, transaction_id) DO UPDATE SET
        -- A receipt sent again after a refund must not reopen the plan: only the store's
        -- notification (setPurchaseStatus) can reverse a refund or a revocation.
@@ -50,6 +53,7 @@ export async function recordPurchase(db: Db, record: PurchaseRecord, userId: str
       record.amountMilli ?? null,
       record.currency ?? null,
       userId,
+      record.exam,
     ],
   );
   const row = rows[0];
@@ -69,14 +73,14 @@ export async function setPurchaseStatus(db: Db, source: PurchaseSource, transact
 
 /** Keeps the account's right in line with the purchase: valid opens the full plan, the rest closes it. */
 async function syncEntitlement(db: Db, source: PurchaseSource, transactionId: string) {
-  const { rows } = await db.query<{ user_id: string | null; status: PurchaseStatus }>('SELECT user_id, status FROM purchases WHERE source = $1 AND transaction_id = $2', [source, transactionId]);
+  const { rows } = await db.query<{ user_id: string | null; status: PurchaseStatus; exam: ExamId }>('SELECT user_id, status, exam FROM purchases WHERE source = $1 AND transaction_id = $2', [source, transactionId]);
   const purchase = rows[0];
   if (!purchase?.user_id) return;
   if (purchase.status === 'valid') {
     await db.query(
-      `INSERT INTO entitlements (user_id, source, external_ref) VALUES ($1, $2, $3)
+      `INSERT INTO entitlements (user_id, source, external_ref, exam) VALUES ($1, $2, $3, $4)
        ON CONFLICT (source, external_ref) DO UPDATE SET status = 'active', user_id = EXCLUDED.user_id`,
-      [purchase.user_id, source, transactionId],
+      [purchase.user_id, source, transactionId, purchase.exam],
     );
   } else {
     const status = purchase.status === 'refunded' ? 'refunded' : 'revoked';

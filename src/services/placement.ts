@@ -10,7 +10,7 @@ import type {
   SkillScore,
 } from '../types';
 import { estimate, information, PRIOR_SD, type Estimate } from './irt';
-import { cefrFor, levelToB, scaledScore, thetaToLevel, Z90 } from './scoring';
+import { cefrFor, combineScores, levelToB, scaledScore, thetaToLevel, Z90 } from './scoring';
 
 /**
  * Computerized adaptive test (CAT) settings. The test stops once both sections are measured
@@ -181,13 +181,13 @@ export function levelEstimate(responses: ItemResponse[]): LevelEstimate {
   const L = sectionResult(responses, 'L');
   const R = sectionResult(responses, 'R');
   const measured = [L, R].filter((r) => r.answered > 0);
-  const score = L.score + R.score;
+  const score = combineScores(L.score, R.score);
   // With a single measured section, its own CEFR level is the honest summary.
   const cefr = measured.length === 1 ? measured[0].cefr : cefrFor('total', score);
   const thetas = (measured.length > 0 ? measured : [L, R]).map((r) => r.theta);
   return {
     sections: { L, R },
-    total: { score, low: L.low + R.low, high: L.high + R.high },
+    total: { score, low: combineScores(L.low, R.low), high: combineScores(L.high, R.high) },
     cefr,
     level: thetaToLevel(thetas.reduce((a, b) => a + b, 0) / thetas.length),
   };

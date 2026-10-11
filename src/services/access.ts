@@ -5,6 +5,7 @@
  * as arguments, so the rules are fully tested.
  */
 import type { Placement, Unit } from '../types';
+import { examConfig } from '../exams/current';
 
 export type Tier = 'free' | 'full';
 
@@ -29,7 +30,8 @@ export interface Trial {
 
 export const TRIAL_UNIT_COUNT = 4;
 /** "TOEIC blanc express": 20 questions. */
-export const FREE_MOCK_IDS = ['demo-mini'];
+/** Mock tests of the free trial (the express test for TOEIC, the first mini test for B2). */
+export const FREE_MOCK_IDS = examConfig.freeMockIds;
 
 /** Speaking content of a band, in the order shown to the learner. */
 export interface SpeakingCatalog {

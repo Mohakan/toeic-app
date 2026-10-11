@@ -16,9 +16,22 @@
     "production": {
       "autoIncrement": true,
       "env": { "EXPO_PUBLIC_API_URL": "https://api.tokiquest.app" }
+    },
+    "development-b2": {
+      "extends": "development",
+      "env": { "EXPO_PUBLIC_API_URL": "https://staging-api.tokiquest.app", "EXPO_PUBLIC_EXAM": "b2First" }
+    },
+    "preview-b2": {
+      "extends": "preview",
+      "env": { "EXPO_PUBLIC_API_URL": "https://staging-api.tokiquest.app", "EXPO_PUBLIC_EXAM": "b2First" }
+    },
+    "production-b2": {
+      "extends": "production",
+      "env": { "EXPO_PUBLIC_API_URL": "https://api.tokiquest.app", "EXPO_PUBLIC_EXAM": "b2First" }
     }
   },
   "submit": {
-    "production": {}
+    "production": {},
+    "production-b2": {}
   }
 }

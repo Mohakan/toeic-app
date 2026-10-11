@@ -14,6 +14,7 @@ import { purchases } from '../services/purchases';
 import { useApp } from '../state/AppState';
 import { colors, fonts, radius, space } from '../theme';
 import type { Lang } from '../types';
+import { examConfig } from '../exams/current';
 
 const LANGS: Lang[] = ['fr', 'ar', 'es', 'en'];
 const accountAvailable = API_URL !== null;
@@ -51,7 +52,7 @@ export function WelcomeScreen({ navigation }: NativeStackScreenProps<RootStackPa
     ['map', 'welcome.n.units'],
     ['albums', 'welcome.n.words'],
     ['timer', 'welcome.n.mocks'],
-    ['mic', 'welcome.n.speaking'],
+    ...(examConfig.toeicSpeaking ? ([['mic', 'welcome.n.speaking']] as [keyof typeof Ionicons.glyphMap, StringKey][]) : []),
   ];
   const offers: { title: StringKey; price: string; note: StringKey; items: StringKey[]; accent: boolean }[] = [
     { title: 'welcome.free', price: t('welcome.freePrice'), note: 'welcome.freeNote', items: ['welcome.free.1', 'welcome.free.2', 'welcome.free.3', 'welcome.free.4'], accent: false },
@@ -133,7 +134,8 @@ export function WelcomeScreen({ navigation }: NativeStackScreenProps<RootStackPa
   );
 }
 
-const GOALS = [550, 700, 800, 900] as const;
+/** Score goals on the scale of the exam of this build. */
+const GOALS = examConfig.goals;
 const DAILY = [5, 10, 15] as const;
 const TOTAL_STEPS = 3;
 

@@ -1,6 +1,23 @@
+import { isExamId, type ExamId } from './exams.js';
+
+/** One app of the family on the App Store. */
+export interface AppleApp {
+  exam: ExamId;
+  bundleId: string;
+  appAppleId: number | null;
+  productId: string;
+}
+
+/** One app of the family on Google Play. */
+export interface GoogleApp {
+  exam: ExamId;
+  packageName: string;
+  productId: string;
+}
+
 export interface StoreConfig {
-  apple: { bundleId: string; appAppleId: number | null; productId: string; rootCertFiles: string[] } | null;
-  google: { packageName: string; productId: string; serviceAccountFile: string; pubsubAudience: string | null; pubsubServiceAccount: string | null } | null;
+  apple: { apps: AppleApp[]; rootCertFiles: string[] } | null;
+  google: { apps: GoogleApp[]; serviceAccountFile: string; pubsubAudience: string | null; pubsubServiceAccount: string | null } | null;
   konnect: { apiUrl: string; apiKey: string; walletId: string; priceMillimes: number } | null;
 }
 
@@ -24,6 +41,27 @@ export interface Config {
   sabil: { apiKey: string; hmacSecret: string } | null;
 }
 
+/** Apps after the TOEIC one, from STORE_APPS (JSON); see server/README.md. */
+interface ExtraApp {
+  exam: ExamId;
+  appleBundleId?: string;
+  appleAppId?: number;
+  googlePackage?: string;
+  productId: string;
+}
+
+function extraApps(value: string | undefined): ExtraApp[] {
+  if (!value) return [];
+  const parsed: unknown = JSON.parse(value);
+  if (!Array.isArray(parsed)) throw new Error('STORE_APPS must be a JSON array.');
+  return parsed.map((entry, i) => {
+    const e = entry as Partial<ExtraApp>;
+    if (!isExamId(e.exam) || e.exam === 'toeic') throw new Error(`STORE_APPS[${i}].exam must be one of the other exams.`);
+    if (typeof e.productId !== 'string' || !e.productId) throw new Error(`STORE_APPS[${i}].productId is required.`);
+    return e as ExtraApp;
+  });
+}
+
 const list = (value: string | undefined) =>
   (value ?? '')
     .split(',')
@@ -33,6 +71,7 @@ const list = (value: string | undefined) =>
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
   const production = env.NODE_ENV === 'production';
   const port = Number(env.PORT ?? 4000);
+  const others = extraApps(env.STORE_APPS);
   const config: Config = {
     production,
     host: env.HOST ?? (production ? '0.0.0.0' : '127.0.0.1'),
@@ -46,19 +85,28 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     trustProxy: env.TRUST_PROXY === '1',
     publicUrl: (env.PUBLIC_URL ?? `http://localhost:${port}`).replace(/\/+$/, ''),
     stores: {
+      // The TOEIC app keeps its original variables; the other apps come from STORE_APPS.
       apple: env.APPLE_BUNDLE_ID
         ? {
-            bundleId: env.APPLE_BUNDLE_ID,
-            appAppleId: env.APPLE_APP_ID ? Number(env.APPLE_APP_ID) : null,
-            productId: env.APPLE_PRODUCT_ID ?? 'toki_quest_full',
+            apps: [
+              {
+                exam: 'toeic',
+                bundleId: env.APPLE_BUNDLE_ID,
+                appAppleId: env.APPLE_APP_ID ? Number(env.APPLE_APP_ID) : null,
+                productId: env.APPLE_PRODUCT_ID ?? 'toki_quest_full',
+              },
+              ...others.flatMap((a): AppleApp[] => (a.appleBundleId ? [{ exam: a.exam, bundleId: a.appleBundleId, appAppleId: a.appleAppId ?? null, productId: a.productId }] : [])),
+            ],
             rootCertFiles: list(env.APPLE_ROOT_CERTS),
           }
         : null,
       google:
         env.GOOGLE_PACKAGE_NAME && env.GOOGLE_SERVICE_ACCOUNT_FILE
           ? {
-              packageName: env.GOOGLE_PACKAGE_NAME,
-              productId: env.GOOGLE_PRODUCT_ID ?? 'toki_quest_full',
+              apps: [
+                { exam: 'toeic', packageName: env.GOOGLE_PACKAGE_NAME, productId: env.GOOGLE_PRODUCT_ID ?? 'toki_quest_full' },
+                ...others.flatMap((a): GoogleApp[] => (a.googlePackage ? [{ exam: a.exam, packageName: a.googlePackage, productId: a.productId }] : [])),
+              ],
               serviceAccountFile: env.GOOGLE_SERVICE_ACCOUNT_FILE,
               pubsubAudience: env.GOOGLE_PUBSUB_AUDIENCE || null,
               pubsubServiceAccount: env.GOOGLE_PUBSUB_SERVICE_ACCOUNT || null,
@@ -80,7 +128,9 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
   if (production && !config.smtpUrl) throw new Error('SMTP_URL is required in production (password reset e-mails).');
   if (production && !config.publicUrl.startsWith('https://')) throw new Error('PUBLIC_URL must be an https:// address in production.');
   if (config.stores.apple && config.stores.apple.rootCertFiles.length === 0) throw new Error('APPLE_ROOT_CERTS must list the Apple root certificate files.');
-  if (production && config.stores.apple && !config.stores.apple.appAppleId) throw new Error('APPLE_APP_ID is required in production.');
+  for (const a of config.stores.apple?.apps ?? []) {
+    if (production && !a.appAppleId) throw new Error(`The App Store app id of ${a.exam} is required in production (APPLE_APP_ID or STORE_APPS[].appleAppId).`);
+  }
   if (config.sabil && config.sabil.hmacSecret.length < 32) throw new Error('SABIL_HMAC_SECRET must be at least 32 characters.');
   return config;
 }

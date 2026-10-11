@@ -1,12 +1,10 @@
 import { Ionicons } from '@expo/vector-icons';
-import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useI18n } from '../i18n';
-import { listening } from '../services/speech';
-import { useApp } from '../state/AppState';
 import { colors, radius, space } from '../theme';
 import type { McqItem } from '../types';
-import { AppText, Button, Card, EnglishText, haptic } from './ui';
+import { AudioPlayer } from './AudioPlayer';
+import { AppText, Card, EnglishText, haptic } from './ui';
 
 /** Plays allowed per recording in test conditions (placement, mock tests). */
 export const TEST_PLAYS = 2;
@@ -31,24 +29,6 @@ interface Props {
 export function McqQuestion({ item, selected, revealed, onSelect, maxPlays, playsUsed, onPlay }: Props) {
   const { t, row } = useI18n();
   const isListening = item.skill === 'listening';
-  const { data } = useApp();
-  const [noVoice, setNoVoice] = useState(false);
-  const [ownPlays, setOwnPlays] = useState(0);
-  const plays = playsUsed ?? ownPlays;
-  const testConditions = maxPlays !== undefined;
-  const playsLeft = testConditions ? Math.max(0, maxPlays - plays) : Infinity;
-  const play = (slow: boolean) => {
-    if (playsLeft <= 0) return;
-    if (onPlay) onPlay();
-    else setOwnPlays((n) => n + 1);
-    return listening
-      .play(item.audio!, { slow, voiceId: data.voiceId ?? undefined })
-      .then((ok) => setNoVoice(!ok))
-      .catch((error) => {
-        console.warn('Speech synthesis failed.', error);
-        setNoVoice(true);
-      });
-  };
 
   return (
     <View style={{ gap: space.md }}>
@@ -57,34 +37,7 @@ export function McqQuestion({ item, selected, revealed, onSelect, maxPlays, play
       </AppText>
       <AppText variant="h3">{t(isListening ? 'assess.instr.listen' : 'assess.instr.mcq')}</AppText>
 
-      {isListening && item.audio ? (
-        testConditions ? (
-          <View style={{ gap: 4 }}>
-            <Button label={t('assess.listen')} icon="volume-high" disabled={playsLeft <= 0} onPress={() => play(false)} />
-            <AppText variant="small" color={colors.inkSoft} center>
-              {t('assess.playsLeft', { n: playsLeft, max: maxPlays })}
-            </AppText>
-          </View>
-        ) : (
-          <View style={[row, { gap: space.sm }]}>
-            <View style={{ flex: 1 }}>
-              <Button label={t('assess.listen')} icon="volume-high" onPress={() => play(false)} />
-            </View>
-            <View style={{ flex: 1 }}>
-              <Button label={t('assess.listenSlow')} icon="walk" variant="secondary" onPress={() => play(true)} />
-            </View>
-          </View>
-        )
-      ) : null}
-
-      {noVoice ? (
-        <View style={[row, { gap: 6, alignItems: 'center' }]} accessibilityLiveRegion="polite">
-          <Ionicons name="alert-circle" size={18} color={colors.dangerDark} />
-          <AppText variant="small" color={colors.dangerDark} style={{ flex: 1 }}>
-            {t('listen.noVoice')}
-          </AppText>
-        </View>
-      ) : null}
+      {isListening && item.audio ? <AudioPlayer audio={item.audio} maxPlays={maxPlays} playsUsed={playsUsed} onPlay={onPlay} /> : null}
 
       {item.passage ? (
         <Card style={{ backgroundColor: colors.accentSoft, boxShadow: 'none' }}>

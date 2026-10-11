@@ -4,18 +4,19 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { ConfirmDialog } from '../components/ConfirmDialog';
 import { McqQuestion, TEST_PLAYS } from '../components/McqQuestion';
+import { TypedQuestion } from '../components/TypedQuestion';
 import { AppText, Button, Card, EnglishText, ProgressBar, Screen } from '../components/ui';
 import { mockById } from '../data/mock';
 import { useI18n } from '../i18n';
 import type { StringKey } from '../i18n/strings';
 import type { RootStackParamList } from '../navigation/types';
-import { formatClock, mockItems, mockResponses, remainingSeconds, scoreMock, type MockReport } from '../services/mock';
+import { answerText, formatClock, isCorrectAnswer, keyText, mockItems, mockResponses, remainingSeconds, scoreMock, type MockAnswer, type MockReport } from '../services/mock';
 import { listening } from '../services/speech';
 import { useApp } from '../state/AppState';
 import { useAccess } from '../state/useAccess';
 import { useAccessGuard } from '../state/useAccessGuard';
 import { colors, space } from '../theme';
-import type { ToeicPart } from '../types';
+import { isTyped, type ExamPart } from '../types';
 import { SectionCard } from './ResultScreen';
 
 const XP_PER_CORRECT = 2;
@@ -29,14 +30,14 @@ export function MockTestScreen({ navigation, route }: NativeStackScreenProps<Roo
   const { t, tx, row } = useI18n();
   const items = useMemo(() => (mock ? mockItems(mock) : []), [mock]);
   const partOf = useMemo(() => {
-    const map: Record<string, ToeicPart> = {};
+    const map: Record<string, ExamPart> = {};
     mock?.sections.forEach((s) => s.items.forEach((i) => (map[i.id] = s.part)));
     return map;
   }, [mock]);
 
   const [phase, setPhase] = useState<'rules' | 'run' | 'report'>('rules');
   const [index, setIndex] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [answers, setAnswers] = useState<Record<string, MockAnswer>>({});
   /** Recording plays per item, kept here so pausing does not give extra plays. */
   const [plays, setPlays] = useState<Record<string, number>>({});
   const [elapsed, setElapsed] = useState(0);
@@ -47,7 +48,7 @@ export function MockTestScreen({ navigation, route }: NativeStackScreenProps<Roo
   const finished = useRef(false);
 
   const finish = useCallback(
-    (finalAnswers: Record<string, number>, used: number) => {
+    (finalAnswers: Record<string, MockAnswer>, used: number) => {
       if (!mock || finished.current) return;
       finished.current = true;
       listening.stop();
@@ -107,7 +108,7 @@ export function MockTestScreen({ navigation, route }: NativeStackScreenProps<Roo
 
   if (phase === 'report' && report) {
     const { result, estimate } = report;
-    const wrong = items.filter((i) => answers[i.id] !== i.answer);
+    const wrong = items.filter((i) => !isCorrectAnswer(i, answers[i.id]));
     return (
       <Screen footer={<Button label={t('mock.back')} onPress={() => (access.full ? navigation.goBack() : navigation.replace('Paywall', { reason: 'mockDone' }))} />}>
         <View style={{ gap: space.lg }}>
@@ -155,13 +156,13 @@ export function MockTestScreen({ navigation, route }: NativeStackScreenProps<Roo
                     {t(`assess.part.${partOf[item.id]}` as StringKey)}
                   </AppText>
                   <EnglishText variant="small" style={{ fontWeight: '700' }}>
-                    {item.prompt === 'Choose the best response.' && item.audio ? item.audio : item.prompt}
+                    {!isTyped(item) && item.prompt === 'Choose the best response.' && item.audio ? item.audio : item.prompt}
                   </EnglishText>
                   <EnglishText variant="small" color={colors.dangerDark}>
-                    {t('mock.yourAnswer', { a: answers[item.id] !== undefined ? item.options[answers[item.id]] : t('mock.noAnswer') })}
+                    {t('mock.yourAnswer', { a: answers[item.id] !== undefined ? answerText(item, answers[item.id]) : t('mock.noAnswer') })}
                   </EnglishText>
                   <EnglishText variant="small" color={colors.successDark}>
-                    {t('lesson.answerWas', { a: item.options[item.answer] })}
+                    {t('lesson.answerWas', { a: keyText(item) })}
                   </EnglishText>
                   <AppText variant="small" color={colors.inkSoft}>
                     {tx(item.explain)}
@@ -243,11 +244,28 @@ export function MockTestScreen({ navigation, route }: NativeStackScreenProps<Roo
             </AppText>
             <Button label={t('mock.resume')} icon="play" onPress={() => setPaused(false)} />
           </Card>
+        ) : isTyped(item) ? (
+          <TypedQuestion
+            key={item.id}
+            item={item}
+            value={String(answers[item.id] ?? '')}
+            revealed={false}
+            // An emptied field counts as unanswered again.
+            onChange={(text) =>
+              setAnswers((a) => {
+                const { [item.id]: _previous, ...rest } = a;
+                return text.trim() ? { ...rest, [item.id]: text } : rest;
+              })
+            }
+            maxPlays={TEST_PLAYS}
+            playsUsed={plays[item.id] ?? 0}
+            onPlay={() => setPlays((p) => ({ ...p, [item.id]: (p[item.id] ?? 0) + 1 }))}
+          />
         ) : (
           <McqQuestion
             key={item.id}
             item={item}
-            selected={answers[item.id] ?? null}
+            selected={typeof answers[item.id] === 'number' ? (answers[item.id] as number) : null}
             revealed={false}
             onSelect={(i) => setAnswers((a) => ({ ...a, [item.id]: i }))}
             maxPlays={TEST_PLAYS}

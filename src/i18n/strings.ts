@@ -1,3 +1,5 @@
+import { currentExam } from '../exams/current';
+import { EXAM_STRINGS } from './examStrings';
 import type { Lang } from '../types';
 
 type Entry = [fr: string, ar: string, en: string, es: string];
@@ -73,6 +75,10 @@ const dict = {
   'goal.700': ['Poste international', 'وظيفة دولية', 'International role', 'Puesto internacional'],
   'goal.800': ['Cadre ou école de commerce', 'إطار أو مدرسة تجارة', 'Management or business school', 'Mando intermedio o escuela de negocios'],
   'goal.900': ['Excellence', 'التميّز', 'Excellence', 'Excelencia'],
+  // B2 First goals on the Cambridge English Scale.
+  'goal.160': ['Réussir le B2 First (grade C)', 'النجاح في B2 First (الدرجة C)', 'Pass B2 First (grade C)', 'Aprobar el B2 First (nota C)'],
+  'goal.173': ['Un B2 solide (grade B)', 'مستوى B2 متين (الدرجة B)', 'A solid B2 (grade B)', 'Un B2 sólido (nota B)'],
+  'goal.180': ['Grade A, certificat de niveau C1', 'الدرجة A، شهادة بمستوى C1', 'Grade A, certificate at C1 level', 'Nota A, certificado de nivel C1'],
   'onb.daily.title': ['Combien de temps par jour ?', 'كم من الوقت يوميًا؟', 'How much time per day?', '¿Cuánto tiempo al día?'],
   'onb.daily.sub': [
     'Mieux vaut peu, mais chaque jour.',
@@ -111,6 +117,33 @@ const dict = {
   'assess.part.R5': ['Lecture · Phrases à compléter', 'قراءة · إكمال الجمل', 'Reading · Incomplete sentences', 'Lectura · Frases incompletas'],
   'assess.part.R6': ['Lecture · Texte à compléter', 'قراءة · إكمال النص', 'Reading · Text completion', 'Lectura · Textos incompletos'],
   'assess.part.R7': ['Lecture · Compréhension', 'قراءة · الفهم', 'Reading · Comprehension', 'Lectura · Comprensión'],
+  // Cambridge English B2 First parts (Toki Quest B2).
+  'assess.part.RU1': ['Lecture et langue · Texte à trous (QCM)', 'القراءة واللغة · نص بفراغات (اختيار من متعدد)', 'Reading and Use of English · Multiple-choice cloze', 'Lectura y uso del inglés · Texto con huecos (opción múltiple)'],
+  'assess.part.RU2': ['Lecture et langue · Texte à trous libre', 'القراءة واللغة · نص بفراغات مفتوحة', 'Reading and Use of English · Open cloze', 'Lectura y uso del inglés · Texto con huecos abiertos'],
+  'assess.part.RU3': ['Lecture et langue · Formation des mots', 'القراءة واللغة · تكوين الكلمات', 'Reading and Use of English · Word formation', 'Lectura y uso del inglés · Formación de palabras'],
+  'assess.part.RU4': ['Lecture et langue · Transformation avec mot clé', 'القراءة واللغة · إعادة صياغة بكلمة مفتاحية', 'Reading and Use of English · Key word transformation', 'Lectura y uso del inglés · Transformación con palabra clave'],
+  'assess.part.RU5': ['Lecture et langue · Compréhension (QCM)', 'القراءة واللغة · فهم النص (اختيار من متعدد)', 'Reading and Use of English · Multiple choice', 'Lectura y uso del inglés · Comprensión (opción múltiple)'],
+  'assess.part.RU6': ['Lecture et langue · Phrases manquantes', 'القراءة واللغة · جمل ناقصة', 'Reading and Use of English · Gapped text', 'Lectura y uso del inglés · Frases eliminadas'],
+  'assess.part.RU7': ['Lecture et langue · Appariement multiple', 'القراءة واللغة · مطابقة متعددة', 'Reading and Use of English · Multiple matching', 'Lectura y uso del inglés · Emparejamiento múltiple'],
+  'assess.part.LI1': ['Écoute · Extraits courts', 'استماع · مقاطع قصيرة', 'Listening · Short extracts', 'Comprensión auditiva · Fragmentos cortos'],
+  'assess.part.LI2': ['Écoute · Phrases à compléter', 'استماع · إكمال الجمل', 'Listening · Sentence completion', 'Comprensión auditiva · Completar frases'],
+  'assess.part.LI3': ['Écoute · Appariement multiple', 'استماع · مطابقة متعددة', 'Listening · Multiple matching', 'Comprensión auditiva · Emparejamiento múltiple'],
+  'assess.part.LI4': ['Écoute · Questions à choix multiple', 'استماع · أسئلة اختيار من متعدد', 'Listening · Multiple choice', 'Comprensión auditiva · Opción múltiple'],
+  // Typed answers (open cloze, word formation, key word transformation, sentence completion).
+  'type.instr': ['Écris ta réponse', 'اكتب إجابتك', 'Write your answer', 'Escribe tu respuesta'],
+  'type.instr.RU2': ['Écris le mot qui manque (un seul mot)', 'اكتب الكلمة الناقصة (كلمة واحدة فقط)', 'Write the missing word (one word only)', 'Escribe la palabra que falta (una sola palabra)'],
+  'type.instr.RU3': ['Transforme le mot donné pour qu’il convienne à la phrase', 'حوّل الكلمة المعطاة لتناسب الجملة', 'Change the given word so that it fits the sentence', 'Transforma la palabra dada para que encaje en la frase'],
+  'type.instr.RU4': [
+    'Complète la seconde phrase pour qu’elle garde le même sens. Utilise le mot donné sans le modifier, en 2 à 5 mots.',
+    'أكمل الجملة الثانية لتحمل المعنى نفسه. استعمل الكلمة المعطاة دون تغييرها، في كلمتين إلى خمس كلمات.',
+    'Complete the second sentence so that it means the same as the first. Use the given word without changing it, in 2 to 5 words.',
+    'Completa la segunda frase para que signifique lo mismo. Usa la palabra dada sin cambiarla, con 2 a 5 palabras.',
+  ],
+  'type.instr.LI2': ['Écoute, puis complète la phrase avec un mot ou une expression courte', 'استمع، ثم أكمل الجملة بكلمة أو بعبارة قصيرة', 'Listen, then complete the sentence with a word or a short phrase', 'Escucha y completa la frase con una palabra o una expresión corta'],
+  'type.cue': ['Mot donné', 'الكلمة المعطاة', 'Given word', 'Palabra dada'],
+  'type.placeholder': ['Ta réponse', 'إجابتك', 'Your answer', 'Tu respuesta'],
+  'type.words': ['{n} mot(s), {max} au maximum', 'عدد الكلمات: {n} (الحد الأقصى {max})', '{n} word(s), {max} at most', '{n} palabra(s), {max} como máximo'],
+  'type.accepted': ['Réponses acceptées', 'الإجابات المقبولة', 'Accepted answers', 'Respuestas aceptadas'],
   'assess.instr.mcq': ['Choisis la bonne réponse', 'اختر الإجابة الصحيحة', 'Choose the best answer', 'Elige la respuesta correcta'],
   'assess.instr.listen': ['Écoute, puis choisis la bonne réponse', 'استمع ثم اختر الإجابة الصحيحة', 'Listen, then choose the best answer', 'Escucha y elige la respuesta correcta'],
   'assess.listen': ['Écouter', 'استمع', 'Listen', 'Escuchar'],
@@ -1011,8 +1044,11 @@ export type StringKey = keyof typeof dict;
 
 const index: Record<Lang, number> = { fr: 0, ar: 1, en: 2, es: 3 };
 
+/** Texts of the exam of this build that replace the shared ones (see examStrings.ts). */
+const overrides: Partial<Record<StringKey, readonly string[]>> = EXAM_STRINGS[currentExam.id] ?? {};
+
 export function translate(lang: Lang, key: StringKey, vars?: Record<string, string | number>): string {
-  let text: string = dict[key][index[lang]];
+  let text: string = (overrides[key] ?? dict[key])[index[lang]];
   if (vars) {
     for (const [k, v] of Object.entries(vars)) text = text.split(`{${k}}`).join(String(v));
   }
@@ -1020,4 +1056,4 @@ export function translate(lang: Lang, key: StringKey, vars?: Record<string, stri
 }
 
 export const allKeys = Object.keys(dict) as StringKey[];
-export const rawEntry = (key: StringKey): readonly string[] => dict[key];
+export const rawEntry = (key: StringKey): readonly string[] => overrides[key] ?? dict[key];

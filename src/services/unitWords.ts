@@ -10,7 +10,13 @@ export const inBand = (word: VocabWord, level: number) => word.level <= level &&
 function textOf(set: ExerciseSet): string {
   return set.exercises
     .flatMap((e) =>
-      e.kind === 'mcq' ? [e.item.prompt, e.item.passage ?? '', e.item.audio ?? '', ...e.item.options] : e.kind === 'order' ? [e.answer.join(' ')] : [],
+      e.kind === 'mcq'
+        ? [e.item.prompt, e.item.passage ?? '', e.item.audio ?? '', ...e.item.options]
+        : e.kind === 'type'
+          ? [e.item.prompt, e.item.passage ?? '', e.item.audio ?? '', e.item.lead ?? '', ...e.item.answers]
+          : e.kind === 'order'
+            ? [e.answer.join(' ')]
+            : [],
     )
     .join('\n');
 }
