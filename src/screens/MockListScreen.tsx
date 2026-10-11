@@ -10,6 +10,7 @@ import { mockItems } from '../services/mock';
 import { useApp } from '../state/AppState';
 import { useAccess } from '../state/useAccess';
 import { colors, radius, space } from '../theme';
+import { examConfig } from '../exams/current';
 
 export function MockListScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -20,20 +21,22 @@ export function MockListScreen() {
   return (
     <Screen hero={<HeroTitle title={t('mock.title')} subtitle={t('mock.sub')} mood="think" />}>
       <View style={{ gap: space.lg }}>
-        <Pressable accessibilityRole="button" accessibilityLabel={t('speak.title')} onPress={() => nav.navigate('Speaking')}>
-          <Card style={[row, { alignItems: 'center', gap: space.md, borderWidth: 2, borderColor: colors.primarySoft }]}>
-            <View style={{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center' }}>
-              <Ionicons name="mic" size={24} color={colors.primaryDark} />
-            </View>
-            <View style={{ flex: 1, gap: 2 }}>
-              <AppText variant="h3">{t('speak.title')}</AppText>
-              <AppText variant="small" color={colors.inkSoft}>
-                {t('speak.entrySub')}
-              </AppText>
-            </View>
-            <Ionicons name={forwardIcon} size={20} color={colors.inkSoft} />
-          </Card>
-        </Pressable>
+        {examConfig.toeicSpeaking ? (
+          <Pressable accessibilityRole="button" accessibilityLabel={t('speak.title')} onPress={() => nav.navigate('Speaking')}>
+            <Card style={[row, { alignItems: 'center', gap: space.md, borderWidth: 2, borderColor: colors.primarySoft }]}>
+              <View style={{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center' }}>
+                <Ionicons name="mic" size={24} color={colors.primaryDark} />
+              </View>
+              <View style={{ flex: 1, gap: 2 }}>
+                <AppText variant="h3">{t('speak.title')}</AppText>
+                <AppText variant="small" color={colors.inkSoft}>
+                  {t('speak.entrySub')}
+                </AppText>
+              </View>
+              <Ionicons name={forwardIcon} size={20} color={colors.inkSoft} />
+            </Card>
+          </Pressable>
+        ) : null}
         {mockTests.length === 0 ? <AppText color={colors.inkSoft}>{t('review.empty')}</AppText> : null}
         {[...mockTests].sort((a, b) => Number(access.mock(b.id)) - Number(access.mock(a.id))).map((mock) => {
           const last = [...data.mockResults].reverse().find((r) => r.mockId === mock.id);

@@ -5,6 +5,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { JourneyMap } from '../components/JourneyMap';
 import { AppText, Button, Card, EnglishText, Mascot, ProgressBar, Screen, StatTile } from '../components/ui';
 import { units } from '../data/units';
+import { examConfig } from '../exams/current';
 import { useI18n } from '../i18n';
 import type { RootStackParamList } from '../navigation/types';
 import { unitStatuses } from '../services/path';
@@ -134,21 +135,23 @@ export function HomeScreen() {
           </View>
         ) : null}
 
-        {/* Speaking and pronunciation, also reachable from the Tests tab, are shown here so they are easy to find. */}
-        <Card style={{ gap: space.md }}>
-          <View style={[row, { alignItems: 'center', gap: space.md }]}>
-            <View style={{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center' }}>
-              <Ionicons name="mic" size={24} color={colors.primaryDark} />
+        {/* Speaking and pronunciation (TOEIC Speaking tasks), also reachable from the Tests tab, are shown here so they are easy to find. */}
+        {examConfig.toeicSpeaking ? (
+          <Card style={{ gap: space.md }}>
+            <View style={[row, { alignItems: 'center', gap: space.md }]}>
+              <View style={{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center' }}>
+                <Ionicons name="mic" size={24} color={colors.primaryDark} />
+              </View>
+              <View style={{ flex: 1, gap: 2 }}>
+                <AppText variant="h3">{t('home.speak')}</AppText>
+                <AppText variant="small" color={colors.inkSoft}>
+                  {t('home.speakSub')}
+                </AppText>
+              </View>
             </View>
-            <View style={{ flex: 1, gap: 2 }}>
-              <AppText variant="h3">{t('home.speak')}</AppText>
-              <AppText variant="small" color={colors.inkSoft}>
-                {t('home.speakSub')}
-              </AppText>
-            </View>
-          </View>
-          <Button label={t('home.speakCta')} icon="mic" variant="secondary" onPress={() => nav.navigate('Speaking')} />
-        </Card>
+            <Button label={t('home.speakCta')} icon="mic" variant="secondary" onPress={() => nav.navigate('Speaking')} />
+          </Card>
+        ) : null}
 
         <View style={{ gap: space.sm }}>
           {units.map((unit, index) => {

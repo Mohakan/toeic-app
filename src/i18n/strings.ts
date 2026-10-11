@@ -1,3 +1,5 @@
+import { currentExam } from '../exams/current';
+import { EXAM_STRINGS } from './examStrings';
 import type { Lang } from '../types';
 
 type Entry = [fr: string, ar: string, en: string, es: string];
@@ -1027,8 +1029,11 @@ export type StringKey = keyof typeof dict;
 
 const index: Record<Lang, number> = { fr: 0, ar: 1, en: 2, es: 3 };
 
+/** Texts of the exam of this build that replace the shared ones (see examStrings.ts). */
+const overrides: Partial<Record<StringKey, readonly string[]>> = EXAM_STRINGS[currentExam.id] ?? {};
+
 export function translate(lang: Lang, key: StringKey, vars?: Record<string, string | number>): string {
-  let text: string = dict[key][index[lang]];
+  let text: string = (overrides[key] ?? dict[key])[index[lang]];
   if (vars) {
     for (const [k, v] of Object.entries(vars)) text = text.split(`{${k}}`).join(String(v));
   }
@@ -1036,4 +1041,4 @@ export function translate(lang: Lang, key: StringKey, vars?: Record<string, stri
 }
 
 export const allKeys = Object.keys(dict) as StringKey[];
-export const rawEntry = (key: StringKey): readonly string[] => dict[key];
+export const rawEntry = (key: StringKey): readonly string[] => overrides[key] ?? dict[key];

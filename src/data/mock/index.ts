@@ -1,4 +1,5 @@
-import { examConfig } from '../../exams/current';
+import { currentExam, examConfig } from '../../exams/current';
+import { b2FirstMockTests } from '../exams/b2First/mock';
 import type { ExamPart, McqItem, MockTest } from '../../types';
 import { allExercises } from '../curriculum';
 import { full1 } from './full-1';
@@ -48,6 +49,9 @@ const demoMini: MockTest = {
   ).map(([part, count]) => ({ part, items: lessonItems(part, count) })),
 };
 
-export const mockTests: MockTest[] = [full1, full2, mini1, mini2, mini3, mini4, mini5, mini6, demoMini];
+export const toeicMockTests: MockTest[] = [full1, full2, mini1, mini2, mini3, mini4, mini5, mini6, demoMini];
+
+/** Mock tests of the exam of this build. */
+export const mockTests: MockTest[] = currentExam.id === 'b2First' ? b2FirstMockTests : toeicMockTests;
 
 export const mockById = Object.fromEntries(mockTests.map((m) => [m.id, m])) as Record<string, MockTest>;

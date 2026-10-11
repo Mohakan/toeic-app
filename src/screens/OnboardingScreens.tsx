@@ -52,7 +52,7 @@ export function WelcomeScreen({ navigation }: NativeStackScreenProps<RootStackPa
     ['map', 'welcome.n.units'],
     ['albums', 'welcome.n.words'],
     ['timer', 'welcome.n.mocks'],
-    ['mic', 'welcome.n.speaking'],
+    ...(examConfig.toeicSpeaking ? ([['mic', 'welcome.n.speaking']] as [keyof typeof Ionicons.glyphMap, StringKey][]) : []),
   ];
   const offers: { title: StringKey; price: string; note: StringKey; items: StringKey[]; accent: boolean }[] = [
     { title: 'welcome.free', price: t('welcome.freePrice'), note: 'welcome.freeNote', items: ['welcome.free.1', 'welcome.free.2', 'welcome.free.3', 'welcome.free.4'], accent: false },

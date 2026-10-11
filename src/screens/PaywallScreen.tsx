@@ -14,14 +14,19 @@ import { dayKey, useApp } from '../state/AppState';
 import { useAccess } from '../state/useAccess';
 import { usePurchaseOutcome } from '../state/usePurchases';
 import { colors, radius, space } from '../theme';
+import { examConfig } from '../exams/current';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Paywall'>;
 
 const BENEFITS: [keyof typeof Ionicons.glyphMap, StringKey][] = [
   ['map', 'pay.b.units'],
   ['document-text', 'pay.b.mocks'],
-  ['mic', 'pay.b.speaking'],
-  ['timer', 'pay.b.simulations'],
+  ...(examConfig.toeicSpeaking
+    ? ([
+        ['mic', 'pay.b.speaking'],
+        ['timer', 'pay.b.simulations'],
+      ] as [keyof typeof Ionicons.glyphMap, StringKey][])
+    : []),
   ['albums', 'pay.b.words'],
 ];
 
