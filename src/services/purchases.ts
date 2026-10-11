@@ -1,3 +1,4 @@
+import { currentExam } from '../exams/current';
 import type { Plan } from './access';
 
 /**
@@ -5,7 +6,8 @@ import type { Plan } from './access';
  * Google Play (purchases.native.ts). The web build cannot buy. Store rules: inside the app, the
  * in-app purchase is the only way to pay, and nothing points to the web payment.
  */
-export const PRODUCT_ID = 'toki_quest_full';
+/** Each app of the family sells its own full plan (src/exams/catalog.ts); 'toki_quest_full' for TOEIC. */
+export const PRODUCT_ID = currentExam.productId;
 
 export type PurchaseOutcome =
   | { kind: 'purchased'; plan: Plan }
