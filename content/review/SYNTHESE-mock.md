@@ -1,6 +1,6 @@
 # Synthèse : relecture des TOEIC blancs (688 items)
 
-Date : 2026-10-11. Grille appliquée : [GRILLE.md](GRILLE.md). Aucune correction n'a encore été appliquée au code.
+Date : 2026-10-11. Grille appliquée : [GRILLE.md](GRILLE.md). Les corrections des items BLOQUANT et À CORRIGER ont été appliquées (voir la dernière section).
 
 ## Méthode
 
@@ -71,8 +71,21 @@ Le contrôle des quasi-doublons de `content:check` ne les a pas détectés : il 
 - `f1-r5-4` : « closed for public holidays » face à « closed on public holidays ».
 - `f1-l2-21` et `m1-l2-4` : un distracteur de partie 2 peut se lire comme une réponse naturelle.
 
+## Corrections appliquées (2026-10-11)
+
+Les 6 items BLOQUANT et les 16 items À CORRIGER ont été corrigés dans `src/data/mock/`. Les propositions des rapports ont été reprises, avec ces écarts :
+
+- 3 propositions de remplacement reprenaient elles-mêmes un item du curriculum. Elles ont été remplacées par d'autres items :
+  - `f2-r5-23` : la proposition reprenait « Only after… », déjà testé par `c1-ag-q1`. Le nouvel item est « At no time ___ the customer informed of the delay. ».
+  - `m3-r5-3` : la proposition reprenait « look forward to », déjà testé par `b1-gi-s2-q4`. Le nouvel item est « thinking about ___ ».
+  - `m6-r5-5` : la proposition reprenait « consider », déjà testé par `b1-gi-s3-q1`. Le nouvel item est « put off ___ ».
+- `f1-l3-39` : une nouvelle résolution à l'aveugle a montré que la 2e réplique restait ambiguë, car le responsable pouvait être là toute la journée le jour de l'inspection. La réplique et le graphique ont été précisés : « he isn’t available at all », « safety inspection (no visits) ».
+
+Vérification :
+- les 26 items modifiés ou touchés par un texte modifié ont été résolus de nouveau à l'aveugle, et tous concordent avec la clé ;
+- `npx tsc --noEmit`, `npm test` (151 tests) et `npm run content:check` (50 tests) passent.
+
 ## Suite proposée
 
-1. Appliquer les corrections des items BLOQUANT et À CORRIGER, puis lancer `npx tsc --noEmit`, `npm test` et `npm run content:check`.
-2. Remplacer les 8 quasi-doublons par des items inédits et renforcer le contrôle de `content:check`.
-3. Soumettre les 5 items DOUTEUX et les 40 MINEUR à l'enseignant.
+1. Renforcer le contrôle des quasi-doublons de `content:check`, par exemple en comparant aussi les ensembles d'options.
+2. Soumettre les 5 items DOUTEUX et les 40 MINEUR à l'enseignant.
