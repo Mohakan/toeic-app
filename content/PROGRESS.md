@@ -29,7 +29,7 @@ Détail du temps d'étude : mini-cours 3,0 h · exercices 38,3 h · reprises 7,7
 
 Tout le contenu a été écrit sans relecture par un enseignant. Par ordre de priorité :
 
-1. **TOEIC blancs** (`src/data/mock/`, 688 items) : ils servent à mesurer, donc une erreur de clé fausse le score. En priorité, les calculs et les questions avec document :
+1. **TOEIC blancs** (`src/data/mock/`, 688 items). Une relecture par agents a été faite le 2026-10-11 et 22 items ont été corrigés (voir [content/review/SYNTHESE-mock.md](review/SYNTHESE-mock.md)). Restent 5 items DOUTEUX et 40 items MINEUR à soumettre à l'enseignant. Ces tests servent à mesurer le niveau, donc une erreur de clé fausse le score. En priorité, les calculs et les questions avec document :
    - partie 7 : `m2-r7-13`, `m4-r7-13`, `m6-r7-7`, `f1-r7-37`, `f1-r7-52`, `f2-r7-21`, `f2-r7-33` ;
    - questions avec document : `f1-l3-39`, `f1-l4-30`, `f2-l3-36`, `f2-l4-26`.
 2. **Inférences de partie 7 aux niveaux B2 et C1** : `b2-mp-*`, `b2-na-*`, `c1-in-*` et `c1-tp-*` (triples documents).

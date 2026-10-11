@@ -12,7 +12,7 @@ import { ConfirmDialog } from './ConfirmDialog';
 import { MatchExercise } from './MatchExercise';
 import { McqQuestion } from './McqQuestion';
 import { OrderExercise } from './OrderExercise';
-import { AppText, Button, EnglishText, haptic, ProgressBar, Screen } from './ui';
+import { AppText, Button, EnglishText, haptic, Mascot, ProgressBar, Screen } from './ui';
 
 export const exerciseExplain = (e: Exercise) => (e.kind === 'mcq' ? e.item.explain : e.explain);
 
@@ -76,16 +76,23 @@ export function ExerciseRunner({ exercises, retryMisses, onFinish, onQuit }: Pro
   const correctText = exercise.kind === 'mcq' ? exercise.item.options[exercise.item.answer] : exercise.kind === 'order' ? exercise.answer.join(' ') : '';
 
   const footer = feedback ? (
-    <View
-      accessibilityLiveRegion="polite"
-      style={{ gap: space.sm, backgroundColor: feedback.correct ? colors.successSoft : colors.dangerSoft, borderRadius: radius.lg, padding: space.md }}
-    >
+    <View accessibilityLiveRegion="polite" style={{ gap: space.sm }}>
       <View style={[row, { alignItems: 'center', gap: space.sm }]}>
-        <Ionicons name={feedback.correct ? 'checkmark-circle' : 'close-circle'} size={28} color={feedback.correct ? colors.successDark : colors.dangerDark} />
-        <AppText variant="h3" color={feedback.correct ? colors.successDark : colors.dangerDark}>
-          {feedback.correct ? t('lesson.correct') : t('lesson.wrong')}
-          {feedback.correct && combo >= 3 ? `  ·  ${t('lesson.combo', { n: combo })}` : ''}
-        </AppText>
+        <Mascot mood={feedback.correct ? 'joy' : 'encourage'} size={44} />
+        <View style={{ flex: 1, gap: 4 }}>
+          <View style={[row, { alignItems: 'center', gap: 6 }]}>
+            <Ionicons name={feedback.correct ? 'checkmark-circle' : 'close-circle'} size={26} color={feedback.correct ? colors.successDark : colors.dangerDark} />
+            <AppText variant="h2" color={feedback.correct ? colors.successDark : colors.dangerDark}>
+              {feedback.correct ? t('lesson.correct') : t('lesson.wrong')}
+            </AppText>
+          </View>
+          {feedback.correct && combo >= 3 ? (
+            <View style={[row, { alignSelf: 'flex-start', alignItems: 'center', gap: 4, backgroundColor: colors.accent, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 2 }]}>
+              <Ionicons name="flame" size={16} color={colors.ink} />
+              <AppText variant="label">{t('lesson.combo', { n: combo })}</AppText>
+            </View>
+          ) : null}
+        </View>
       </View>
       {!feedback.correct && correctText ? (
         <EnglishText variant="body" style={{ fontWeight: '700' }}>
@@ -112,7 +119,7 @@ export function ExerciseRunner({ exercises, retryMisses, onFinish, onQuit }: Pro
   const progressLabel = t('lesson.progress', { n: position + 1, total: queue.length });
 
   return (
-    <Screen footer={footer}>
+    <Screen footer={footer} footerTone={feedback ? (feedback.correct ? colors.successSoft : colors.dangerSoft) : undefined}>
       <View style={{ gap: space.lg }}>
         <View style={[row, { alignItems: 'center', gap: space.md }]}>
           <Pressable

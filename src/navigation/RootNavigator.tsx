@@ -29,7 +29,7 @@ import { WordsScreen } from '../screens/WordsScreen';
 import { useApp } from '../state/AppState';
 import { AccountSync } from '../state/useAccount';
 import { PurchaseSync } from '../state/usePurchases';
-import { colors } from '../theme';
+import { colors, fonts, radius } from '../theme';
 import type { RootStackParamList, TabParamList } from './types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -59,10 +59,23 @@ function MainTabs() {
       initialRouteName="Path"
       screenOptions={({ route }) => ({
         headerShown: false,
+        // White bar like the cards: the active tab sits in a light sky pill, in Bleu Nuit.
         tabBarActiveTintColor: colors.primaryDark,
         tabBarInactiveTintColor: colors.inkSoft,
-        tabBarLabelStyle: { fontSize: 12, fontWeight: '700' },
-        tabBarStyle: { minHeight: 60, paddingTop: 6, backgroundColor: colors.white, borderTopColor: colors.line },
+        tabBarActiveBackgroundColor: colors.primarySoft,
+        tabBarLabelStyle: { fontSize: 12, fontFamily: fonts[600] },
+        tabBarItemStyle: { borderRadius: radius.md, marginHorizontal: 4, marginVertical: 4 },
+        tabBarStyle: {
+          minHeight: 68,
+          paddingTop: 4,
+          paddingHorizontal: 8,
+          backgroundColor: colors.white,
+          borderTopWidth: 0,
+          borderTopLeftRadius: radius.lg,
+          borderTopRightRadius: radius.lg,
+          // The shadow rises from the bottom edge of the screen.
+          boxShadow: '0px -6px 20px rgba(20, 66, 122, 0.10)',
+        },
         tabBarIcon: ({ focused, color, size }) => (
           <Ionicons name={tabIcons[route.name][focused ? 0 : 1]} size={size} color={color} />
         ),

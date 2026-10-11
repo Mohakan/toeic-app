@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { View } from 'react-native';
 import { JourneyMap } from '../components/JourneyMap';
-import { AppText, Button, Card, EnglishText, Screen } from '../components/ui';
+import { AppText, Button, Card, HeroTitle, Screen, StatTile } from '../components/ui';
 import { units } from '../data/units';
 import { useI18n } from '../i18n';
 import type { StringKey } from '../i18n/strings';
@@ -40,10 +40,20 @@ export function ProgressScreen() {
   const weak = weakestSkills(allResponses, 1);
   const doneUnits = Object.keys(data.units).length;
 
+  const hero = (
+    <View style={{ gap: space.md }}>
+      <HeroTitle title={t('progress.title')} subtitle={t('progress.weekXp', { n: weekXp })} mood="joy" />
+      <View style={[row, { gap: space.sm }]}>
+        {level ? <StatTile icon="trending-up" iconColor={colors.primaryDark} value={String(level.current.total.score)} caption={t('progress.estimate')} /> : null}
+        <StatTile icon="checkmark-done" iconColor={colors.successDark} value={`${doneUnits}/${units.length}`} caption={t('progress.units')} />
+        <StatTile icon="flame" iconColor={colors.accentDark} value={String(data.streak)} caption={t('home.streakTile')} />
+      </View>
+    </View>
+  );
+
   return (
-    <Screen>
+    <Screen hero={hero}>
       <View style={{ gap: space.lg }}>
-        <AppText variant="h2">{t('progress.title')}</AppText>
 
         {placement && level ? (
           <View style={{ gap: space.md }}>
@@ -127,21 +137,6 @@ export function ProgressScreen() {
             </AppText>
           </Card>
         ) : null}
-
-        <View style={[row, { gap: space.md }]}>
-          <Card style={{ flex: 1, alignItems: 'center' }}>
-            <AppText variant="label" color={colors.inkSoft} center>
-              {t('progress.units').toUpperCase()}
-            </AppText>
-            <EnglishText variant="h2" style={{ textAlign: 'center' }}>{`${doneUnits} / ${units.length}`}</EnglishText>
-          </Card>
-          <Card style={{ flex: 1, alignItems: 'center' }}>
-            <Ionicons name="flame" size={22} color={colors.accentDark} />
-            <AppText variant="h2" center>
-              {data.streak}
-            </AppText>
-          </Card>
-        </View>
 
         <Card style={{ backgroundColor: colors.primarySoft, boxShadow: 'none' }}>
           <AppText variant="label" color={colors.inkSoft}>

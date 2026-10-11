@@ -123,7 +123,7 @@ export function McqQuestion({ item, selected, revealed, onSelect, maxPlays, play
               }}
               style={[styles.option, row, { backgroundColor: background, borderColor: border }]}
             >
-              <View style={[styles.letter, { borderColor: border }]}>
+              <View style={[styles.letter, { borderColor: border, backgroundColor: isKey ? colors.success : isWrong ? colors.danger : isSelected ? colors.primary : colors.white }]}>
                 <AppText variant="label" color={colors.ink} center>
                   {String.fromCharCode(65 + index)}
                 </AppText>
@@ -144,18 +144,18 @@ export function McqQuestion({ item, selected, revealed, onSelect, maxPlays, play
 const styles = StyleSheet.create({
   option: {
     alignItems: 'center',
-    gap: space.sm,
+    gap: space.md,
     borderWidth: 2,
-    borderBottomWidth: 4,
+    borderBottomWidth: 5,
     borderRadius: radius.md,
     paddingVertical: 12,
     paddingHorizontal: 14,
-    minHeight: 56,
+    minHeight: 60,
   },
   letter: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
+    width: 34,
+    height: 34,
+    borderRadius: 10,
     borderWidth: 2,
     alignItems: 'center',
     justifyContent: 'center',

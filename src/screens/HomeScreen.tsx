@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { JourneyMap } from '../components/JourneyMap';
-import { AppText, Button, Card, EnglishText, ProgressBar, Screen } from '../components/ui';
+import { AppText, Button, Card, EnglishText, Mascot, ProgressBar, Screen, StatTile } from '../components/ui';
 import { units } from '../data/units';
 import { useI18n } from '../i18n';
 import type { RootStackParamList } from '../navigation/types';
@@ -38,21 +38,29 @@ export function HomeScreen() {
   const access = useAccess();
   const currentPaid = !!current && !access.unit(current.id);
 
-  return (
-    <Screen>
-      <View style={{ gap: space.lg }}>
-        <View style={[row, { alignItems: 'center', justifyContent: 'space-between' }]}>
+  const streak = streakActive && data.streak > 0 ? data.streak : 0;
+  const hero = (
+    <View style={{ gap: space.md }}>
+      <View style={[row, { alignItems: 'center', gap: space.sm }]}>
+        <View style={{ flex: 1, gap: 2 }}>
           <AppText variant="h2">{t('home.hello', { name: data.name || '' }).replace(/\s+([!?])/, '$1')}</AppText>
-          <View style={[row, { alignItems: 'center', gap: 6, backgroundColor: colors.accentSoft, borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 6 }]}>
-            <Ionicons name="flame" size={20} color={colors.accentDark} />
-            <AppText variant="label" color={colors.ink}>
-              {streakActive && data.streak > 0 ? data.streak : 0}
-            </AppText>
-          </View>
+          <AppText variant="small">{streak > 0 ? t('home.streak', { n: streak }) : t('home.streak0')}</AppText>
         </View>
-        <AppText variant="small" color={colors.inkSoft}>
-          {streakActive && data.streak > 0 ? t('home.streak', { n: data.streak }) : t('home.streak0')}
-        </AppText>
+        <Mascot mood="neutral" size={64} />
+      </View>
+      <View style={[row, { gap: space.sm }]}>
+        <StatTile icon="flame" iconColor={colors.accentDark} value={String(streak)} caption={t('home.streakTile')} />
+        <StatTile icon="flash" iconColor={colors.goldDark} value={String(data.xp)} caption={t('home.xpTile')} />
+        {level && measuredBoth ? (
+          <StatTile icon="trending-up" iconColor={colors.primaryDark} value={String(level.current.total.score)} caption={t('progress.estimate')} />
+        ) : null}
+      </View>
+    </View>
+  );
+
+  return (
+    <Screen hero={hero}>
+      <View style={{ gap: space.lg }}>
 
         {level && measuredBoth ? <JourneyMap level={level} /> : null}
 

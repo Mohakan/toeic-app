@@ -13,7 +13,7 @@ import { purchases, type PurchaseOutcome } from '../services/purchases';
 import { dayKey, useApp } from '../state/AppState';
 import { useAccess } from '../state/useAccess';
 import { usePurchaseOutcome } from '../state/usePurchases';
-import { colors, space } from '../theme';
+import { colors, radius, space } from '../theme';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Paywall'>;
 
@@ -70,8 +70,28 @@ export function PaywallScreen({ navigation, route }: Props) {
     setNotice(NOTICES[outcome.kind === 'nothing' && !restoring ? 'error' : outcome.kind]);
   };
 
+  // Offer in the hero band (Toki, title, the reason for the offer); the price card stands out in
+  // Orange Soleil, the color of the one action on this screen.
+  const hero = (
+    <View style={{ gap: space.sm }}>
+      <View style={row}>
+        <Pressable accessibilityRole="button" accessibilityLabel={t('common.back')} onPress={() => navigation.goBack()} hitSlop={8} style={{ minWidth: 44, minHeight: 44, justifyContent: 'center' }}>
+          <Ionicons name={backIcon} size={24} color={colors.ink} />
+        </Pressable>
+      </View>
+      <View style={{ alignItems: 'center', gap: space.sm }}>
+        <Mascot mood={full ? 'joy' : 'welcome'} size={88} />
+        <AppText variant="title" center>
+          {t(full ? 'pay.fullTitle' : 'pay.title')}
+        </AppText>
+        <AppText center>{t(full ? 'pay.fullSub' : reason ? (`pay.reason.${reason}` as StringKey) : 'pay.sub')}</AppText>
+      </View>
+    </View>
+  );
+
   return (
     <Screen
+      hero={hero}
       footer={
         full ? (
           <Button label={t('common.back')} onPress={() => navigation.goBack()} />
@@ -84,40 +104,28 @@ export function PaywallScreen({ navigation, route }: Props) {
       }
     >
       <View style={{ gap: space.lg }}>
-        <View style={row}>
-          <Pressable accessibilityRole="button" accessibilityLabel={t('common.back')} onPress={() => navigation.goBack()} hitSlop={8} style={{ minWidth: 44, minHeight: 44, justifyContent: 'center' }}>
-            <Ionicons name={backIcon} size={24} color={colors.ink} />
-          </Pressable>
-        </View>
-        <View style={{ alignItems: 'center', gap: space.sm }}>
-          <Mascot mood={full ? 'joy' : 'welcome'} size={96} />
-          <AppText variant="title" center>
-            {t(full ? 'pay.fullTitle' : 'pay.title')}
-          </AppText>
-          <AppText color={colors.inkSoft} center>
-            {t(full ? 'pay.fullSub' : reason ? (`pay.reason.${reason}` as StringKey) : 'pay.sub')}
-          </AppText>
-        </View>
+        {!full ? (
+          <View style={{ alignItems: 'center', gap: 2, backgroundColor: colors.white, borderWidth: 3, borderColor: colors.accent, borderBottomWidth: 6, borderRadius: radius.lg, padding: space.md }}>
+            <AppText variant="title" style={{ fontWeight: '800' }}>
+              {price}
+            </AppText>
+            <AppText variant="small" color={colors.inkSoft} center>
+              {t('pay.once')}
+            </AppText>
+          </View>
+        ) : null}
 
         <Card style={{ gap: space.md }}>
           {BENEFITS.map(([icon, key]) => (
             <View key={key} style={[row, { alignItems: 'center', gap: space.md }]}>
-              <View style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center' }}>
+              <View style={{ width: 40, height: 40, borderRadius: radius.sm, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center' }}>
                 <Ionicons name={icon} size={20} color={colors.primaryDark} />
               </View>
               <AppText style={{ flex: 1, fontWeight: '600' }}>{t(key)}</AppText>
+              <Ionicons name="checkmark-circle" size={22} color={colors.successDark} />
             </View>
           ))}
         </Card>
-
-        {!full ? (
-          <Card style={{ alignItems: 'center', gap: 2, backgroundColor: colors.accentSoft, boxShadow: 'none' }}>
-            <AppText variant="h2">{price}</AppText>
-            <AppText variant="small" color={colors.inkSoft} center>
-              {t('pay.once')}
-            </AppText>
-          </Card>
-        ) : null}
 
         {!full ? (
           <View style={{ gap: space.xs }}>

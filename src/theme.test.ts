@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { colors } from './theme';
+import { colors, fontFamilyFor } from './theme';
 
 /** WCAG relative luminance and contrast ratio. */
 const luminance = (hex: string) => {
@@ -37,5 +37,24 @@ describe('Toki palette', () => {
     expect(contrast(colors.white, colors.primaryDark)).toBeGreaterThanOrEqual(4.5);
     // Why white is not used on the bright buttons.
     expect(contrast(colors.white, colors.primary)).toBeLessThan(4.5);
+  });
+});
+
+describe('Rubik typeface', () => {
+  it('maps every fontWeight to a bundled Rubik file', () => {
+    expect(fontFamilyFor(undefined)).toBe('Rubik_400Regular');
+    expect(fontFamilyFor('normal')).toBe('Rubik_400Regular');
+    expect(fontFamilyFor('bold')).toBe('Rubik_700Bold');
+    expect(fontFamilyFor('600')).toBe('Rubik_600SemiBold');
+    expect(fontFamilyFor(300)).toBe('Rubik_300Light');
+    // 900 and 100 are not bundled: the nearest bundled weight is used.
+    expect(fontFamilyFor('900')).toBe('Rubik_800ExtraBold');
+    expect(fontFamilyFor('100')).toBe('Rubik_300Light');
+  });
+
+  it('keeps Encre readable on the Bleu Ciel hero band and the white stat tiles', () => {
+    expect(contrast(colors.ink, colors.primary)).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(colors.inkSoft, colors.white)).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(colors.white, colors.primaryDark)).toBeGreaterThanOrEqual(4.5);
   });
 });

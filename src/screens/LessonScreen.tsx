@@ -2,6 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useState } from 'react';
 import { Pressable, View } from 'react-native';
+import { Confetti } from '../components/Confetti';
 import { exerciseExplain, ExerciseRunner, type RunResult } from '../components/ExerciseRunner';
 import { AppText, Button, Card, EnglishText, Mascot, Screen } from '../components/ui';
 import { exerciseKey, unitById } from '../data/units';
@@ -18,7 +19,7 @@ import { setWords } from '../services/unitWords';
 import { MAX_PRACTICE_RESPONSES, useApp } from '../state/AppState';
 import { useAccess } from '../state/useAccess';
 import { useAccessGuard } from '../state/useAccessGuard';
-import { colors, space } from '../theme';
+import { colors, radius, space } from '../theme';
 import type { Cefr } from '../types';
 
 const NEW_WORDS_PER_SET = 8;
@@ -98,74 +99,79 @@ export function LessonScreen({ navigation, route }: NativeStackScreenProps<RootS
     const trialDone = !access.full && passed && access.trial.units.includes(unit.id) && access.trial.units.every((id) => id === unit.id || data.units[id]?.passed);
     const close = () => (trialDone ? navigation.replace('Paywall', { reason: 'trialEnd' }) : navigation.goBack());
     return (
-      <Screen footer={<Button label={t('done.cta')} onPress={close} />}>
-        <View style={{ gap: space.lg, alignItems: 'center' }}>
-          <Mascot mood={passed ? 'joy' : 'encourage'} size={96} />
-          <AppText variant="title" center>
-            {passed ? t('done.passed') : t('done.title')}
-          </AppText>
-          {/* A finished unit is already said by the title ("Unité validée !"); a new level gets its own message. */}
-          {celebration === 'levelUp' && level ? (
-            <Card style={{ alignSelf: 'stretch', alignItems: 'center', gap: space.xs, backgroundColor: colors.goldSoft, borderWidth: 2, borderColor: colors.gold }}>
-              <View style={[row, { alignItems: 'center', gap: space.sm }]} accessibilityLiveRegion="polite">
-                <Ionicons name="trophy" size={26} color={colors.goldDark} />
-                <AppText variant="h3" color={colors.goldDark}>
-                  {t('celebrate.level', { l: level })}
-                </AppText>
-              </View>
-              <AppText variant="small" center>
-                {t('celebrate.levelSub')}
-              </AppText>
-            </Card>
-          ) : null}
-          <View style={[row, { gap: 8 }]} accessibilityLabel={`${stars} / 3`}>
-            {[1, 2, 3].map((n) => (
-              <Ionicons key={n} name={n <= stars ? 'star' : 'star-outline'} size={44} color={n <= stars ? colors.gold : colors.mist} />
-            ))}
-          </View>
-          <View style={[row, { gap: space.md, alignSelf: 'stretch' }]}>
-            <Card style={{ flex: 1, alignItems: 'center' }}>
-              <AppText variant="label" color={colors.inkSoft}>
-                {t('done.accuracy').toUpperCase()}
-              </AppText>
-              <EnglishText variant="h2" style={{ textAlign: 'center' }}>{`${Math.round(accuracy * 100)} %`}</EnglishText>
-            </Card>
-            <Card style={{ flex: 1, alignItems: 'center' }}>
-              <AppText variant="label" color={colors.inkSoft}>
-                {t('done.xp').toUpperCase()}
-              </AppText>
-              <EnglishText variant="h2" color={colors.accentDark} style={{ textAlign: 'center' }}>{`+${xp}`}</EnglishText>
-            </Card>
-          </View>
-          <AppText center color={colors.inkSoft}>
-            {passed ? t(message) : t('done.notPassed', { p: Math.round(PASS_THRESHOLD * 100) })}
-          </AppText>
-          {missed.length > 0 ? (
-            <Card style={{ alignSelf: 'stretch', gap: space.sm }}>
-              <AppText variant="h3">{t('done.review')}</AppText>
-              {missed.map((e) => (
-                <View key={exerciseKey(e)} style={{ gap: 2 }}>
-                  {e.kind === 'mcq' ? (
-                    <EnglishText variant="small" style={{ fontWeight: '700' }}>
-                      {e.item.prompt}
-                    </EnglishText>
-                  ) : e.kind === 'order' ? (
-                    <EnglishText variant="small" style={{ fontWeight: '700' }}>
-                      {e.answer.join(' ')}
-                    </EnglishText>
-                  ) : null}
-                  <AppText variant="small" color={colors.inkSoft}>
-                    {tx(exerciseExplain(e))}
+      <View style={{ flex: 1 }}>
+        <Screen footer={<Button label={t('done.cta')} variant="play" onPress={close} />}>
+          <View style={{ gap: space.lg, alignItems: 'center' }}>
+            <Mascot mood={passed ? 'joy' : 'encourage'} size={96} />
+            <AppText variant="title" center>
+              {passed ? t('done.passed') : t('done.title')}
+            </AppText>
+            {/* A finished unit is already said by the title ("Unité validée !"); a new level gets its own message. */}
+            {celebration === 'levelUp' && level ? (
+              <Card style={{ alignSelf: 'stretch', alignItems: 'center', gap: space.xs, backgroundColor: colors.goldSoft, borderWidth: 2, borderColor: colors.gold }}>
+                <View style={[row, { alignItems: 'center', gap: space.sm }]} accessibilityLiveRegion="polite">
+                  <Ionicons name="trophy" size={26} color={colors.goldDark} />
+                  <AppText variant="h3" color={colors.goldDark}>
+                    {t('celebrate.level', { l: level })}
                   </AppText>
                 </View>
+                <AppText variant="small" center>
+                  {t('celebrate.levelSub')}
+                </AppText>
+              </Card>
+            ) : null}
+            <View style={[row, { gap: 8 }]} accessibilityLabel={`${stars} / 3`}>
+              {[1, 2, 3].map((n) => (
+                <Ionicons key={n} name={n <= stars ? 'star' : 'star-outline'} size={44} color={n <= stars ? colors.gold : colors.mist} />
               ))}
-              <AppText variant="small" color={colors.primaryDark} style={{ fontWeight: '700' }}>
-                {t('done.reviewScheduled', { n: missed.length })}
-              </AppText>
-            </Card>
-          ) : null}
-        </View>
-      </Screen>
+            </View>
+            {/* Sober figures for the result (direction "Premium épuré"), colored tiles for the rewards. */}
+            <View style={[row, { gap: space.md, alignSelf: 'stretch' }]}>
+              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: space.sm }}>
+                <AppText variant="label" color={colors.inkSoft} center>
+                  {t('done.accuracy').toUpperCase()}
+                </AppText>
+                <EnglishText style={{ fontSize: 56, lineHeight: 64, fontWeight: '300', textAlign: 'center' }}>{`${Math.round(accuracy * 100)} %`}</EnglishText>
+              </View>
+              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 2, backgroundColor: colors.goldSoft, borderRadius: radius.lg, padding: space.md }}>
+                <AppText variant="label" color={colors.goldDark} center>
+                  {t('done.xp').toUpperCase()}
+                </AppText>
+                <EnglishText variant="title" color={colors.goldDark} style={{ textAlign: 'center' }}>{`+${xp}`}</EnglishText>
+              </View>
+            </View>
+            <AppText center color={colors.inkSoft}>
+              {passed ? t(message) : t('done.notPassed', { p: Math.round(PASS_THRESHOLD * 100) })}
+            </AppText>
+            {missed.length > 0 ? (
+              <Card style={{ alignSelf: 'stretch', gap: space.sm }}>
+                <AppText variant="h3">{t('done.review')}</AppText>
+                {missed.map((e) => (
+                  <View key={exerciseKey(e)} style={{ gap: 2 }}>
+                    {e.kind === 'mcq' ? (
+                      <EnglishText variant="small" style={{ fontWeight: '700' }}>
+                        {e.item.prompt}
+                      </EnglishText>
+                    ) : e.kind === 'order' ? (
+                      <EnglishText variant="small" style={{ fontWeight: '700' }}>
+                        {e.answer.join(' ')}
+                      </EnglishText>
+                    ) : null}
+                    <AppText variant="small" color={colors.inkSoft}>
+                      {tx(exerciseExplain(e))}
+                    </AppText>
+                  </View>
+                ))}
+                <AppText variant="small" color={colors.primaryDark} style={{ fontWeight: '700' }}>
+                  {t('done.reviewScheduled', { n: missed.length })}
+                </AppText>
+              </Card>
+            ) : null}
+          </View>
+        </Screen>
+        {/* A finished unit or a new level gets a burst of confetti. */}
+        {celebration ? <Confetti /> : null}
+      </View>
     );
   }
 

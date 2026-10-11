@@ -165,6 +165,8 @@ const dict = {
   'home.hello': ['Salut {name} !', 'مرحبًا {name}!', 'Hi {name}!', '¡Hola, {name}!'],
   'home.streak': ['Série en cours : {n}', 'السلسلة الحالية: {n}', 'Current streak: {n}', 'Racha actual: {n}'],
   'home.streak0': ['Commence ta série aujourd’hui', 'ابدأ سلسلتك اليوم', 'Start your streak today', 'Empieza tu racha hoy'],
+  'home.streakTile': ['jours de série', 'أيام متتالية', 'day streak', 'días de racha'],
+  'home.xpTile': ['XP au total', 'نقاط إجمالًا', 'total XP', 'XP en total'],
   'home.today': ['Objectif du jour', 'هدف اليوم', 'Today’s goal', 'Objetivo del día'],
   'home.todayDone': ['Objectif atteint, bravo !', 'تحقق الهدف، أحسنت!', 'Goal reached, well done!', '¡Objetivo cumplido, bien hecho!'],
   'home.todayLeft': ['{n} XP pour atteindre ton objectif', '{n} نقطة لبلوغ هدفك', '{n} XP to reach your goal', '{n} XP para alcanzar tu objetivo'],

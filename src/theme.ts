@@ -47,7 +47,32 @@ export const colors = {
   white: '#FFFFFF',
 };
 
-export const radius = { sm: 10, md: 16, lg: 24, pill: 999 };
+/** Rounder shapes for the "Ciel ludique" direction (see docs/design/direction-visuelle.md). */
+export const radius = { sm: 12, md: 18, lg: 28, pill: 999 };
 export const space = { xs: 4, sm: 8, md: 16, lg: 24, xl: 32 };
 
-export const shadow = { boxShadow: '0px 4px 12px rgba(28, 36, 48, 0.08)' } as const;
+/** Floating cards: a soft, Bleu Nuit tinted shadow. */
+export const shadow = { boxShadow: '0px 10px 28px rgba(20, 66, 122, 0.12)' } as const;
+
+/**
+ * Rubik covers Latin and Arabic. Each weight is its own font file, so text picks the family from
+ * its weight (see `typeface`) instead of setting fontWeight, which would fall back to the system
+ * font on some platforms.
+ */
+export const fonts = {
+  300: 'Rubik_300Light',
+  400: 'Rubik_400Regular',
+  500: 'Rubik_500Medium',
+  600: 'Rubik_600SemiBold',
+  700: 'Rubik_700Bold',
+  800: 'Rubik_800ExtraBold',
+} as const;
+
+type Weight = keyof typeof fonts;
+
+/** The Rubik family for a fontWeight value ('bold' = 700, 'normal' = 400, 900 = 800). */
+export function fontFamilyFor(weight: string | number | undefined): string {
+  const n = weight === 'bold' ? 700 : weight === undefined || weight === 'normal' ? 400 : Number(weight);
+  const clamped = (Math.min(800, Math.max(300, Math.round((Number.isFinite(n) ? n : 400) / 100) * 100)) as Weight);
+  return fonts[clamped];
+}

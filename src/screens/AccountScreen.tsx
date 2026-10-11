@@ -9,7 +9,7 @@ import type { AccountMode, RootStackParamList } from '../navigation/types';
 import { ApiError } from '../services/api';
 import { useAccount } from '../state/useAccount';
 import { LegalLinks } from '../components/LegalLinks';
-import { colors, radius, space } from '../theme';
+import { colors, fonts, radius, space } from '../theme';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Account'>;
 
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     paddingHorizontal: space.md,
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: fonts[600],
     color: colors.ink,
   },
 });
