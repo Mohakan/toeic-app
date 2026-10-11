@@ -1,0 +1,185 @@
+openapi: 3.1.0
+info:
+  title: Toki Quest – API partenaire Sabil
+  version: 1.0.0
+  description: |
+    Sabil transmet ses inscrits à Toki Quest. Un compte Toki Quest créé avec le même e-mail,
+    avant ou après l'appel, obtient le plan complet tant que l'inscription est active.
+
+    **Authentification et signature (obligatoires sur chaque appel)**
+    - `Authorization: Bearer <clé d'API>` : la clé propre à Sabil.
+    - `X-Timestamp` : heure Unix en secondes ; écart accepté de 5 minutes avec l'horloge du serveur.
+    - `X-Signature` : HMAC-SHA256 en hexadécimal minuscule, avec le secret partagé, de la chaîne
+      `<X-Timestamp>.<MÉTHODE>.<chemin avec la requête>.<corps brut>` (corps vide pour GET et DELETE).
+      Exemple de chaîne signée : `1791450000.PUT./partner/sabil/accounts/S-1001.{"email":"amal@example.com"}`.
+    - Une même signature n'est acceptée qu'une fois : chaque nouvel appel doit être signé à nouveau.
+
+    HTTPS uniquement. Limite : 600 appels par minute. Toutes les écritures sont idempotentes :
+    répéter un appel (signé à nouveau) donne le même résultat.
+servers:
+  - url: https://api.tokiquest.app
+    description: Production (adresse à confirmer)
+  - url: https://staging-api.tokiquest.app
+    description: Environnement de test, avec ses propres clés (adresse à confirmer)
+security:
+  - sabilKey: []
+paths:
+  /partner/sabil/accounts/{sabilId}:
+    parameters:
+      - $ref: '#/components/parameters/SabilId'
+      - $ref: '#/components/parameters/Timestamp'
+      - $ref: '#/components/parameters/Signature'
+    put:
+      summary: Créer ou mettre à jour un inscrit
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AccountInput' }
+            example: { email: amal@example.com, firstName: Amal, status: active, validUntil: '2027-06-30' }
+      responses:
+        '200':
+          description: Inscrit enregistré
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Account' }
+        '400': { $ref: '#/components/responses/Invalid' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '409': { $ref: '#/components/responses/Replayed' }
+    get:
+      summary: Lire un inscrit (contrôle et rapprochement)
+      responses:
+        '200':
+          description: L'inscrit
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Account'
+                  - type: object
+                    properties:
+                      firstName: { type: [string, 'null'] }
+                      updatedAt: { type: string, format: date-time }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    delete:
+      summary: Fin de l'inscription
+      description: Sans `endsOn`, l'accès complet se termine tout de suite. Avec `endsOn` (aujourd'hui ou plus tard), il dure jusqu'à ce jour inclus.
+      parameters:
+        - name: endsOn
+          in: query
+          required: false
+          schema: { type: string, format: date, example: '2027-06-30' }
+      responses:
+        '204': { description: Inscription terminée ou date de fin enregistrée }
+        '400': { $ref: '#/components/responses/Invalid' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Replayed' }
+  /partner/sabil/accounts:batch:
+    parameters:
+      - $ref: '#/components/parameters/Timestamp'
+      - $ref: '#/components/parameters/Signature'
+    post:
+      summary: Envoi groupé (jusqu'à 500 inscrits)
+      description: Pour la reprise initiale et les resynchronisations. Chaque inscrit réussit ou échoue séparément.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [accounts]
+              properties:
+                accounts:
+                  type: array
+                  minItems: 1
+                  maxItems: 500
+                  items:
+                    allOf:
+                      - type: object
+                        required: [sabilId]
+                        properties:
+                          sabilId: { $ref: '#/components/schemas/SabilIdValue' }
+                      - $ref: '#/components/schemas/AccountInput'
+      responses:
+        '200':
+          description: Résultat par inscrit
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  received: { type: integer }
+                  upserted: { type: integer }
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        index: { type: integer, description: Position dans le tableau envoyé }
+                        sabilId: { type: [string, 'null'] }
+                        error: { enum: [invalid_account, invalid_email, invalid_date] }
+        '400': { $ref: '#/components/responses/Invalid' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '409': { $ref: '#/components/responses/Replayed' }
+components:
+  securitySchemes:
+    sabilKey:
+      type: http
+      scheme: bearer
+      description: Clé d'API de Sabil, à utiliser avec la signature X-Signature.
+  parameters:
+    SabilId:
+      name: sabilId
+      in: path
+      required: true
+      schema: { $ref: '#/components/schemas/SabilIdValue' }
+    Timestamp:
+      name: X-Timestamp
+      in: header
+      required: true
+      schema: { type: string, pattern: '^\d{9,11}$', example: '1791450000' }
+    Signature:
+      name: X-Signature
+      in: header
+      required: true
+      schema: { type: string, pattern: '^[0-9a-f]{64}$' }
+  schemas:
+    SabilIdValue:
+      type: string
+      pattern: '^[A-Za-z0-9._-]{1,64}$'
+      description: Identifiant de l'inscrit chez Sabil, stable dans le temps.
+    AccountInput:
+      type: object
+      required: [email]
+      additionalProperties: false
+      properties:
+        email: { type: string, format: email, maxLength: 254, description: Comparé sans tenir compte des majuscules }
+        firstName: { type: [string, 'null'], maxLength: 80 }
+        status: { enum: [active, ended], default: active }
+        validUntil: { type: [string, 'null'], format: date, description: Dernier jour d'accès ; absent ou null si l'inscription n'a pas de fin prévue }
+    Account:
+      type: object
+      properties:
+        sabilId: { $ref: '#/components/schemas/SabilIdValue' }
+        email: { type: string }
+        status: { enum: [active, ended] }
+        validUntil: { type: [string, 'null'], format: date }
+    Error:
+      type: object
+      properties:
+        error: { type: string }
+  responses:
+    Invalid:
+      description: Requête invalide (invalid_request, invalid_email, invalid_date)
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    Unauthorized:
+      description: invalid_api_key, invalid_timestamp ou invalid_signature
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    Replayed:
+      description: replayed_request, la même signature a déjà été reçue
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    NotFound:
+      description: not_found, inscrit inconnu
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }

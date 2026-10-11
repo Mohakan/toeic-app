@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Toki Quest",
+    "NSMicrophoneUsageDescription": "Toki Quest uses the microphone only when you practice speaking, to compare what you read with the text. Recordings are never saved.",
+    "NSSpeechRecognitionUsageDescription": "Toki Quest turns your voice into text to give you feedback on your reading. Apple may process your speech to recognize it; the app keeps only the text, on your device."
+  },
+  "android": {
+    "app_name": "Toki Quest"
+  }
+}

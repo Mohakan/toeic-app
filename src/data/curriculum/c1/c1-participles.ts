@@ -1,0 +1,228 @@
+import type { Unit } from '../../../types';
+import { g, lesson, listen, match, order, respond, unit, x } from '../build';
+
+export const c1Participles: Unit = unit(
+  {
+    id: 'c1-participles',
+    emoji: '🧩',
+    level: 5,
+    part: 'R5',
+    title: x('Propositions participiales', 'جمل اسم الفاعل واسم المفعول', 'Participle clauses', 'Oraciones de participio'),
+    subtitle: x('-ing, -ed, having done, relatives réduites', '-ing و-ed وhaving done والموصولات المختصرة', '-ing, -ed, having done, reduced relatives', '-ing, -ed, having done, relativas reducidas'),
+    lesson: lesson(
+      x('Condenser les phrases avec des participes, comme dans les textes officiels.', 'اختصار الجمل بأسماء الفاعل والمفعول كما في النصوص الرسمية.', 'Shorten sentences with participles, as in formal texts.', 'Condensar frases con participios, como en los textos oficiales.'),
+      [
+        x('-ing = sens actif et simultané : « Working late, she missed the bus. »', '-ing = معنى مبني للمعلوم ومتزامن: «Working late, she missed the bus.»', '-ing = active, same time.', '-ing = sentido activo y simultáneo: «Working late, she missed the bus.»'),
+        x('Participe passé = sens passif : « Built in 1990, the plant needs repairs. »', 'اسم المفعول = معنى مجهول: «Built in 1990, the plant needs repairs.»', 'Past participle = passive.', 'Participio pasado = sentido pasivo: «Built in 1990, the plant needs repairs.»'),
+        x('Having + participe = action antérieure : « Having signed the deal, they celebrated. »', 'Having + اسم المفعول = فعل سابق: «Having signed the deal, they celebrated.»', 'Having done = earlier action.', 'Having + participio = acción anterior: «Having signed the deal, they celebrated.»'),
+        x('Le sujet sous-entendu doit être celui de la principale (sinon : participe « suspendu », fautif).', 'الفاعل المضمر يجب أن يكون فاعل الجملة الرئيسية (وإلا فهو خطأ).', 'The implied subject = main subject.', 'El sujeto implícito debe ser el de la principal (si no, es un participio «colgante», incorrecto).'),
+      ],
+      'Products ordered before noon are shipped the same day.',
+      x('« Ordered » = which are ordered (relative réduite passive).', '«Ordered» = which are ordered (موصول مختصر مجهول).', '“Ordered” = which are ordered.', '«Ordered» = which are ordered (relativa reducida pasiva).'),
+    ),
+  },
+  [
+    g('c1-pt-q1', 5, '___ by the results, the board approved a bonus for all staff.', ['Encouraged', 'Encouraging', 'To encourage', 'Having encouraging'], x(
+      'Le conseil est encouragé (passif) → participe passé.',
+      'المجلس تشجّع (مجهول) ← اسم المفعول.',
+      'Passive meaning → -ed.',
+      'El consejo se siente animado (pasiva) → participio pasado.',
+    )),
+    g('c1-pt-q2', 5, 'Employees ___ to work from home must use the secure network.', ['wishing', 'wished', 'wish', 'are wishing'], x(
+      'Relative réduite active : « who wish » → « wishing ».',
+      'موصول مختصر معلوم: «who wish» ← «wishing».',
+      '“Who wish” → wishing.',
+      'Relativa reducida activa: «who wish» → «wishing».',
+    )),
+    g('c1-pt-q3', 5, '___ the contract, the lawyer sent it to the client.', ['Having reviewed', 'Reviewed', 'Being reviewed', 'To review'], x(
+      'Action terminée avant l’envoi → « Having reviewed ».',
+      'فعل انتهى قبل الإرسال ← «Having reviewed».',
+      'Earlier action: having + participle.',
+      'Acción terminada antes del envío → «Having reviewed».',
+    )),
+    g('c1-pt-q4', 5, 'The report ___ yesterday contains several errors.', ['published', 'publishing', 'publishes', 'to publish'], x(
+      '« Which was published » → participe passé.',
+      '«Which was published» ← اسم المفعول.',
+      'Reduced passive relative.',
+      '«Which was published» → participio pasado.',
+    )),
+    g('c1-pt-q5', 5, '___ near the station, the hotel is popular with business travelers.', ['Located', 'Locating', 'Having located', 'Locate'], x(
+      'L’hôtel est situé (passif) → « Located ».',
+      'الفندق يقع (مجهول) ← «Located».',
+      'Passive state → Located.',
+      'El hotel está situado (pasiva) → «Located».',
+    )),
+    g('c1-pt-q6', 5, '___ no reply, Mr. Kaci called the supplier again.', ['Having received', 'Received', 'Being receive', 'To receive'], x(
+      'N’ayant reçu aucune réponse (avant d’appeler) → « Having received ».',
+      'بعد عدم تلقي رد (قبل الاتصال) ← «Having received».',
+      'Earlier: having received.',
+      'Al no haber recibido respuesta (antes de llamar) → «Having received».',
+    )),
+    g('c1-pt-q7', 5, 'Anyone ___ the building after 8 p.m. must sign in at security.', ['entering', 'entered', 'enters', 'to entering'], x(
+      '« Who enters » → « entering » (sens actif).',
+      '«Who enters» ← «entering» (معلوم).',
+      'Active reduced relative.',
+      '«Who enters» → «entering» (sentido activo).',
+    )),
+    order('c1-pt-o1', 'Founded in 1985 the firm now employs 500 people', x('Commence par « Founded ».', 'ابدأ بـ «Founded».', 'Start with “Founded”.', 'Empieza por «Founded».'), x(
+      'Participe passé en tête, puis la principale.',
+      'اسم المفعول في البداية ثم الجملة الرئيسية.',
+      'Participle first, then main clause.',
+      'Participio al inicio y luego la principal.',
+    )),
+    respond('c1-pt-l1', 5, 'Is this the version approved by the client?', ['No, that one’s still on my desk.', 'The client is approved.', 'It’s version two of the app.'], x(
+      'Non + où se trouve la bonne version.',
+      'لا + مكان النسخة الصحيحة.',
+      'No, and where it is.',
+      'No + dónde está la versión correcta.',
+    )),
+    listen('c1-pt-l2', 'L4', 5, 'Passengers holding tickets for the 6 p.m. ferry are asked to proceed to Gate 3. Vehicles arriving after 5:30 may not be allowed on board.', 'What is said about late vehicles?', ['They may be refused', 'They must pay extra', 'They will board first', 'They should go to Gate 1'], x(
+      '« Vehicles arriving after 5:30 may not be allowed on board ».',
+      '«May not be allowed on board»: قد تُرفض.',
+      'They may not board.',
+      '«May not be allowed on board»: podrían no embarcar.',
+    )),
+    match('c1-participles-w1', ['calibrate', 'tolerance', 'quality-assurance', 'certification', 'by-product'], x(
+      'Mots C1 sur la production : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول الإنتاج: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about production: review each example in the Words tab.',
+      'Palabras C1 sobre la producción: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-pt-s2-q1', 5, 'Not ___ the answer, she asked her manager for advice.', ['knowing', 'known', 'to know', 'knew'], x(
+      'Cause active : « As she didn’t know » → « Not knowing ».',
+      'سبب معلوم: «As she didn’t know» ← «Not knowing».',
+      'Not knowing = because she didn’t know.',
+      'Causa activa: «As she didn’t know» → «Not knowing».',
+    )),
+    g('c1-pt-s2-q2', 5, 'All items ___ in the sale cannot be exchanged.', ['purchased', 'purchasing', 'purchase', 'to purchase'], x(
+      '« Which are purchased » → participe passé.',
+      '«Which are purchased» ← اسم المفعول.',
+      'Passive relative → purchased.',
+      '«Which are purchased» → participio pasado.',
+    )),
+    g('c1-pt-s2-q3', 5, '___ for over ten hours, the negotiators finally reached an agreement.', ['Having talked', 'Talked', 'Being talked', 'To talk'], x(
+      'Durée antérieure au résultat → « Having talked ».',
+      'مدة سابقة للنتيجة ← «Having talked».',
+      'Having + participle for an earlier period.',
+      'Duración anterior al resultado → «Having talked».',
+    )),
+    g('c1-pt-s2-q4', 5, 'The machines ___ in the new factory are made in Germany.', ['used', 'using', 'uses', 'to using'], x(
+      '« Which are used » → « used ».',
+      'موصول مختصر مجهول: «Which are used» ← «used».',
+      'Passive → used.',
+      '«Which are used» → «used».',
+    )),
+    g('c1-pt-s2-q5', 5, '___ his presentation, Mr. Ali took questions from the audience.', ['Having finished', 'Finished', 'Being finish', 'He finished'], x(
+      'Présentation terminée avant les questions → « Having finished ».',
+      'العرض انتهى قبل الأسئلة ← «Having finished».',
+      'First finish, then questions.',
+      'Presentación terminada antes de las preguntas → «Having finished».',
+    )),
+    g('c1-pt-s2-q6', 5, 'Visitors ___ the museum are requested not to touch the exhibits.', ['visiting', 'visited', 'visit', 'are visiting'], x(
+      '« Who visit » → « visiting ».',
+      'موصول مختصر معلوم: «Who visit» ← «visiting».',
+      'Active → visiting.',
+      '«Who visit» → «visiting».',
+    )),
+    g('c1-pt-s2-q7', 5, '___ carefully, the instructions are easy to follow.', ['Read', 'Reading', 'Having reading', 'To reading'], x(
+      'Les instructions sont lues (passif) → « Read » (= If they are read).',
+      'التعليمات تُقرأ (مجهول) ← «Read».',
+      'Passive: if they are read.',
+      'Las instrucciones se leen (pasiva) → «Read» (= If they are read).',
+    )),
+    order('c1-pt-s2-o1', 'Having read the report she called the director', x('Commence par « Having ».', 'ابدأ بـ «Having».', 'Start with “Having”.', 'Empieza por «Having».'), x(
+      'Having + participe, puis la principale.',
+      'Having + اسم المفعول ثم الجملة الرئيسية.',
+      'Having read, then main clause.',
+      'Having + participio y luego la principal.',
+    )),
+    respond('c1-pt-s2-l1', 5, 'Who are the people waiting in the lobby?', ['They’re the candidates for the sales job.', 'They’ve been waiting an hour.', 'The lobby is downstairs.'], x(
+      '« Who » → leur identité.',
+      '«Who» ← هويتهم.',
+      'Their identity.',
+      '«Who» → su identidad.',
+    )),
+    listen('c1-pt-s2-l2', 'L3', 5, 'W: Having looked at all three offers, I think the second one is the most realistic.\nM: Me too. The first is cheaper, but it doesn’t include installation.', 'Why does the man reject the first offer?', ['It excludes installation', 'It is too expensive', 'It is unrealistic', 'It arrived late'], x(
+      '« It doesn’t include installation ».',
+      '«It doesn’t include installation»: لا تشمل التركيب.',
+      'No installation.',
+      '«It doesn’t include installation»: no incluye la instalación.',
+    )),
+    match('c1-participles-w2', ['legacy-system', 'deploy', 'data-migration', 'end-user', 'rollout'], x(
+      'Mots C1 sur l’informatique : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول المعلوماتية: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about technology: review each example in the Words tab.',
+      'Palabras C1 sobre la informática: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-pt-s3-q1', 5, '___ abroad for years, Ms. Ruiz speaks four languages.', ['Having lived', 'Lived', 'Being lived', 'To live'], x(
+      'Expérience passée qui explique le présent → « Having lived ».',
+      'تجربة سابقة تفسر الحاضر ← «Having lived».',
+      'Earlier experience → having lived.',
+      'Experiencia pasada que explica el presente → «Having lived».',
+    )),
+    g('c1-pt-s3-q2', 5, 'Applications ___ after the deadline will not be considered.', ['received', 'receiving', 'receive', 'to receive'], x(
+      '« Which are received » → « received ».',
+      'موصول مختصر مجهول: «Which are received» ← «received».',
+      'Passive → received.',
+      '«Which are received» → «received».',
+    )),
+    g('c1-pt-s3-q3', 5, 'The new manager, ___ from our Paris office, starts on Monday.', ['transferred', 'transferring', 'transfers', 'to transfer'], x(
+      'Elle a été mutée (passif) → participe passé.',
+      'لقد نُقلت (مجهول) ← اسم المفعول.',
+      'Passive → transferred.',
+      'Ha sido trasladada (pasiva) → participio pasado.',
+    )),
+    g('c1-pt-s3-q4', 5, '___ the crowds, we left the conference early.', ['Wanting to avoid', 'Wanted to avoid', 'Want to avoid', 'Wanted avoiding'], x(
+      'Raison active : « Because we wanted » → « Wanting ».',
+      'سبب معلوم: «Because we wanted» ← «Wanting».',
+      'Wanting = because we wanted.',
+      'Razón activa: «Because we wanted» → «Wanting».',
+    )),
+    g('c1-pt-s3-q5', 5, 'Customers ___ with the service can ask for a full refund.', ['dissatisfied', 'dissatisfying', 'dissatisfy', 'dissatisfaction'], x(
+      '« Who are dissatisfied » → adjectif en -ed (ressenti).',
+      '«Who are dissatisfied» ← صفة بـ -ed (شعور).',
+      '-ed = how people feel.',
+      '«Who are dissatisfied» → adjetivo en -ed (sentimiento).',
+    )),
+    g('c1-pt-s3-q6', 5, 'The figures ___ by the auditors differ from ours.', ['provided', 'providing', 'provide', 'provides'], x(
+      '« By the auditors » → sens passif : « provided ».',
+      '«By the auditors» ← معنى مجهول: «provided».',
+      'By … → passive.',
+      '«By the auditors» → sentido pasivo: «provided».',
+    )),
+    g('c1-pt-s3-q7', 5, 'While ___ the data, the analyst found a serious mistake.', ['checking', 'checked', 'check', 'to check'], x(
+      '« While + -ing » = pendant qu’il vérifiait (sujet : l’analyste).',
+      '«While + -ing» = أثناء التحقق (الفاعل: المحلل).',
+      'While + -ing.',
+      '«While + -ing» = mientras comprobaba (sujeto: el analista).',
+    )),
+    order('c1-pt-s3-o1', 'Orders placed online are delivered within two days', x('Commence par « Orders ».', 'ابدأ بـ «Orders».', 'Start with “Orders”.', 'Empieza por «Orders».'), x(
+      'Relative réduite passive : Orders (which are) placed online…',
+      'موصول مختصر مجهول: Orders (which are) placed online…',
+      'Reduced passive relative.',
+      'Relativa reducida pasiva: Orders (which are) placed online…',
+    )),
+    respond('c1-pt-s3-l1', 5, 'Having seen the prototype, what do you think?', ['It’s promising, but the battery needs work.', 'I saw it on Monday.', 'The prototype is in the lab.'], x(
+      'Une opinion nuancée, comme demandé.',
+      'رأي دقيق كما طُلب.',
+      'A nuanced opinion.',
+      'Una opinión matizada, como se pide.',
+    )),
+    listen('c1-pt-s3-l2', 'L4', 5, 'Built over a century ago, the old customs house has been restored and will reopen next month as a business center. Companies interested in renting office space there are invited to contact the city council.', 'What will the building become?', ['A business center', 'A customs office', 'A museum', 'A hotel'], x(
+      '« Will reopen next month as a business center ».',
+      '«Will reopen as a business center»: مركز أعمال.',
+      'A business center.',
+      '«Will reopen as a business center»: un centro de negocios.',
+    )),
+    match('c1-participles-w3', ['valuation', 'zoning', 'leasehold', 'surveyor', 'fit-out'], x(
+      'Mots C1 sur l’immobilier : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول العقارات: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about property: review each example in the Words tab.',
+      'Palabras C1 sobre el sector inmobiliario: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+);

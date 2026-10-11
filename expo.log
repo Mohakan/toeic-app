@@ -1,0 +1,985 @@
+Starting project at C:\projets\toeic-app
+Starting Metro Bundler
+
+Waiting on http://localhost:8081
+
+Logs for your project will appear below.
+| (node:3280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:3280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:3280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:3280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:3280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:3280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:3280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:3280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundled 2480ms index.ts (667 modules)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  An error occurred in the <ProgressScreen> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: responses.filter is not a function] 
+
+Code: placement.ts
+[0m [90m 206 |[39m [90m */[39m
+ [90m 207 |[39m [36mexport[39m [36mfunction[39m skillEstimate(responses[33m:[39m [33mItemResponse[39m[][33m,[39m skill[33m:[39m [33mSkill[39m)[33m:[39m [33mEstimate[39m [33m&[39m { answered[33m:[39m number } {
+[31m[1m>[22m[39m[90m 208 |[39m   [36mconst[39m own [33m=[39m responses[33m.[39mfilter((r) [33m=>[39m r[33m.[39mskill [33m===[39m skill)[33m;[39m
+ [90m     |[39m                         [31m[1m^[22m[39m
+ [90m 209 |[39m   [36mreturn[39m { [33m...[39mestimate(own[33m.[39mmap((r) [33m=>[39m ({ params[33m:[39m r[33m.[39mparams[33m,[39m correct[33m:[39m r[33m.[39mcorrect })))[33m,[39m answered[33m:[39m own[33m.[39mlength }[33m;[39m
+ [90m 210 |[39m }
+ [90m 211 |[39m[0m
+Call Stack
+  skillEstimate (src\services\placement.ts:208:25)
+  SKILLS.map$argument_0 (src\services\placement.ts:214:39)
+  weakestSkills (src\services\placement.ts:214:17)
+  Chip.props.onPress (src\screens\ProfileScreen.tsx:42:111) 
+
+Code: RootNavigator.tsx
+[0m [90m 38 |[39m
+ [90m 39 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 40 |[39m     [33m<[39m[33mTabs[39m[33m.[39m[33mNavigator[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 41 |[39m       key[33m=[39m{isRTL [33m?[39m [32m'rtl'[39m [33m:[39m [32m'ltr'[39m}
+ [90m 42 |[39m       initialRouteName[33m=[39m[32m"Path"[39m
+ [90m 43 |[39m       screenOptions[33m=[39m{({ route }) [33m=>[39m ({[0m
+Call Stack
+  MainTabs (src\navigation\RootNavigator.tsx:40:5)
+  RootNavigator (src\navigation\RootNavigator.tsx:74:7)
+  App (App.tsx:16:9)
+ ERROR  SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |
+    at constructor (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:369:19)
+    at TypeScriptParserMixin.raise (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6622:19)
+    at Object.unterminated (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5687:20)
+    at readStringContents (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5429:16)
+    at TypeScriptParserMixin.readString (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6521:9)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6281:14)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:4815:11)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10010:11)
+    at TypeScriptParserMixin.nextToken (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5805:10)
+    at TypeScriptParserMixin.next (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5715:10)
+    at TypeScriptParserMixin.eat (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5719:12)
+    at TypeScriptParserMixin.parseVar (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13418:25)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13264:10)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9431:31)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12885:23)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9531:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12801:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12778:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13350:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13343:10)
+    at TypeScriptParserMixin.parseProgram (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12656:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12646:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14522:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10149:18)
+    at parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14535:26)
+    at parser (C:\projets\toeic-app\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\normalize-file.js:51:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at evaluateSync (C:\projets\toeic-app\node_modules\gensync\index.js:251:28)
+    at sync (C:\projets\toeic-app\node_modules\gensync\index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (C:\projets\toeic-app\node_modules\@babel\core\lib\errors\rewrite-stack-trace.js:47:12)
+    at Object.transformSync (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:40:76)
+    at parseWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:75:18)
+    at transformSync (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:54:16)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\babel-transformer.js:146:58)
+    at transformJSWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:495:47)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:614:12)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\transform-worker.js:179:19)
+    at transformFile (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:67:36)
+    at Object.transform (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:42:10)
+    at execFunction (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:167:17)
+    at execHelper (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:155:5)
+    at execMethod (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:158:5)
+    at MessagePort.messageListener (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:52:7)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+Web  ERROR  [TransformError: SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |]
+ ERROR  SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |
+    at constructor (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:369:19)
+    at TypeScriptParserMixin.raise (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6622:19)
+    at Object.unterminated (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5687:20)
+    at readStringContents (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5429:16)
+    at TypeScriptParserMixin.readString (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6521:9)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6281:14)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:4815:11)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10010:11)
+    at TypeScriptParserMixin.nextToken (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5805:10)
+    at TypeScriptParserMixin.next (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5715:10)
+    at TypeScriptParserMixin.eat (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5719:12)
+    at TypeScriptParserMixin.parseVar (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13418:25)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13264:10)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9431:31)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12885:23)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9531:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12801:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12778:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13350:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13343:10)
+    at TypeScriptParserMixin.parseProgram (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12656:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12646:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14522:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10149:18)
+    at parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14535:26)
+    at parser (C:\projets\toeic-app\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\normalize-file.js:51:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at evaluateSync (C:\projets\toeic-app\node_modules\gensync\index.js:251:28)
+    at sync (C:\projets\toeic-app\node_modules\gensync\index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (C:\projets\toeic-app\node_modules\@babel\core\lib\errors\rewrite-stack-trace.js:47:12)
+    at Object.transformSync (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:40:76)
+    at parseWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:75:18)
+    at transformSync (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:54:16)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\babel-transformer.js:146:58)
+    at transformJSWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:495:47)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:614:12)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\transform-worker.js:179:19)
+    at transformFile (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:67:36)
+    at Object.transform (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:42:10)
+    at execFunction (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:167:17)
+    at execHelper (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:155:5)
+    at execMethod (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:158:5)
+    at MessagePort.messageListener (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:52:7)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+Web  ERROR  [TransformError: SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |]
+ ERROR  SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |
+    at constructor (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:369:19)
+    at TypeScriptParserMixin.raise (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6622:19)
+    at Object.unterminated (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5687:20)
+    at readStringContents (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5429:16)
+    at TypeScriptParserMixin.readString (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6521:9)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6281:14)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:4815:11)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10010:11)
+    at TypeScriptParserMixin.nextToken (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5805:10)
+    at TypeScriptParserMixin.next (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5715:10)
+    at TypeScriptParserMixin.eat (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5719:12)
+    at TypeScriptParserMixin.parseVar (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13418:25)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13264:10)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9431:31)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12885:23)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9531:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12801:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12778:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13350:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13343:10)
+    at TypeScriptParserMixin.parseProgram (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12656:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12646:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14522:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10149:18)
+    at parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14535:26)
+    at parser (C:\projets\toeic-app\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\normalize-file.js:51:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at evaluateSync (C:\projets\toeic-app\node_modules\gensync\index.js:251:28)
+    at sync (C:\projets\toeic-app\node_modules\gensync\index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (C:\projets\toeic-app\node_modules\@babel\core\lib\errors\rewrite-stack-trace.js:47:12)
+    at Object.transformSync (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:40:76)
+    at parseWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:75:18)
+    at transformSync (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:54:16)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\babel-transformer.js:146:58)
+    at transformJSWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:495:47)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:614:12)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\transform-worker.js:179:19)
+    at transformFile (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:67:36)
+    at Object.transform (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:42:10)
+    at execFunction (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:167:17)
+    at execHelper (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:155:5)
+    at execMethod (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:158:5)
+    at MessagePort.messageListener (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:52:7)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+Web  ERROR  [TransformError: SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |]
+ ERROR  SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |
+    at constructor (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:369:19)
+    at TypeScriptParserMixin.raise (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6622:19)
+    at Object.unterminated (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5687:20)
+    at readStringContents (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5429:16)
+    at TypeScriptParserMixin.readString (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6521:9)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6281:14)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:4815:11)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10010:11)
+    at TypeScriptParserMixin.nextToken (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5805:10)
+    at TypeScriptParserMixin.next (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5715:10)
+    at TypeScriptParserMixin.eat (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5719:12)
+    at TypeScriptParserMixin.parseVar (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13418:25)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13264:10)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9431:31)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12885:23)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9531:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12801:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12778:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13350:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13343:10)
+    at TypeScriptParserMixin.parseProgram (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12656:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12646:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14522:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10149:18)
+    at parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14535:26)
+    at parser (C:\projets\toeic-app\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\normalize-file.js:51:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at evaluateSync (C:\projets\toeic-app\node_modules\gensync\index.js:251:28)
+    at sync (C:\projets\toeic-app\node_modules\gensync\index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (C:\projets\toeic-app\node_modules\@babel\core\lib\errors\rewrite-stack-trace.js:47:12)
+    at Object.transformSync (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:40:76)
+    at parseWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:75:18)
+    at transformSync (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:54:16)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\babel-transformer.js:146:58)
+    at transformJSWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:495:47)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:614:12)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\transform-worker.js:179:19)
+    at transformFile (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:67:36)
+    at Object.transform (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:42:10)
+    at execFunction (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:167:17)
+    at execHelper (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:155:5)
+    at execMethod (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:158:5)
+    at MessagePort.messageListener (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:52:7)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+Web  ERROR  [TransformError: SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |]
+ ERROR  SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |
+    at constructor (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:369:19)
+    at TypeScriptParserMixin.raise (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6622:19)
+    at Object.unterminated (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5687:20)
+    at readStringContents (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5429:16)
+    at TypeScriptParserMixin.readString (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6521:9)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6281:14)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:4815:11)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10010:11)
+    at TypeScriptParserMixin.nextToken (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5805:10)
+    at TypeScriptParserMixin.next (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5715:10)
+    at TypeScriptParserMixin.eat (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5719:12)
+    at TypeScriptParserMixin.parseVar (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13418:25)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13264:10)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9431:31)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12885:23)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9531:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12801:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12778:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13350:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13343:10)
+    at TypeScriptParserMixin.parseProgram (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12656:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12646:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14522:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10149:18)
+    at parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14535:26)
+    at parser (C:\projets\toeic-app\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\normalize-file.js:51:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at evaluateSync (C:\projets\toeic-app\node_modules\gensync\index.js:251:28)
+    at sync (C:\projets\toeic-app\node_modules\gensync\index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (C:\projets\toeic-app\node_modules\@babel\core\lib\errors\rewrite-stack-trace.js:47:12)
+    at Object.transformSync (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:40:76)
+    at parseWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:75:18)
+    at transformSync (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:54:16)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\babel-transformer.js:146:58)
+    at transformJSWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:495:47)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:614:12)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\transform-worker.js:179:19)
+    at transformFile (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:67:36)
+    at Object.transform (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:42:10)
+    at execFunction (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:167:17)
+    at execHelper (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:155:5)
+    at execMethod (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:158:5)
+    at MessagePort.messageListener (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:52:7)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+Web  ERROR  [TransformError: SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |]
+ ERROR  SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |
+    at constructor (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:369:19)
+    at TypeScriptParserMixin.raise (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6622:19)
+    at Object.unterminated (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5687:20)
+    at readStringContents (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5429:16)
+    at TypeScriptParserMixin.readString (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6521:9)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:6281:14)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:4815:11)
+    at TypeScriptParserMixin.getTokenFromCode (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10010:11)
+    at TypeScriptParserMixin.nextToken (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5805:10)
+    at TypeScriptParserMixin.next (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5715:10)
+    at TypeScriptParserMixin.eat (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:5719:12)
+    at TypeScriptParserMixin.parseVar (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13418:25)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13264:10)
+    at TypeScriptParserMixin.parseVarStatement (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9431:31)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12885:23)
+    at TypeScriptParserMixin.parseStatementContent (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:9531:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12801:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12778:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13350:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:13343:10)
+    at TypeScriptParserMixin.parseProgram (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12656:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:12646:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14522:25)
+    at TypeScriptParserMixin.parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:10149:18)
+    at parse (C:\projets\toeic-app\node_modules\@babel\parser\lib\index.js:14535:26)
+    at parser (C:\projets\toeic-app\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\normalize-file.js:51:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\projets\toeic-app\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at evaluateSync (C:\projets\toeic-app\node_modules\gensync\index.js:251:28)
+    at sync (C:\projets\toeic-app\node_modules\gensync\index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (C:\projets\toeic-app\node_modules\@babel\core\lib\errors\rewrite-stack-trace.js:47:12)
+    at Object.transformSync (C:\projets\toeic-app\node_modules\@babel\core\lib\transform.js:40:76)
+    at parseWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:75:18)
+    at transformSync (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transformSync.js:54:16)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\babel-transformer.js:146:58)
+    at transformJSWithBabel (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:495:47)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:614:12)
+    at Object.transform (C:\projets\toeic-app\node_modules\expo\node_modules\@expo\metro-config\build\transform-worker\transform-worker.js:179:19)
+    at transformFile (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:67:36)
+    at Object.transform (C:\projets\toeic-app\node_modules\metro\src\DeltaBundler\Worker.flow.js:42:10)
+    at execFunction (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:167:17)
+    at execHelper (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:155:5)
+    at execMethod (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:158:5)
+    at MessagePort.messageListener (C:\projets\toeic-app\node_modules\jest-worker\build\workers\threadChild.js:52:7)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+Web  ERROR  [TransformError: SyntaxError: C:\projets\toeic-app\src\screens\ProfileScreen.tsx: Unterminated string constant. (19:21)
+
+  17 | const GOALS = [550, 700, 800, 900];
+  18 | const DAILY = [5, 10, 15];
+> 19 | const VOICE_SAMPLE = 'W: Excuse me, when does the next train to London leave?
+     |                      ^
+  20 | M: In about ten minutes, from platform four.';
+  21 | const MAX_VOICES = 6;
+  22 |]
+Web Bundled 22ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 22ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 20ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 29ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  An error occurred in the <HomeScreen> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: Cannot read properties of undefined (reading 'length')] 
+
+Code: HomeScreen.tsx
+[0m [90m 115 |[39m               [33m<[39m[33m/[39m[33mView[39m[33m>[39m
+ [90m 116 |[39m             ) [33m:[39m [36mnull[39m[33m;[39m
+[31m[1m>[22m[39m[90m 117 |[39m             [36mconst[39m result [33m=[39m data[33m.[39munits[unit[33m.[39mid][33m;[39m
+ [90m     |[39m                                 [31m[1m^[22m[39m
+ [90m 118 |[39m             [36mconst[39m locked [33m=[39m status [33m===[39m [32m'locked'[39m[33m;[39m
+ [90m 119 |[39m             [36mconst[39m statusText [33m=[39m
+ [90m 120 |[39m               status [33m===[39m [32m'done'[39m [33m?[39m t([32m'home.done'[39m) [33m:[39m status [33m===[39m [32m'skipped'[39m [33m?[39m t([32m'home.skipped'[39m) [33m:[39m locked [33m?[39m t([32m'home.locked'[39m) [33m:[39m t([32m'home.exercises'[39m[33m,[39m { n[33m:[39m unit[33m.[39mexercises[33m.[39mlength })[33m;[39m[0m
+Call Stack
+  units.map$argument_0 (src\screens\HomeScreen.tsx:117:33)
+  HomeScreen (src\screens\HomeScreen.tsx:91:22) 
+
+Code: RootNavigator.tsx
+[0m [90m 39 |[39m
+ [90m 40 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 41 |[39m     [33m<[39m[33mTabs[39m[33m.[39m[33mNavigator[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 42 |[39m       key[33m=[39m{isRTL [33m?[39m [32m'rtl'[39m [33m:[39m [32m'ltr'[39m}
+ [90m 43 |[39m       initialRouteName[33m=[39m[32m"Path"[39m
+ [90m 44 |[39m       screenOptions[33m=[39m{({ route }) [33m=>[39m ({[0m
+Call Stack
+  MainTabs (src\navigation\RootNavigator.tsx:41:5)
+  RootNavigator (src\navigation\RootNavigator.tsx:75:7)
+  App (App.tsx:16:9)
+Web  WARN  An error occurred in the <HomeScreen> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: Cannot read properties of undefined (reading 'length')] 
+
+Code: HomeScreen.tsx
+[0m [90m 115 |[39m               [33m<[39m[33m/[39m[33mView[39m[33m>[39m
+ [90m 116 |[39m             ) [33m:[39m [36mnull[39m[33m;[39m
+[31m[1m>[22m[39m[90m 117 |[39m             [36mconst[39m result [33m=[39m data[33m.[39munits[unit[33m.[39mid][33m;[39m
+ [90m     |[39m                                 [31m[1m^[22m[39m
+ [90m 118 |[39m             [36mconst[39m locked [33m=[39m status [33m===[39m [32m'locked'[39m[33m;[39m
+ [90m 119 |[39m             [36mconst[39m statusText [33m=[39m
+ [90m 120 |[39m               status [33m===[39m [32m'done'[39m [33m?[39m t([32m'home.done'[39m) [33m:[39m status [33m===[39m [32m'skipped'[39m [33m?[39m t([32m'home.skipped'[39m) [33m:[39m locked [33m?[39m t([32m'home.locked'[39m) [33m:[39m t([32m'home.exercises'[39m[33m,[39m { n[33m:[39m unit[33m.[39mexercises[33m.[39mlength })[33m;[39m[0m
+Call Stack
+  units.map$argument_0 (src\screens\HomeScreen.tsx:117:33)
+  HomeScreen (src\screens\HomeScreen.tsx:91:22) 
+
+Code: RootNavigator.tsx
+[0m [90m 39 |[39m
+ [90m 40 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 41 |[39m     [33m<[39m[33mTabs[39m[33m.[39m[33mNavigator[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 42 |[39m       key[33m=[39m{isRTL [33m?[39m [32m'rtl'[39m [33m:[39m [32m'ltr'[39m}
+ [90m 43 |[39m       initialRouteName[33m=[39m[32m"Path"[39m
+ [90m 44 |[39m       screenOptions[33m=[39m{({ route }) [33m=>[39m ({[0m
+Call Stack
+  MainTabs (src\navigation\RootNavigator.tsx:41:5)
+  RootNavigator (src\navigation\RootNavigator.tsx:75:7)
+  App (App.tsx:16:9)
+Web  WARN  An error occurred in the <HomeScreen> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: Cannot read properties of undefined (reading 'length')] 
+
+Code: HomeScreen.tsx
+[0m [90m 115 |[39m               [33m<[39m[33m/[39m[33mView[39m[33m>[39m
+ [90m 116 |[39m             ) [33m:[39m [36mnull[39m[33m;[39m
+[31m[1m>[22m[39m[90m 117 |[39m             [36mconst[39m result [33m=[39m data[33m.[39munits[unit[33m.[39mid][33m;[39m
+ [90m     |[39m                                 [31m[1m^[22m[39m
+ [90m 118 |[39m             [36mconst[39m locked [33m=[39m status [33m===[39m [32m'locked'[39m[33m;[39m
+ [90m 119 |[39m             [36mconst[39m statusText [33m=[39m
+ [90m 120 |[39m               status [33m===[39m [32m'done'[39m [33m?[39m t([32m'home.done'[39m) [33m:[39m status [33m===[39m [32m'skipped'[39m [33m?[39m t([32m'home.skipped'[39m) [33m:[39m locked [33m?[39m t([32m'home.locked'[39m) [33m:[39m t([32m'home.exercises'[39m[33m,[39m { n[33m:[39m unit[33m.[39mexercises[33m.[39mlength })[33m;[39m[0m
+Call Stack
+  units.map$argument_0 (src\screens\HomeScreen.tsx:117:33)
+  HomeScreen (src\screens\HomeScreen.tsx:91:22) 
+
+Code: RootNavigator.tsx
+[0m [90m 39 |[39m
+ [90m 40 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 41 |[39m     [33m<[39m[33mTabs[39m[33m.[39m[33mNavigator[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 42 |[39m       key[33m=[39m{isRTL [33m?[39m [32m'rtl'[39m [33m:[39m [32m'ltr'[39m}
+ [90m 43 |[39m       initialRouteName[33m=[39m[32m"Path"[39m
+ [90m 44 |[39m       screenOptions[33m=[39m{({ route }) [33m=>[39m ({[0m
+Call Stack
+  MainTabs (src\navigation\RootNavigator.tsx:41:5)
+  RootNavigator (src\navigation\RootNavigator.tsx:75:7)
+  App (App.tsx:16:9)
+Web  WARN  An error occurred in the <HomeScreen> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: Cannot read properties of undefined (reading 'length')] 
+
+Code: HomeScreen.tsx
+[0m [90m  99 |[39m               [33m<[39m[33mView[39m key[33m=[39m{[32m`band-${cefr}`[39m} style[33m=[39m{[row[33m,[39m { alignItems[33m:[39m [32m'center'[39m[33m,[39m gap[33m:[39m space[33m.[39msm[33m,[39m marginTop[33m:[39m index [33m===[39m [35m0[39m [33m?[39m [35m0[39m [33m:[39m space[33m.[39msm }]}[33m>[39m
+ [90m 100 |[39m                 [33m<[39m[33mAppText[39m variant[33m=[39m[32m"label"[39m color[33m=[39m{colors[33m.[39minkSoft}[33m>[39m
+[31m[1m>[22m[39m[90m 101 |[39m                   {t([32m'home.level'[39m[33m,[39m { cefr })[33m.[39mtoUpperCase()}
+ [90m     |[39m                                                          [31m[1m^[22m[39m
+ [90m 102 |[39m                 [33m<[39m[33m/[39m[33mAppText[39m[33m>[39m
+ [90m 103 |[39m                 [33m<[39m[33mEnglishText[39m variant[33m=[39m[32m"label"[39m color[33m=[39m{colors[33m.[39minkSoft}[33m>[39m
+ [90m 104 |[39m                   {[32m`${bandDone}/${band.length}`[39m}[0m
+Call Stack
+  units.map$argument_0 (src\screens\HomeScreen.tsx:101:58)
+  HomeScreen (src\screens\HomeScreen.tsx:78:17) 
+
+Code: RootNavigator.tsx
+[0m [90m 39 |[39m
+ [90m 40 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 41 |[39m     [33m<[39m[33mTabs[39m[33m.[39m[33mNavigator[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 42 |[39m       key[33m=[39m{isRTL [33m?[39m [32m'rtl'[39m [33m:[39m [32m'ltr'[39m}
+ [90m 43 |[39m       initialRouteName[33m=[39m[32m"Path"[39m
+ [90m 44 |[39m       screenOptions[33m=[39m{({ route }) [33m=>[39m ({[0m
+Call Stack
+  MainTabs (src\navigation\RootNavigator.tsx:41:5)
+  RootNavigator (src\navigation\RootNavigator.tsx:75:7)
+  App (App.tsx:16:9)
+Web  WARN  An error occurred in the <HomeScreen> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: Cannot read properties of undefined (reading 'length')] 
+
+Code: HomeScreen.tsx
+[0m [90m 77 |[39m               [33m<[39m[33mView[39m style[33m=[39m{[row[33m,[39m { alignItems[33m:[39m [32m'center'[39m[33m,[39m gap[33m:[39m space[33m.[39mmd }]}[33m>[39m
+ [90m 78 |[39m                 [33m<[39m[33mText[39m emoji[33m=[39m{current[33m.[39memoji} [33m/[39m[33m>[39m
+[31m[1m>[22m[39m[90m 79 |[39m                 [33m<[39m[33mView[39m style[33m=[39m{{ flex[33m:[39m [35m1[39m }}[33m>[39m
+ [90m    |[39m                              [31m[1m^[22m[39m
+ [90m 80 |[39m                   [33m<[39m[33mAppText[39m variant[33m=[39m[32m"h3"[39m[33m>[39m{tx(current[33m.[39mtitle)}[33m<[39m[33m/[39m[33mAppText[39m[33m>[39m
+ [90m 81 |[39m                   [33m<[39m[33mAppText[39m variant[33m=[39m[32m"small"[39m color[33m=[39m{colors[33m.[39minkSoft}[33m>[39m
+ [90m 82 |[39m                     {tx(current[33m.[39msubtitle)}[0m
+Call Stack
+  HomeScreen (src\screens\HomeScreen.tsx:79:30)
+  HomeScreen (src\screens\HomeScreen.tsx:58:59) 
+
+Code: RootNavigator.tsx
+[0m [90m 39 |[39m
+ [90m 40 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 41 |[39m     [33m<[39m[33mTabs[39m[33m.[39m[33mNavigator[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 42 |[39m       key[33m=[39m{isRTL [33m?[39m [32m'rtl'[39m [33m:[39m [32m'ltr'[39m}
+ [90m 43 |[39m       initialRouteName[33m=[39m[32m"Path"[39m
+ [90m 44 |[39m       screenOptions[33m=[39m{({ route }) [33m=>[39m ({[0m
+Call Stack
+  MainTabs (src\navigation\RootNavigator.tsx:41:5)
+  RootNavigator (src\navigation\RootNavigator.tsx:75:7)
+  App (App.tsx:16:9)
+Web  WARN  An error occurred in the <HomeScreen> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: Cannot read properties of undefined (reading 'length')] 
+
+Code: HomeScreen.tsx
+[0m [90m 77 |[39m               [33m<[39m[33mView[39m style[33m=[39m{[row[33m,[39m { alignItems[33m:[39m [32m'center'[39m[33m,[39m gap[33m:[39m space[33m.[39mmd }]}[33m>[39m
+ [90m 78 |[39m                 [33m<[39m[33mText[39m emoji[33m=[39m{current[33m.[39memoji} [33m/[39m[33m>[39m
+[31m[1m>[22m[39m[90m 79 |[39m                 [33m<[39m[33mView[39m style[33m=[39m{{ flex[33m:[39m [35m1[39m }}[33m>[39m
+ [90m    |[39m                              [31m[1m^[22m[39m
+ [90m 80 |[39m                   [33m<[39m[33mAppText[39m variant[33m=[39m[32m"h3"[39m[33m>[39m{tx(current[33m.[39mtitle)}[33m<[39m[33m/[39m[33mAppText[39m[33m>[39m
+ [90m 81 |[39m                   [33m<[39m[33mAppText[39m variant[33m=[39m[32m"small"[39m color[33m=[39m{colors[33m.[39minkSoft}[33m>[39m
+ [90m 82 |[39m                     {tx(current[33m.[39msubtitle)}[0m
+Call Stack
+  HomeScreen (src\screens\HomeScreen.tsx:79:30)
+  HomeScreen (src\screens\HomeScreen.tsx:58:59) 
+
+Code: RootNavigator.tsx
+[0m [90m 39 |[39m
+ [90m 40 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 41 |[39m     [33m<[39m[33mTabs[39m[33m.[39m[33mNavigator[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 42 |[39m       key[33m=[39m{isRTL [33m?[39m [32m'rtl'[39m [33m:[39m [32m'ltr'[39m}
+ [90m 43 |[39m       initialRouteName[33m=[39m[32m"Path"[39m
+ [90m 44 |[39m       screenOptions[33m=[39m{({ route }) [33m=>[39m ({[0m
+Call Stack
+  MainTabs (src\navigation\RootNavigator.tsx:41:5)
+  RootNavigator (src\navigation\RootNavigator.tsx:75:7)
+  App (App.tsx:16:9)
+Web Bundled 45ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 29ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 42ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 23ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 26ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 42ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 45ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 41ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 20ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 25ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 21ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 20ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 28ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 42ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 23ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 35ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 30ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 23ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 32ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 33ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 36ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 36ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 41ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 39ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 29ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 27ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 30ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 24ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 30ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Unable to resolve "./health" from "src\data\vocab\index.ts"
+[0m [90m 10 |[39m [36mimport[39m { diningWords } [36mfrom[39m [32m'./dining'[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m { eventsWords } [36mfrom[39m [32m'./events'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 12 |[39m [36mimport[39m { healthWords } [36mfrom[39m [32m'./health'[39m[33m;[39m
+ [90m    |[39m                              [31m[1m^[22m[39m
+ [90m 13 |[39m [36mimport[39m { propertyWords } [36mfrom[39m [32m'./property'[39m[33m;[39m
+ [90m 14 |[39m [36mimport[39m { legalWords } [36mfrom[39m [32m'./legal'[39m[33m;[39m
+ [90m 15 |[39m [36mimport[39m { environmentWords } [36mfrom[39m [32m'./environment'[39m[33m;[39m[0m
+
+Import stack:
+
+ src\data\vocab\index.ts
+ | import "./health"
+
+ src\screens\WordsScreen.tsx
+ | import "../data/vocab"
+
+ src\navigation\RootNavigator.tsx
+ | import "../screens/WordsScreen"
+
+ App.tsx
+ | import "./src/navigation/RootNavigator"
+
+ index.ts
+ | import "./App"
+
+ 
+ | import "./index.ts"
+
+Web  ERROR  [UnableToResolveError: Unable to resolve module ./health from C:\projets\toeic-app\src\data\vocab\index.ts: 
+
+None of these files exist:
+  * src\data\vocab\health(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css)
+  * src\data\vocab\health
+  10 | import { diningWords } from './dining';
+  11 | import { eventsWords } from './events';
+> 12 | import { healthWords } from './health';
+     |                              ^
+  13 | import { propertyWords } from './property';
+  14 | import { legalWords } from './legal';
+  15 | import { environmentWords } from './environment';]
+Web Bundled 32ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 35ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 46ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  ERROR  [TypeError: item.options.map is not a function] 
+
+Code: shuffle.ts
+[0m [90m 26 |[39m [36mexport[39m [36mfunction[39m withShuffledOptions(item[33m:[39m [33mMcqItem[39m)[33m:[39m [33mMcqItem[39m {
+ [90m 27 |[39m   [36mconst[39m rand [33m=[39m mulberry32(hash(item[33m.[39mid))[33m;[39m
+[31m[1m>[22m[39m[90m 28 |[39m   [36mconst[39m order [33m=[39m item[33m.[39moptions[33m.[39mmap((_[33m,[39m i) [33m=>[39m i)[33m;[39m
+ [90m    |[39m                              [31m[1m^[22m[39m
+ [90m 29 |[39m   [36mfor[39m ([36mlet[39m i [33m=[39m order[33m.[39mlength [33m-[39m [35m1[39m[33m;[39m i [33m>[39m [35m0[39m[33m;[39m i [33m-=[39m [35m1[39m) {
+ [90m 30 |[39m     [36mconst[39m j [33m=[39m [33mMath[39m[33m.[39mfloor(rand() [33m*[39m (i [33m+[39m [35m1[39m))[33m;[39m
+ [90m 31 |[39m     [order[i][33m,[39m order[j]] [33m=[39m [order[j][33m,[39m order[i]][33m;[39m[0m
+Call Stack
+  withShuffledOptions (src\data\shuffle.ts:28:30)
+  listen (src\data\curriculum\build.ts:32:50)
+  <global> (src\data\mock\mini-1.ts:25:9)
+  <global> (src\data\mock\index.ts:3)
+Web Bundled 34ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 32ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 43ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 34ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents

@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Toki Quest",
+    "NSMicrophoneUsageDescription": "Toki Quest utilise le micro seulement quand tu t’entraînes à l’oral, pour comparer ce que tu lis au texte. Les enregistrements ne sont jamais conservés.",
+    "NSSpeechRecognitionUsageDescription": "Toki Quest transforme ta voix en texte pour corriger ta lecture. Apple peut traiter ta voix pour la reconnaître ; l’application garde seulement le texte, sur ton appareil."
+  },
+  "android": {
+    "app_name": "Toki Quest"
+  }
+}

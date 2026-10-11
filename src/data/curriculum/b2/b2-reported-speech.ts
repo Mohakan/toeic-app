@@ -1,0 +1,228 @@
+import type { Unit } from '../../../types';
+import { g, lesson, listen, match, order, respond, unit, x } from '../build';
+
+export const b2ReportedSpeech: Unit = unit(
+  {
+    id: 'b2-reported-speech',
+    emoji: '💬',
+    level: 4,
+    part: 'R5 · L3',
+    title: x('Le discours indirect', 'الكلام غير المباشر', 'Reported speech', 'El estilo indirecto'),
+    subtitle: x('Rapporter des paroles et des questions', 'نقل الأقوال والأسئلة', 'Report statements and questions', 'Contar lo que alguien dijo o preguntó'),
+    lesson: lesson(
+      x('Rapporter ce que quelqu’un a dit, demandé ou conseillé.', 'نقل ما قاله شخص أو سأله أو نصح به.', 'Report what someone said, asked or advised.', 'Contar lo que alguien dijo, preguntó o aconsejó.'),
+      [
+        x('Après un verbe au passé, on recule d’un temps : « I am busy » → She said she was busy.', 'بعد فعل في الماضي نرجع زمنًا إلى الوراء: «I am busy» ← She said she was busy.', 'After a past verb, shift back: am → was.', 'Tras un verbo en pasado se retrocede un tiempo: «I am busy» → She said she was busy.'),
+        x('« Say » sans personne ; « tell » + personne : She told me (that)…', '«Say» بدون شخص، و«tell» + شخص: She told me (that)…', 'Say something; tell someone.', '«Say» sin persona; «tell» + persona: She told me (that)…'),
+        x('Question rapportée : ordre sujet + verbe, avec if / whether ou le mot interrogatif.', 'السؤال المنقول: ترتيب فاعل + فعل، مع if / whether أو أداة الاستفهام.', 'Reported question: subject + verb order.', 'Pregunta indirecta: orden sujeto + verbo, con if / whether o la palabra interrogativa.'),
+        x('Ordres et conseils : ask / tell / advise + personne + to + verbe.', 'الأوامر والنصائح: ask / tell / advise + شخص + to + فعل.', 'Ask / tell / advise someone to do.', 'Órdenes y consejos: ask / tell / advise + persona + to + verbo.'),
+      ],
+      'The client asked when the order would arrive.',
+      x('Pas d’inversion : « when the order would arrive ».', 'لا قلب في الترتيب: «when the order would arrive».', 'No inversion in reported questions.', 'Sin inversión: «when the order would arrive».'),
+    ),
+  },
+  [
+    g('b2-rs-q1', 4, 'Mr. Ben Salah said that he ___ the report the next day.', ['would send', 'will send', 'sends', 'has sent'], x(
+      'Après « said » : will → would.',
+      'بعد «said»: will ← would.',
+      'After “said”: will → would.',
+      'Tras «said»: will → would.',
+    )),
+    g('b2-rs-q2', 4, 'The receptionist ___ us that the hotel was full.', ['told', 'said', 'spoke', 'talked'], x(
+      '« Tell » + personne (us). « Say » ne prend pas de personne directement.',
+      '«Tell» + شخص (us)، أما «say» فلا تأخذ شخصًا مباشرة.',
+      'Tell + person.',
+      '«Tell» + persona (us). «Say» no lleva persona directamente.',
+    )),
+    g('b2-rs-q3', 4, 'She asked me where ___.', ['the conference room was', 'was the conference room', 'is the conference room', 'the conference room is it'], x(
+      'Question rapportée : sujet + verbe, temps reculé.',
+      'سؤال منقول: فاعل + فعل مع إرجاع الزمن.',
+      'Subject + verb, past tense.',
+      'Pregunta indirecta: sujeto + verbo, tiempo retrocedido.',
+    )),
+    g('b2-rs-q4', 4, 'The doctor advised him ___ more exercise.', ['to take', 'take', 'taking', 'that take'], x(
+      '« Advise » + personne + to + verbe.',
+      '«Advise» + شخص + to + فعل.',
+      'Advise someone to do.',
+      '«Advise» + persona + to + verbo.',
+    )),
+    g('b2-rs-q5', 4, 'The customer wanted to know ___ we offered free delivery.', ['whether', 'that', 'what', 'which'], x(
+      'Question fermée rapportée → « whether / if ».',
+      'سؤال بنعم/لا منقول ← «whether / if».',
+      'Yes/no question → whether.',
+      'Pregunta de sí/no indirecta → «whether / if».',
+    )),
+    g('b2-rs-q6', 4, 'He said he ___ in Sfax for five years before moving to Tunis.', ['had lived', 'has lived', 'lives', 'is living'], x(
+      'Antérieur au passé rapporté → past perfect.',
+      'سابق للماضي المنقول ← الماضي التام.',
+      'Earlier past → past perfect.',
+      'Anterior al pasado narrado → past perfect.',
+    )),
+    order('b2-rs-o1', 'She asked me if I could help her', x('Commence par « She asked me ».', 'ابدأ بـ «She asked me».', 'Start with “She asked me”.', 'Empieza por «She asked me».'), x(
+      'Question rapportée avec « if » : sujet + verbe.',
+      'سؤال منقول بـ «if»: فاعل + فعل.',
+      'Reported question with “if”.',
+      'Pregunta indirecta con «if»: sujeto + verbo.',
+    )),
+    respond('b2-rs-l1', 4, 'What did the manager say about the budget?', ['She said it would be cut by ten percent.', 'She’s in a meeting.', 'Yes, she did.'], x(
+      'On rapporte les paroles de la responsable.',
+      'ننقل كلام المديرة.',
+      'It reports her words.',
+      'Se cuentan las palabras de la responsable.',
+    )),
+    respond('b2-rs-l2', 4, 'Did Mr. Haddad tell you why he was leaving?', ['He said he’d found a job closer to home.', 'He left at five.', 'I told him yesterday.'], x(
+      'Raison rapportée au discours indirect. « He left at five » répond à « quand ».',
+      'السبب منقول بالكلام غير المباشر، أما «He left at five» فتجيب عن «متى».',
+      'Gives the reported reason.',
+      'Razón contada en estilo indirecto. «He left at five» responde a «cuándo».',
+    )),
+    listen('b2-rs-l3', 'L3', 4, 'W: Did the courier say when the package would arrive?\nM: He told me it would be delivered before noon, but he asked us to keep someone at reception.', 'What did the courier ask?', ['That someone stay at reception', 'That they pay in cash', 'That they call him at noon', 'That they collect the package'], x(
+      '« He asked us to keep someone at reception ».',
+      '«He asked us to keep someone at reception»: إبقاء شخص في الاستقبال.',
+      'Keep someone at reception.',
+      '«He asked us to keep someone at reception»: dejar a alguien en recepción.',
+    )),
+    match('b2-reported-speech-w1', ['briefing', 'follow-up', 'copy-in', 'correspondence', 'deadline-extension'], x(
+      'Mots B2 sur le travail de bureau : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات B2 حول العمل المكتبي: راجع مثال كل كلمة في قسم الكلمات.',
+      'B2 words about office work: review each example in the Words tab.',
+      'Palabras B2 sobre el trabajo de oficina: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('b2-rs-s2-q1', 4, 'The technician said the system ___ working again.', ['was', 'is being', 'will', 'were'], x(
+      'Après « said » : is → was.',
+      'بعد «said»: is ← was.',
+      'Shift back: is → was.',
+      'Tras «said»: is → was.',
+    )),
+    g('b2-rs-s2-q2', 4, 'Ms. Ruiz ___ that the meeting had been moved.', ['said', 'told', 'asked', 'spoke'], x(
+      'Pas de personne après le verbe → « said ».',
+      'لا يوجد شخص بعد الفعل ← «said».',
+      'No person → said.',
+      'No hay persona tras el verbo → «said».',
+    )),
+    g('b2-rs-s2-q3', 4, 'Could you tell me what time ___?', ['the store opens', 'does the store open', 'opens the store', 'the store does open'], x(
+      'Question indirecte polie : sujet + verbe, sans « does ».',
+      'سؤال غير مباشر مهذب: فاعل + فعل بدون «does».',
+      'Indirect question: no “does”.',
+      'Pregunta indirecta cortés: sujeto + verbo, sin «does».',
+    )),
+    g('b2-rs-s2-q4', 4, 'Our manager asked us ___ late on Friday.', ['not to stay', 'don’t stay', 'not staying', 'to not staying'], x(
+      'Ordre négatif rapporté : ask + personne + not to + verbe.',
+      'أمر منفي منقول: ask + شخص + not to + فعل.',
+      'Ask someone not to do.',
+      'Orden negativa indirecta: ask + persona + not to + verbo.',
+    )),
+    g('b2-rs-s2-q5', 4, 'He explained that the shipment ___ because of a strike.', ['had been delayed', 'has delayed', 'delays', 'is delaying'], x(
+      'Fait antérieur + l’envoi subit le retard → past perfect passif.',
+      'حدث سابق والشحنة يقع عليها التأخير ← ماضٍ تام مجهول.',
+      'Past perfect passive.',
+      'Hecho anterior + el envío sufre el retraso → past perfect pasivo.',
+    )),
+    g('b2-rs-s2-q6', 4, 'The interviewer asked me how long I ___ in sales.', ['had worked', 'have I worked', 'did I work', 'work'], x(
+      'Question rapportée : ordre normal et temps reculé.',
+      'سؤال منقول: ترتيب عادي وزمن مُرجَع.',
+      'Normal order, past perfect.',
+      'Pregunta indirecta: orden normal y tiempo retrocedido.',
+    )),
+    g('b2-rs-s2-q7', 4, 'The supplier promised ___ the parts by Thursday.', ['to deliver', 'delivering', 'that deliver', 'deliver'], x(
+      '« Promise to » + verbe.',
+      '«Promise to» + فعل.',
+      '“Promise to do”.',
+      '«Promise to» + verbo.',
+    )),
+    order('b2-rs-o2', 'He told me that the flight had been cancelled', x('Commence par « He told me ».', 'ابدأ بـ «He told me».', 'Start with “He told me”.', 'Empieza por «He told me».'), x(
+      'Tell + personne + that + past perfect passif.',
+      'Tell + شخص + that + ماضٍ تام مجهول.',
+      'Tell someone that…',
+      'Tell + persona + that + past perfect pasivo.',
+    )),
+    respond('b2-rs-s2-l1', 4, 'Do you know if the bank is open on Saturday?', ['Only until noon, I think.', 'Yes, I know him.', 'I opened an account.'], x(
+      'Question indirecte → réponse sur l’horaire.',
+      'سؤال غير مباشر ← إجابة عن التوقيت.',
+      'It answers about the hours.',
+      'Pregunta indirecta → respuesta sobre el horario.',
+    )),
+    listen('b2-rs-s2-l2', 'L4', 4, 'Before we start, I’d like to share some feedback. Several customers told us that our website was hard to use on their phones, so the IT team has asked for two more weeks to improve it.', 'What did customers say about the website?', ['It was difficult to use on phones', 'It was too slow at night', 'It had wrong prices', 'It was not in French'], x(
+      '« Hard to use on their phones ».',
+      '«Hard to use on their phones»: صعب الاستعمال على الهواتف.',
+      'Hard to use on phones.',
+      '«Hard to use on their phones»: difícil de usar en el móvil.',
+    )),
+    match('b2-reported-speech-w2', ['appraisal', 'probation', 'onboarding', 'payroll', 'mentor'], x(
+      'Mots B2 sur les ressources humaines : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات B2 حول الموارد البشرية: راجع مثال كل كلمة في قسم الكلمات.',
+      'B2 words about human resources: review each example in the Words tab.',
+      'Palabras B2 sobre los recursos humanos: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('b2-rs-s3-q1', 4, 'She said she ___ call me back later.', ['would', 'will', 'shall', 'can'], x(
+      'Après « said » : will → would.',
+      'بعد «said»: will ← would.',
+      'Shift back: will → would.',
+      'Tras «said»: will → would.',
+    )),
+    g('b2-rs-s3-q2', 4, 'The guide told the visitors ___ their bags at the entrance.', ['to leave', 'leave', 'leaving', 'that leave'], x(
+      '« Tell » + personne + to + verbe (consigne).',
+      '«Tell» + شخص + to + فعل (تعليمة).',
+      'Tell someone to do.',
+      '«Tell» + persona + to + verbo (instrucción).',
+    )),
+    g('b2-rs-s3-q3', 4, 'I wonder ___ the new manager will start.', ['when', 'that', 'what', 'whose'], x(
+      'Moment inconnu → « when », puis sujet + verbe.',
+      'وقت غير معروف ← «when» ثم فاعل + فعل.',
+      'Unknown time → when.',
+      'Momento desconocido → «when» y luego sujeto + verbo.',
+    )),
+    g('b2-rs-s3-q4', 4, 'The CEO announced that profits ___ for the third year in a row.', ['had risen', 'have risen', 'rise', 'rising'], x(
+      'Discours rapporté au passé → past perfect.',
+      'كلام منقول في الماضي ← الماضي التام.',
+      'Reported past → past perfect.',
+      'Estilo indirecto en pasado → past perfect.',
+    )),
+    g('b2-rs-s3-q5', 4, 'He asked whether the price ___ taxes.', ['included', 'does include', 'did it include', 'including'], x(
+      'Question rapportée : sujet + verbe au prétérit, sans auxiliaire.',
+      'سؤال منقول: فاعل + فعل في الماضي بدون فعل مساعد.',
+      'No auxiliary in reported questions.',
+      'Pregunta indirecta: sujeto + verbo en pasado, sin auxiliar.',
+    )),
+    g('b2-rs-s3-q6', 4, 'The client ___ me to send the invoice again.', ['asked', 'said', 'suggested', 'explained'], x(
+      '« Ask » + personne + to + verbe. « Said / suggested / explained » ne se construisent pas ainsi.',
+      '«Ask» + شخص + to + فعل، أما الأفعال الأخرى فلا تُبنى هكذا.',
+      'Ask someone to do.',
+      '«Ask» + persona + to + verbo. Los otros verbos no se construyen así.',
+    )),
+    g('b2-rs-s3-q7', 4, 'Ms. Lee mentioned that she ___ the documents the day before.', ['had signed', 'has signed', 'signs', 'will sign'], x(
+      '« The day before » → past perfect.',
+      '«The day before» ← الماضي التام.',
+      '“The day before” → past perfect.',
+      '«The day before» → past perfect.',
+    )),
+    order('b2-rs-s3-o1', 'They asked us to arrive before nine', x('Commence par « They asked us ».', 'ابدأ بـ «They asked us».', 'Start with “They asked us”.', 'Empieza por «They asked us».'), x(
+      'Ask + personne + to + verbe.',
+      'Ask + شخص + to + فعل.',
+      'Ask someone to do.',
+      'Ask + persona + to + verbo.',
+    )),
+    respond('b2-rs-s3-l1', 4, 'What did the client say when you called?', ['She said she’d think about it.', 'I called at ten.', 'Her number is on the file.'], x(
+      'On rapporte la réponse de la cliente.',
+      'ننقل جواب العميلة.',
+      'Reports what she said.',
+      'Se cuenta la respuesta de la clienta.',
+    )),
+    listen('b2-rs-s3-l2', 'L3', 4, 'M: Did you ask the landlord whether we could paint the office?\nW: Yes. He said we could, as long as we used light colors and told him before we started.', 'What condition did the landlord set?', ['Using light colors', 'Paying a deposit', 'Finishing in one day', 'Hiring his painter'], x(
+      '« As long as we used light colors ».',
+      '«As long as we used light colors»: ألوان فاتحة.',
+      'Light colors only.',
+      '«As long as we used light colors»: colores claros.',
+    )),
+    match('b2-reported-speech-w3', ['testimonial', 'press-release', 'word-of-mouth', 'publicity', 'focus-group'], x(
+      'Mots B2 sur le marketing : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات B2 حول التسويق: راجع مثال كل كلمة في قسم الكلمات.',
+      'B2 words about marketing: review each example in the Words tab.',
+      'Palabras B2 sobre el marketing: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+);

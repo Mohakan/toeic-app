@@ -1,0 +1,228 @@
+import type { Unit } from '../../../types';
+import { g, lesson, listen, match, order, respond, unit, x } from '../build';
+
+export const b2Conditionals: Unit = unit(
+  {
+    id: 'b2-conditionals',
+    emoji: '🔀',
+    level: 4,
+    part: 'R5 · L3',
+    title: x('Les conditionnels', 'الجمل الشرطية', 'Conditionals', 'Las condicionales'),
+    subtitle: x('Réel, hypothétique, passé', 'الواقعي والافتراضي والماضي', 'Real, unreal and past', 'Real, hipotética y pasada'),
+    lesson: lesson(
+      x('Choisir le bon temps selon que la condition est réelle, imaginaire ou passée.', 'اختيار الزمن المناسب حسب كون الشرط واقعيًا أو افتراضيًا أو ماضيًا.', 'Choose the tense for real, imaginary or past conditions.', 'Elegir el tiempo según la condición sea real, imaginaria o pasada.'),
+      [
+        x('Réel : If + présent → will. « If it rains, we will stay inside. »', 'واقعي: If + المضارع ← will. «If it rains, we will stay inside.»', 'Real: If + present → will.', 'Real: If + presente → will. «If it rains, we will stay inside.»'),
+        x('Imaginaire (présent) : If + prétérit → would. « If I had time, I would help. »', 'افتراضي (حاضر): If + الماضي البسيط ← would. «If I had time, I would help.»', 'Unreal present: If + past → would.', 'Hipotética (presente): If + pasado → would. «If I had time, I would help.»'),
+        x('Regret (passé) : If + past perfect → would have + participe.', 'ندم (ماضٍ): If + الماضي التام ← would have + اسم المفعول.', 'Past: If + had + participle → would have + participle.', 'Pasado: If + past perfect → would have + participio.'),
+        x('« Unless » = if … not ; « provided that / as long as » = à condition que.', '«Unless» = if … not، و«provided that / as long as» = بشرط أن.', 'Unless = if not; provided that = only if.', '«Unless» = if … not; «provided that / as long as» = siempre que.'),
+      ],
+      'If we had left earlier, we would have caught the train.',
+      x('On ne l’a pas fait : condition passée, résultat passé.', 'لم نفعل ذلك: شرط في الماضي ونتيجة في الماضي.', 'It did not happen: past condition, past result.', 'No ocurrió: condición pasada, resultado pasado.'),
+    ),
+  },
+  [
+    g('b2-cd-q1', 4, 'If the client ___ the contract today, we will start the work next week.', ['signs', 'will sign', 'signed', 'would sign'], x(
+      'Condition réelle : If + présent, puis « will ». Jamais « will » après « if ».',
+      'شرط واقعي: If + المضارع ثم «will». لا نضع «will» بعد «if».',
+      'Real condition: If + present, then will.',
+      'Condición real: If + presente y luego «will». Nunca «will» después de «if».',
+    )),
+    g('b2-cd-q2', 4, 'If I ___ the manager, I would change the schedule.', ['were', 'am', 'will be', 'have been'], x(
+      'Hypothèse imaginaire : If + prétérit ; avec « be », on emploie « were » à toutes les personnes.',
+      'افتراض خيالي: If + الماضي، ومع «be» نستعمل «were» لكل الضمائر.',
+      'Unreal present: “If I were”.',
+      'Hipótesis imaginaria: If + pasado; con «be» se usa «were» en todas las personas.',
+    )),
+    g('b2-cd-q3', 4, 'If we had booked earlier, we ___ a cheaper flight.', ['would have found', 'would find', 'will find', 'found'], x(
+      'If + past perfect → would have + participe (regret sur le passé).',
+      'If + الماضي التام ← would have + اسم المفعول (ندم على الماضي).',
+      'Past condition → would have + participle.',
+      'If + past perfect → would have + participio (lamento sobre el pasado).',
+    )),
+    g('b2-cd-q4', 4, 'We cannot process your order ___ you send us the payment.', ['unless', 'if', 'provided', 'as long'], x(
+      '« Unless » = sauf si / à moins que : sans paiement, pas de traitement.',
+      '«Unless» = ما لم: بدون دفع لا تتم المعالجة.',
+      '“Unless” = if … not.',
+      '«Unless» = a menos que: sin pago no hay trámite.',
+    )),
+    g('b2-cd-q5', 4, 'You can use the company car ___ you return it by 6 p.m.', ['as long as', 'unless', 'even if', 'whether'], x(
+      '« As long as » = à condition que.',
+      '«As long as» = ما دام / بشرط أن.',
+      '“As long as” = on condition that.',
+      '«As long as» = siempre que.',
+    )),
+    g('b2-cd-q6', 4, 'What would you do if your flight ___ cancelled?', ['were', 'is', 'will be', 'has been'], x(
+      '« Would » dans la principale → hypothèse : If + prétérit (« were »).',
+      'وجود «would» في الجملة الرئيسية ← افتراض: If + الماضي («were»).',
+      '“Would” → unreal: “were”.',
+      '«Would» en la principal → hipótesis: If + pasado («were»).',
+    )),
+    order('b2-cd-o1', 'If I had known about the meeting I would have come', x('Commence par « If I had known ».', 'ابدأ بـ «If I had known».', 'Start with “If I had known”.', 'Empieza por «If I had known».'), x(
+      'If + past perfect, puis would have + participe.',
+      'If + الماضي التام ثم would have + اسم المفعول.',
+      'If + had known, then would have come.',
+      'If + past perfect y luego would have + participio.',
+    )),
+    respond('b2-cd-l1', 4, 'What will happen if the supplier doesn’t deliver on time?', ['We’ll have to delay the launch.', 'Yes, they delivered it.', 'At the warehouse.'], x(
+      'Question sur une conséquence → réponse en « will ».',
+      'سؤال عن نتيجة ← إجابة بـ «will».',
+      'A consequence with “will”.',
+      'Pregunta sobre una consecuencia → respuesta con «will».',
+    )),
+    respond('b2-cd-l2', 4, 'Would you accept the job if they offered it to you?', ['Only if the salary were higher.', 'They offered me coffee.', 'Yes, I accepted it last year.'], x(
+      'Réponse hypothétique cohérente : « only if the salary were higher ».',
+      'إجابة افتراضية منسجمة: «only if the salary were higher».',
+      'A matching hypothetical answer.',
+      'Respuesta hipotética coherente: «only if the salary were higher».',
+    )),
+    listen('b2-cd-l3', 'L3', 4, 'M: If we had ordered the chairs last month, they would be here by now.\nW: I know. Let’s not make the same mistake with the desks. I’ll place the order today.', 'What does the woman decide to do?', ['Order the desks today', 'Cancel the chair order', 'Wait until next month', 'Buy used furniture'], x(
+      '« I’ll place the order today » : commander les bureaux aujourd’hui.',
+      '«I’ll place the order today»: طلب المكاتب اليوم.',
+      'She will order the desks today.',
+      '«I’ll place the order today»: pedir los escritorios hoy.',
+    )),
+    match('b2-conditionals-w1', ['forecast', 'cash-flow', 'overdue', 'installment', 'break-even'], x(
+      'Mots B2 sur la finance : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات B2 حول المالية: راجع مثال كل كلمة في قسم الكلمات.',
+      'B2 words about finance: review each example in the Words tab.',
+      'Palabras B2 sobre las finanzas: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('b2-cd-s2-q1', 4, 'If sales ___ next quarter, we will hire two more staff.', ['increase', 'will increase', 'increased', 'would increase'], x(
+      'Condition réelle → If + présent.',
+      'شرط واقعي ← If + المضارع.',
+      'Real condition → present after “if”.',
+      'Condición real → If + presente.',
+    )),
+    g('b2-cd-s2-q2', 4, 'If the train hadn’t been late, I ___ the presentation.', ['wouldn’t have missed', 'won’t miss', 'didn’t miss', 'wouldn’t miss'], x(
+      'Passé contraire à la réalité → would have + participe.',
+      'ماضٍ مخالف للواقع ← would have + اسم المفعول.',
+      'Unreal past → would have missed.',
+      'Pasado contrario a la realidad → would have + participio.',
+    )),
+    g('b2-cd-s2-q3', 4, 'If we ___ more space, we could open a showroom.', ['had', 'have', 'will have', 'had had'], x(
+      '« Could » → hypothèse présente : If + prétérit.',
+      '«Could» ← افتراض في الحاضر: If + الماضي.',
+      '“Could” → past simple after “if”.',
+      '«Could» → hipótesis presente: If + pasado.',
+    )),
+    g('b2-cd-s2-q4', 4, 'Call me ___ you need any help with the software.', ['if', 'unless', 'although', 'despite'], x(
+      'Condition simple → « if ». « Unless » donnerait le sens inverse.',
+      'شرط بسيط ← «if». أما «unless» فتعطي المعنى المعاكس.',
+      'Simple condition → “if”.',
+      'Condición simple → «if». «Unless» daría el sentido contrario.',
+    )),
+    g('b2-cd-s2-q5', 4, 'The machine stops automatically if it ___.', ['overheats', 'overheated', 'would overheat', 'had overheated'], x(
+      'Vérité générale : If + présent, présent.',
+      'حقيقة عامة: If + المضارع ثم المضارع.',
+      'General truth: present + present.',
+      'Verdad general: If + presente, presente.',
+    )),
+    g('b2-cd-s2-q6', 4, 'I would have called you if I ___ your number.', ['had had', 'have', 'had', 'would have'], x(
+      'Passé : If + past perfect (« had had » = avais eu).',
+      'ماضٍ: If + الماضي التام («had had»).',
+      'Past perfect after “if”: “had had”.',
+      'Pasado: If + past perfect («had had» = hubiera tenido).',
+    )),
+    g('b2-cd-s2-q7', 4, '___ the weather is bad, the event will take place indoors.', ['If', 'Unless', 'Whether', 'So that'], x(
+      'S’il fait mauvais → intérieur : « If ».',
+      'إذا كان الطقس سيئًا ← في الداخل: «If».',
+      'If bad weather → indoors.',
+      'Si hace mal tiempo → en interior: «If».',
+    )),
+    order('b2-cd-s2-o1', 'We will miss the deadline unless we work this weekend', x('Commence par « We will miss ».', 'ابدأ بـ «We will miss».', 'Start with “We will miss”.', 'Empieza por «We will miss».'), x(
+      'Résultat + unless + présent.',
+      'النتيجة + unless + المضارع.',
+      'Result + unless + present.',
+      'Resultado + unless + presente.',
+    )),
+    respond('b2-cd-s2-l1', 4, 'If it rains tomorrow, will the picnic be cancelled?', ['No, we’ll move it to the cafeteria.', 'It rained a lot yesterday.', 'I like picnics.'], x(
+      'Réponse directe sur le plan B.',
+      'إجابة مباشرة عن الخطة البديلة.',
+      'A direct answer with plan B.',
+      'Respuesta directa sobre el plan B.',
+    )),
+    listen('b2-cd-s2-l2', 'L4', 4, 'Attention, shoppers. If you spend more than 100 dinars today, you will receive a free reusable bag. Please ask for it at any checkout.', 'How can shoppers get a free bag?', ['By spending over 100 dinars', 'By joining a club', 'By returning old bags', 'By shopping online'], x(
+      '« If you spend more than 100 dinars » : la condition.',
+      '«If you spend more than 100 dinars»: هذا هو الشرط.',
+      'Spend over 100 dinars.',
+      '«If you spend more than 100 dinars»: esa es la condición.',
+    )),
+    match('b2-conditionals-w2', ['non-refundable', 'travel-insurance', 'overbooked', 'stopover', 'excess-baggage'], x(
+      'Mots B2 sur les voyages d’affaires : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات B2 حول سفر العمل: راجع مثال كل كلمة في قسم الكلمات.',
+      'B2 words about business travel: review each example in the Words tab.',
+      'Palabras B2 sobre los viajes de negocios: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('b2-cd-s3-q1', 4, 'If the printer ___ again, please call technical support.', ['breaks down', 'will break down', 'broke down', 'would break down'], x(
+      'Condition réelle + impératif → If + présent.',
+      'شرط واقعي + أمر ← If + المضارع.',
+      'Real condition + imperative.',
+      'Condición real + imperativo → If + presente.',
+    )),
+    g('b2-cd-s3-q2', 4, 'She would travel more if she ___ so busy.', ['weren’t', 'isn’t', 'won’t be', 'hasn’t been'], x(
+      'Hypothèse présente : If + prétérit → « weren’t ».',
+      'افتراض في الحاضر: If + الماضي ← «weren’t».',
+      'Unreal present → “weren’t”.',
+      'Hipótesis presente: If + pasado → «weren’t».',
+    )),
+    g('b2-cd-s3-q3', 4, 'If they had checked the figures, they ___ the error.', ['would have noticed', 'will notice', 'noticed', 'would notice'], x(
+      'If + past perfect → would have + participe.',
+      'If + الماضي التام ← would have + اسم المفعول.',
+      'Past unreal → would have noticed.',
+      'If + past perfect → would have + participio.',
+    )),
+    g('b2-cd-s3-q4', 4, 'You won’t get a refund ___ you keep the receipt.', ['unless', 'if', 'as soon as', 'when'], x(
+      'Sans reçu, pas de remboursement → « unless ».',
+      'بدون وصل لا استرداد ← «unless».',
+      'No receipt, no refund → “unless”.',
+      'Sin recibo no hay reembolso → «unless».',
+    )),
+    g('b2-cd-s3-q5', 4, 'We will sign the deal ___ that the price stays the same.', ['provided', 'unless', 'even', 'in case'], x(
+      '« Provided that » = à condition que.',
+      '«Provided that» = بشرط أن.',
+      '“Provided that” = only if.',
+      '«Provided that» = siempre que.',
+    )),
+    g('b2-cd-s3-q6', 4, 'If I were you, I ___ the offer.', ['would accept', 'will accept', 'accept', 'accepted'], x(
+      '« If I were you » (conseil) → would + base verbale.',
+      '«If I were you» (نصيحة) ← would + المصدر.',
+      'Advice: would + verb.',
+      '«If I were you» (consejo) → would + infinitivo.',
+    )),
+    g('b2-cd-s3-q7', 4, 'If the parts arrive by Monday, the repair ___ on Tuesday.', ['will be completed', 'would be completed', 'had been completed', 'completes'], x(
+      'Condition réelle → will ; la réparation subit l’action → passif.',
+      'شرط واقعي ← will، والإصلاح يقع عليه الفعل ← مجهول.',
+      'Real: will + passive.',
+      'Condición real → will; la reparación recibe la acción → pasiva.',
+    )),
+    order('b2-cd-s3-o1', 'If you had asked me I would have helped you', x('Commence par « If you had asked ».', 'ابدأ بـ «If you had asked».', 'Start with “If you had asked”.', 'Empieza por «If you had asked».'), x(
+      'Conditionnel passé complet.',
+      'جملة شرطية في الماضي كاملة.',
+      'A full past conditional.',
+      'Condicional pasada completa.',
+    )),
+    respond('b2-cd-s3-l1', 4, 'What would you do if you lost your badge?', ['I’d ask security for a new one.', 'I lost it last week.', 'It’s a blue badge.'], x(
+      'Hypothèse → réponse avec « I’d » (I would).',
+      'افتراض ← إجابة بـ «I’d» (I would).',
+      'Hypothetical → “I’d”.',
+      'Hipótesis → respuesta con «I’d» (I would).',
+    )),
+    listen('b2-cd-s3-l2', 'L3', 4, 'W: If we hadn’t changed suppliers, we would have saved a lot of time this month.\nM: True, but the new supplier is cheaper. Once they learn our system, things will get faster.', 'What does the man say about the new supplier?', ['It costs less', 'It is faster', 'It is closer', 'It is more experienced'], x(
+      '« The new supplier is cheaper » = moins cher.',
+      '«The new supplier is cheaper» = أرخص.',
+      'It is cheaper.',
+      '«The new supplier is cheaper» = más barato.',
+    )),
+    match('b2-conditionals-w3', ['bid', 'negotiate', 'lead-time', 'unit-price', 'bulk-discount'], x(
+      'Mots B2 sur les achats et la logistique : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات B2 حول المشتريات والخدمات اللوجستية: راجع مثال كل كلمة في قسم الكلمات.',
+      'B2 words about purchasing and logistics: review each example in the Words tab.',
+      'Palabras B2 sobre las compras y la logística: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+);

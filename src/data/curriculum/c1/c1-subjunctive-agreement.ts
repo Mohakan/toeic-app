@@ -1,0 +1,228 @@
+import type { Unit } from '../../../types';
+import { g, lesson, listen, match, order, respond, unit, x } from '../build';
+
+export const c1SubjunctiveAgreement: Unit = unit(
+  {
+    id: 'c1-subjunctive-agreement',
+    emoji: '⚖️',
+    level: 5,
+    part: 'R5',
+    title: x('Subjonctif et accords difficiles', 'الصيغة الافتراضية والمطابقة الصعبة', 'Subjunctive and tricky agreement', 'Subjuntivo y concordancias difíciles'),
+    subtitle: x('Recommend that…, the number of, each, none', 'Recommend that… وthe number of وeach وnone', 'Recommend that…, the number of, each, none', 'Recommend that…, the number of, each, none'),
+    lesson: lesson(
+      x('Employer le subjonctif anglais et accorder le verbe avec les sujets complexes.', 'استعمال الصيغة الافتراضية الإنجليزية ومطابقة الفعل مع الفواعل المعقدة.', 'Use the English subjunctive and agree verbs with complex subjects.', 'Usar el subjuntivo inglés y concordar el verbo con sujetos complejos.'),
+      [
+        x('Après recommend, suggest, insist, require, demand, it is vital / essential that → base verbale (be, have, send), même au passé.', 'بعد recommend وsuggest وinsist وrequire وdemand وit is vital / essential that ← المصدر (be وhave وsend) حتى في الماضي.', 'After “recommend that” etc. → base form.', 'Tras recommend, suggest, insist, require, demand, it is vital / essential that → forma base (be, have, send), incluso en pasado.'),
+        x('Négation : « that he not be late » (pas de do / does).', 'النفي: «that he not be late» (بدون do / does).', 'Negative: “that he not be”.', 'Negación: «that he not be late» (sin do / does).'),
+        x('The number of + pluriel → singulier ; a number of + pluriel → pluriel.', 'The number of + جمع ← مفرد، وa number of + جمع ← جمع.', 'The number of = singular; a number of = plural.', 'The number of + plural → singular; a number of + plural → plural.'),
+        x('Each, every, either, neither, everyone → singulier ; along with / as well as ne changent pas le sujet.', 'each وevery وeither وneither وeveryone ← مفرد، وalong with / as well as لا تغيّر الفاعل.', 'Each/every = singular; “as well as” is ignored.', 'Each, every, either, neither, everyone → singular; along with / as well as no cambian el sujeto.'),
+      ],
+      'The auditor recommended that the company review its expenses.',
+      x('« Review » sans -s : subjonctif.', '«Review» بدون -s: صيغة افتراضية.', '“Review” with no -s: subjunctive.', '«Review» sin -s: subjuntivo.'),
+    ),
+  },
+  [
+    g('c1-sa-q1', 5, 'The consultant recommended that the company ___ its warehouse.', ['relocate', 'relocates', 'relocated', 'will relocate'], x(
+      '« Recommend that » + base verbale, même si le verbe principal est au passé.',
+      '«Recommend that» + المصدر حتى لو كان الفعل الرئيسي في الماضي.',
+      'Subjunctive: base form.',
+      '«Recommend that» + forma base, aunque el verbo principal esté en pasado.',
+    )),
+    g('c1-sa-q2', 5, 'It is vital that every passenger ___ a valid passport.', ['have', 'has', 'had', 'having'], x(
+      '« It is vital that » + subjonctif : « have », pas « has ».',
+      '«It is vital that» + الصيغة الافتراضية: «have» لا «has».',
+      'Base form: have.',
+      '«It is vital that» + subjuntivo: «have», no «has».',
+    )),
+    g('c1-sa-q3', 5, 'A number of employees ___ asked for flexible hours.', ['have', 'has', 'is', 'was'], x(
+      '« A number of » = plusieurs → pluriel.',
+      '«A number of» = عدد من ← جمع.',
+      '“A number of” is plural.',
+      '«A number of» = varios → plural.',
+    )),
+    g('c1-sa-q4', 5, 'Every manager and every assistant ___ required to attend.', ['is', 'are', 'were', 'have been'], x(
+      '« Every … and every … » → singulier.',
+      '«Every … and every …» ← مفرد.',
+      'Every … and every … = singular.',
+      '«Every … and every …» → singular.',
+    )),
+    g('c1-sa-q5', 5, 'The director, as well as her two deputies, ___ attending the summit.', ['is', 'are', 'were', 'have been'], x(
+      '« As well as… » n’ajoute rien au sujet : « The director » → singulier.',
+      '«As well as…» لا تضيف إلى الفاعل: «The director» ← مفرد.',
+      'Ignore “as well as”.',
+      '«As well as…» no suma al sujeto: «The director» → singular.',
+    )),
+    g('c1-sa-q6', 5, 'The union insisted that no employee ___ dismissed without a hearing.', ['be', 'is', 'was', 'will be'], x(
+      '« Insist that » + subjonctif passif : « be dismissed ».',
+      '«Insist that» + صيغة افتراضية مجهولة: «be dismissed».',
+      'Subjunctive passive: be.',
+      '«Insist that» + subjuntivo pasivo: «be dismissed».',
+    )),
+    g('c1-sa-q7', 5, 'None of the information ___ been confirmed yet.', ['has', 'have', 'are', 'were'], x(
+      '« Information » est indénombrable → « none of the information » + singulier.',
+      '«Information» غير معدود ← «none of the information» + مفرد.',
+      'Uncountable noun → singular.',
+      '«Information» es incontable → «none of the information» + singular.',
+    )),
+    order('c1-sa-o1', 'We suggest that he not sign the contract', x('Commence par « We suggest ».', 'ابدأ بـ «We suggest».', 'Start with “We suggest”.', 'Empieza por «We suggest».'), x(
+      'Subjonctif négatif : not + base verbale, sans « does ».',
+      'صيغة افتراضية منفية: not + المصدر بدون «does».',
+      'Negative subjunctive: not sign.',
+      'Subjuntivo negativo: not + forma base, sin «does».',
+    )),
+    respond('c1-sa-l1', 5, 'Did legal really demand that the contract be rewritten?', ['Only the liability clause, actually.', 'They wrote it on paper.', 'Yes, it was legal.'], x(
+      'Réponse qui précise : seule la clause de responsabilité.',
+      'إجابة توضّح: بند المسؤولية فقط.',
+      'Only one clause.',
+      'Respuesta que precisa: solo la cláusula de responsabilidad.',
+    )),
+    listen('c1-sa-l2', 'L4', 5, 'Following the incident in the laboratory, the safety committee has required that all visitors be accompanied at all times and that protective glasses be worn in every testing area.', 'What has the committee required?', ['That visitors always have an escort', 'That the laboratory close', 'That testing stop', 'That staff work from home'], x(
+      '« All visitors be accompanied at all times » = toujours accompagnés.',
+      '«All visitors be accompanied at all times» = مرافقة دائمة.',
+      'Visitors must be accompanied.',
+      '«All visitors be accompanied at all times» = siempre acompañados.',
+    )),
+    match('c1-subjunctive-agreement-w1', ['stipulate', 'indemnify', 'statute', 'plaintiff', 'defendant'], x(
+      'Mots C1 sur le droit et les contrats : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول القانون والعقود: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about law and contracts: review each example in the Words tab.',
+      'Palabras C1 sobre el derecho y los contratos: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-sa-s2-q1', 5, 'The board has proposed that the annual meeting ___ held online.', ['be', 'is', 'will be', 'being'], x(
+      '« Propose that » + subjonctif passif : « be held ».',
+      '«Propose that» + صيغة افتراضية مجهولة: «be held».',
+      'Base “be” after “propose that”.',
+      '«Propose that» + subjuntivo pasivo: «be held».',
+    )),
+    g('c1-sa-s2-q2', 5, 'It is essential that the client ___ informed before Friday.', ['be', 'is', 'was', 'has been'], x(
+      '« It is essential that » + « be + participe ».',
+      '«It is essential that» + «be + اسم المفعول».',
+      'Subjunctive: be informed.',
+      '«It is essential that» + «be + participio».',
+    )),
+    g('c1-sa-s2-q3', 5, 'The number of applicants ___ doubled this year.', ['has', 'have', 'are', 'were'], x(
+      '« The number of » → singulier.',
+      '«The number of» ← مفرد.',
+      'Singular with “the number of”.',
+      '«The number of» → singular.',
+    )),
+    g('c1-sa-s2-q4', 5, 'Neither of the proposals ___ acceptable to the committee.', ['is', 'are', 'were', 'have been'], x(
+      '« Neither of » + pluriel → verbe au singulier (registre soutenu).',
+      '«Neither of» + جمع ← فعل مفرد (أسلوب رسمي).',
+      '“Neither of” = singular.',
+      '«Neither of» + plural → verbo en singular (registro formal).',
+    )),
+    g('c1-sa-s2-q5', 5, 'The manager asked that each employee ___ a copy of the new code.', ['sign', 'signs', 'signed', 'signing'], x(
+      '« Ask that » + subjonctif → « sign ».',
+      '«Ask that» + صيغة افتراضية ← «sign».',
+      'Base form after “ask that”.',
+      '«Ask that» + subjuntivo → «sign».',
+    )),
+    g('c1-sa-s2-q6', 5, 'Ten thousand dinars ___ a reasonable price for this machine.', ['is', 'are', 'were', 'have been'], x(
+      'Une somme d’argent est vue comme un tout → singulier.',
+      'المبلغ المالي يُعامل ككلّ ← مفرد.',
+      'A sum of money is singular.',
+      'Una cantidad de dinero se ve como un todo → singular.',
+    )),
+    g('c1-sa-s2-q7', 5, 'The team, along with its supervisor, ___ been praised for its work.', ['has', 'have', 'are', 'were'], x(
+      '« Along with » ne change pas le sujet « The team » → singulier.',
+      '«Along with» لا تغيّر الفاعل «The team» ← مفرد.',
+      'Ignore “along with”.',
+      '«Along with» no cambia el sujeto «The team» → singular.',
+    )),
+    order('c1-sa-s2-o1', 'It is crucial that the data be protected', x('Commence par « It is crucial ».', 'ابدأ بـ «It is crucial».', 'Start with “It is crucial”.', 'Empieza por «It is crucial».'), x(
+      'It is crucial that + sujet + be + participe.',
+      'It is crucial that + فاعل + be + اسم المفعول.',
+      'Subjunctive passive.',
+      'It is crucial that + sujeto + be + participio.',
+    )),
+    respond('c1-sa-s2-l1', 5, 'Has everyone in the department been informed?', ['Everyone except the new interns.', 'The department is large.', 'Yes, it’s informal.'], x(
+      'Réponse précise avec une exception.',
+      'إجابة دقيقة مع استثناء.',
+      'All but the interns.',
+      'Respuesta precisa con una excepción.',
+    )),
+    listen('c1-sa-s2-l2', 'L3', 5, 'M: The client is demanding that we deliver the full order by Monday.\nW: That’s impossible. But I’d suggest that we send half on Monday and the rest on Wednesday.', 'What does the woman propose?', ['Delivering the order in two parts', 'Cancelling the order', 'Delivering everything on Wednesday', 'Asking another supplier'], x(
+      'La moitié lundi, le reste mercredi : livraison en deux fois.',
+      'النصف يوم الاثنين والباقي يوم الأربعاء: تسليم على دفعتين.',
+      'Two deliveries.',
+      'La mitad el lunes y el resto el miércoles: entrega en dos partes.',
+    )),
+    match('c1-subjunctive-agreement-w2', ['retention', 'succession-planning', 'severance-package', 'grievance', 'headcount'], x(
+      'Mots C1 sur les ressources humaines : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول الموارد البشرية: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about human resources: review each example in the Words tab.',
+      'Palabras C1 sobre los recursos humanos: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-sa-s3-q1', 5, 'The doctor advised that he ___ more rest.', ['take', 'takes', 'took', 'taking'], x(
+      '« Advise that » + subjonctif → « take ».',
+      '«Advise that» + صيغة افتراضية ← «take».',
+      'Base form: take.',
+      '«Advise that» + subjuntivo → «take».',
+    )),
+    g('c1-sa-s3-q2', 5, 'We request that payment ___ made within thirty days.', ['be', 'is', 'will be', 'was'], x(
+      '« Request that » + « be made ».',
+      'بعد «Request that» نستعمل المصدر: «be made».',
+      'Subjunctive passive: be made.',
+      '«Request that» + «be made».',
+    )),
+    g('c1-sa-s3-q3', 5, 'Either the invoices or the receipt ___ missing from the file.', ['is', 'are', 'were', 'have been'], x(
+      'Accord avec le sujet le plus proche : « the receipt » → singulier.',
+      'المطابقة مع الفاعل الأقرب: «the receipt» ← مفرد.',
+      'Nearer subject: receipt.',
+      'Concordancia con el sujeto más cercano: «the receipt» → singular.',
+    )),
+    g('c1-sa-s3-q4', 5, 'The majority of the shareholders ___ in favor of the merger.', ['are', 'is', 'was', 'has been'], x(
+      '« The majority of » + nom pluriel → pluriel.',
+      '«The majority of» + اسم جمع ← جمع.',
+      'Plural noun → plural verb.',
+      '«The majority of» + sustantivo plural → plural.',
+    )),
+    g('c1-sa-s3-q5', 5, 'It is important that the meeting not ___ beyond five o’clock.', ['run', 'runs', 'ran', 'running'], x(
+      'Subjonctif négatif : « not run ».',
+      'صيغة افتراضية منفية: «not run».',
+      'Negative subjunctive.',
+      'Subjuntivo negativo: «not run».',
+    )),
+    g('c1-sa-s3-q6', 5, 'Statistics ___ a compulsory course for all economics students.', ['is', 'are', 'were', 'have'], x(
+      'Nom de matière en -s (statistics, economics) → singulier.',
+      'اسم مادة ينتهي بـ -s (statistics) ← مفرد.',
+      'A subject name is singular.',
+      'Nombre de asignatura en -s (statistics, economics) → singular.',
+    )),
+    g('c1-sa-s3-q7', 5, 'One of our suppliers ___ raised its prices twice this year.', ['has', 'have', 'are', 'were'], x(
+      '« One of » + pluriel → le sujet est « one » → singulier.',
+      '«One of» + جمع ← الفاعل «one» ← مفرد.',
+      'The subject is “one”.',
+      '«One of» + plural → el sujeto es «one» → singular.',
+    )),
+    order('c1-sa-s3-o1', 'The client insisted that the price remain fixed', x('Commence par « The client ».', 'ابدأ بـ «The client».', 'Start with “The client”.', 'Empieza por «The client».'), x(
+      'Insist that + sujet + base verbale (remain).',
+      'Insist that + فاعل + المصدر (remain).',
+      'Subjunctive: remain.',
+      'Insist that + sujeto + forma base (remain).',
+    )),
+    respond('c1-sa-s3-l1', 5, 'Is it necessary that I attend the whole training?', ['Only the morning session is mandatory.', 'The training is in Room 4.', 'Yes, I attended it.'], x(
+      'Réponse nuancée : seule la matinée est obligatoire.',
+      'إجابة دقيقة: الفترة الصباحية فقط إجبارية.',
+      'Only the morning is required.',
+      'Respuesta matizada: solo la mañana es obligatoria.',
+    )),
+    listen('c1-sa-s3-l2', 'L4', 5, 'A number of you have asked about the new parking rules. The building management has insisted that every vehicle display a permit from Monday. Permits can be collected at reception until Friday.', 'What must drivers do from Monday?', ['Show a parking permit', 'Park outside the building', 'Pay at reception every day', 'Share their cars'], x(
+      '« Every vehicle display a permit » = afficher un badge.',
+      '«Every vehicle display a permit» = وضع تصريح ظاهر.',
+      'Display a permit.',
+      '«Every vehicle display a permit» = mostrar un permiso.',
+    )),
+    match('c1-subjunctive-agreement-w3', ['due-diligence', 'null-and-void', 'force-majeure', 'whistleblower', 'notwithstanding'], x(
+      'Mots C1 sur le droit et les contrats : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول القانون والعقود: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about law and contracts: review each example in the Words tab.',
+      'Palabras C1 sobre el derecho y los contratos: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+);

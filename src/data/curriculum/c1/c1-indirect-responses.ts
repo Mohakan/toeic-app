@@ -1,0 +1,227 @@
+import type { Unit } from '../../../types';
+import { lesson, listen, match, respond, unit, x } from '../build';
+
+export const c1IndirectResponses: Unit = unit(
+  {
+    id: 'c1-indirect-responses',
+    emoji: '🗣️',
+    level: 5,
+    part: 'L2 · L3',
+    title: x('Réponses indirectes', 'الإجابات غير المباشرة', 'Indirect responses', 'Respuestas indirectas'),
+    subtitle: x('Parties 2 et 3 : comprendre ce qui n’est pas dit', 'الجزءان 2 و3: فهم ما لم يُقل', 'Parts 2 and 3: understand what is not said', 'Partes 2 y 3: entender lo que no se dice'),
+    lesson: lesson(
+      x('Repérer la bonne réponse quand elle ne contient ni « yes » ni « no » ni les mots de la question.', 'تحديد الإجابة الصحيحة حين لا تتضمن «yes» ولا «no» ولا كلمات السؤال.', 'Find the answer when it has no yes/no and no repeated words.', 'Encontrar la respuesta correcta cuando no contiene «yes», «no» ni las palabras de la pregunta.'),
+      [
+        x('Au niveau avancé, la bonne réponse est souvent une question en retour, une condition ou un renvoi : « Let me check with finance. »', 'في المستوى المتقدم كثيرًا ما تكون الإجابة سؤالًا مقابلًا أو شرطًا أو إحالة: «Let me check with finance.»', 'Often a counter-question, condition or referral.', 'En nivel avanzado, la respuesta correcta suele ser otra pregunta, una condición o una derivación: «Let me check with finance.»'),
+        x('Méfie-toi des réponses qui reprennent un mot de la question ou un mot proche par le son.', 'احذر من الإجابات التي تكرر كلمة من السؤال أو كلمة قريبة صوتيًا.', 'Beware of repeated or similar-sounding words.', 'Desconfía de las respuestas que repiten una palabra de la pregunta o una que suena parecido.'),
+        x('Dans les conversations, le ton (surprise, ironie, hésitation) indique l’opinion réelle.', 'في المحادثات تدل النبرة (دهشة، سخرية، تردد) على الرأي الحقيقي.', 'Tone shows the real opinion.', 'En las conversaciones, el tono (sorpresa, ironía, duda) revela la opinión real.'),
+      ],
+      'Q: Are we still on for lunch tomorrow? A: My flight was moved to the morning.',
+      x('Réponse indirecte = non, il ne pourra pas venir.', 'إجابة غير مباشرة = لا، لن يستطيع الحضور.', 'Indirect = no, he can’t come.', 'Respuesta indirecta = no, no podrá ir.'),
+    ),
+  },
+  [
+    respond('c1-ir-l1', 5, 'Are we still on for lunch tomorrow?', ['My flight was moved to the morning, unfortunately.', 'I had lunch at noon.', 'It’s on the table.'], x(
+      'Réponse indirecte : il ne pourra pas venir.',
+      'إجابة غير مباشرة: لن يستطيع الحضور.',
+      'An indirect no.',
+      'Respuesta indirecta: no podrá ir.',
+    )),
+    respond('c1-ir-l2', 5, 'Should we accept the supplier’s new terms?', ['What did legal say about the penalty clause?', 'The supplier is in Sousse.', 'Yes, it’s a new term.'], x(
+      'Réponse par une question pertinente : il faut l’avis juridique d’abord.',
+      'إجابة بسؤال مناسب: يجب رأي القسم القانوني أولًا.',
+      'A relevant counter-question.',
+      'Respuesta con una pregunta pertinente: primero hace falta la opinión jurídica.',
+    )),
+    respond('c1-ir-l3', 5, 'How much will the renovation cost?', ['We’re still waiting for the contractors’ quotes.', 'It took three months.', 'The renovation looks great.'], x(
+      'On ne connaît pas encore le prix : devis attendus.',
+      'السعر غير معروف بعد: في انتظار عروض الأسعار.',
+      'Not known yet.',
+      'Aún no se sabe el precio: esperan los presupuestos.',
+    )),
+    respond('c1-ir-l4', 5, 'Is the projector in Room 3 working again?', ['I’d bring your laptop’s adapter just in case.', 'Room 3 is booked.', 'It works in projects.'], x(
+      'Réponse prudente qui laisse entendre un doute.',
+      'إجابة حذرة توحي بالشك.',
+      'A cautious hint.',
+      'Respuesta prudente que deja entrever una duda.',
+    )),
+    respond('c1-ir-l5', 5, 'Who approved this expense?', ['It was signed before I joined the team.', 'About two thousand dinars.', 'It was very expensive.'], x(
+      'Il ne sait pas, mais explique pourquoi.',
+      'لا يعرف لكنه يشرح السبب.',
+      'He doesn’t know, and says why.',
+      'No lo sabe, pero explica por qué.',
+    )),
+    respond('c1-ir-l6', 5, 'Why don’t we ask Nadia to lead the project?', ['She’s already handling two accounts.', 'Because she’s the project leader.', 'The lead is in the drawer.'], x(
+      'Objection implicite : elle est déjà très occupée.',
+      'اعتراض ضمني: إنها مشغولة جدًا.',
+      'Implicit objection.',
+      'Objeción implícita: ya está muy ocupada.',
+    )),
+    listen('c1-ir-l7', 'L3', 5, 'M: The client wants the full report by Wednesday instead of Friday.\nW: Wednesday? Half the data hasn’t even come in yet.\nM: I know. I’ll see if they’d accept a summary first.', 'What does the woman imply?', ['The new deadline is not realistic', 'The data is complete', 'Friday is too late', 'The client is right'], x(
+      'Surprise + manque de données : mercredi est irréaliste.',
+      'دهشة + نقص المعطيات: الأربعاء غير واقعي.',
+      'Wednesday is unrealistic.',
+      'Sorpresa + falta de datos: el miércoles no es realista.',
+    )),
+    listen('c1-ir-l8', 'L3', 5, 'W: Did you see the new office layout?\nM: I did. Let’s just say I’ll be buying noise-cancelling headphones.', 'What does the man mean?', ['The new office will be noisy', 'He likes music', 'He has bought headphones already', 'The layout is excellent'], x(
+      'Ironie : l’open space sera bruyant.',
+      'سخرية: الفضاء المفتوح سيكون صاخبًا.',
+      'Ironic: it will be noisy.',
+      'Ironía: la oficina abierta será ruidosa.',
+    )),
+    listen('c1-ir-l9', 'L3', 5, 'M: Are you going to apply for the position in Montreal?\nW: I’m tempted, but my children have just started school here.\nM: You could always ask about starting next year.', 'What does the man suggest?', ['Asking about a later start date', 'Moving with the children now', 'Refusing the position', 'Applying for a local job'], x(
+      '« Ask about starting next year » = un départ décalé.',
+      '«Ask about starting next year»: موعد بداية لاحق.',
+      'A later start.',
+      '«Ask about starting next year»: empezar más tarde.',
+    )),
+    listen('c1-ir-l10', 'L3', 5, 'W: The marketing agency’s proposal is very creative.\nM: Creative, yes. But did you see the price?\nW: I did. Maybe we can keep the concept and do the production ourselves.', 'What does the woman propose?', ['Using the idea but producing it internally', 'Rejecting the concept', 'Paying the full price', 'Finding another agency'], x(
+      '« Keep the concept and do the production ourselves ».',
+      '«Keep the concept and do the production ourselves»: الإنتاج داخليًا.',
+      'Keep the idea, produce in-house.',
+      '«Keep the concept and do the production ourselves»: producir internamente.',
+    )),
+    match('c1-indirect-responses-w1', ['touch-base', 'keep-in-the-loop', 'action-item', 'accountability', 'achieve'], x(
+      'Mots C1 sur le travail de bureau : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول العمل المكتبي: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about office work: review each example in the Words tab.',
+      'Palabras C1 sobre el trabajo de oficina: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    respond('c1-ir-s2-l1', 5, 'Can you send me the slides before the meeting?', ['They’re already in your inbox.', 'The meeting slides at noon.', 'I can’t meet you.'], x(
+      'Réponse indirecte : c’est déjà fait.',
+      'إجابة غير مباشرة: تم ذلك بالفعل.',
+      'Already done.',
+      'Respuesta indirecta: ya está hecho.',
+    )),
+    respond('c1-ir-s2-l2', 5, 'Do you think the client will renew the contract?', ['That depends on how the audit goes.', 'He renewed his passport.', 'The contract is long.'], x(
+      'Réponse conditionnelle.',
+      'إجابة شرطية.',
+      'It depends on the audit.',
+      'Respuesta condicional.',
+    )),
+    respond('c1-ir-s2-l3', 5, 'Where are we holding the training this year?', ['Hasn’t HR sent the details yet?', 'Training is every year.', 'We held it tightly.'], x(
+      'Question en retour : l’information devrait déjà être arrivée.',
+      'سؤال مقابل: كان يجب أن تصل المعلومة.',
+      'Counter-question.',
+      'Pregunta de vuelta: la información ya debería haber llegado.',
+    )),
+    respond('c1-ir-s2-l4', 5, 'Isn’t it too late to change the venue?', ['Not if we confirm by Friday.', 'The venue is late.', 'It’s ten o’clock.'], x(
+      'Condition qui nuance.',
+      'شرط يدقّق المعلومة.',
+      'Possible on one condition.',
+      'Una condición que matiza.',
+    )),
+    respond('c1-ir-s2-l5', 5, 'Why is the warehouse so empty?', ['Most of the stock was shipped yesterday.', 'It’s near the port.', 'I emptied my bag.'], x(
+      'Cause logique.',
+      'سبب منطقي: شُحنت البضاعة.',
+      'A logical cause.',
+      'Causa lógica.',
+    )),
+    respond('c1-ir-s2-l6', 5, 'Would you mind reviewing my cover letter?', ['I’ll have time after four.', 'I don’t mind the cover.', 'Yes, I reviewed it.'], x(
+      'Accord implicite avec un moment précis.',
+      'موافقة ضمنية مع وقت محدد.',
+      'Yes, later today.',
+      'Aceptación implícita con un momento concreto.',
+    )),
+    listen('c1-ir-s2-l7', 'L3', 5, 'W: How did the negotiation go?\nM: Well, we didn’t get the price we wanted, but they agreed to pay in thirty days instead of ninety.\nW: Honestly, that might be worth more to us.', 'What does the woman think?', ['The payment terms are a valuable gain', 'The negotiation failed', 'The price is too low', 'Ninety days is better'], x(
+      'Paiement plus rapide = meilleure trésorerie : gain jugé précieux.',
+      'دفع أسرع = سيولة أفضل: مكسب ثمين.',
+      'Faster payment is valuable.',
+      'Cobro más rápido = mejor tesorería: una ganancia valiosa.',
+    )),
+    listen('c1-ir-s2-l8', 'L3', 5, 'M: I’ve booked the team dinner at Dar El Jeld.\nW: Have you seen their prices?\nM: Don’t worry, the department is paying.', 'Why does the woman mention the prices?', ['She thinks the restaurant is expensive', 'She wants to pay', 'She has never been there', 'She prefers a cheaper menu for herself'], x(
+      'Elle s’inquiète du coût ; il la rassure.',
+      'تقلق من الكلفة وهو يطمئنها.',
+      'She worries about cost.',
+      'Le preocupa el coste; él la tranquiliza.',
+    )),
+    listen('c1-ir-s2-l9', 'L3', 5, 'W: Our website crashed again during the sale.\nM: Third time this year. I think it’s time we talked to another hosting company.\nW: I’ll ask procurement for a list.', 'What will the woman do?', ['Request a list of possible providers', 'Fix the website herself', 'Cancel the sale', 'Call the current host'], x(
+      '« I’ll ask procurement for a list ».',
+      '«I’ll ask procurement for a list»: طلب قائمة بالمزودين.',
+      'Ask for a list of providers.',
+      '«I’ll ask procurement for a list»: pedir una lista de proveedores.',
+    )),
+    listen('c1-ir-s2-l10', 'L3', 5, 'M: Did Mr. Aziz agree to speak at the conference?\nW: He said he’d love to, if we can cover his travel costs.\nM: That shouldn’t be a problem.', 'What condition did Mr. Aziz set?', ['His travel expenses must be paid', 'He must speak first', 'He wants a larger fee', 'He needs a translator'], x(
+      '« If we can cover his travel costs ».',
+      '«If we can cover his travel costs»: تغطية مصاريف السفر.',
+      'Travel costs covered.',
+      '«If we can cover his travel costs»: cubrir sus gastos de viaje.',
+    )),
+    match('c1-indirect-responses-w2', ['relocation', 'expatriate', 'concierge', 'lodging', 'rebook'], x(
+      'Mots C1 sur les voyages d’affaires : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول سفر العمل: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about business travel: review each example in the Words tab.',
+      'Palabras C1 sobre los viajes de negocios: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    respond('c1-ir-s3-l1', 5, 'Has the new manager been announced?', ['There’s a staff meeting at three.', 'He’s a good manager.', 'The announcement was loud.'], x(
+      'Indirect : l’annonce aura sans doute lieu à la réunion.',
+      'غير مباشر: الإعلان سيكون على الأرجح في الاجتماع.',
+      'It will be at the meeting.',
+      'Indirecta: probablemente se anunciará en la reunión.',
+    )),
+    respond('c1-ir-s3-l2', 5, 'Which hotel should I book for the trade fair?', ['Most of our clients stay at the Royal.', 'I booked it in March.', 'The fair is fair.'], x(
+      'Conseil implicite : choisir le Royal.',
+      'نصيحة ضمنية: اختيار فندق رويال.',
+      'Implicit advice.',
+      'Consejo implícito: elegir el Royal.',
+    )),
+    respond('c1-ir-s3-l3', 5, 'Why hasn’t the payment arrived?', ['Let me check with accounts.', 'It arrived on time.', 'The payment is monthly.'], x(
+      'Renvoi au service compétent.',
+      'إحالة إلى المصلحة المختصة.',
+      'A referral to accounts.',
+      'Derivación al servicio competente.',
+    )),
+    respond('c1-ir-s3-l4', 5, 'Shall I print the contracts now?', ['The client still wants a few changes.', 'Yes, the printer is new.', 'I contracted a cold.'], x(
+      'Non, implicitement : pas encore finalisés.',
+      'لا ضمنيًا: لم تُستكمل بعد.',
+      'Not yet: changes pending.',
+      'No, implícitamente: aún no están finalizados.',
+    )),
+    respond('c1-ir-s3-l5', 5, 'When are you moving to the Sousse office?', ['That depends on when my replacement starts.', 'I moved the chairs.', 'Sousse is on the coast.'], x(
+      'Réponse conditionnelle sur la date.',
+      'إجابة شرطية بخصوص الموعد.',
+      'A conditional date.',
+      'Respuesta condicional sobre la fecha.',
+    )),
+    respond('c1-ir-s3-l6', 5, 'You’ve met the new CFO, haven’t you?', ['Only briefly, at the reception last week.', 'Yes, I met my target.', 'The CFO is new.'], x(
+      'Oui, avec nuance et contexte.',
+      'نعم مع توضيح وسياق.',
+      'Yes, briefly.',
+      'Sí, con un matiz y el contexto.',
+    )),
+    listen('c1-ir-s3-l7', 'L3', 5, 'W: Do you think we should hire an external trainer?\nM: Samir gave the same course last year, and the feedback was excellent.\nW: Good point. Let’s ask him first.', 'What does the man imply?', ['An internal employee could do the training', 'The course is too expensive', 'The feedback was poor', 'Samir has left the company'], x(
+      'Samir (collègue) a déjà donné le cours avec succès.',
+      'سمير (زميل) قدّم الدورة بنجاح من قبل.',
+      'A colleague can do it.',
+      'Samir (compañero) ya dio el curso con éxito.',
+    )),
+    listen('c1-ir-s3-l8', 'L3', 5, 'M: The board liked your proposal.\nW: Really? They didn’t ask a single question.\nM: With this board, that’s usually a good sign.', 'What does the man mean?', ['Silence from the board is positive', 'The board was not listening', 'The proposal was rejected', 'The woman should ask questions'], x(
+      'Pas de questions = signe favorable avec ce conseil.',
+      'غياب الأسئلة = علامة إيجابية مع هذا المجلس.',
+      'No questions is a good sign.',
+      'Ninguna pregunta = buena señal con este consejo.',
+    )),
+    listen('c1-ir-s3-l9', 'L3', 5, 'W: Your train gets in at nine, and the meeting starts at nine fifteen.\nM: The station is a twenty-minute walk from the office, isn’t it?\nW: Yes. I’ll send a taxi to meet you.', 'What problem is mentioned?', ['The man might arrive late', 'The train is cancelled', 'The meeting has moved', 'The taxi is expensive'], x(
+      'Train à 9 h + 20 min à pied > 9 h 15 → risque de retard.',
+      'القطار على 9:00 + 20 دقيقة مشيًا > 9:15 ← خطر التأخر.',
+      'He could be late.',
+      'Tren a las 9:00 + 20 min a pie > 9:15 → riesgo de llegar tarde.',
+    )),
+    listen('c1-ir-s3-l10', 'L3', 5, 'M: Should we translate the catalog into Spanish?\nW: Our sales in Spain doubled last year.\nM: Then I’ll ask for a quote from the translation agency.', 'Why does the woman mention sales in Spain?', ['To support the translation idea', 'To reject the idea', 'To change the subject', 'To ask for a raise'], x(
+      'Forte croissance en Espagne → la traduction se justifie.',
+      'نمو قوي في إسبانيا ← الترجمة مبررة.',
+      'It supports translating.',
+      'Fuerte crecimiento en España → la traducción está justificada.',
+    )),
+    match('c1-indirect-responses-w3', ['upskill', 'talent-pool', 'attrition', 'secondment', 'exit-interview'], x(
+      'Mots C1 sur les ressources humaines : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول الموارد البشرية: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about human resources: review each example in the Words tab.',
+      'Palabras C1 sobre los recursos humanos: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+);

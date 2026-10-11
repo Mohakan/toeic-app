@@ -1,0 +1,228 @@
+import type { Unit } from '../../../types';
+import { g, lesson, listen, match, order, respond, unit, x } from '../build';
+
+export const c1Inversion: Unit = unit(
+  {
+    id: 'c1-inversion',
+    emoji: '🔁',
+    level: 5,
+    part: 'R5',
+    title: x('Inversion et mise en relief', 'القلب والتوكيد', 'Inversion and emphasis', 'Inversión y énfasis'),
+    subtitle: x('Never, not only, no sooner, what…', 'Never وnot only وno sooner وwhat…', 'Never, not only, no sooner, what…', 'Never, not only, no sooner, what…'),
+    lesson: lesson(
+      x('Reconnaître et construire les phrases inversées et emphatiques du registre soutenu.', 'التعرف على جمل القلب والتوكيد في الأسلوب الرسمي وبناؤها.', 'Recognize and build formal inverted and emphatic sentences.', 'Reconocer y construir las frases invertidas y enfáticas del registro formal.'),
+      [
+        x('Expression négative ou restrictive en tête (never, rarely, only then, not until) → auxiliaire + sujet.', 'تعبير نفي أو حصر في البداية (never وrarely وonly then وnot until) ← الفعل المساعد + الفاعل.', 'Negative opener → auxiliary + subject.', 'Expresión negativa o restrictiva al inicio (never, rarely, only then, not until) → auxiliar + sujeto.'),
+        x('Sans auxiliaire dans la phrase de départ, on ajoute do / does / did : « Rarely does he… ».', 'إذا لم يوجد فعل مساعد نضيف do / does / did: «Rarely does he…».', 'Add do/does/did if needed.', 'Si la frase no tiene auxiliar, se añade do / does / did: «Rarely does he…».'),
+        x('Paires fixes : no sooner … than ; hardly / scarcely … when ; not only … but also.', 'أزواج ثابتة: no sooner … than وhardly / scarcely … when وnot only … but also.', 'Fixed pairs: no sooner…than, hardly…when.', 'Pares fijos: no sooner … than; hardly / scarcely … when; not only … but also.'),
+        x('Mise en relief : « It was Ms. Ali who… », « What surprised us was… ».', 'التوكيد: «It was Ms. Ali who…» و«What surprised us was…».', 'Cleft: It was … who; What … was.', 'Énfasis: «It was Ms. Ali who…», «What surprised us was…».'),
+      ],
+      'Never before had the company received so many applications.',
+      x('« Never before » en tête → « had the company received ».', '«Never before» في البداية ← «had the company received».', '“Never before” → had + subject.', '«Never before» al inicio → «had the company received».'),
+    ),
+  },
+  [
+    g('c1-iv-q1', 5, 'Never before ___ such a large order from a single client.', ['had we received', 'we had received', 'we received', 'received we'], x(
+      '« Never before » en tête → inversion : had + sujet + participe.',
+      '«Never before» في البداية ← قلب: had + فاعل + اسم المفعول.',
+      'Inversion after “Never before”.',
+      '«Never before» al inicio → inversión: had + sujeto + participio.',
+    )),
+    g('c1-iv-q2', 5, 'Hardly had the CEO finished her speech ___ journalists began asking questions.', ['when', 'than', 'that', 'then'], x(
+      'Paire fixe : « Hardly … when ». (« No sooner » irait avec « than ».)',
+      'زوج ثابت: «Hardly … when»، أما «No sooner» فمع «than».',
+      'Hardly … when.',
+      'Par fijo: «Hardly … when». («No sooner» iría con «than».)',
+    )),
+    g('c1-iv-q3', 5, 'Only by cutting costs ___ survive the crisis.', ['can the firm', 'the firm can', 'the firm could', 'does the firm can'], x(
+      '« Only by + -ing » en tête → inversion modale : can + sujet.',
+      '«Only by + -ing» في البداية ← قلب مع الفعل الناقص: can + فاعل.',
+      'Only by … → can + subject.',
+      '«Only by + -ing» al inicio → inversión con el modal: can + sujeto.',
+    )),
+    g('c1-iv-q4', 5, 'Little ___ that the takeover had already been agreed.', ['did the staff know', 'the staff knew', 'knew the staff', 'the staff did know'], x(
+      '« Little » (= pas du tout) en tête → inversion avec « did ».',
+      '«Little» (= إطلاقًا) في البداية ← قلب مع «did».',
+      '“Little” → did + subject + know.',
+      '«Little» (= en absoluto) al inicio → inversión con «did».',
+    )),
+    g('c1-iv-q5', 5, 'It was Ms. Gharbi ___ first noticed the error in the accounts.', ['who', 'which', 'what', 'whom'], x(
+      'Phrase clivée « It was + personne + who » (sujet de « noticed »).',
+      'جملة توكيدية «It was + شخص + who» (فاعل «noticed»).',
+      'Cleft: It was … who.',
+      'Oración escindida «It was + persona + who» (sujeto de «noticed»).',
+    )),
+    g('c1-iv-q6', 5, '___ surprised the investors was the speed of the recovery.', ['What', 'That', 'Which', 'It'], x(
+      'Pseudo-clivée : « What + proposition + was… ».',
+      'جملة توكيدية: «What + جملة + was…».',
+      'What … was …',
+      'Pseudoescindida: «What + oración + was…».',
+    )),
+    g('c1-iv-q7', 5, 'Not only ___ late, but it also arrived damaged.', ['was the delivery', 'the delivery was', 'did the delivery', 'the delivery did'], x(
+      '« Not only » en tête → inversion ; avec « be », on inverse simplement « was ».',
+      '«Not only» في البداية ← قلب، ومع «be» نقدّم «was» فقط.',
+      'With “be”: was + subject.',
+      '«Not only» al inicio → inversión; con «be» basta con anteponer «was».',
+    )),
+    order('c1-iv-o1', 'Rarely do we see such loyal customers', x('Commence par « Rarely ».', 'ابدأ بـ «Rarely».', 'Start with “Rarely”.', 'Empieza por «Rarely».'), x(
+      'Rarely + do + sujet + verbe.',
+      'Rarely + do + فاعل + فعل.',
+      'Rarely + do + subject + verb.',
+      'Rarely + do + sujeto + verbo.',
+    )),
+    respond('c1-iv-l1', 5, 'Only after the inspection will the factory reopen, is that right?', ['Yes, and that’s scheduled for Thursday.', 'The factory is very old.', 'I opened it after lunch.'], x(
+      'Confirmation + date de l’inspection.',
+      'تأكيد + موعد التفتيش.',
+      'Confirms and gives the date.',
+      'Confirmación + fecha de la inspección.',
+    )),
+    listen('c1-iv-l2', 'L4', 5, 'Not once in our forty-year history have we had to recall a product. So, while this voluntary recall concerns only a small batch, we are taking it extremely seriously.', 'What is suggested about the company?', ['Recalls are very unusual for it', 'It recalls products every year', 'It is a new company', 'The recall is compulsory'], x(
+      '« Not once in our forty-year history » : c’est le premier rappel.',
+      '«Not once in our forty-year history»: هذا أول سحب للمنتجات.',
+      'This is its first recall.',
+      '«Not once in our forty-year history»: es la primera retirada.',
+    )),
+    match('c1-inversion-w1', ['throughput', 'yield', 'scale-up', 'ramp-up', 'retool'], x(
+      'Mots C1 sur la production : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول الإنتاج: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about production: review each example in the Words tab.',
+      'Palabras C1 sobre la producción: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-iv-s2-q1', 5, 'At no time ___ the safety of our passengers.', ['was there any risk to', 'there was any risk to', 'there was no risk to', 'was there no risk to'], x(
+      '« At no time » (négatif) → inversion, sans deuxième négation.',
+      '«At no time» (نفي) ← قلب بدون نفي ثانٍ.',
+      'Inversion, one negative only.',
+      '«At no time» (negativo) → inversión, sin segunda negación.',
+    )),
+    g('c1-iv-s2-q2', 5, 'Only when the contract was signed ___ the news to the press.', ['did they release', 'they released', 'they did release', 'released they'], x(
+      '« Only when + proposition » → inversion dans la principale.',
+      '«Only when + جملة» ← قلب في الجملة الرئيسية.',
+      'Inversion in the main clause.',
+      '«Only when + oración» → inversión en la principal.',
+    )),
+    g('c1-iv-s2-q3', 5, 'Scarcely had the doors opened ___ the shoppers rushed in.', ['when', 'than', 'then', 'that'], x(
+      '« Scarcely … when » (comme « hardly … when »).',
+      '«Scarcely … when» (مثل «hardly … when»).',
+      'Scarcely … when.',
+      '«Scarcely … when» (como «hardly … when»).',
+    )),
+    g('c1-iv-s2-q4', 5, 'So successful ___ that a second edition is planned.', ['was the event', 'the event was', 'did the event', 'the event did'], x(
+      '« So + adjectif » en tête → inversion : was + sujet.',
+      '«So + صفة» في البداية ← قلب: was + فاعل.',
+      'So + adjective → inversion.',
+      '«So + adjetivo» al inicio → inversión: was + sujeto.',
+    )),
+    g('c1-iv-s2-q5', 5, 'It is the after-sales service ___ distinguishes us from our competitors.', ['that', 'what', 'who', 'where'], x(
+      'Clivée « It is + nom + that » : « that » reprend une chose sujet.',
+      'جملة توكيدية «It is + اسم + that»: «that» لغير العاقل فاعلًا.',
+      'It is … that …',
+      'Escindida «It is + sustantivo + that»: «that» retoma una cosa sujeto.',
+    )),
+    g('c1-iv-s2-q6', 5, 'In no way ___ responsible for delays caused by customs.', ['is the carrier', 'the carrier is', 'the carrier isn’t', 'isn’t the carrier'], x(
+      '« In no way » = absolument pas → inversion, pas d’autre négation.',
+      '«In no way» = إطلاقًا ← قلب دون نفي آخر.',
+      '“In no way” + inversion.',
+      '«In no way» = de ningún modo → inversión, sin otra negación.',
+    )),
+    g('c1-iv-s2-q7', 5, 'What the client wants ___ a faster delivery, not a lower price.', ['is', 'are', 'be', 'being'], x(
+      'Proposition en « What » = sujet singulier → « is ».',
+      'جملة «What» فاعل مفرد ← «is».',
+      'A What-clause is singular.',
+      'Una oración con «What» es sujeto singular → «is».',
+    )),
+    order('c1-iv-s2-o1', 'Under no circumstances should this door be left open', x('Commence par « Under no ».', 'ابدأ بـ «Under no».', 'Start with “Under no”.', 'Empieza por «Under no».'), x(
+      'Expression négative + should + sujet + passif.',
+      'تعبير نفي + should + فاعل + مجهول.',
+      'Negative opener + should + subject.',
+      'Expresión negativa + should + sujeto + pasiva.',
+    )),
+    respond('c1-iv-s2-l1', 5, 'Was it Karim who suggested moving the launch?', ['No, it was the regional director.', 'Yes, he moved house.', 'The launch was in May.'], x(
+      'Question clivée → réponse : une autre personne.',
+      'سؤال توكيدي ← الجواب: شخص آخر.',
+      'It names another person.',
+      'Pregunta escindida → respuesta: otra persona.',
+    )),
+    listen('c1-iv-s2-l2', 'L3', 5, 'W: What really impressed the client was how quickly we answered their questions.\nM: Then let’s make sure the support team gets the credit at Friday’s meeting.', 'What does the man want to do?', ['Recognize the support team', 'Answer more questions', 'Meet the client on Friday', 'Hire more support staff'], x(
+      '« Make sure the support team gets the credit » = reconnaître leur travail.',
+      '«Make sure the support team gets the credit» = الإشادة بعمل الفريق.',
+      'Give the team credit.',
+      '«Make sure the support team gets the credit» = reconocer su trabajo.',
+    )),
+    match('c1-inversion-w2', ['positioning', 'segmentation', 'flagship', 'disruptive', 'viral'], x(
+      'Mots C1 sur le marketing : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول التسويق: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about marketing: review each example in the Words tab.',
+      'Palabras C1 sobre el marketing: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-iv-s3-q1', 5, 'Not until the end of the year ___ the full results.', ['will we know', 'we will know', 'we know', 'know we'], x(
+      '« Not until » en tête → inversion avec l’auxiliaire futur « will ».',
+      '«Not until» في البداية ← قلب مع «will».',
+      'Not until … will we know.',
+      '«Not until» al inicio → inversión con el auxiliar de futuro «will».',
+    )),
+    g('c1-iv-s3-q2', 5, 'No sooner had we launched the app ___ users reported a bug.', ['than', 'when', 'then', 'as'], x(
+      '« No sooner … than ».',
+      'تركيب ثابت: «No sooner … than».',
+      'No sooner … than.',
+      '«No sooner … than».',
+    )),
+    g('c1-iv-s3-q3', 5, 'Such ___ the demand that we had to open a second line.', ['was', 'were', 'had', 'did'], x(
+      '« Such was + nom » = la demande était telle que…',
+      '«Such was + اسم» = كان الطلب كبيرًا لدرجة أن…',
+      '“Such was the demand that…”.',
+      '«Such was + sustantivo» = tal era la demanda que…',
+    )),
+    g('c1-iv-s3-q4', 5, 'Only then ___ how serious the problem was.', ['did the manager realize', 'the manager realized', 'the manager did realize', 'realized the manager'], x(
+      '« Only then » en tête → did + sujet + base verbale.',
+      '«Only then» في البداية ← did + فاعل + المصدر.',
+      'Only then + did + subject.',
+      '«Only then» al inicio → did + sujeto + forma base.',
+    )),
+    g('c1-iv-s3-q5', 5, 'It was not until 2019 ___ the company made its first profit.', ['that', 'when', 'which', 'than'], x(
+      'Structure fixe : « It was not until … that … ».',
+      'تركيب ثابت: «It was not until … that …».',
+      'It was not until … that.',
+      'Estructura fija: «It was not until … that …».',
+    )),
+    g('c1-iv-s3-q6', 5, 'Seldom ___ a merger been completed so quickly.', ['has', 'have', 'is', 'did'], x(
+      'Present perfect inversé : has + sujet singulier (a merger) + been.',
+      'مضارع تام مقلوب: has + فاعل مفرد (a merger) + been.',
+      'has + singular subject.',
+      'Present perfect invertido: has + sujeto singular (a merger) + been.',
+    )),
+    g('c1-iv-s3-q7', 5, 'Nowhere ___ more competitive prices than at our online store.', ['will you find', 'you will find', 'you find', 'find you'], x(
+      '« Nowhere » en tête → inversion : will + sujet.',
+      '«Nowhere» في البداية ← قلب: will + فاعل.',
+      'Nowhere + will you.',
+      '«Nowhere» al inicio → inversión: will + sujeto.',
+    )),
+    order('c1-iv-s3-o1', 'It was the price that convinced them', x('Commence par « It was ».', 'ابدأ بـ «It was».', 'Start with “It was”.', 'Empieza por «It was».'), x(
+      'Phrase clivée : It was + élément mis en relief + that.',
+      'جملة توكيدية: It was + العنصر المؤكَّد + that.',
+      'Cleft sentence.',
+      'Oración escindida: It was + elemento resaltado + that.',
+    )),
+    respond('c1-iv-s3-l1', 5, 'Never have I seen the office this quiet.', ['Half the team is at the trade fair.', 'I’ve seen it twice.', 'The office is on the left.'], x(
+      'Explication logique du calme.',
+      'تفسير منطقي للهدوء.',
+      'It explains why.',
+      'Explicación lógica de la tranquilidad.',
+    )),
+    listen('c1-iv-s3-l2', 'L4', 5, 'Rarely do we get the chance to hear from someone who has built three companies from scratch. So please join me in welcoming tonight’s speaker, Ms. Rania Toumi.', 'What is the speaker doing?', ['Introducing a guest', 'Announcing a merger', 'Closing a meeting', 'Describing a product'], x(
+      '« Please join me in welcoming tonight’s speaker » : présentation d’une invitée.',
+      '«Please join me in welcoming tonight’s speaker»: تقديم ضيفة.',
+      'She introduces a speaker.',
+      '«Please join me in welcoming tonight’s speaker»: presenta a una invitada.',
+    )),
+    match('c1-inversion-w3', ['summit', 'symposium', 'delegation', 'moderator', 'proceedings'], x(
+      'Mots C1 sur les événements : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول الفعاليات: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about events: review each example in the Words tab.',
+      'Palabras C1 sobre los eventos: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+);

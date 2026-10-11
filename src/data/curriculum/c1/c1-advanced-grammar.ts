@@ -1,0 +1,215 @@
+import type { Unit } from '../../../types';
+import { g, lesson, match, order, respond, unit, x } from '../build';
+
+export const c1AdvancedGrammar: Unit = unit(
+  {
+    id: 'c1-advanced-grammar',
+    emoji: '🎓',
+    level: 5,
+    part: 'R5',
+    title: x('Grammaire avancée', 'قواعد متقدمة', 'Advanced grammar', 'Gramática avanzada'),
+    subtitle: x('Inversion, subjonctif, conditionnels mixtes', 'القلب والصيغة الافتراضية والشرط المختلط', 'Inversion, subjunctive, mixed conditionals', 'Inversión, subjuntivo, condicionales mixtos'),
+    lesson: lesson(
+      x('Maîtriser les structures qui séparent les scores de 850+.', 'إتقان التراكيب التي تميّز نتائج 850 فما فوق.', 'Master the structures that separate 850+ scores.', 'Dominar las estructuras que marcan la diferencia en las puntuaciones de 850 o más.'),
+      [
+        x('Inversion après une expression négative en tête : Not only did they…, Rarely have we…', 'القلب بعد عبارة نفي في البداية: Not only did they… وRarely have we…', 'Inversion after a fronted negative.', 'Inversión tras una expresión negativa al principio de la frase: Not only did they…, Rarely have we…'),
+        x('« Had + sujet + participe » = if inversé (3e conditionnel).', '«Had + فاعل + اسم المفعول» = شرط مقلوب (النوع الثالث).', '“Had + subject + participle” = inverted if.', '«Had + sujeto + participio» = «if» invertido (condicional de tipo 3).'),
+        x('Après insist / recommend / require that → forme de base : that he be, that it be sent.', 'بعد insist/recommend/require that ← الشكل الأساسي: that he be وthat it be sent.', 'After insist/recommend that → base form.', 'Tras insist / recommend / require that → forma base: that he be, that it be sent.'),
+      ],
+      'Had we known about the delay, we would have informed the client.',
+      x('= If we had known… : conditionnel passé dans la principale.', '= If we had known…: الشرط الماضي في الجملة الرئيسية.', '= If we had known…', '= If we had known…: condicional compuesto en la oración principal.'),
+    ),
+  },
+  [
+    g('c1-ag-q1', 5, 'Only after the audit was completed ___ the extent of the losses.', ['did the board realize', 'the board realized', 'the board did realize', 'realized the board'], x(
+      '« Only after… » en tête de phrase entraîne l’inversion dans la principale : did + sujet + verbe.',
+      '«Only after…» في بداية الجملة يستلزم القلب في الجملة الرئيسية: did + فاعل + فعل.',
+      'Fronted “Only after…” triggers inversion in the main clause: did + subject + verb.',
+      '«Only after…» al principio de la frase provoca inversión en la principal: did + sujeto + verbo.',
+    )),
+    g('c1-ag-q2', 5, 'Had the shipment left on time, we ___ the penalty.', ['would have avoided', 'would avoid', 'had avoided', 'will have avoided'], x(
+      '« Had + sujet + participe » = if inversé (3e conditionnel) → « would have avoided ».',
+      '«Had + فاعل + اسم المفعول» = شرط مقلوب (النوع الثالث) ← «would have avoided».',
+      '“Had + subject + participle” = inverted third conditional → “would have avoided”.',
+      '«Had + sujeto + participio» = «if» invertido (condicional de tipo 3) → «would have avoided».',
+    )),
+    g('c1-ag-q3', 5, 'The committee recommended that every supplier ___ a new safety certificate.', ['obtain', 'obtains', 'obtained', 'will obtain'], x(
+      'Après « recommend that », subjonctif : forme de base sans -s, même avec « every supplier ».',
+      'بعد «recommend that» نستعمل الصيغة الافتراضية: الشكل الأساسي دون -s حتى مع «every supplier».',
+      'After “recommend that”: subjunctive, base form without -s, even with “every supplier”.',
+      'Tras «recommend that», subjuntivo: forma base sin -s, incluso con «every supplier».',
+    )),
+    g('c1-ag-q4', 5, 'The chairman, together with his advisers, ___ expected to arrive at noon.', ['is', 'are', 'were', 'have been'], x(
+      '« Together with his advisers » est une incise : le sujet reste « The chairman » (singulier) → « is ».',
+      '«Together with his advisers» جملة اعتراضية: الفاعل يبقى «The chairman» (مفرد) ← «is».',
+      'The subject is “the chairman”: singular.',
+      '«Together with his advisers» es un inciso: el sujeto sigue siendo «The chairman» (singular) → «is».',
+    )),
+    g('c1-ag-q5', 5, 'If she had accepted the offer last year, she ___ in London now.', ['would be working', 'would have worked', 'will work', 'had worked'], x(
+      'Conditionnel mixte : condition passée (had accepted), conséquence présente (now) → would be.',
+      'شرط مختلط: شرط ماضٍ (had accepted) ونتيجة حاضرة (now) ← would be.',
+      'Mixed conditional: past condition, present result.',
+      'Condicional mixto: condición pasada (had accepted) y consecuencia presente (now) → would be.',
+    )),
+    g('c1-ag-q6', 5, 'Rarely ___ such a strong increase in demand.', ['have we seen', 'we have seen', 'we saw', 'seen we have'], x(
+      'Adverbe négatif en tête (Rarely) → inversion.',
+      'ظرف نفي في البداية (Rarely) ← قلب.',
+      'Fronted “Rarely” → inversion.',
+      'Adverbio negativo al principio (Rarely) → inversión.',
+    )),
+    g('c1-ag-q7', 5, 'After ten years abroad, Mr. Chen is used to ___ meetings in English.', ['leading', 'lead', 'led', 'leads'], x(
+      '« Be used to » (avoir l’habitude de) : « to » est une préposition, suivie de -ing.',
+      '«Be used to» (معتاد على): «to» هنا حرف جر يليه -ing.',
+      '“Be used to”: “to” is a preposition, followed by -ing.',
+      '«Be used to» (estar acostumbrado a): «to» es una preposición, seguida de -ing.',
+    )),
+    order('c1-ag-o1', 'Had we known earlier we would have acted', x('Commence par « Had ».', 'ابدأ بـ «Had».', 'Start with “Had”.', 'Empieza por «Had».'), x(
+      'Inversion : Had + sujet + participe, puis would have + participe.',
+      'القلب: Had + فاعل + اسم المفعول ثم would have + اسم المفعول.',
+      'Had + subject + participle, then would have.',
+      'Inversión: Had + sujeto + participio, y luego would have + participio.',
+    )),
+    match('c1-advanced-grammar-w1', ['liquidity', 'solvent', 'depreciation', 'collateral', 'equity'], x(
+      'Mots C1 sur la finance : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول المالية: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about finance: review each example in the Words tab.',
+      'Palabras C1 sobre las finanzas: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-ag-s2-q1', 5, 'Seldom ___ a candidate with such a broad range of skills.', ['have we interviewed', 'we have interviewed', 'we interviewed', 'interviewed we'], x(
+      'Adverbe négatif en tête (« Seldom ») → inversion auxiliaire + sujet.',
+      'ظرف نفي في البداية («Seldom») ← قلب: الفعل المساعد قبل الفاعل.',
+      'Negative adverb first → inversion.',
+      'Adverbio negativo al inicio («Seldom») → inversión auxiliar + sujeto.',
+    )),
+    g('c1-ag-s2-q2', 5, 'It is essential that the contract ___ before the end of the month.', ['be signed', 'is signed', 'will be signed', 'was signed'], x(
+      '« It is essential that » + subjonctif (base verbale) : « be signed ».',
+      '«It is essential that» + الصيغة الافتراضية (المصدر): «be signed».',
+      'Subjunctive after “essential that”.',
+      '«It is essential that» + subjuntivo (forma base): «be signed».',
+    )),
+    g('c1-ag-s2-q3', 5, 'If we hadn’t lost the Lyon contract, we ___ more staff now.', ['would be hiring', 'would have hired', 'will hire', 'had hired'], x(
+      'Conditionnel mixte : cause passée (had not lost) → conséquence présente (now).',
+      'شرط مختلط: سبب في الماضي ← نتيجة في الحاضر (now).',
+      'Mixed: past cause, present result.',
+      'Condicional mixta: causa pasada → consecuencia presente (now).',
+    )),
+    g('c1-ag-s2-q4', 5, 'The number of complaints ___ fallen sharply since the new policy.', ['has', 'have', 'are', 'were'], x(
+      '« The number of » = singulier → « has ». (« A number of » serait pluriel.)',
+      '«The number of» مفرد ← «has». أما «A number of» فجمع.',
+      '“The number of” is singular.',
+      '«The number of» = singular → «has». («A number of» sería plural.)',
+    )),
+    g('c1-ag-s2-q5', 5, '___ the report, the manager called an urgent meeting.', ['Having read', 'Had read', 'To have read', 'Have read'], x(
+      'Proposition participiale d’antériorité : « Having + participe ».',
+      'جملة اسم فاعل تدل على السبق: «Having + اسم المفعول».',
+      '“Having read” = after reading.',
+      'Oración de participio anterior: «Having + participio».',
+    )),
+    g('c1-ag-s2-q6', 5, 'Either the manager or her deputies ___ going to attend the hearing.', ['are', 'is', 'was', 'has'], x(
+      'Avec « either … or », le verbe s’accorde avec le sujet le plus proche : « deputies » → « are ».',
+      'مع «either … or» يتطابق الفعل مع الفاعل الأقرب: «deputies» ← «are».',
+      'Agree with the nearer subject.',
+      'Con «either … or», el verbo concuerda con el sujeto más cercano: «deputies» → «are».',
+    )),
+    g('c1-ag-s2-q7', 5, 'Were the price ___ any further, we would cancel the order.', ['to rise', 'rising', 'rose', 'rises'], x(
+      '« Were + sujet + to + verbe » = hypothèse formelle (= If the price rose).',
+      '«Were + فاعل + to + فعل» = افتراض رسمي (= If the price rose).',
+      'Formal “were … to”.',
+      '«Were + sujeto + to + verbo» = hipótesis formal (= If the price rose).',
+    )),
+    order('c1-ag-s2-o1', 'Not until the results arrived did we celebrate', x('Commence par « Not until ».', 'ابدأ بـ «Not until».', 'Start with “Not until”.', 'Empieza por «Not until».'), x(
+      '« Not until … » en tête → inversion dans la principale : « did we celebrate ».',
+      '«Not until …» في البداية ← قلب في الجملة الرئيسية: «did we celebrate».',
+      'Inversion after “Not until”.',
+      '«Not until …» al inicio → inversión en la principal: «did we celebrate».',
+    )),
+    respond('c1-ag-s2-l1', 5, 'Had you known about the strike, would you have changed the route?', ['Without a doubt, we’d have gone through Rotterdam.', 'Yes, the route is long.', 'I know about it now.'], x(
+      'Réponse au conditionnel passé, avec une alternative précise.',
+      'إجابة بالشرط الماضي مع بديل محدد.',
+      'A past conditional answer.',
+      'Respuesta en condicional pasado, con una alternativa concreta.',
+    )),
+    respond('c1-ag-s2-l2', 5, 'The board insists that the plan be revised, doesn’t it?', ['Only the budget section, as far as I know.', 'The board is made of oak.', 'Yes, I revised for my exam.'], x(
+      'Réponse qui nuance : seule la partie budget est concernée.',
+      'إجابة تدقّق: قسم الميزانية فقط هو المعني.',
+      'It narrows the claim.',
+      'Respuesta que matiza: solo afecta a la parte del presupuesto.',
+    )),
+    match('c1-advanced-grammar-w2', ['arbitration', 'jurisdiction', 'waiver', 'amendment', 'litigation'], x(
+      'Mots C1 sur le droit et les contrats : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول القانون والعقود: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about law and contracts: review each example in the Words tab.',
+      'Palabras C1 sobre el derecho y los contratos: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-ag-s3-q1', 5, 'No sooner had the meeting started ___ the fire alarm went off.', ['than', 'when', 'then', 'that'], x(
+      'Structure fixe : « No sooner … than ».',
+      'تركيب ثابت: «No sooner … than».',
+      'Fixed pair: no sooner … than.',
+      'Estructura fija: «No sooner … than».',
+    )),
+    g('c1-ag-s3-q2', 5, 'The auditors requested that each department ___ its receipts by Friday.', ['submit', 'submits', 'submitted', 'will submit'], x(
+      '« Request that » + subjonctif : base verbale, sans -s.',
+      '«Request that» + الصيغة الافتراضية: المصدر بدون -s.',
+      'Subjunctive: base form.',
+      '«Request that» + subjuntivo: forma base, sin -s.',
+    )),
+    g('c1-ag-s3-q3', 5, 'If Ms. Laabidi were more experienced, she ___ the Paris office last year.', ['would have been given', 'would be given', 'will be given', 'had been given'], x(
+      'Mixte : trait présent (were more experienced) → résultat passé (last year).',
+      'مختلط: صفة حاضرة ← نتيجة في الماضي (last year).',
+      'Mixed: present state, past result.',
+      'Mixta: rasgo presente → resultado pasado (last year).',
+    )),
+    g('c1-ag-s3-q4', 5, 'Each of the proposals ___ been reviewed by two experts.', ['has', 'have', 'are', 'were'], x(
+      '« Each of » + pluriel → verbe au singulier.',
+      '«Each of» + جمع ← فعل مفرد.',
+      '“Each of” takes a singular verb.',
+      '«Each of» + plural → verbo en singular.',
+    )),
+    g('c1-ag-s3-q5', 5, 'Under no circumstances ___ share their passwords.', ['should employees', 'employees should', 'employees shouldn’t', 'shouldn’t employees'], x(
+      '« Under no circumstances » (négatif) → inversion, sans autre négation.',
+      '«Under no circumstances» (نفي) ← قلب بدون نفي إضافي.',
+      'Inversion, no second negative.',
+      '«Under no circumstances» (negativo) → inversión, sin otra negación.',
+    )),
+    g('c1-ag-s3-q6', 5, '___ in 1952, the company is one of the oldest in the region.', ['Founded', 'Founding', 'Having founded', 'To found'], x(
+      'La société a été fondée (passif) → participe passé « Founded ».',
+      'الشركة أُسّست (مجهول) ← اسم المفعول «Founded».',
+      'Passive meaning → “Founded”.',
+      'La empresa fue fundada (pasiva) → participio «Founded».',
+    )),
+    g('c1-ag-s3-q7', 5, 'Should you require further assistance, please ___ our help desk.', ['contact', 'contacting', 'to contact', 'contacted'], x(
+      '« Should you… » = If you…, suivi d’un impératif : « contact ».',
+      '«Should you…» = If you… يليها أمر: «contact».',
+      '“Should you” = if you; then imperative.',
+      '«Should you…» = If you…, seguido de un imperativo: «contact».',
+    )),
+    order('c1-ag-s3-o1', 'What we need is a clear plan', x('Commence par « What ».', 'ابدأ بـ «What».', 'Start with “What”.', 'Empieza por «What».'), x(
+      'Phrase clivée : « What we need is… » met l’accent sur le besoin.',
+      'جملة توكيدية: «What we need is…» تبرز الحاجة.',
+      'A cleft sentence for emphasis.',
+      'Oración escindida: «What we need is…» resalta la necesidad.',
+    )),
+    respond('c1-ag-s3-l1', 5, 'Not only did sales drop, but costs went up too.', ['Then we’ll need to revisit the forecast.', 'Sales are on the second floor.', 'I dropped it yesterday.'], x(
+      'Réaction logique : revoir les prévisions. Les autres jouent sur les mots.',
+      'رد منطقي: مراجعة التوقعات، والبقية تلاعب بالألفاظ.',
+      'A logical reaction.',
+      'Reacción lógica: revisar las previsiones. Las demás juegan con las palabras.',
+    )),
+    respond('c1-ag-s3-l2', 5, 'Should the client call, what shall I tell her?', ['Say I’ll get back to her by noon.', 'She called at ten.', 'I’ll tell you a story.'], x(
+      '« Should the client call » = si elle appelle → consigne à transmettre.',
+      '«Should the client call» = إذا اتصلت ← رسالة تُبلَّغ.',
+      'A message to pass on.',
+      '«Should the client call» = si llama → un mensaje que transmitir.',
+    )),
+    match('c1-advanced-grammar-w3', ['oversee', 'liaise', 'bottleneck', 'red-tape', 'consensus'], x(
+      'Mots C1 sur le travail de bureau : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول العمل المكتبي: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about office work: review each example in the Words tab.',
+      'Palabras C1 sobre el trabajo de oficina: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+);

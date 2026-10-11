@@ -1,0 +1,228 @@
+import type { Unit } from '../../../types';
+import { g, lesson, listen, match, order, respond, unit, x } from '../build';
+
+export const b2PastModals: Unit = unit(
+  {
+    id: 'b2-past-modals',
+    emoji: '🕰️',
+    level: 4,
+    part: 'R5 · L2',
+    title: x('Modaux au passé', 'الأفعال الناقصة في الماضي', 'Past modals', 'Modales en pasado'),
+    subtitle: x('Regret, déduction, reproche', 'الندم والاستنتاج واللوم', 'Regret, deduction, criticism', 'Lamento, deducción, reproche'),
+    lesson: lesson(
+      x('Exprimer un regret, une déduction ou un reproche sur le passé.', 'التعبير عن ندم أو استنتاج أو لوم بخصوص الماضي.', 'Express regret, deduction or criticism about the past.', 'Expresar lamento, deducción o reproche sobre el pasado.'),
+      [
+        x('Should have + participe = il aurait fallu (reproche, regret).', 'Should have + اسم المفعول = كان ينبغي (لوم أو ندم).', 'Should have done = it was a good idea, but it didn’t happen.', 'Should have + participio = habría que haber (reproche, lamento).'),
+        x('Must have + participe = déduction quasi certaine sur le passé.', 'Must have + اسم المفعول = استنتاج شبه أكيد عن الماضي.', 'Must have done = almost certain.', 'Must have + participio = deducción casi segura sobre el pasado.'),
+        x('Can’t / couldn’t have = impossible ; might / may / could have = peut-être.', 'Can’t / couldn’t have = مستحيل، وmight / may / could have = ربما.', 'Can’t have = impossible; might have = possible.', 'Can’t / couldn’t have = imposible; might / may / could have = quizá.'),
+        x('Needn’t have + participe = on l’a fait, mais c’était inutile.', 'Needn’t have + اسم المفعول = فعلناه لكنه لم يكن ضروريًا.', 'Needn’t have done = it was unnecessary.', 'Needn’t have + participio = se hizo, pero no hacía falta.'),
+      ],
+      'The lights are off. They must have left already.',
+      x('Déduction logique à partir d’un indice présent.', 'استنتاج منطقي من دليل حاضر.', 'A deduction from present evidence.', 'Deducción lógica a partir de un indicio presente.'),
+    ),
+  },
+  [
+    g('b2-pm-q1', 4, 'We missed the train. We ___ earlier.', ['should have left', 'must have left', 'should leave', 'can’t have left'], x(
+      'Regret : il aurait fallu partir plus tôt → « should have left ».',
+      'ندم: كان ينبغي المغادرة مبكرًا ← «should have left».',
+      'Regret → should have left.',
+      'Lamento: habría que haber salido antes → «should have left».',
+    )),
+    g('b2-pm-q2', 4, 'Ms. Haddad isn’t answering. She ___ already gone home.', ['must have', 'should have', 'needn’t have', 'would have'], x(
+      'Déduction presque certaine → « must have ».',
+      'استنتاج شبه أكيد ← «must have».',
+      'Strong deduction → must have.',
+      'Deducción casi segura → «must have».',
+    )),
+    g('b2-pm-q3', 4, 'He ___ the email. He was on holiday with no internet.', ['can’t have read', 'must have read', 'should have read', 'might read'], x(
+      'Impossible (pas d’internet) → « can’t have read ».',
+      'مستحيل (لا إنترنت) ← «can’t have read».',
+      'Impossible → can’t have.',
+      'Imposible (sin internet) → «can’t have read».',
+    )),
+    g('b2-pm-q4', 4, 'The package ___ lost in the post. I’m not sure.', ['might have been', 'must be', 'should have been', 'can’t be'], x(
+      '« I’m not sure » → possibilité : « might have been ».',
+      '«I’m not sure» ← احتمال: «might have been».',
+      'Not sure → might have.',
+      '«I’m not sure» → posibilidad: «might have been».',
+    )),
+    g('b2-pm-q5', 4, 'You ___ printed the slides. We’re using the projector.', ['needn’t have', 'mustn’t have', 'can’t', 'should have'], x(
+      'Fait, mais inutile → « needn’t have ».',
+      'فُعل لكنه غير ضروري ← «needn’t have».',
+      'Done but unnecessary.',
+      'Hecho, pero innecesario → «needn’t have».',
+    )),
+    g('b2-pm-q6', 4, 'They ___ the contract more carefully before signing it.', ['should have checked', 'must have checked', 'can’t have checked', 'needn’t check'], x(
+      'Reproche → « should have checked ».',
+      'لوم ← «should have checked».',
+      'Criticism → should have.',
+      'Reproche → «should have checked».',
+    )),
+    order('b2-pm-o1', 'You should have told me about the problem', x('Commence par « You should ».', 'ابدأ بـ «You should».', 'Start with “You should”.', 'Empieza por «You should».'), x(
+      'Should have + participe (reproche).',
+      'Should have + اسم المفعول (لوم).',
+      'Should have + participle.',
+      'Should have + participio (reproche).',
+    )),
+    respond('b2-pm-l1', 4, 'Where is Karim? The meeting started ten minutes ago.', ['He must have got stuck in traffic.', 'He meets clients every week.', 'In meeting room B.'], x(
+      'Déduction sur la cause du retard.',
+      'استنتاج عن سبب التأخر.',
+      'A deduction about the delay.',
+      'Deducción sobre la causa del retraso.',
+    )),
+    respond('b2-pm-l2', 4, 'I sent the file to the wrong client.', ['You should have checked the address.', 'The client is very happy.', 'I’ll send it by post.'], x(
+      'Reproche logique après une erreur.',
+      'لوم منطقي بعد خطأ.',
+      'A natural criticism.',
+      'Reproche lógico tras un error.',
+    )),
+    listen('b2-pm-l3', 'L3', 4, 'W: The projector isn’t working. Did someone move it?\nM: The cleaners might have unplugged it last night. Let me check the cable before we call IT.', 'What will the man do next?', ['Check the cable', 'Call IT', 'Move the projector', 'Talk to the cleaners'], x(
+      '« Let me check the cable before we call IT ».',
+      '«Let me check the cable before we call IT»: يتحقق من الكابل أولًا.',
+      'He will check the cable first.',
+      '«Let me check the cable before we call IT»: primero revisa el cable.',
+    )),
+    match('b2-past-modals-w1', ['freight', 'consignment', 'dispatch', 'proof-of-delivery', 'customs-duty'], x(
+      'Mots B2 sur les achats et la logistique : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات B2 حول المشتريات والخدمات اللوجستية: راجع مثال كل كلمة في قسم الكلمات.',
+      'B2 words about purchasing and logistics: review each example in the Words tab.',
+      'Palabras B2 sobre las compras y la logística: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('b2-pm-s2-q1', 4, 'The floor is wet. It ___ during the night.', ['must have rained', 'should have rained', 'needn’t have rained', 'would rain'], x(
+      'Indice présent → déduction : « must have rained ».',
+      'دليل حاضر ← استنتاج: «must have rained».',
+      'Evidence → must have.',
+      'Indicio presente → deducción: «must have rained».',
+    )),
+    g('b2-pm-s2-q2', 4, 'I ___ more attention during the training. Now I don’t know how to use the system.', ['should have paid', 'must have paid', 'can’t have paid', 'might pay'], x(
+      'Regret personnel → « should have paid ».',
+      'ندم شخصي ← «should have paid».',
+      'Regret → should have.',
+      'Lamento personal → «should have paid».',
+    )),
+    g('b2-pm-s2-q3', 4, 'She ___ the keys at the hotel; she had them at the airport.', ['can’t have left', 'must have left', 'should have left', 'needn’t have left'], x(
+      'Elle les avait à l’aéroport → impossible : « can’t have left ».',
+      'كانت معها في المطار ← مستحيل: «can’t have left».',
+      'Impossible → can’t have.',
+      'Las tenía en el aeropuerto → imposible: «can’t have left».',
+    )),
+    g('b2-pm-s2-q4', 4, 'We ___ a taxi. The hotel offered a free shuttle.', ['needn’t have taken', 'mustn’t take', 'can’t have taken', 'should take'], x(
+      'On a pris un taxi inutilement → « needn’t have taken ».',
+      'أخذنا سيارة أجرة بلا داعٍ ← «needn’t have taken».',
+      'Unnecessary → needn’t have.',
+      'Tomamos un taxi sin necesidad → «needn’t have taken».',
+    )),
+    g('b2-pm-s2-q5', 4, 'The client ___ forgotten the meeting, or perhaps her flight was late.', ['may have', 'must', 'should have', 'can’t'], x(
+      '« Or perhaps » → possibilité : « may have ».',
+      '«Or perhaps» ← احتمال: «may have».',
+      'Possibility → may have.',
+      '«Or perhaps» → posibilidad: «may have».',
+    )),
+    g('b2-pm-s2-q6', 4, 'The report ___ yesterday, but it’s still on my desk.', ['should have been sent', 'must have sent', 'can’t have sent', 'should send'], x(
+      'Le rapport subit l’action, non réalisée → passif « should have been sent ».',
+      'التقرير يقع عليه الفعل ولم يُنجز ← مجهول «should have been sent».',
+      'Passive past modal.',
+      'El informe recibe la acción, no realizada → pasiva «should have been sent».',
+    )),
+    g('b2-pm-s2-q7', 4, 'You ___ seen Mr. Silva at the fair. He was in Brazil.', ['couldn’t have', 'must have', 'should have', 'needn’t have'], x(
+      'Il était au Brésil → impossible : « couldn’t have ».',
+      'كان في البرازيل ← مستحيل: «couldn’t have».',
+      'Impossible → couldn’t have.',
+      'Estaba en Brasil → imposible: «couldn’t have».',
+    )),
+    order('b2-pm-s2-o1', 'The driver must have taken the wrong road', x('Commence par « The driver ».', 'ابدأ بـ «The driver».', 'Start with “The driver”.', 'Empieza por «The driver».'), x(
+      'Must have + participe : déduction.',
+      'Must have + اسم المفعول: استنتاج.',
+      'Must have = deduction.',
+      'Must have + participio: deducción.',
+    )),
+    respond('b2-pm-s2-l1', 4, 'Why didn’t the order arrive yesterday?', ['The courier may have had a problem.', 'I ordered three boxes.', 'It arrived yesterday.'], x(
+      'Hypothèse sur la cause → « may have ».',
+      'فرضية حول السبب ← «may have».',
+      'A possible cause.',
+      'Hipótesis sobre la causa → «may have».',
+    )),
+    listen('b2-pm-s2-l2', 'L4', 4, 'Thank you all for coming. Looking back at last year’s fair, we should have brought more brochures: we ran out on the first morning. This year, we’ve printed twice as many.', 'What does the speaker regret?', ['Not having enough brochures', 'Choosing the wrong venue', 'Arriving late', 'Spending too much money'], x(
+      '« We should have brought more brochures » : regret.',
+      '«We should have brought more brochures»: ندم.',
+      'Too few brochures.',
+      '«We should have brought more brochures»: lamento.',
+    )),
+    match('b2-past-modals-w2', ['outage', 'glitch', 'bug', 'troubleshoot', 'tech-support'], x(
+      'Mots B2 sur l’informatique : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات B2 حول المعلوماتية: راجع مثال كل كلمة في قسم الكلمات.',
+      'B2 words about technology: review each example in the Words tab.',
+      'Palabras B2 sobre la informática: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('b2-pm-s3-q1', 4, 'You ___ me! I would have helped you.', ['should have called', 'must have called', 'can’t have called', 'needn’t call'], x(
+      'Reproche amical → « should have called ».',
+      'لوم ودّي ← «should have called».',
+      'Criticism → should have.',
+      'Reproche amistoso → «should have called».',
+    )),
+    g('b2-pm-s3-q2', 4, 'The office is locked. Everyone ___ home.', ['must have gone', 'should have gone', 'needn’t have gone', 'can go'], x(
+      'Bureau fermé → déduction : « must have gone ».',
+      'المكتب مغلق ← استنتاج: «must have gone».',
+      'Deduction → must have.',
+      'Oficina cerrada → deducción: «must have gone».',
+    )),
+    g('b2-pm-s3-q3', 4, 'He ___ the test so quickly. It usually takes an hour.', ['can’t have finished', 'should have finished', 'needn’t finish', 'must finish'], x(
+      'Peu crédible → « can’t have finished ».',
+      'غير قابل للتصديق ← «can’t have finished».',
+      'Not possible → can’t have.',
+      'Poco creíble → «can’t have finished».',
+    )),
+    g('b2-pm-s3-q4', 4, 'We ___ so much food. Half the guests didn’t come.', ['needn’t have ordered', 'must have ordered', 'can’t have ordered', 'should order'], x(
+      'Commande inutile → « needn’t have ordered ».',
+      'طلب غير ضروري ← «needn’t have ordered».',
+      'Unnecessary → needn’t have.',
+      'Pedido innecesario → «needn’t have ordered».',
+    )),
+    g('b2-pm-s3-q5', 4, 'The machine ___ damaged during transport.', ['might have been', 'should be', 'can’t', 'must'], x(
+      'Hypothèse + passif → « might have been ».',
+      'فرضية + مجهول ← «might have been».',
+      'Possibility + passive.',
+      'Hipótesis + pasiva → «might have been».',
+    )),
+    g('b2-pm-s3-q6', 4, 'They ___ the deadline if they had started earlier.', ['could have met', 'must have met', 'should meet', 'can’t meet'], x(
+      'Possibilité passée non réalisée → « could have met ».',
+      'إمكانية في الماضي لم تتحقق ← «could have met».',
+      'Unreal past ability.',
+      'Posibilidad pasada no realizada → «could have met».',
+    )),
+    g('b2-pm-s3-q7', 4, 'I ___ my umbrella. It didn’t rain at all.', ['needn’t have brought', 'must have brought', 'should have brought', 'can’t bring'], x(
+      'Inutile → « needn’t have brought ».',
+      'غير ضروري ← «needn’t have brought».',
+      'Unnecessary → needn’t have.',
+      'Innecesario → «needn’t have brought».',
+    )),
+    order('b2-pm-s3-o1', 'We could have saved money by booking online', x('Commence par « We could ».', 'ابدأ بـ «We could».', 'Start with “We could”.', 'Empieza por «We could».'), x(
+      'Could have + participe : possibilité manquée.',
+      'Could have + اسم المفعول: فرصة ضائعة.',
+      'A missed possibility.',
+      'Could have + participio: posibilidad perdida.',
+    )),
+    respond('b2-pm-s3-l1', 4, 'The client says she never got our quote.', ['It might have gone to her spam folder.', 'She quoted a book.', 'We got it last week.'], x(
+      'Hypothèse plausible → « might have ».',
+      'فرضية معقولة ← «might have».',
+      'A plausible cause.',
+      'Hipótesis plausible → «might have».',
+    )),
+    listen('b2-pm-s3-l2', 'L3', 4, 'M: I can’t find the signed contract anywhere.\nW: Sara must have taken it to the legal department. She said she needed to make copies this morning.', 'What does the woman think happened?', ['A colleague took the contract', 'The contract was lost', 'The client kept it', 'It was sent by mail'], x(
+      '« Sara must have taken it » : déduction.',
+      '«Sara must have taken it»: استنتاج.',
+      'Sara took it.',
+      '«Sara must have taken it»: deducción.',
+    )),
+    match('b2-past-modals-w3', ['workplace-accident', 'health-and-safety', 'hazard', 'protective-equipment', 'fatigue'], x(
+      'Mots B2 sur la santé au travail : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات B2 حول الصحة في العمل: راجع مثال كل كلمة في قسم الكلمات.',
+      'B2 words about health at work: review each example in the Words tab.',
+      'Palabras B2 sobre la salud laboral: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+);

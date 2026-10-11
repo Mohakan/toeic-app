@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Toki Quest",
+    "NSMicrophoneUsageDescription": "يستخدم Toki Quest الميكروفون فقط عندما تتدرّب على الشفوي، لمقارنة ما تقرؤه بالنص. لا تُحفظ التسجيلات أبدًا.",
+    "NSSpeechRecognitionUsageDescription": "يحوّل Toki Quest صوتك إلى نص لتصحيح قراءتك. قد تعالج Apple صوتك للتعرّف عليه، ويحتفظ التطبيق بالنص فقط على جهازك."
+  },
+  "android": {
+    "app_name": "Toki Quest"
+  }
+}

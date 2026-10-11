@@ -1,0 +1,227 @@
+import type { Unit } from '../../../types';
+import { g, lesson, listen, match, order, respond, unit, x } from '../build';
+
+export const c1Conditionals: Unit = unit(
+  {
+    id: 'c1-conditionals',
+    emoji: '🧭',
+    level: 5,
+    part: 'R5 · L3',
+    title: x('Conditionnels avancés', 'الشرط المتقدم', 'Advanced conditionals', 'Condicionales avanzadas'),
+    subtitle: x('Mixtes, inversés, but for, otherwise', 'مختلط ومقلوب وbut for وotherwise', 'Mixed, inverted, but for, otherwise', 'Mixtas, invertidas, but for, otherwise'),
+    lesson: lesson(
+      x('Exprimer des hypothèses complexes avec les structures du registre professionnel.', 'التعبير عن فرضيات معقدة بتراكيب الأسلوب المهني.', 'Express complex hypotheses in a professional register.', 'Expresar hipótesis complejas con las estructuras del registro profesional.'),
+      [
+        x('Mixte : If + past perfect → would + base (passé → présent) ; If + prétérit → would have (présent → passé).', 'مختلط: If + الماضي التام ← would + المصدر (ماضٍ ← حاضر)، وIf + الماضي ← would have (حاضر ← ماضٍ).', 'Mixed: past cause/present result, or the reverse.', 'Mixta: If + past perfect → would + forma base (pasado → presente); If + pasado → would have (presente → pasado).'),
+        x('Sans « if » : Had we known… / Were it not for… / Should you need… (inversion).', 'بدون «if»: Had we known… / Were it not for… / Should you need… (قلب).', 'Inverted: Had…, Were…, Should….', 'Sin «if»: Had we known… / Were it not for… / Should you need… (inversión).'),
+        x('But for / without + nom = sans ; otherwise = sinon ; supposing / provided / on condition that.', 'But for / without + اسم = لولا، وotherwise = وإلا، وsupposing / provided / on condition that.', 'But for = without; otherwise = if not.', 'But for / without + sustantivo = de no ser por; otherwise = si no; supposing / provided / on condition that.'),
+      ],
+      'But for the new software, we would still be processing orders by hand.',
+      x('« But for » = sans ce logiciel (qui existe).', '«But for» = لولا هذا البرنامج (الموجود).', '“But for” = without it.', '«But for» = de no ser por ese programa (que existe).'),
+    ),
+  },
+  [
+    g('c1-cd-q1', 5, 'If we had invested in solar panels five years ago, our energy bills ___ much lower today.', ['would be', 'would have been', 'will be', 'had been'], x(
+      'Mixte : cause passée → résultat présent (« today ») → « would be ».',
+      'مختلط: سبب ماضٍ ← نتيجة حاضرة («today») ← «would be».',
+      'Past cause, present result.',
+      'Mixta: causa pasada → resultado presente («today») → «would be».',
+    )),
+    g('c1-cd-q2', 5, '___ for the loan from the bank, the company would have gone bankrupt.', ['Had it not been', 'If it was not', 'Unless it had been', 'Were it not been'], x(
+      'Inversion de « If it had not been for » → « Had it not been for ».',
+      'قلب «If it had not been for» ← «Had it not been for».',
+      'Inverted past: Had it not been for.',
+      'Inversión de «If it had not been for» → «Had it not been for».',
+    )),
+    g('c1-cd-q3', 5, '___ you need any further information, do not hesitate to contact us.', ['Should', 'Would', 'Had', 'Unless'], x(
+      '« Should you need » = si jamais vous avez besoin (formule de lettre).',
+      '«Should you need» = إذا احتجت (عبارة مراسلات).',
+      'Formal “Should you…”.',
+      '«Should you need» = si llegara a necesitar (fórmula de carta).',
+    )),
+    g('c1-cd-q4', 5, 'Book your tickets early; ___, you may not get a seat.', ['otherwise', 'unless', 'provided', 'whereas'], x(
+      '« Otherwise » = sinon (après point-virgule).',
+      '«Otherwise» = وإلا (بعد فاصلة منقوطة).',
+      '“Otherwise” = if not.',
+      '«Otherwise» = si no (tras punto y coma).',
+    )),
+    g('c1-cd-q5', 5, 'But ___ his quick reaction, the fire would have spread.', ['for', 'from', 'with', 'by'], x(
+      '« But for » + nom = sans.',
+      '«But for» + اسم = لولا.',
+      '“But for” = without.',
+      '«But for» + sustantivo = de no ser por.',
+    )),
+    g('c1-cd-q6', 5, 'If Ms. Haddad weren’t so experienced, the board ___ her as CEO last year.', ['wouldn’t have chosen', 'wouldn’t choose', 'won’t choose', 'hadn’t chosen'], x(
+      'Mixte : qualité présente → choix passé (« last year ») → would have + participe.',
+      'مختلط: صفة حاضرة ← اختيار ماضٍ («last year») ← would have + اسم المفعول.',
+      'Present state, past result.',
+      'Mixta: cualidad presente → elección pasada («last year») → would have + participio.',
+    )),
+    g('c1-cd-q7', 5, '___ that the shipment is delayed, what is our backup plan?', ['Supposing', 'Unless', 'Otherwise', 'Despite'], x(
+      '« Supposing (that) » = à supposer que.',
+      '«Supposing (that)» = بافتراض أن.',
+      '“Supposing” = imagine that.',
+      '«Supposing (that)» = suponiendo que.',
+    )),
+    order('c1-cd-o1', 'Were it not for the delay we would be finished', x('Commence par « Were it not ».', 'ابدأ بـ «Were it not».', 'Start with “Were it not”.', 'Empieza por «Were it not».'), x(
+      'Were it not for + nom = s’il n’y avait pas…',
+      'Were it not for + اسم = لولا…',
+      'Inverted present conditional.',
+      'Were it not for + sustantivo = si no fuera por…',
+    )),
+    respond('c1-cd-l1', 5, 'Would you have accepted the offer if the salary had been higher?', ['Probably, but the location was the real problem.', 'The salary is paid monthly.', 'I offered it yesterday.'], x(
+      'Réponse hypothétique nuancée.',
+      'إجابة افتراضية دقيقة.',
+      'A nuanced hypothetical answer.',
+      'Respuesta hipotética matizada.',
+    )),
+    listen('c1-cd-l2', 'L3', 5, 'W: If we hadn’t switched to the new carrier, we’d still be paying twice as much for shipping.\nM: True. And had we done it sooner, we’d have saved even more.', 'What do the speakers agree on?', ['Changing carriers was a good decision', 'The new carrier is too slow', 'Shipping costs have doubled', 'They should change carriers again'], x(
+      'Les deux reconnaissent que le changement a fait économiser.',
+      'كلاهما يعترف بأن التغيير وفّر المال.',
+      'The switch saved money.',
+      'Ambos reconocen que el cambio les hizo ahorrar.',
+    )),
+    match('c1-conditionals-w1', ['inflation', 'recession', 'venture-capital', 'profit-margin', 'cost-effective'], x(
+      'Mots C1 sur la finance : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول المالية: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about finance: review each example in the Words tab.',
+      'Palabras C1 sobre las finanzas: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-cd-s2-q1', 5, 'If I had taken the job in Dubai, I ___ there now.', ['would be living', 'would have lived', 'will live', 'had lived'], x(
+      'Passé → présent (« now ») : would be + -ing.',
+      'ماضٍ ← حاضر («now»): would be + -ing.',
+      'Mixed: “now” → would be.',
+      'Pasado → presente («now»): would be + -ing.',
+    )),
+    g('c1-cd-s2-q2', 5, '___ the board approve the plan, work will begin in June.', ['Should', 'Were', 'Had', 'Would'], x(
+      '« Should + sujet + base » = If the board approves.',
+      '«Should + فاعل + المصدر» = If the board approves.',
+      'Should = if.',
+      '«Should + sujeto + forma base» = If the board approves.',
+    )),
+    g('c1-cd-s2-q3', 5, 'Without your support, we ___ the contract.', ['would never have won', 'never win', 'had never won', 'will never win'], x(
+      '« Without + nom » = condition passée irréelle → would have + participe.',
+      '«Without + اسم» = شرط ماضٍ غير واقعي ← would have + اسم المفعول.',
+      'Without … → would have won.',
+      '«Without + sustantivo» = condición pasada irreal → would have + participio.',
+    )),
+    g('c1-cd-s2-q4', 5, 'You may use the lab on ___ that you follow the safety rules.', ['condition', 'case', 'order', 'account'], x(
+      '« On condition that » = à condition que.',
+      '«On condition that» = بشرط أن.',
+      '“On condition that”.',
+      '«On condition that» = con la condición de que.',
+    )),
+    g('c1-cd-s2-q5', 5, 'Were the company ___ its prices, many customers would leave.', ['to raise', 'raising', 'raised', 'raise'], x(
+      '« Were + sujet + to + base » = hypothèse peu probable.',
+      '«Were + فاعل + to + المصدر» = افتراض غير مرجّح.',
+      'Were … to + verb.',
+      '«Were + sujeto + to + forma base» = hipótesis poco probable.',
+    )),
+    g('c1-cd-s2-q6', 5, 'We left early; ___, we would have missed the flight.', ['otherwise', 'unless', 'if not', 'so'], x(
+      '« Otherwise » = si nous ne l’avions pas fait.',
+      '«Otherwise» = لو لم نفعل ذلك.',
+      '“Otherwise” = if we hadn’t.',
+      '«Otherwise» = si no lo hubiéramos hecho.',
+    )),
+    g('c1-cd-s2-q7', 5, 'Had the forecast been accurate, we ___ so much stock now.', ['wouldn’t have', 'wouldn’t have had', 'won’t have', 'hadn’t'], x(
+      'Inversion passée + résultat présent (« now ») → would + base.',
+      'قلب في الماضي + نتيجة في الحاضر («now») ← would + المصدر.',
+      'Mixed with “now”.',
+      'Inversión pasada + resultado presente («now») → would + forma base.',
+    )),
+    order('c1-cd-s2-o1', 'Should you have any questions please call us', x('Commence par « Should ».', 'ابدأ بـ «Should».', 'Start with “Should”.', 'Empieza por «Should».'), x(
+      'Should + sujet + verbe, puis impératif.',
+      'Should + فاعل + فعل ثم أمر.',
+      'Should …, then imperative.',
+      'Should + sujeto + verbo y luego imperativo.',
+    )),
+    respond('c1-cd-s2-l1', 5, 'What if the client refuses the new terms?', ['Then we’ll fall back on the old contract.', 'The terms are in English.', 'She refused it twice.'], x(
+      '« What if » = et si… → plan B.',
+      '«What if» = ماذا لو… ← خطة بديلة.',
+      'A fallback plan.',
+      '«What if» = ¿y si…? → plan B.',
+    )),
+    listen('c1-cd-s2-l2', 'L4', 5, 'Had it not been for the generosity of our sponsors, tonight’s concert would not have been possible. All proceeds will go to the children’s hospital in Sfax.', 'What does the speaker thank sponsors for?', ['Making the event possible', 'Building a hospital', 'Performing at the concert', 'Selling tickets'], x(
+      '« Had it not been for… would not have been possible » = grâce à eux.',
+      '«Had it not been for…»: بفضلهم أصبح الحفل ممكنًا.',
+      'Thanks to them it happened.',
+      '«Had it not been for…»: gracias a ellos fue posible.',
+    )),
+    match('c1-conditionals-w2', ['surplus', 'shortfall', 'stockpile', 'just-in-time', 'sole-supplier'], x(
+      'Mots C1 sur les achats et la logistique : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول المشتريات والخدمات اللوجستية: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about purchasing and logistics: review each example in the Words tab.',
+      'Palabras C1 sobre las compras y la logística: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+  [
+    g('c1-cd-s3-q1', 5, 'If the team were better organized, they ___ the deadline last month.', ['would have met', 'would meet', 'will meet', 'had met'], x(
+      'Présent → passé (« last month ») : would have + participe.',
+      'حاضر ← ماضٍ («last month»): would have + اسم المفعول.',
+      'Present state, past result.',
+      'Presente → pasado («last month»): would have + participio.',
+    )),
+    g('c1-cd-s3-q2', 5, '___ we known about the strike, we would have rescheduled.', ['Had', 'If', 'Should', 'Were'], x(
+      'Inversion du past perfect : Had + sujet + participe.',
+      'قلب الماضي التام: Had + فاعل + اسم المفعول.',
+      'Inverted past: Had we known.',
+      'Inversión del past perfect: Had + sujeto + participio.',
+    )),
+    g('c1-cd-s3-q3', 5, 'The product will be launched in May, ___ the tests are successful.', ['provided', 'unless', 'otherwise', 'even'], x(
+      '« Provided (that) » = à condition que.',
+      '«Provided (that)» = بشرط أن.',
+      '“Provided” = only if.',
+      '«Provided (that)» = siempre que.',
+    )),
+    g('c1-cd-s3-q4', 5, 'Were it not for tourism, the region’s economy ___ much weaker.', ['would be', 'will be', 'would have', 'is'], x(
+      '« Were it not for » (présent) → would + base.',
+      '«Were it not for» (حاضر) ← would + المصدر.',
+      'Present unreal: would be.',
+      '«Were it not for» (presente) → would + forma base.',
+    )),
+    g('c1-cd-s3-q5', 5, 'If she ___ the warning, she wouldn’t be in this difficult situation now.', ['had heeded', 'heeded', 'would heed', 'has heeded'], x(
+      'Mixte : cause passée (past perfect) → situation présente.',
+      'مختلط: سبب ماضٍ (الماضي التام) ← وضع حاضر.',
+      'Past perfect cause.',
+      'Mixta: causa pasada (past perfect) → situación presente.',
+    )),
+    g('c1-cd-s3-q6', 5, 'Keep a copy of the receipt ___ you need to return the item.', ['in case', 'unless', 'provided', 'otherwise'], x(
+      '« In case » = au cas où (précaution).',
+      '«In case» = تحسّبًا لـ.',
+      'Precaution → in case.',
+      '«In case» = por si (precaución).',
+    )),
+    g('c1-cd-s3-q7', 5, 'Even if the price ___, demand would remain strong.', ['rose', 'rises', 'had risen', 'will rise'], x(
+      'Hypothèse présente avec « would » → prétérit après « even if ».',
+      'افتراض حاضر مع «would» ← الماضي بعد «even if».',
+      'Unreal present: past tense.',
+      'Hipótesis presente con «would» → pasado tras «even if».',
+    )),
+    order('c1-cd-s3-o1', 'But for the rain the match would have continued', x('Commence par « But for ».', 'ابدأ بـ «But for».', 'Start with “But for”.', 'Empieza por «But for».'), x(
+      'But for + nom, puis would have + participe.',
+      'But for + اسم ثم would have + اسم المفعول.',
+      'But for + noun.',
+      'But for + sustantivo y luego would have + participio.',
+    )),
+    respond('c1-cd-s3-l1', 5, 'Suppose the budget is cut again — what would you drop first?', ['Probably the trade fair in Milan.', 'I dropped my phone.', 'The budget was approved.'], x(
+      'Hypothèse → choix concret.',
+      'افتراض ← اختيار ملموس.',
+      'A concrete choice.',
+      'Hipótesis → elección concreta.',
+    )),
+    listen('c1-cd-s3-l2', 'L3', 5, 'M: If we’d hired a translator, the Japanese clients wouldn’t have misunderstood the offer.\nW: Agreed. Let’s make sure one is available for the next meeting, otherwise we risk losing them.', 'What does the woman want to do?', ['Arrange a translator for the next meeting', 'Cancel the Japanese contract', 'Rewrite the offer', 'Learn Japanese'], x(
+      '« Make sure one is available for the next meeting » = prévoir un traducteur.',
+      '«Make sure one is available»: توفير مترجم.',
+      'Book a translator.',
+      '«Make sure one is available»: prever un traductor.',
+    )),
+    match('c1-conditionals-w3', ['contingency-plan', 'mitigate', 'impact-assessment', 'carbon-offset', 'net-zero'], x(
+      'Mots C1 sur l’environnement : relis l’exemple de chaque mot dans l’onglet Mots.',
+      'مفردات C1 حول البيئة: راجع مثال كل كلمة في قسم الكلمات.',
+      'C1 words about the environment: review each example in the Words tab.',
+      'Palabras C1 sobre el medio ambiente: repasa el ejemplo de cada una en la pestaña Palabras.',
+    )),
+  ],
+);
