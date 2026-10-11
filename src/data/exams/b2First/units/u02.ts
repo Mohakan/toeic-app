@@ -15,7 +15,7 @@ export const fceU02: Unit = unit(
     emoji: '🔤',
     level: 3,
     part: 'RU2',
-    title: x('Texte à trous libre', 'النص ذو الفراغات المفتوحة', 'Open cloze', 'Texto con huecos abierto'),
+    title: x('Texte à trous libre', 'النص ذو الفراغات المفتوحة', 'Open cloze: grammar words', 'Texto con huecos abierto'),
     subtitle: x('Articles, prépositions, auxiliaires, pronoms, quantifieurs', 'أدوات التعريف وحروف الجر والأفعال المساعدة والضمائر والمحددات الكمية', 'Articles, prepositions, auxiliaries, pronouns, quantifiers', 'Artículos, preposiciones, auxiliares, pronombres, cuantificadores'),
     lesson: lesson(
       x(

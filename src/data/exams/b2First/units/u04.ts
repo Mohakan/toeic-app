@@ -70,7 +70,7 @@ export const fceU04: Unit = unit(
       'Present continuous passive: is being + built.',
       'Presente continuo activo (are building) → pasiva «is being built»: be en presente continuo + participio.',
     )),
-    ru4('fce-u04-s1-q2', 4, '“I’ll call you when I arrive in Tunis,” Karim told his mother.', 'WOULD', 'Karim told his mother that ___ when he arrived in Tunis.', ['he would call her', 'he’d call her'], x(
+    ru4('fce-u04-s1-q2', 4, '“I’ll call you when I arrive in Tunis,” Karim told his mother.', 'WOULD', 'Karim told his mother that ___ when he arrived in Tunis.', ['he would call her'], x(
       'Discours indirect : « will » recule en « would », « I » devient « he » et « you » devient « her ».',
       'الكلام المنقول: «will» تصبح «would»، و«I» تصبح «he»، و«you» تصبح «her».',
       'will → would; I → he, you → her.',

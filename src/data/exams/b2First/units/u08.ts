@@ -82,11 +82,11 @@ export const fceU08: Unit = unit(
       'Thanks to X → if it hadn’t been for X.',
       '«Thanks to X» en pasado → «If it hadn’t been for X» (tercer condicional).',
     )),
-    ru4('fce-u08-s1-q4', 5, 'I regret not studying harder for my exams.', 'WISH', 'I ___ harder for my exams.', ['wish I had studied', 'wish I’d studied'], x(
-      'Regret sur le passé → wish + past perfect : « wish I had studied ».',
-      'ندم على الماضي ← wish + الماضي التام: «wish I had studied».',
+    ru4('fce-u08-s1-q4', 5, 'I regret not applying for the summer course in Dublin.', 'WISH', 'I ___ for the summer course in Dublin.', ['wish I had applied', 'wish I’d applied'], x(
+      'Regret sur le passé → wish + past perfect : « wish I had applied ».',
+      'ندم على الماضي ← wish + الماضي التام: «wish I had applied».',
       'Past regret: wish + past perfect.',
-      'Lamento sobre el pasado → wish + past perfect: «wish I had studied».',
+      'Lamento sobre el pasado → wish + past perfect: «wish I had applied».',
     )),
     ru4('fce-u08-s1-q5', 5, 'It’s a pity I can’t speak Spanish.', 'ONLY', 'If ___ Spanish.', ['only I could speak', 'only I spoke'], x(
       'Regret sur le présent → if only + prétérit ; « can’t » devient « could » : « If only I could speak ».',
@@ -94,7 +94,7 @@ export const fceU08: Unit = unit(
       'Present regret: if only + could.',
       'Lamento sobre el presente → if only + pasado; «can’t» pasa a «could»: «If only I could speak».',
     )),
-    ru4('fce-u08-s1-q6', 5, 'I’m sure Leila forgot about the meeting.', 'MUST', 'Leila ___ about the meeting.', ['must have forgotten', 'must’ve forgotten'], x(
+    ru4('fce-u08-s1-q6', 5, 'I’m sure Leila forgot about the meeting.', 'MUST', 'Leila ___ about the meeting.', ['must have forgotten'], x(
       '« I’m sure » + fait passé → « must have » + participe passé « forgotten ».',
       '«I’m sure» + حدث في الماضي ← «must have» + اسم المفعول «forgotten».',
       'Past certainty → must have forgotten.',
@@ -156,7 +156,7 @@ export const fceU08: Unit = unit(
       'Past regret: if only + past perfect.',
       'Lamento sobre el pasado → if only + past perfect: «If only I had taken».',
     )),
-    ru4('fce-u08-s2-q6', 5, 'The streets are wet, so I’m sure it rained during the night.', 'MUST', 'It ___ during the night, because the streets are wet.', ['must have rained', 'must’ve rained'], x(
+    ru4('fce-u08-s2-q6', 5, 'The streets are wet, so I’m sure it rained during the night.', 'MUST', 'It ___ during the night, because the streets are wet.', ['must have rained'], x(
       'Déduction sûre sur le passé, à partir d’un indice (wet streets) → « must have rained ».',
       'استنتاج مؤكد عن الماضي انطلاقًا من دليل (wet streets) ← «must have rained».',
       'Certain past deduction → must have rained.',

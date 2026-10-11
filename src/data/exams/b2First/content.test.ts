@@ -35,6 +35,21 @@ const allItems: MockItem[] = [...b2FirstAssessmentBank, ...lessonItems, ...mockI
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 const fingerprint = (i: { prompt: string; passage?: string; audio?: string; lead?: string }) => norm(`${i.lead ?? ''} ${i.prompt} ${i.passage ?? ''} ${i.audio ?? ''}`);
 
+/**
+ * Key word transformation: the key word must appear unchanged. A contraction after it keeps it
+ * (SHOULD → "shouldn't", MUST → "must've"); contracting the key word itself changes it
+ * (WOULD → "he'd") and is not accepted.
+ */
+function containsKeyWord(answer: string, cue: string): boolean {
+  const key = cue.toLowerCase();
+  const words = answer.toLowerCase().replace(/[’‘]/g, "'").split(/\s+/);
+  return words.some((raw) => {
+    const w = raw.replace(/[^a-z']/g, '');
+    // The key word itself, followed or not by a contracted word ("must've", "shouldn't").
+    return w === key || w.startsWith(`${key}'`) || w === `${key}n't` || (key === 'can' && w === "can't") || (key === 'will' && w === "won't");
+  });
+}
+
 function checkExplain(id: string, explain: Localized) {
   for (const lang of LANGS) expect.soft(explain[lang]?.length ?? 0, `${id}/${lang}`).toBeGreaterThan(10);
   expect.soft(ARABIC.test(explain.ar), `${id}/ar is in Arabic`).toBe(true);
@@ -103,7 +118,7 @@ describe('Toki Quest B2 content', () => {
         if (item.part === 'RU4') {
           const n = countWords(answer);
           expect.soft(n >= 2 && n <= 5, `${item.id}: "${answer}" has ${n} words`).toBe(true);
-          expect.soft(norm(answer).split(' ').includes(norm(item.cue ?? '')), `${item.id}: "${answer}" must contain ${item.cue}`).toBe(true);
+          expect.soft(containsKeyWord(answer, item.cue ?? ''), `${item.id}: "${answer}" must contain ${item.cue} unchanged`).toBe(true);
         }
         if (item.part === 'LI2') {
           expect.soft(countWords(answer), `${item.id}: short answer`).toBeLessThanOrEqual(3);
