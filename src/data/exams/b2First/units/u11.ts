@@ -141,8 +141,8 @@ export const fceU11: Unit = unit(
       '«the lights from beach bars confuse them»; la luz de la luna, en cambio, las guía al mar.',
     )),
     li3('fce-u11-s1-q6', 4, S1_SPEAKERS, 'What does Speaker 1 say about learning an instrument?', S1_OPTIONS, 6, x(
-      'Pas de place pour un piano (« no room ») : elle a choisi le ukulélé parce qu’il « fits in a cupboard » → G.',
-      'لا مكان للبيانو («no room»)، فاختارت آلة اليوكوليلي لأنها «fits in a cupboard» ← G.',
+      'Pas de place pour un piano (« no room ») : choix du ukulélé parce qu’il « fits in a cupboard » → G.',
+      'لا مكان للبيانو («no room»)، فاختار المتحدث آلة اليوكوليلي لأنها «fits in a cupboard» ← G.',
       'No room for a piano, so a ukulele that “fits in a cupboard” → G.',
       'No hay sitio para un piano («no room»): eligió el ukelele porque «fits in a cupboard» → G.',
     )),
@@ -153,7 +153,7 @@ export const fceU11: Unit = unit(
       'Sus turnos en el hospital: «I just don’t know where that half hour is supposed to come from» → C.',
     )),
     li3('fce-u11-s1-q8', 4, S1_SPEAKERS, 'What does Speaker 3 say about learning an instrument?', S1_OPTIONS, 3, x(
-      'Seul, il s’ennuyait ; avec l’orchestre « I suddenly wanted to get better » → D.',
+      'Seul, on s’ennuyait ; avec l’orchestre « I suddenly wanted to get better » → D.',
       'كان يشعر بالملل وحده، ومع الأوركسترا «I suddenly wanted to get better» ← D.',
       'With the orchestra, “I suddenly wanted to get better” → D.',
       'Solo se aburría; con la orquesta «I suddenly wanted to get better» → D.',
@@ -203,8 +203,8 @@ export const fceU11: Unit = unit(
       '«You’ll need to pay a deposit when you register»; el resto se paga un mes antes de salir.',
     )),
     li3('fce-u11-s2-q6', 4, S2_SPEAKERS, 'What does Speaker 1 say about their first job?', S2_OPTIONS, 1, x(
-      '« I’d assumed it would be boring but easy… Easy, absolutely not » : debout, à porter des caisses → B. Elle est restée jusqu’au bout (pas F).',
-      '«I’d assumed it would be boring but easy… Easy, absolutely not»: وقوف طويل وحمل صناديق ← B. وقد بقيت حتى النهاية (ليس F).',
+      '« I’d assumed it would be boring but easy… Easy, absolutely not » : debout, à porter des caisses → B. Le locuteur est resté jusqu’au bout (pas F).',
+      '«I’d assumed it would be boring but easy… Easy, absolutely not»: وقوف طويل وحمل صناديق ← B. وقد بقي المتحدث حتى النهاية (ليس F).',
       '“Easy, absolutely not”: lifting crates all day → B.',
       '«I’d assumed it would be boring but easy… Easy, absolutely not»: de pie, cargando cajas → B. Se quedó hasta el final (no F).',
     )),
