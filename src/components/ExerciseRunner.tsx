@@ -5,16 +5,18 @@ import { exerciseKey } from '../data/units';
 import { useI18n } from '../i18n';
 import { feedbackSounds } from '../services/feedbackSoundDevice';
 import { listening } from '../services/speech';
+import { isAcceptedAnswer } from '../services/typedAnswer';
 import { useApp } from '../state/AppState';
 import { colors, radius, space } from '../theme';
 import type { Exercise } from '../types';
 import { ConfirmDialog } from './ConfirmDialog';
 import { MatchExercise } from './MatchExercise';
 import { McqQuestion } from './McqQuestion';
+import { TypedQuestion } from './TypedQuestion';
 import { OrderExercise } from './OrderExercise';
 import { AppText, Button, EnglishText, haptic, Mascot, ProgressBar, Screen } from './ui';
 
-export const exerciseExplain = (e: Exercise) => (e.kind === 'mcq' ? e.item.explain : e.explain);
+export const exerciseExplain = (e: Exercise) => (e.kind === 'mcq' || e.kind === 'type' ? e.item.explain : e.explain);
 
 export interface RunResult {
   /** First-try outcome per exercise key. */
@@ -39,6 +41,7 @@ export function ExerciseRunner({ exercises, retryMisses, onFinish, onQuit }: Pro
   const [combo, setCombo] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [picked, setPicked] = useState<number[]>([]);
+  const [typed, setTyped] = useState('');
   const [feedback, setFeedback] = useState<{ correct: boolean } | null>(null);
   const [confirmQuit, setConfirmQuit] = useState(false);
 
@@ -60,6 +63,7 @@ export function ExerciseRunner({ exercises, retryMisses, onFinish, onQuit }: Pro
 
   const check = () => {
     if (exercise.kind === 'mcq') recordResult(selected === exercise.item.answer);
+    else if (exercise.kind === 'type') recordResult(isAcceptedAnswer(typed, exercise.item.answers));
     else if (exercise.kind === 'order') recordResult(picked.map((i) => exercise.words[i]).join(' ') === exercise.answer.join(' '));
   };
 
@@ -68,12 +72,15 @@ export function ExerciseRunner({ exercises, retryMisses, onFinish, onQuit }: Pro
     setFeedback(null);
     setSelected(null);
     setPicked([]);
+    setTyped('');
     if (position + 1 >= queue.length) onFinish({ firstTry });
     else setPosition(position + 1);
   };
 
-  const canCheck = exercise.kind === 'mcq' ? selected !== null : exercise.kind === 'order' ? picked.length === exercise.words.length : false;
-  const correctText = exercise.kind === 'mcq' ? exercise.item.options[exercise.item.answer] : exercise.kind === 'order' ? exercise.answer.join(' ') : '';
+  const canCheck =
+    exercise.kind === 'mcq' ? selected !== null : exercise.kind === 'type' ? typed.trim().length > 0 : exercise.kind === 'order' ? picked.length === exercise.words.length : false;
+  const correctText =
+    exercise.kind === 'mcq' ? exercise.item.options[exercise.item.answer] : exercise.kind === 'type' ? exercise.item.answers[0] : exercise.kind === 'order' ? exercise.answer.join(' ') : '';
 
   const footer = feedback ? (
     <View accessibilityLiveRegion="polite" style={{ gap: space.sm }}>
@@ -141,6 +148,16 @@ export function ExerciseRunner({ exercises, retryMisses, onFinish, onQuit }: Pro
 
         {exercise.kind === 'mcq' ? (
           <McqQuestion key={`${key}-${position}`} item={exercise.item} selected={selected} revealed={!!feedback} onSelect={setSelected} />
+        ) : null}
+        {exercise.kind === 'type' ? (
+          <TypedQuestion
+            key={`${key}-${position}`}
+            item={exercise.item}
+            value={typed}
+            onChange={setTyped}
+            revealed={!!feedback}
+            onSubmit={() => !feedback && canCheck && check()}
+          />
         ) : null}
         {exercise.kind === 'order' ? (
           <OrderExercise key={`${key}-${position}`} words={exercise.words} picked={picked} revealed={!!feedback} hint={tx(exercise.hint)} onChange={setPicked} />

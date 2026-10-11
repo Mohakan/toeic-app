@@ -148,7 +148,7 @@ export function LessonScreen({ navigation, route }: NativeStackScreenProps<RootS
                 <AppText variant="h3">{t('done.review')}</AppText>
                 {missed.map((e) => (
                   <View key={exerciseKey(e)} style={{ gap: 2 }}>
-                    {e.kind === 'mcq' ? (
+                    {e.kind === 'mcq' || e.kind === 'type' ? (
                       <EnglishText variant="small" style={{ fontWeight: '700' }}>
                         {e.item.prompt}
                       </EnglishText>

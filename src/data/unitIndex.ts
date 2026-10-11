@@ -1,6 +1,6 @@
 import type { Exercise, ExerciseSet, Unit } from '../types';
 
-export const exerciseKey = (e: Exercise): string => (e.kind === 'mcq' ? e.item.id : e.id);
+export const exerciseKey = (e: Exercise): string => (e.kind === 'mcq' || e.kind === 'type' ? e.item.id : e.id);
 
 export interface LocatedExercise {
   unit: Unit;

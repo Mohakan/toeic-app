@@ -24,6 +24,7 @@ function mulberry32(seed: number) {
  * correct answer is not predictable (e.g. always "A") while tests stay reproducible.
  */
 export function withShuffledOptions(item: McqItem): McqItem {
+  if (item.fixedOrder) return item;
   const rand = mulberry32(hash(item.id));
   const order = item.options.map((_, i) => i);
   for (let i = order.length - 1; i > 0; i -= 1) {

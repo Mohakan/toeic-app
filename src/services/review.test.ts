@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { mockTests } from '../data/mock';
-import { formatClock, mockItems, remainingSeconds, scoreMock } from './mock';
+import { formatClock, keyAnswer, mockItems, remainingSeconds, scoreMock } from './mock';
 import { addDays, applyReview, dueEntries, REVIEW_INTERVALS, scheduleMisses } from './review';
 
 const today = '2026-10-06';
@@ -51,7 +51,7 @@ describe('mock tests', () => {
   });
 
   it('scores a perfect test higher than an empty one, with unanswered items counted wrong', () => {
-    const perfect = scoreMock(mock, Object.fromEntries(items.map((i) => [i.id, i.answer])), 600);
+    const perfect = scoreMock(mock, Object.fromEntries(items.map((i) => [i.id, keyAnswer(i)])), 600);
     const empty = scoreMock(mock, {}, 600);
     expect(perfect.result.correct).toBe(items.length);
     expect(empty.result.correct).toBe(0);
@@ -60,7 +60,7 @@ describe('mock tests', () => {
   });
 
   it('reports results by part', () => {
-    const { result } = scoreMock(mock, Object.fromEntries(items.map((i) => [i.id, i.answer])), 60);
+    const { result } = scoreMock(mock, Object.fromEntries(items.map((i) => [i.id, keyAnswer(i)])), 60);
     const total = Object.values(result.byPart).reduce((s, p) => s + p!.total, 0);
     expect(total).toBe(items.length);
     for (const section of mock.sections) expect(result.byPart[section.part]!.correct).toBe(result.byPart[section.part]!.total);

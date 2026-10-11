@@ -104,8 +104,8 @@ export function contentStats(): ContentStats {
     unitsByLevel: tally(units, (u) => u.level) as unknown as Record<number, number>,
     sets: units.reduce((n, u) => n + u.sets.length, 0),
     exercises: exercises.length,
-    exercisesByLevel: tally(allExercises, (x) => (x.exercise.kind === 'mcq' ? x.exercise.item.level : x.unit.level)) as unknown as Record<number, number>,
-    exercisesByPart: tally(exercises, (e) => (e.kind === 'mcq' ? e.item.part : e.kind)),
+    exercisesByLevel: tally(allExercises, (x) => (x.exercise.kind === 'mcq' || x.exercise.kind === 'type' ? x.exercise.item.level : x.unit.level)) as unknown as Record<number, number>,
+    exercisesByPart: tally(exercises, (e) => (e.kind === 'mcq' || e.kind === 'type' ? e.item.part : e.kind)),
     mockTests: {
       full: realMocks.filter((m) => m.kind === 'full').length,
       mini: realMocks.filter((m) => m.kind === 'mini').length,

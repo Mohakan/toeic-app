@@ -4,7 +4,7 @@ import { join } from 'path';
 import { describe, expect, it } from 'vitest';
 import { allKeys, rawEntry } from '../i18n/strings';
 import { paramsOf, sectionOf } from '../services/placement';
-import type { Lang, Localized, McqItem } from '../types';
+import { isTyped, type Lang, type Localized, type McqItem } from '../types';
 import { assessmentBank } from './assessment';
 import { FULL_TEST_BLUEPRINT, MINI_TEST_BLUEPRINT, mockTests } from './mock';
 import { allExercises, exerciseKey, units } from './units';
@@ -36,7 +36,8 @@ const allPhotos = [...photoTasks, ...simulationPhotos];
 const LANGS: Lang[] = ['fr', 'ar', 'en', 'es'];
 const exercises = allExercises.map((x) => x.exercise);
 const lessonMcqs: McqItem[] = exercises.flatMap((e) => (e.kind === 'mcq' ? [e.item] : []));
-const mockMcqs: McqItem[] = mockTests.filter((m) => !m.demo).flatMap((m) => m.sections.flatMap((s) => s.items));
+// The TOEIC content only has multiple-choice items; typed items are checked with their exam's content.
+const mockMcqs: McqItem[] = mockTests.filter((m) => !m.demo).flatMap((m) => m.sections.flatMap((s) => s.items.filter((i): i is McqItem => !isTyped(i))));
 const allMcqs = [...assessmentBank, ...lessonMcqs, ...mockMcqs];
 
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -162,7 +163,7 @@ describe('learning path', () => {
 
   it('explains every non-multiple-choice exercise in every help language', () => {
     for (const e of exercises) {
-      if (e.kind === 'mcq') continue;
+      if (e.kind === 'mcq' || e.kind === 'type') continue;
       for (const lang of LANGS) expect(e.explain[lang].length, e.id).toBeGreaterThan(10);
       if (e.kind === 'order') for (const lang of LANGS) expect(e.hint[lang].length, e.id).toBeGreaterThan(3);
     }
@@ -258,7 +259,7 @@ describe('editorial rules (cross-review)', () => {
   const ARABIC = /[؀-ۿ]/;
   const texts: [string, Localized][] = [
     ...allMcqs.map((i) => [i.id, i.explain] as [string, Localized]),
-    ...exercises.flatMap((e) => (e.kind === 'mcq' ? [] : [[e.id, e.explain] as [string, Localized]])),
+    ...exercises.flatMap((e) => (e.kind === 'mcq' || e.kind === 'type' ? [] : [[e.id, e.explain] as [string, Localized]])),
     ...units.flatMap((u) => [[`${u.id}/goal`, u.lesson.goal], ...u.lesson.points.map((p, n) => [`${u.id}/point${n}`, p]), [`${u.id}/note`, u.lesson.example.note]] as [string, Localized][]),
   ];
 

@@ -31,7 +31,45 @@ export interface McqItem {
   explain: Localized;
   /** Overrides the provisional IRT parameters derived from `level`. */
   irt?: Partial<ItemParams>;
+  /**
+   * Options keep the authored order: True / False / Not Given, paragraphs A-G of a gapped text,
+   * sections of a multiple-matching text. The key is then given by `answer`, not by position 0.
+   */
+  fixedOrder?: boolean;
 }
+
+/**
+ * Answer typed by the learner: open cloze, word formation, key word transformation, sentence or
+ * form completion. Compared with the accepted answers after normalization (case, spaces,
+ * apostrophes, final punctuation): see src/services/typedAnswer.ts.
+ */
+export interface TypedItem {
+  id: string;
+  skill: Skill;
+  part: ExamPart;
+  /** 1 (A1) to 6 (C1+) */
+  level: number;
+  /** Sentence or text with "___" where the answer goes. */
+  prompt: string;
+  passage?: string;
+  /** Text read aloud by speech synthesis for listening items. */
+  audio?: string;
+  /** Key word transformation: the sentence to rewrite. */
+  lead?: string;
+  /** Word formation: the stem to change. Key word transformation: the word that must be used. */
+  cue?: string;
+  /** Accepted answers; the first one is shown as the correction. */
+  answers: string[];
+  /** Longest accepted answer in words (key word transformation: 5). */
+  maxWords?: number;
+  explain: Localized;
+  irt?: Partial<ItemParams>;
+}
+
+/** An item of a mock test: chosen among options or typed. */
+export type MockItem = McqItem | TypedItem;
+
+export const isTyped = (item: MockItem): item is TypedItem => 'answers' in item;
 
 export type VocabTheme =
   | 'office'
@@ -71,6 +109,7 @@ export interface UnitLesson {
 
 export type Exercise =
   | { kind: 'mcq'; item: McqItem }
+  | { kind: 'type'; item: TypedItem }
   | { kind: 'order'; id: string; words: string[]; answer: string[]; hint: Localized; explain: Localized }
   | { kind: 'match'; id: string; wordIds: string[]; explain: Localized };
 
@@ -108,7 +147,7 @@ export interface MockTest {
   durationMin: number;
   /** Assembled from lesson items to exercise the feature until dedicated mock content exists. */
   demo?: boolean;
-  sections: { part: ExamPart; items: McqItem[] }[];
+  sections: { part: ExamPart; items: MockItem[] }[];
 }
 
 export interface MockResult {

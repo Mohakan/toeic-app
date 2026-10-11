@@ -12,7 +12,7 @@ export function practiceResponse(
   unitLevel: number,
   source: ItemResponse['source'] = 'practice',
 ): ItemResponse | null {
-  if (e.kind === 'mcq') {
+  if (e.kind === 'mcq' || e.kind === 'type') {
     return { itemId: e.item.id, section: sectionOf(e.item.skill), skill: e.item.skill, level: e.item.level, params: paramsOf(e.item), correct, source };
   }
   if (e.kind === 'order') {
