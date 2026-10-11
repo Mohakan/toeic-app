@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Pressable, View } from 'react-native';
-import { AppText, Card, EnglishText, Screen } from '../components/ui';
+import { AppText, Card, EnglishText, HeroTitle, Screen } from '../components/ui';
 import { mockTests } from '../data/mock';
 import { useI18n } from '../i18n';
 import type { RootStackParamList } from '../navigation/types';
@@ -18,10 +18,8 @@ export function MockListScreen() {
   const access = useAccess();
 
   return (
-    <Screen>
+    <Screen hero={<HeroTitle title={t('mock.title')} subtitle={t('mock.sub')} mood="think" />}>
       <View style={{ gap: space.lg }}>
-        <AppText variant="h2">{t('mock.title')}</AppText>
-        <AppText color={colors.inkSoft}>{t('mock.sub')}</AppText>
         <Pressable accessibilityRole="button" accessibilityLabel={t('speak.title')} onPress={() => nav.navigate('Speaking')}>
           <Card style={[row, { alignItems: 'center', gap: space.md, borderWidth: 2, borderColor: colors.primarySoft }]}>
             <View style={{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center' }}>

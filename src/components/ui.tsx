@@ -15,6 +15,16 @@ import {
   type TextStyle,
   type ViewStyle,
 } from 'react-native';
+import Reanimated, {
+  cancelAnimation,
+  Easing as REasing,
+  useAnimatedStyle,
+  useSharedValue,
+  withRepeat,
+  withSequence,
+  withSpring,
+  withTiming,
+} from 'react-native-reanimated';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useI18n } from '../i18n';
 import { isolateLatin } from '../i18n/bidi';
@@ -255,14 +265,58 @@ export function IconBadge({ icon, color, bg, size = 44 }: { icon: keyof typeof I
 
 /**
  * Toki, the falcon mascot. He grows with the learner's estimated score and is mirrored in Arabic.
- * Decorative: hidden from screen readers, the screen text says the same thing.
+ * He floats gently, hops on a right answer and tilts his head on a wrong one; he stays still when
+ * the system asks to reduce motion. Decorative: hidden from screen readers, the screen text says
+ * the same thing.
  */
 export function Mascot({ mood = 'neutral', size = 72 }: { mood?: TokiExpression; size?: number }) {
   const { isRTL } = useI18n();
   const level = useLevel();
+  const reduced = useReducedMotion();
+  const lift = useSharedValue(0);
+  const tilt = useSharedValue(0);
+
+  useEffect(() => {
+    if (reduced) {
+      lift.set(0);
+      tilt.set(0);
+      return;
+    }
+    const ease = REasing.inOut(REasing.sin);
+    if (mood === 'joy') {
+      lift.set(withSequence(withTiming(-size * 0.2, { duration: 180, easing: REasing.out(REasing.quad) }), withSpring(0, { damping: 6, stiffness: 220 })));
+      tilt.set(withSequence(withTiming(-8, { duration: 90 }), withRepeat(withTiming(8, { duration: 120 }), 3, true), withTiming(0, { duration: 90 })));
+    } else if (mood === 'encourage') {
+      tilt.set(withSequence(withTiming(-7, { duration: 220 }), withTiming(0, { duration: 480, easing: ease })));
+    } else {
+      lift.set(withRepeat(withSequence(withTiming(-3, { duration: 1400, easing: ease }), withTiming(0, { duration: 1400, easing: ease })), -1));
+    }
+    return () => {
+      cancelAnimation(lift);
+      cancelAnimation(tilt);
+    };
+  }, [mood, reduced, size, lift, tilt]);
+
+  const motion = useAnimatedStyle(() => ({ transform: [{ translateY: lift.get() }, { rotate: `${tilt.get()}deg` }] }));
   return (
     <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={{ width: size * 1.3, height: size * 1.3, alignItems: 'center', justifyContent: 'center' }}>
-      <Toki expression={mood} stage={tokiStage(level?.current.total.score)} size={size * 1.15} mirrored={isRTL} />
+      <Reanimated.View style={motion}>
+        <Toki expression={mood} stage={tokiStage(level?.current.total.score)} size={size * 1.15} mirrored={isRTL} />
+      </Reanimated.View>
+    </View>
+  );
+}
+
+/** Title block of a hero band: heading, one line under it and Toki on the side. */
+export function HeroTitle({ title, subtitle, mood = 'neutral' }: { title: string; subtitle?: string; mood?: TokiExpression }) {
+  const { row } = useI18n();
+  return (
+    <View style={[row, { alignItems: 'center', gap: space.sm }]}>
+      <View style={{ flex: 1, gap: 2 }}>
+        <AppText variant="h2">{title}</AppText>
+        {subtitle ? <AppText variant="small">{subtitle}</AppText> : null}
+      </View>
+      <Mascot mood={mood} size={56} />
     </View>
   );
 }

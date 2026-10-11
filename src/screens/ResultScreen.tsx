@@ -1,6 +1,7 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { View } from 'react-native';
 import { AdaptivePathChart } from '../components/AdaptivePathChart';
+import { Confetti } from '../components/Confetti';
 import { JourneyMap } from '../components/JourneyMap';
 import { AppText, Button, Card, EnglishText, Mascot, Screen } from '../components/ui';
 import { units } from '../data/units';
@@ -72,95 +73,103 @@ export function ResultScreen({ navigation }: NativeStackScreenProps<RootStackPar
   const statuses = unitStatuses(units, data.units, placement);
   const startUnit = units.find((u) => statuses[u.id] === 'current');
 
+  // The score sits in the hero band: a big, light figure (direction "Premium épuré") under Toki.
+  const hero = (
+    <View style={{ alignItems: 'center', gap: space.xs }}>
+      <Mascot mood="joy" size={72} />
+      <AppText variant="h2" center>
+        {t('result.title')}
+      </AppText>
+      <AppText variant="label" center style={{ marginTop: space.sm }}>
+        {t('result.score').toUpperCase()}
+      </AppText>
+      <EnglishText style={{ fontSize: 72, lineHeight: 80, fontWeight: '300', textAlign: 'center' }}>{bothMeasured ? String(placement.total.score) : '—'}</EnglishText>
+      <View style={{ backgroundColor: colors.white, borderRadius: radius.pill, paddingHorizontal: 14, paddingVertical: 4 }}>
+        <AppText variant="label" color={colors.primaryDark} center>
+          {placement.cefr} · {t(`cefr.${placement.cefr}` as StringKey)}
+        </AppText>
+      </View>
+      {bothMeasured ? (
+        <AppText variant="small" center style={{ marginTop: space.xs }}>
+          {t('result.range', { low: placement.total.low, high: placement.total.high })}
+        </AppText>
+      ) : null}
+    </View>
+  );
+
   return (
-    <Screen footer={<Button label={t('result.cta')} icon="map" onPress={() => navigation.reset({ index: 0, routes: [{ name: 'Main' }] })} />}>
-      <View style={{ gap: space.lg }}>
-        <View style={{ alignItems: 'center', gap: space.sm }}>
-          <Mascot mood="joy" size={80} />
-          <AppText variant="h2" center>
-            {t('result.title')}
-          </AppText>
-        </View>
-
-        <Card style={{ alignItems: 'center', gap: space.sm }}>
-          <AppText variant="label" color={colors.inkSoft} center>
-            {t('result.score').toUpperCase()}
-          </AppText>
-          <EnglishText variant="title" color={colors.primaryDark} style={{ fontSize: 56, lineHeight: 64, textAlign: 'center' }}>
-            {bothMeasured ? String(placement.total.score) : '—'}
-          </EnglishText>
-          <CefrBadge cefr={placement.cefr} />
-          {bothMeasured ? (
-            <AppText variant="small" color={colors.inkSoft} center>
-              {t('result.range', { low: placement.total.low, high: placement.total.high })}
+    <View style={{ flex: 1 }}>
+      <Screen hero={hero} footer={<Button label={t('result.cta')} icon="map" variant="play" onPress={() => navigation.reset({ index: 0, routes: [{ name: 'Main' }] })} />}>
+        <View style={{ gap: space.lg }}>
+          <Card style={{ gap: space.xs }}>
+            <AppText variant="small" color={colors.inkSoft}>
+              {t('result.answered', { n: placement.answered, k: placement.dontKnow })}
             </AppText>
-          ) : null}
-          <AppText variant="small" color={colors.inkSoft} center>
-            {t('result.answered', { n: placement.answered, k: placement.dontKnow })}
-          </AppText>
-          <AppText variant="small" color={colors.inkSoft} center>
-            {t('result.caveat')}
-          </AppText>
-        </Card>
-
-        <View style={[row, { gap: space.md }]}>
-          <SectionCard section="L" result={L} />
-          <SectionCard section="R" result={R} />
-        </View>
-
-        {bothMeasured ? <JourneyMap level={level} compact /> : null}
-
-        <Card style={{ gap: space.md }}>
-          <AppText variant="h3">{t('result.path')}</AppText>
-          <AdaptivePathChart responses={placement.responses} />
-          <AppText variant="small" color={colors.inkSoft}>
-            {t('result.pathHelp')}
-          </AppText>
-          <Button label={t('result.method')} icon="flask" variant="secondary" compact onPress={() => navigation.navigate('Method')} />
-        </Card>
-
-        <Card style={{ gap: space.md }}>
-          <AppText variant="h3">{t('result.skills')}</AppText>
-          {SKILLS.map((skill) => {
-            const est = skillEstimate(placement.responses, skill);
-            const section = sectionOf(skill);
-            const cefr = cefrFor(section, scaledScore(section, est.theta));
-            return (
-              <View key={skill} style={[row, { justifyContent: 'space-between', alignItems: 'center', minHeight: 32 }]}>
-                <AppText style={{ fontWeight: '700' }}>{t(`skill.${skill}` as StringKey)}</AppText>
-                {est.answered === 0 ? (
-                  <AppText variant="small" color={colors.inkSoft}>
-                    {t('skill.none')}
-                  </AppText>
-                ) : (
-                  <View style={[row, { alignItems: 'center', gap: space.sm }]}>
-                    {weak.includes(skill) ? (
-                      <AppText variant="label" color={colors.accentDark}>
-                        {t('result.focus')}
-                      </AppText>
-                    ) : null}
-                    <CefrBadge cefr={cefr} />
-                  </View>
-                )}
-              </View>
-            );
-          })}
-          <AppText variant="small" color={colors.inkSoft}>
-            {t('result.skillsIndicative')}
-          </AppText>
-        </Card>
-
-        {startUnit ? (
-          <Card style={{ backgroundColor: colors.primarySoft, boxShadow: 'none' }}>
-            <AppText variant="label" color={colors.inkSoft}>
-              {t('result.startAt').toUpperCase()}
-            </AppText>
-            <AppText variant="h3">
-              {startUnit.emoji} {tx(startUnit.title)}
+            <AppText variant="small" color={colors.inkSoft}>
+              {t('result.caveat')}
             </AppText>
           </Card>
-        ) : null}
-      </View>
-    </Screen>
+
+          <View style={[row, { gap: space.md }]}>
+            <SectionCard section="L" result={L} />
+            <SectionCard section="R" result={R} />
+          </View>
+
+          {bothMeasured ? <JourneyMap level={level} compact /> : null}
+
+          <Card style={{ gap: space.md }}>
+            <AppText variant="h3">{t('result.path')}</AppText>
+            <AdaptivePathChart responses={placement.responses} />
+            <AppText variant="small" color={colors.inkSoft}>
+              {t('result.pathHelp')}
+            </AppText>
+            <Button label={t('result.method')} icon="flask" variant="secondary" compact onPress={() => navigation.navigate('Method')} />
+          </Card>
+
+          <Card style={{ gap: space.md }}>
+            <AppText variant="h3">{t('result.skills')}</AppText>
+            {SKILLS.map((skill) => {
+              const est = skillEstimate(placement.responses, skill);
+              const section = sectionOf(skill);
+              const cefr = cefrFor(section, scaledScore(section, est.theta));
+              return (
+                <View key={skill} style={[row, { justifyContent: 'space-between', alignItems: 'center', minHeight: 32 }]}>
+                  <AppText style={{ fontWeight: '700' }}>{t(`skill.${skill}` as StringKey)}</AppText>
+                  {est.answered === 0 ? (
+                    <AppText variant="small" color={colors.inkSoft}>
+                      {t('skill.none')}
+                    </AppText>
+                  ) : (
+                    <View style={[row, { alignItems: 'center', gap: space.sm }]}>
+                      {weak.includes(skill) ? (
+                        <AppText variant="label" color={colors.accentDark}>
+                          {t('result.focus')}
+                        </AppText>
+                      ) : null}
+                      <CefrBadge cefr={cefr} />
+                    </View>
+                  )}
+                </View>
+              );
+            })}
+            <AppText variant="small" color={colors.inkSoft}>
+              {t('result.skillsIndicative')}
+            </AppText>
+          </Card>
+
+          {startUnit ? (
+            <Card style={{ backgroundColor: colors.accentSoft, boxShadow: 'none' }}>
+              <AppText variant="label" color={colors.ink}>
+                {t('result.startAt').toUpperCase()}
+              </AppText>
+              <AppText variant="h3">
+                {startUnit.emoji} {tx(startUnit.title)}
+              </AppText>
+            </Card>
+          ) : null}
+        </View>
+      </Screen>
+      <Confetti />
+    </View>
   );
 }

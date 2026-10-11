@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
-import { AppText, Button, Card, Chip, EnglishText, Mascot, ProgressBar, Screen } from '../components/ui';
+import { AppText, Button, Card, Chip, EnglishText, HeroTitle, Mascot, ProgressBar, Screen } from '../components/ui';
 import { themeNames, vocab } from '../data/vocab';
 import type { VocabTheme } from '../types';
 
@@ -39,15 +39,15 @@ export function WordsScreen() {
   };
 
   return (
-    <Screen>
-      <View style={{ gap: space.lg }}>
-        <AppText variant="h2">{t('words.title')}</AppText>
-        <View style={{ gap: 6 }}>
-          <AppText variant="small" color={colors.inkSoft}>
-            {t('words.mastered', { n: mastered, total: vocab.length })}
-          </AppText>
-          <ProgressBar value={mastered / vocab.length} color={colors.primary} label={t('words.title')} />
+    <Screen
+      hero={
+        <View style={{ gap: space.md }}>
+          <HeroTitle title={t('words.title')} subtitle={t('words.mastered', { n: mastered, total: vocab.length })} />
+          <ProgressBar value={mastered / vocab.length} color={colors.primaryDark} label={t('words.title')} />
         </View>
+      }
+    >
+      <View style={{ gap: space.lg }}>
 
         <View style={{ gap: space.sm }}>
           <AppText variant="label" color={colors.inkSoft}>

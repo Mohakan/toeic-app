@@ -48,8 +48,36 @@ La palette du brief Toki ne change pas. Ce sont son dosage et les formes qui cha
 - Les nouveaux contrastes sont vérifiés dans `src/theme.test.ts`.
 - Chaque écran retouché est vérifié en arabe : Toki doit apparaître en miroir et les chiffres doivent être alignés sur leur légende.
 
+## Lot 2 (2026-10-11)
+
+- **Bandeau sur les onglets Mots, Examens et Progrès.** Il est construit avec `HeroTitle` : titre, ligne d'information et Toki.
+  - Progrès regroupe ses chiffres dans le bandeau : score estimé, étapes terminées et série.
+  - Mots affiche dans le bandeau sa barre « mots maîtrisés ».
+- **Toki animé** (`Mascot`, avec `react-native-reanimated` 4.5.1 et `react-native-worklets` 0.10.1) :
+  - au repos, il flotte doucement ;
+  - sur une bonne réponse, il fait un bond et se dandine ;
+  - sur une erreur, il penche la tête ;
+  - il reste immobile quand le réglage « Réduire les animations » est actif.
+- **Confettis** (`src/components/Confetti.tsx`).
+  - Ils apparaissent :
+    - en fin de série quand une unité est terminée ou qu'un nouveau niveau est atteint ;
+    - à l'arrivée sur le résultat du test de niveau.
+  - Une seule salve, aux couleurs de Toki. Ils ne captent pas les touches et sont désactivés quand le réglage « Réduire les animations » est actif.
+- **Résultat du test de niveau** :
+  - le score s'affiche en grand chiffre léger dans le bandeau, avec le niveau CECR dans une pastille blanche et l'intervalle de confiance ;
+  - les précautions de lecture passent dans une carte sous le bandeau ;
+  - le bouton principal est Orange Soleil.
+- **Paywall** :
+  - l'offre est dans le bandeau ;
+  - le prix est dans une carte à bord Orange Soleil, placée avant la liste des avantages ;
+  - chaque avantage est coché en vert.
+
+| Onglets et Paywall | Résultat du test de niveau |
+| --- | --- |
+| ![Mots, Examens, Progrès, Paywall](onglets-et-paywall.png) | ![Résultat avec confettis](resultat-test-confettis.png) |
+
 ## Suite
 
-1. Étendre le bandeau aux écrans Progrès, Examens et Mots.
-2. Animer Toki (clignement, saut sur une bonne réponse) et ajouter des confettis en fin d'unité. Cela demande `react-native-reanimated`, à installer avec `npx expo install`.
-3. Écran de résultat du test de niveau et Paywall.
+1. Faire clignoter Toki : il faut animer les yeux dans `Toki.tsx`, donc des propriétés SVG animées.
+2. Étendre le bandeau aux écrans Profil, Oral et TOEIC blanc en cours.
+3. Tester les animations sur un appareil Android d'entrée de gamme (objectif : 60 images par seconde).
