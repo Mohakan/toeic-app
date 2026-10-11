@@ -656,7 +656,7 @@ const rawBank: McqItem[] = [
     ),
   },
   {
-    id: 'fce-a6-2', skill: 'grammar', part: 'RU1', level: 6,
+    id: 'fce-a6-2', skill: 'grammar', part: 'RU1', level: 5,
     prompt: 'It’s high time the council ___ something about the traffic in the old town.',
     options: ['did', 'does', 'has done', 'will do'], answer: 0,
     explain: L(
@@ -667,7 +667,7 @@ const rawBank: McqItem[] = [
     ),
   },
   {
-    id: 'fce-a6-3', skill: 'grammar', part: 'RU1', level: 6,
+    id: 'fce-a6-3', skill: 'grammar', part: 'RU1', level: 5,
     prompt: '___ to the rules, she would never have been disqualified.',
     options: ['Had she kept', 'If she kept', 'Were she to keep', 'Should she keep'], answer: 0,
     explain: L(
@@ -770,7 +770,7 @@ const rawBank: McqItem[] = [
     ),
   },
   {
-    id: 'fce-a6-10', skill: 'listening', part: 'LI1', level: 6, irt: C3,
+    id: 'fce-a6-10', skill: 'listening', part: 'LI1', level: 5, irt: C3,
     audio: 'W: I gather you weren’t exactly thrilled with the new coach’s plan.\nM: It’s not that I object to it as such. On paper, it’s perfectly sensible. What bothers me is that half the team found out about it on social media before we’d been told anything officially.\nW: So it’s the way it was handled.\nM: Exactly. Get that wrong and even the best idea will meet resistance.',
     prompt: 'What is the man unhappy about?',
     options: ['How the plan was communicated', 'What the plan actually involves', 'Being dropped from the team'], answer: 0,

@@ -78,11 +78,11 @@ export const fceU02: Unit = unit(
       'Superlative: “the most delicious”.',
       'Superlativo: «the most delicious»; «we had ever tasted» lo confirma.',
     ), MARRAKECH),
-    ru2('fce-u02-s1-q4', 4, 'I can’t find my keys ___. Have you seen them?', ['anywhere'], x(
-      'Phrase négative (can’t) : on emploie « anywhere » (nulle part), pas « somewhere ».',
-      'في الجملة المنفية (can’t) نستعمل «anywhere» (في أي مكان)، لا «somewhere».',
-      'Negative sentence → “anywhere”.',
-      'Frase negativa (can’t): se usa «anywhere» (en ninguna parte), no «somewhere».',
+    ru2('fce-u02-s1-q4', 4, 'My keys aren’t in my bag, and they aren’t ___ else in the flat either. Have you seen them?', ['anywhere'], x(
+      'Phrase négative (aren’t … either) : on emploie « anywhere else » (nulle part ailleurs), pas « somewhere ».',
+      'في الجملة المنفية (aren’t … either) نستعمل «anywhere else» (في أي مكان آخر)، لا «somewhere».',
+      'Negative sentence (aren’t … either) → “anywhere else”.',
+      'Frase negativa (aren’t … either): se usa «anywhere else» (en ninguna otra parte), no «somewhere».',
     )),
     ru2('fce-u02-s1-q5', 3, 'Ahmed is the student ___ won the science competition.', ['who', 'that'], x(
       'Pronom relatif sujet pour une personne : « who » (ou « that », relative déterminative).',

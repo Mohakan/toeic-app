@@ -64,7 +64,7 @@ export const fceU04: Unit = unit(
     ),
   },
   [
-    ru4('fce-u04-s1-q1', 4, 'They are building a new sports centre near the university.', 'BEING', 'A new sports centre ___ near the university.', ['is being built'], x(
+    ru4('fce-u04-s1-q1', 4, 'They are building a new sports centre near the university.', 'BEING', 'A new sports centre ___ near the university.', ['is being built', 'is currently being built'], x(
       'Présent continu actif (are building) → passif « is being built » : be au présent continu + participe passé.',
       'المضارع المستمر المبني للمعلوم (are building) ← المبني للمجهول «is being built»: be في المضارع المستمر + اسم المفعول.',
       'Present continuous passive: is being + built.',
@@ -82,7 +82,7 @@ export const fceU04: Unit = unit(
       'Causative: had + his hair + cut (participle).',
       'Causativa: have + objeto + participio. El peluquero hizo el trabajo, así que «had his hair cut» (cut también es el participio).',
     )),
-    ru4('fce-u04-s1-q4', 4, 'I’m going to ask someone to fix my laptop screen tomorrow.', 'GET', 'I’m going to ___ tomorrow.', ['get my laptop screen fixed'], x(
+    ru4('fce-u04-s1-q4', 4, 'I’m going to ask someone to fix my laptop screen tomorrow.', 'GET', 'I’m going to ___ tomorrow.', ['get my laptop screen fixed', 'get my laptop screen repaired'], x(
       '« Ask someone to fix » = « get + objet + participe » : « get my laptop screen fixed ».',
       '«Ask someone to fix» = «get + مفعول به + اسم المفعول»: «get my laptop screen fixed».',
       'Causative: get + object + fixed.',
@@ -112,13 +112,13 @@ export const fceU04: Unit = unit(
       'Reported question: where + I + had bought, no “did”.',
       'Pregunta indirecta: orden sujeto + verbo (where I…) sin «did»; el pasado retrocede a «had bought» (también se acepta el pasado simple).',
     )),
-    ru4('fce-u04-s1-q9', 4, 'You must hand in the application form before Friday.', 'HANDED', 'The application form ___ before Friday.', ['must be handed in'], x(
+    ru4('fce-u04-s1-q9', 4, 'You must hand in the application form before Friday.', 'HANDED', 'The application form ___ before Friday.', ['must be handed in', 'has to be handed in', 'needs to be handed in'], x(
       'Passif avec modal : must + be + participe ; la particule « in » reste après le verbe : « must be handed in ».',
       'المبني للمجهول مع فعل ناقص: must + be + اسم المفعول؛ وتبقى الأداة «in» بعد الفعل: «must be handed in».',
       'Modal passive: must be handed in (keep the particle).',
       'Pasiva con modal: must + be + participio; la partícula «in» se mantiene: «must be handed in».',
     )),
-    ru4('fce-u04-s1-q10', 4, 'At first, the long winters in Oslo were hard for Salma, but not any more.', 'USED', 'Salma has ___ the long winters in Oslo.', ['got used to', 'gotten used to', 'become used to'], x(
+    ru4('fce-u04-s1-q10', 4, 'At first, the long winters in Oslo were hard for Salma, but not any more.', 'USED', 'Salma has ___ the long winters in Oslo.', ['got used to', 'gotten used to', 'become used to', 'grown used to', 'now got used to', 'now become used to', 'now gotten used to'], x(
       'Changement progressif (difficile au début, plus maintenant) → « get used to » ; après « has », le participe « got » : « got used to ».',
       'تغيّر تدريجي (صعب في البداية ثم لم يعد كذلك) ← «get used to»؛ وبعد «has» يأتي اسم المفعول «got»: «got used to».',
       'Process of adapting → has got used to.',
@@ -138,7 +138,7 @@ export const fceU04: Unit = unit(
       'Advice: advise + person + to + verb.',
       '«You should…» es un consejo: advise + persona + to + infinitivo: «advised Amira to drink».',
     )),
-    ru4('fce-u04-s2-q3', 4, 'A technician is going to install solar panels on our roof next month.', 'HAVE', 'We are going to ___ on our roof next month.', ['have solar panels installed', 'have some solar panels installed'], x(
+    ru4('fce-u04-s2-q3', 4, 'A technician is going to install solar panels on our roof next month.', 'HAVE', 'We are going to ___ on our roof next month.', ['have solar panels installed', 'have some solar panels installed', 'have solar panels fitted'], x(
       'Un technicien fait le travail pour nous → have + objet + participe : « have solar panels installed ».',
       'فنيّ يقوم بالعمل لصالحنا ← have + مفعول به + اسم المفعول: «have solar panels installed».',
       'Causative: have + solar panels + installed.',
@@ -162,7 +162,7 @@ export const fceU04: Unit = unit(
       'Negative command: told someone not to + verb.',
       'Orden negativa en estilo indirecto: tell + persona + «not to» + infinitivo: «not to touch».',
     )),
-    ru4('fce-u04-s2-q7', 4, 'Living in a big city is new to Yanis; he grew up in a small village.', 'USED', 'Yanis ___ in a big city because he grew up in a small village.', ['isn’t used to living', 'is not used to living'], x(
+    ru4('fce-u04-s2-q7', 4, 'Living in a big city is new to Yanis; he grew up in a small village.', 'USED', 'Yanis ___ in a big city because he grew up in a small village.', ['isn’t used to living', 'is not used to living', 'isn’t used to life'], x(
       '« New to him » = il n’en a pas l’habitude : « be not used to » + -ing : « isn’t used to living ».',
       '«New to him» = ليس معتادًا عليه: «be not used to» + ‎-ing: «isn’t used to living».',
       'Not accustomed → isn’t used to + -ing.',
@@ -180,7 +180,7 @@ export const fceU04: Unit = unit(
       'Causative: got + our posters + printed.',
       'El centro hizo el trabajo por nosotros → get + objeto + participio: «got our posters printed».',
     )),
-    ru4('fce-u04-s2-q10', 4, '“Have you ever been to Morocco?” Lucas asked Sofia.', 'IF', 'Lucas asked Sofia ___ to Morocco.', ['if she had ever been', 'if she’d ever been', 'if she had been', 'if she’d been'], x(
+    ru4('fce-u04-s2-q10', 4, '“Have you ever been to Morocco?” Lucas asked Sofia.', 'IF', 'Lucas asked Sofia ___ to Morocco.', ['if she had ever been', 'if she’d ever been', 'if she had been', 'if she’d been', 'if she has ever been'], x(
       'Question fermée rapportée : « if » + sujet + verbe ; le present perfect recule en past perfect : « if she had ever been ».',
       'سؤال بنعم أو لا منقول: «if» + الفاعل + الفعل؛ ويتراجع المضارع التام إلى الماضي التام: «if she had ever been».',
       'Yes/no question: if + she + had (ever) been.',

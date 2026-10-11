@@ -115,7 +115,7 @@ export const fceMini1: MockTest = b2Mock(
       'Collocation: “draw attention to” something.',
       'Colocación «draw (public) attention to» = llamar la atención sobre. «Pay attention» es «prestar atención uno mismo».',
     ), RU1_TEXT),
-    ru1('fce-m1-ru1-3', 4, 'Gap (3): At first, many neighbours were doubtful, but the farm soon ___ a reputation for excellent tomatoes.', ['earned', 'achieved', 'deserved', 'reached'], x(
+    ru1('fce-m1-ru1-3', 4, 'Gap (3): At first, many neighbours were doubtful, but the farm soon ___ a reputation for excellent tomatoes.', ['earned', 'collected', 'deserved', 'reached'], x(
       'Collocation « earn a reputation for » = se faire une réputation grâce à. « Deserve » = mériter (sans idée d’obtenir), « reach » s’emploie pour un niveau ou un lieu.',
       'المتلازمة «earn a reputation for» تعني «اكتسب سمعة بفضل». أما «deserve» فتعني «استحق» دون حصول فعلي، و«reach» تُستعمل لمستوى أو مكان.',
       'Collocation: “earn a reputation for” something.',
@@ -187,13 +187,13 @@ export const fceMini1: MockTest = b2Mock(
       'Present perfect negative + “for a long time”.',
       '«It’s a long time since I last…» = «I haven’t been… for a long time»: present perfect negativo con «been to».',
     )),
-    ru4('fce-m1-ru4-2', 4, '‘Don’t forget to bring your passport,’ Leila’s mother told her.', 'REMINDED', 'Leila’s mother ___ her passport.', ['reminded her to bring', 'reminded Leila to bring'], x(
+    ru4('fce-m1-ru4-2', 4, '‘Don’t forget to bring your passport,’ Leila’s mother told her.', 'REMINDED', 'Leila’s mother ___ her passport.', ['reminded her to bring', 'reminded Leila to bring', 'reminded her to take', 'reminded Leila to take', 'reminded her daughter to bring', 'reminded her daughter to take'], x(
       'Discours rapporté : « remind sb to do sth » remplace « Don’t forget to… ».',
       'الكلام المنقول: «remind sb to do sth» يحل محل «Don’t forget to…».',
       '“Don’t forget to…” → remind sb to do sth.',
       'Estilo indirecto: «remind sb to do sth» sustituye a «Don’t forget to…».',
     )),
-    ru4('fce-m1-ru4-3', 4, 'I regret not studying harder for my exams.', 'WISH', 'I ___ harder for my exams.', ['wish I had studied', "wish I'd studied"], x(
+    ru4('fce-m1-ru4-3', 4, 'I regret not studying harder for my exams.', 'WISH', 'I ___ harder for my exams.', ['wish I had studied', "wish I'd studied", 'wish that I had studied', 'wish that I’d studied'], x(
       'Regret sur le passé : « wish + past perfect » → « wish I had studied ».',
       'الندم على الماضي: «wish + الماضي التام» ← «wish I had studied».',
       'Past regret: wish + past perfect.',

@@ -56,7 +56,7 @@ export const EXAMS: Record<ExamId, ExamVariant> = {
   },
   b2First: {
     id: 'b2First',
-    status: 'planned',
+    status: 'live',
     appName: 'Toki Quest B2',
     slug: 'toki-quest-b2',
     bundleId: 'app.tokiquest.b2',

@@ -64,7 +64,7 @@ export const fceU08: Unit = unit(
     ),
   },
   [
-    ru4('fce-u08-s1-q1', 5, 'If you don’t book early, you won’t get a seat on the night train.', 'UNLESS', 'You won’t get a seat on the night train ___ early.', ['unless you book'], x(
+    ru4('fce-u08-s1-q1', 5, 'If you don’t book early, you won’t get a seat on the night train.', 'UNLESS', 'You won’t get a seat on the night train ___ early.', ['unless you book', 'unless you have booked'], x(
       '« If you don’t book » = « unless you book » : unless contient déjà la négation, le verbe reste affirmatif.',
       '«If you don’t book» = «unless you book»: unless تتضمن النفي، فيبقى الفعل مثبتًا.',
       'unless = if not, so the verb is positive.',
@@ -138,7 +138,7 @@ export const fceU08: Unit = unit(
       'otherwise + would have + participle.',
       '«otherwise» sustituye la condición irreal pasada; se mantiene «would have» + participio: «otherwise she would have».',
     )),
-    ru4('fce-u08-s2-q3', 5, 'The concert was cancelled only because of the storm.', 'FOR', 'If ___ the storm, the concert would not have been cancelled.', ['it hadn’t been for', 'it had not been for'], x(
+    ru4('fce-u08-s2-q3', 5, 'The concert was cancelled only because of the storm.', 'FOR', 'If ___ the storm, the concert would not have been cancelled.', ['it hadn’t been for', 'it had not been for', 'not for'], x(
       '« only because of X » au passé → « If it hadn’t been for X » (sans X, rien ne serait arrivé).',
       '«only because of X» في الماضي ← «If it hadn’t been for X» (لولا X لما حدث ذلك).',
       'Only because of X → if it hadn’t been for X.',

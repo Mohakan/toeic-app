@@ -146,7 +146,7 @@ export const fceU05: Unit = unit(
       '“work out” = find the answer.',
       '«work out» = averiguar, resolver.',
     )),
-    ru2('fce-u05-s2-q6', 4, '___ her injury, Sofia finished the marathon.', ['Despite'], x(
+    ru2('fce-u05-s2-q6', 4, '___ her injury, Sofia finished the marathon.', ['Despite', 'Notwithstanding'], x(
       'Nom seul (her injury) sans « of » : « Despite » ; « Although » demande un verbe.',
       'اسم وحده (her injury) دون «of»: «Despite»، أما «Although» فتحتاج فعلاً.',
       '“Despite” + noun, without “of”.',

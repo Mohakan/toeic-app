@@ -16,6 +16,19 @@ describe('typed answers', () => {
     expect(isAcceptedAnswer('   ', ['unless'])).toBe(false);
   });
 
+  it('accepts a contraction for its full form and the other way round', () => {
+    expect(isAcceptedAnswer('wish he would not keep', ['wish he wouldn’t keep'])).toBe(true);
+    expect(isAcceptedAnswer("needn't have bought", ['need not have bought'])).toBe(true);
+    expect(isAcceptedAnswer('he would phone her', ['he’d phone her'])).toBe(true);
+    expect(isAcceptedAnswer('she had left', ["she'd left"])).toBe(true);
+    expect(isAcceptedAnswer('it has been', ["it's been"])).toBe(true);
+    expect(isAcceptedAnswer('cannot', ["can't"])).toBe(true);
+    expect(isAcceptedAnswer('will not', ["won't"])).toBe(true);
+    // A different word is still wrong.
+    expect(isAcceptedAnswer('he will phone her', ['he’d phone her'])).toBe(false);
+    expect(isAcceptedAnswer("Ali's car", ['Ali car'])).toBe(false);
+  });
+
   it('counts a contraction as two words, as Cambridge does', () => {
     expect(countWords("wasn't able to")).toBe(4);
     expect(countWords('had been told')).toBe(3);

@@ -140,7 +140,7 @@ export const fceMini2: MockTest = b2Mock(
       'Dependent preposition: “worry about”.',
       'El verbo «worry» va con «about» (o «over») + -ing.',
     ), RU2_TEXT),
-    ru2('fce-m2-ru2-3', 4, 'Gap (3): ‘…but within a few weeks I was looking forward to it ___ week.’', ['every', 'each'], x(
+    ru2('fce-m2-ru2-3', 4, 'Gap (3): ‘…but within a few weeks I was looking forward to it ___ week.’', ['every', 'each', 'all'], x(
       'Fréquence : « every week » (ou « each week ») = chaque semaine.',
       'التكرار: «every week» (أو «each week») = كل أسبوع.',
       'Frequency: every / each week.',
@@ -180,19 +180,19 @@ export const fceMini2: MockTest = b2Mock(
     )),
 
     // ── Part 4 ──
-    ru4('fce-m2-ru4-1', 5, 'Nobody has told me about the new rules yet.', 'STILL', 'I ___ about the new rules.', ["still haven't been told", 'still have not been told'], x(
+    ru4('fce-m2-ru4-1', 5, 'Nobody has told me about the new rules yet.', 'STILL', 'I ___ about the new rules.', ["still haven't been told", 'still have not been told', 'have still not been told'], x(
       '« Yet » au négatif → « still » + present perfect, et passage au passif : « I still haven’t been told ».',
       '«yet» في النفي ← «still» + المضارع التام، مع التحويل إلى المبني للمجهول: «I still haven’t been told».',
       '“still” + present perfect passive.',
       '«Yet» en negativa → «still» + present perfect en pasiva: «I still haven’t been told».',
     )),
-    ru4('fce-m2-ru4-2', 4, 'The museum was so crowded that we couldn’t see the paintings properly.', 'TOO', 'The museum was ___ us to see the paintings properly.', ['too crowded for'], x(
+    ru4('fce-m2-ru4-2', 4, 'The museum was so crowded that we couldn’t see the paintings properly.', 'TOO', 'The museum was ___ us to see the paintings properly.', ['too crowded for', 'far too crowded for', 'much too crowded for'], x(
       '« So… that we couldn’t » = « too + adjectif + for sb + to do ».',
       '«so… that we couldn’t» = «too + صفة + for sb + to do».',
       '“so … that … couldn’t” → too + adj + for sb to.',
       '«So… that we couldn’t» = «too + adjetivo + for sb + to do».',
     )),
-    ru4('fce-m2-ru4-3', 4, 'It wasn’t necessary for you to bring any food.', 'NEED', 'You ___ any food.', ["didn't need to bring", 'did not need to bring', "needn't have brought", 'need not have brought'], x(
+    ru4('fce-m2-ru4-3', 4, 'It wasn’t necessary for you to bring any food.', 'NEED', 'You ___ any food.', ["didn't need to bring", 'did not need to bring', "needn't have brought", 'need not have brought', 'had no need to bring'], x(
       'Absence d’obligation dans le passé : « didn’t need to bring » (ou « needn’t have brought » si la nourriture a été apportée).',
       'نفي الضرورة في الماضي: «didn’t need to bring» (أو «needn’t have brought» إذا كان الطعام قد أُحضر فعلًا).',
       'Past lack of necessity: didn’t need to / needn’t have.',

@@ -139,5 +139,7 @@ const styles = StyleSheet.create({
     color: colors.ink,
     textAlign: 'left',
     writingDirection: 'ltr',
+    // The field's own border shows the focus; no second outline from the browser.
+    outlineWidth: 0,
   },
 });

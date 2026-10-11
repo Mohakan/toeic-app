@@ -71,11 +71,11 @@ export const fceU12: Unit = unit(
       '“No sooner had… than”.',
       '«… sooner had we… than»: inversión tras «No sooner».',
     )),
-    ru2('fce-u12-s1-q3', 5, 'Please keep the party a secret. I’d rather you ___ tell anyone else about it.', ['didn’t'], x(
-      '« would rather » + autre sujet + prétérit ; ici négatif : « you didn’t tell ».',
-      '«would rather» + فاعل آخر + ماضٍ، وهنا منفي: «you didn’t tell».',
-      '“I’d rather you” + past negative: didn’t.',
-      '«would rather» + otro sujeto + pasado; aquí en negativa: «you didn’t tell».',
+    ru2('fce-u12-s1-q3', 5, 'Please keep the party a secret. I’d rather you ___ not tell anyone else about it.', ['did'], x(
+      '« would rather » + autre sujet + prétérit ; à la forme négative : « you did not tell ».',
+      '«would rather» + فاعل آخر + ماضٍ، وفي النفي: «you did not tell».',
+      '“I’d rather you” + past, negative: did not tell.',
+      '«would rather» + otro sujeto + pasado; en negativa: «you did not tell».',
     )),
     ru3('fce-u12-s1-q4', 5, 'Her ___ to give up, despite a serious knee injury, impressed the whole team.', 'REFUSE', ['refusal'], x(
       'Après « Her », il faut un nom (« refusal to + verbe ») : refuse → refusal (-al, le e disparaît).',
@@ -101,7 +101,7 @@ export const fceU12: Unit = unit(
       'such a + adjective + noun.',
       'Con un sustantivo, «so» pasa a «such a» + adjetivo + sustantivo: «such a boring film».',
     )),
-    ru4('fce-u12-s1-q8', 5, 'Malik had only just got home when his phone rang.', 'HARDLY', 'Malik ___ home when his phone rang.', ['had hardly got', 'had hardly gotten'], x(
+    ru4('fce-u12-s1-q8', 5, 'Malik had only just got home when his phone rang.', 'HARDLY', 'Malik ___ home when his phone rang.', ['had hardly got', 'had hardly gotten', 'had hardly arrived'], x(
       '« only just » = « hardly » ; avec le past perfect, hardly se place après had : « had hardly got … when ».',
       '«only just» = «hardly»، ومع الماضي التام يأتي hardly بعد had: «had hardly got … when».',
       '“only just” = hardly: had hardly got… when.',
@@ -163,7 +163,7 @@ export const fceU12: Unit = unit(
       'It’s high time + subject + past.',
       'Reproche por el retraso: «It’s high time» + sujeto + pasado: «high time the council introduced».',
     )),
-    ru4('fce-u12-s2-q8', 5, 'From the way Tom talks, you would think he was the manager.', 'IF', 'Tom talks ___ the manager.', ['as if he was', 'as if he were'], x(
+    ru4('fce-u12-s2-q8', 5, 'From the way Tom talks, you would think he was the manager.', 'IF', 'Tom talks ___ the manager.', ['as if he was', 'as if he were', 'as if he is'], x(
       'Impression fausse : « as if » + prétérit ; « were » et « was » sont acceptés : « as if he were / was ».',
       'انطباع غير صحيح: «as if» + ماضٍ، وتُقبل «were» و«was»: «as if he were / was».',
       'as if + past: as if he were/was.',
