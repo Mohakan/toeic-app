@@ -1,7 +1,10 @@
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
-import type { ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import {
+  AccessibilityInfo,
+  Animated,
+  Easing,
   Platform,
   Pressable,
   ScrollView,
@@ -12,24 +15,47 @@ import {
   type TextStyle,
   type ViewStyle,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useI18n } from '../i18n';
 import { isolateLatin } from '../i18n/bidi';
 import { tokiStage, type TokiExpression } from '../services/toki';
 import { useLevel } from '../state/useLevel';
 import { Toki } from './Toki';
-import { colors, radius, shadow, space } from '../theme';
+import { colors, fontFamilyFor, fonts, radius, shadow, space } from '../theme';
 
 type Variant = 'title' | 'h2' | 'h3' | 'body' | 'small' | 'label';
 
 const textStyles: Record<Variant, TextStyle> = {
   title: { fontSize: 30, lineHeight: 38, fontWeight: '800' },
-  h2: { fontSize: 22, lineHeight: 30, fontWeight: '800' },
-  h3: { fontSize: 18, lineHeight: 26, fontWeight: '700' },
+  h2: { fontSize: 24, lineHeight: 32, fontWeight: '700' },
+  h3: { fontSize: 18, lineHeight: 26, fontWeight: '600' },
   body: { fontSize: 16, lineHeight: 24, fontWeight: '400' },
   small: { fontSize: 14, lineHeight: 20, fontWeight: '400' },
   label: { fontSize: 13, lineHeight: 18, fontWeight: '700', letterSpacing: 0.3 },
 };
+
+/** Swaps fontWeight for the matching Rubik file (a custom font has one weight per family). */
+const typeface = (style: StyleProp<TextStyle>): TextStyle => {
+  const flat = StyleSheet.flatten(style) ?? {};
+  return flat.fontFamily ? {} : { fontFamily: fontFamilyFor(flat.fontWeight), fontWeight: 'normal' };
+};
+
+/** The system "Reduce motion" setting: animations are skipped when it is on. */
+export function useReducedMotion(): boolean {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    let active = true;
+    AccessibilityInfo.isReduceMotionEnabled()
+      .then((on) => active && setReduced(on))
+      .catch(() => undefined);
+    const sub = AccessibilityInfo.addEventListener('reduceMotionChanged', setReduced);
+    return () => {
+      active = false;
+      sub.remove();
+    };
+  }, []);
+  return reduced;
+}
 
 interface AppTextProps {
   variant?: Variant;
@@ -46,11 +72,9 @@ const isolateChildren = (children: ReactNode): ReactNode =>
 
 export function AppText({ variant = 'body', color = colors.ink, center, style, children, numberOfLines }: AppTextProps) {
   const { align, isRTL } = useI18n();
+  const base = [textStyles[variant], { color }, align, center && { textAlign: 'center' as const }, style];
   return (
-    <Text
-      numberOfLines={numberOfLines}
-      style={[textStyles[variant], { color }, align, center && { textAlign: 'center' }, style]}
-    >
+    <Text numberOfLines={numberOfLines} style={[base, typeface(base)]}>
       {isRTL ? isolateChildren(children) : children}
     </Text>
   );
@@ -58,9 +82,8 @@ export function AppText({ variant = 'body', color = colors.ink, center, style, c
 
 /** English content (questions, passages) is always laid out left-to-right. */
 export function EnglishText({ variant = 'body', color = colors.ink, style, children }: Omit<AppTextProps, 'center'>) {
-  return (
-    <Text style={[textStyles[variant], { color, textAlign: 'left', writingDirection: 'ltr' }, style]}>{children}</Text>
-  );
+  const base = [textStyles[variant], { color, textAlign: 'left' as const, writingDirection: 'ltr' as const }, style];
+  return <Text style={[base, typeface(base)]}>{children}</Text>;
 }
 
 interface ButtonProps {
@@ -141,6 +164,13 @@ export function Card({ children, style }: { children: ReactNode; style?: StylePr
 export function ProgressBar({ value, color = colors.success, height = 12, label }: { value: number; color?: string; height?: number; label?: string }) {
   const pct = Math.max(0, Math.min(1, value));
   const { isRTL } = useI18n();
+  const reduced = useReducedMotion();
+  // The bar fills from empty when it appears, then glides to each new value.
+  const [fill] = useState(() => new Animated.Value(0));
+  useEffect(() => {
+    if (reduced) fill.setValue(pct);
+    else Animated.timing(fill, { toValue: pct, duration: 500, easing: Easing.out(Easing.cubic), useNativeDriver: false }).start();
+  }, [fill, pct, reduced]);
   return (
     <View
       accessibilityRole="progressbar"
@@ -148,18 +178,40 @@ export function ProgressBar({ value, color = colors.success, height = 12, label 
       accessibilityValue={{ min: 0, max: 100, now: Math.round(pct * 100) }}
       style={{ height, borderRadius: radius.pill, backgroundColor: colors.line, overflow: 'hidden', flexDirection: isRTL ? 'row-reverse' : 'row' }}
     >
-      <View style={{ width: `${pct * 100}%`, backgroundColor: color, borderRadius: radius.pill }} />
+      <Animated.View
+        style={{ width: fill.interpolate({ inputRange: [0, 1], outputRange: ['0%', '100%'] }), backgroundColor: color, borderRadius: radius.pill }}
+      />
     </View>
   );
 }
 
-export function Screen({ children, scroll = true, padded = true, footer }: { children: ReactNode; scroll?: boolean; padded?: boolean; footer?: ReactNode }) {
+interface ScreenProps {
+  children: ReactNode;
+  scroll?: boolean;
+  padded?: boolean;
+  footer?: ReactNode;
+  /** Background of the footer band, e.g. the soft green or red of answer feedback. */
+  footerTone?: string;
+  /** Content of the Bleu Ciel band at the top of the screen (scrolling screens only). */
+  hero?: ReactNode;
+}
+
+export function Screen({ children, scroll = true, padded = true, footer, footerTone, hero }: ScreenProps) {
   const content = padded ? styles.padded : undefined;
+  const insets = useSafeAreaInsets();
+  const withHero = scroll && !!hero;
   return (
-    <SafeAreaView style={styles.screen} edges={['top', 'left', 'right', 'bottom']}>
+    <SafeAreaView style={styles.screen} edges={withHero ? ['left', 'right', 'bottom'] : ['top', 'left', 'right', 'bottom']}>
       {scroll ? (
-        <ScrollView contentContainerStyle={[content, { flexGrow: 1 }]} keyboardShouldPersistTaps="handled">
-          <View style={styles.maxWidth}>{children}</View>
+        <ScrollView contentContainerStyle={[{ flexGrow: 1 }, !withHero && content]} keyboardShouldPersistTaps="handled">
+          {withHero ? (
+            <View style={[styles.hero, { paddingTop: insets.top + space.md }]}>
+              <View style={styles.maxWidth}>{hero}</View>
+            </View>
+          ) : null}
+          <View style={withHero ? content : undefined}>
+            <View style={styles.maxWidth}>{children}</View>
+          </View>
         </ScrollView>
       ) : (
         <View style={[{ flex: 1 }, content]}>
@@ -167,11 +219,29 @@ export function Screen({ children, scroll = true, padded = true, footer }: { chi
         </View>
       )}
       {footer ? (
-        <View style={styles.footer}>
+        <View style={[styles.footer, footerTone ? { backgroundColor: footerTone, borderTopWidth: 0 } : null]}>
           <View style={styles.maxWidth}>{footer}</View>
         </View>
       ) : null}
     </SafeAreaView>
+  );
+}
+
+/** A figure in the hero band: icon, big value, short caption. */
+export function StatTile({ icon, iconColor, value, caption }: { icon: keyof typeof Ionicons.glyphMap; iconColor: string; value: string; caption: string }) {
+  const { row } = useI18n();
+  return (
+    <View accessible accessibilityLabel={`${value} ${caption}`} style={[row, styles.statTile]}>
+      <Ionicons name={icon} size={22} color={iconColor} />
+      <View style={{ flex: 1 }}>
+        <AppText variant="h3" style={{ fontWeight: '800', lineHeight: 22 }}>
+          {value}
+        </AppText>
+        <AppText variant="label" color={colors.inkSoft} style={{ fontWeight: '400', letterSpacing: 0 }} numberOfLines={1}>
+          {caption}
+        </AppText>
+      </View>
+    </View>
   );
 }
 
@@ -214,7 +284,7 @@ export function Chip({ label, selected, onPress, icon }: { label: string; select
       ]}
     >
       {selected ? <Ionicons name="checkmark-circle" size={18} color={colors.primaryDark} /> : icon ? <Ionicons name={icon} size={18} color={colors.inkSoft} /> : null}
-      <Text style={{ color: selected ? colors.primaryDark : colors.ink, fontWeight: '700', fontSize: 15 }}>{label}</Text>
+      <Text style={{ color: selected ? colors.primaryDark : colors.ink, fontFamily: fonts[600], fontSize: 15 }}>{label}</Text>
     </Pressable>
   );
 }
@@ -224,6 +294,23 @@ const styles = StyleSheet.create({
   padded: { padding: space.md, paddingBottom: space.xl },
   maxWidth: { width: '100%', maxWidth: 560, alignSelf: 'center' },
   footer: { padding: space.md, backgroundColor: colors.bg, borderTopWidth: 1, borderTopColor: colors.line },
+  hero: {
+    backgroundColor: colors.primary,
+    borderBottomLeftRadius: 36,
+    borderBottomRightRadius: 36,
+    paddingHorizontal: space.lg,
+    paddingBottom: space.lg,
+  },
+  statTile: {
+    flex: 1,
+    alignItems: 'center',
+    gap: space.sm,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    borderRadius: radius.md,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    minHeight: 56,
+  },
   button: {
     borderRadius: radius.md,
     paddingHorizontal: space.lg,
@@ -231,7 +318,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  buttonLabel: { fontSize: 17, fontWeight: '800' },
+  buttonLabel: { fontSize: 17, fontFamily: fonts[700] },
   card: { backgroundColor: colors.card, borderRadius: radius.lg, padding: space.md, ...shadow },
   chip: {
     alignItems: 'center',

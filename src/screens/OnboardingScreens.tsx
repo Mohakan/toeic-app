@@ -12,7 +12,7 @@ import { LegalLinks } from '../components/LegalLinks';
 import { localPrice } from '../services/pricing';
 import { purchases } from '../services/purchases';
 import { useApp } from '../state/AppState';
-import { colors, radius, space } from '../theme';
+import { colors, fonts, radius, space } from '../theme';
 import type { Lang } from '../types';
 
 const LANGS: Lang[] = ['fr', 'ar', 'es', 'en'];
@@ -356,7 +356,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     paddingHorizontal: space.md,
     fontSize: 20,
-    fontWeight: '700',
+    fontFamily: fonts[700],
     color: colors.ink,
   },
   choice: {

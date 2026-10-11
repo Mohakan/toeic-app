@@ -16,7 +16,7 @@ import { dayKey, useApp } from '../state/AppState';
 import { useAccess } from '../state/useAccess';
 import { useAccessGuard } from '../state/useAccessGuard';
 import { useSpeechCapture, type CaptureResult } from '../state/useSpeechCapture';
-import { colors, radius, space } from '../theme';
+import { colors, fonts, radius, space } from '../theme';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ReadAloud'>;
 /** 'failed': nothing was heard (microphone refused or missing, network, silence); nothing is saved. */
@@ -276,7 +276,7 @@ export function ReadAloudScreen({ navigation, route }: Props) {
                         lineHeight: 28,
                         color: m.status === 'missed' ? colors.dangerDark : colors.ink,
                         textDecorationLine: m.status === 'missed' ? 'line-through' : m.status === 'wrong' ? 'underline' : 'none',
-                        fontWeight: m.status === 'ok' ? '400' : '700',
+                        fontFamily: m.status === 'ok' ? fonts[400] : fonts[700],
                         writingDirection: 'ltr',
                       }}
                     >

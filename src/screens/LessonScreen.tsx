@@ -18,7 +18,7 @@ import { setWords } from '../services/unitWords';
 import { MAX_PRACTICE_RESPONSES, useApp } from '../state/AppState';
 import { useAccess } from '../state/useAccess';
 import { useAccessGuard } from '../state/useAccessGuard';
-import { colors, space } from '../theme';
+import { colors, radius, space } from '../theme';
 import type { Cefr } from '../types';
 
 const NEW_WORDS_PER_SET = 8;
@@ -98,7 +98,7 @@ export function LessonScreen({ navigation, route }: NativeStackScreenProps<RootS
     const trialDone = !access.full && passed && access.trial.units.includes(unit.id) && access.trial.units.every((id) => id === unit.id || data.units[id]?.passed);
     const close = () => (trialDone ? navigation.replace('Paywall', { reason: 'trialEnd' }) : navigation.goBack());
     return (
-      <Screen footer={<Button label={t('done.cta')} onPress={close} />}>
+      <Screen footer={<Button label={t('done.cta')} variant="play" onPress={close} />}>
         <View style={{ gap: space.lg, alignItems: 'center' }}>
           <Mascot mood={passed ? 'joy' : 'encourage'} size={96} />
           <AppText variant="title" center>
@@ -123,19 +123,20 @@ export function LessonScreen({ navigation, route }: NativeStackScreenProps<RootS
               <Ionicons key={n} name={n <= stars ? 'star' : 'star-outline'} size={44} color={n <= stars ? colors.gold : colors.mist} />
             ))}
           </View>
+          {/* Sober figures for the result (direction "Premium épuré"), colored tiles for the rewards. */}
           <View style={[row, { gap: space.md, alignSelf: 'stretch' }]}>
-            <Card style={{ flex: 1, alignItems: 'center' }}>
-              <AppText variant="label" color={colors.inkSoft}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: space.sm }}>
+              <AppText variant="label" color={colors.inkSoft} center>
                 {t('done.accuracy').toUpperCase()}
               </AppText>
-              <EnglishText variant="h2" style={{ textAlign: 'center' }}>{`${Math.round(accuracy * 100)} %`}</EnglishText>
-            </Card>
-            <Card style={{ flex: 1, alignItems: 'center' }}>
-              <AppText variant="label" color={colors.inkSoft}>
+              <EnglishText style={{ fontSize: 56, lineHeight: 64, fontWeight: '300', textAlign: 'center' }}>{`${Math.round(accuracy * 100)} %`}</EnglishText>
+            </View>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 2, backgroundColor: colors.goldSoft, borderRadius: radius.lg, padding: space.md }}>
+              <AppText variant="label" color={colors.goldDark} center>
                 {t('done.xp').toUpperCase()}
               </AppText>
-              <EnglishText variant="h2" color={colors.accentDark} style={{ textAlign: 'center' }}>{`+${xp}`}</EnglishText>
-            </Card>
+              <EnglishText variant="title" color={colors.goldDark} style={{ textAlign: 'center' }}>{`+${xp}`}</EnglishText>
+            </View>
           </View>
           <AppText center color={colors.inkSoft}>
             {passed ? t(message) : t('done.notPassed', { p: Math.round(PASS_THRESHOLD * 100) })}
