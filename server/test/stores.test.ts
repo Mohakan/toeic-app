@@ -4,10 +4,14 @@ import type { Db } from '../src/db.js';
 import type { AppleTransaction, GooglePurchase, Providers } from '../src/providers.js';
 import { bearer, planOf, signUp, testApp, testDb, type TestApp } from './helpers.js';
 
+const planIn = async (exam: string, token: string) => (await app.inject({ method: 'GET', url: '/me', headers: { ...bearer(token), 'x-toki-exam': exam } })).json().plan;
+
 /** Stand-ins for Apple and Google: a "signed" transaction is just a key into these tables. */
 const appleTx = new Map<string, AppleTransaction>();
 const appleNotes = new Map<string, { type: string; transaction: AppleTransaction | null }>();
 const googleTokens = new Map<string, GooglePurchase>();
+/** Package a token was issued for, when a test sets it. */
+const googlePackageOf = new Map<string, string>();
 let pushOk = true;
 
 const providers: Providers = {
@@ -23,13 +27,27 @@ const providers: Providers = {
       return n;
     },
   },
-  google: { product: async (_id, token) => googleTokens.get(token) ?? null, verifyPush: async () => pushOk },
+  google: { product: async (packageName, _id, token) => (packageName === googlePackageOf.get(token) || !googlePackageOf.has(token) ? (googleTokens.get(token) ?? null) : null), verifyPush: async () => pushOk },
   konnect: null,
 };
 
 const stores: StoreConfig = {
-  apple: { bundleId: 'app.tokiquest', appAppleId: 123, productId: 'toki_quest_full', rootCertFiles: [] },
-  google: { packageName: 'app.tokiquest', productId: 'toki_quest_full', serviceAccountFile: '', pubsubAudience: 'aud', pubsubServiceAccount: 'sa@example.com' },
+  apple: {
+    apps: [
+      { exam: 'toeic', bundleId: 'app.tokiquest', appAppleId: 123, productId: 'toki_quest_full' },
+      { exam: 'b2First', bundleId: 'app.tokiquest.b2', appAppleId: 456, productId: 'toki_quest_b2_full' },
+    ],
+    rootCertFiles: [],
+  },
+  google: {
+    apps: [
+      { exam: 'toeic', packageName: 'app.tokiquest', productId: 'toki_quest_full' },
+      { exam: 'b2First', packageName: 'app.tokiquest.b2', productId: 'toki_quest_b2_full' },
+    ],
+    serviceAccountFile: '',
+    pubsubAudience: 'aud',
+    pubsubServiceAccount: 'sa@example.com',
+  },
   konnect: null,
 };
 
@@ -60,6 +78,7 @@ beforeEach(async () => {
   appleTx.clear();
   appleNotes.clear();
   googleTokens.clear();
+  googlePackageOf.clear();
   pushOk = true;
 });
 
@@ -162,6 +181,46 @@ describe('Google Play', () => {
     pushOk = true;
     expect((await pubsub({ voidedPurchaseNotification: { purchaseToken: 'token-abcdef' } })).statusCode).toBe(204);
     expect((await planOf(app, token)).tier).toBe('free');
+  });
+});
+
+describe('one app per exam', () => {
+  it('opens the plan of the app the purchase was made in, and only that one', async () => {
+    const token = await signUp(app, 'lina@example.com');
+    appleTx.set('jws-signed-transaction-b2', tx('2000001', { bundleId: 'app.tokiquest.b2', productId: 'toki_quest_b2_full' }));
+    const res = await apple('jws-signed-transaction-b2', token);
+    expect(res.json()).toMatchObject({ status: 'valid', plan: { tier: 'full' } });
+    expect((await planIn('b2First', token)).tier).toBe('full');
+    // The TOEIC app (no header, or its own) stays on the free plan.
+    expect((await planOf(app, token)).tier).toBe('free');
+    expect((await planIn('toeic', token)).tier).toBe('free');
+    const { rows } = await db.query<{ exam: string }>('SELECT exam FROM entitlements');
+    expect(rows).toEqual([{ exam: 'b2First' }]);
+  });
+
+  it('checks a Google token against the package of the product’s app', async () => {
+    const token = await signUp(app, 'lina@example.com');
+    googleTokens.set('b2-token-1', { state: 'purchased', orderId: 'GPA.2', test: true });
+    googlePackageOf.set('b2-token-1', 'app.tokiquest.b2');
+    expect((await google('b2-token-1', token, 'toki_quest_b2_full')).json()).toMatchObject({ status: 'valid', plan: { tier: 'full' } });
+    expect((await planIn('b2First', token)).tier).toBe('full');
+    expect((await planOf(app, token)).tier).toBe('free');
+    // The same token presented as the TOEIC product is checked with the TOEIC package: unknown there.
+    googlePackageOf.set('b2-token-2', 'app.tokiquest.b2');
+    googleTokens.set('b2-token-2', { state: 'purchased', orderId: 'GPA.3', test: true });
+    expect((await google('b2-token-2', token)).json()).toEqual({ error: 'invalid_receipt' });
+  });
+
+  it('refuses a product of one app sold through another app', async () => {
+    appleTx.set('jws-signed-transaction-mixed', tx('2000002', { bundleId: 'app.tokiquest.b2', productId: 'toki_quest_full' }));
+    expect((await apple('jws-signed-transaction-mixed')).json()).toEqual({ error: 'wrong_product' });
+  });
+
+  it('treats an unknown exam header as the TOEIC app', async () => {
+    const token = await signUp(app, 'lina@example.com');
+    appleTx.set('jws-signed-transaction-9', tx('2000003'));
+    await apple('jws-signed-transaction-9', token);
+    expect((await planIn('nope', token)).tier).toBe('full');
   });
 });
 

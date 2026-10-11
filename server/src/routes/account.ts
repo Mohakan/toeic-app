@@ -4,6 +4,7 @@ import { dummyPasswordHash, hashPassword, newResetCode, sameHash, sha256, verify
 import type { Db } from '../db.js';
 import { LANGS, resetMail, type Lang, type Mailer } from '../mailer.js';
 import { planFor } from '../plan.js';
+import { examOfRequest, type ExamId } from '../exams.js';
 
 /** Below this age, a parent must agree to the account (Tunisian law 2004-63 and GDPR art. 8 allow 13 to 16). */
 export const PARENTAL_CONSENT_AGE = 15;
@@ -33,11 +34,12 @@ export function accountRoutes(
   app: FastifyInstance,
   { db, mailer, strict, now = () => new Date() }: { db: Db; mailer: Mailer; strict: { rateLimit: { max: number; timeWindow: string } }; now?: () => Date },
 ) {
-  const profile = async (user: Pick<UserRow, 'id' | 'email' | 'birth_year' | 'lang'>) => {
+  /** The account and its plan in the app that asks (x-toki-exam header). */
+  const profile = async (user: Pick<UserRow, 'id' | 'email' | 'birth_year' | 'lang'>, exam: ExamId) => {
     const { rows } = await db.query<{ n: number }>('SELECT count(*)::int AS n FROM sessions WHERE user_id = $1 AND revoked_at IS NULL', [user.id]);
     return {
       user: { email: user.email, birthYear: user.birth_year, lang: user.lang, devices: rows[0].n },
-      plan: await planFor(db, user.id, user.email),
+      plan: await planFor(db, user.id, user.email, exam),
     };
   };
   const findUser = async (email: string) => (await db.query<UserRow>('SELECT * FROM users WHERE email = $1', [email])).rows[0];
@@ -74,7 +76,7 @@ export function accountRoutes(
       const user = rows[0];
       if (!user) return reply.code(409).send({ error: 'email_taken' });
       const token = await createSession(db, user.id, device);
-      return reply.code(201).send({ token, ...(await profile(user)) });
+      return reply.code(201).send({ token, ...(await profile(user, examOfRequest(request.headers))) });
     },
   );
 
@@ -92,7 +94,7 @@ export function accountRoutes(
       const ok = await verifyPassword(request.body.password, user?.password_hash ?? (await dummyPasswordHash()));
       if (!user || !ok) return reply.code(401).send({ error: 'invalid_credentials' });
       const token = await createSession(db, user.id, request.body.device);
-      return { token, ...(await profile(user)) };
+      return { token, ...(await profile(user, examOfRequest(request.headers))) };
     },
   );
 
@@ -158,13 +160,13 @@ export function accountRoutes(
       // A new password signs every device out.
       await db.query('UPDATE sessions SET revoked_at = now() WHERE user_id = $1 AND revoked_at IS NULL', [user.id]);
       const token = await createSession(db, user.id, request.body.device);
-      return { token, ...(await profile(user)) };
+      return { token, ...(await profile(user, examOfRequest(request.headers))) };
     },
   );
 
   app.get('/me', { preHandler: requireUser }, async (request) => {
     const user = (await db.query<UserRow>('SELECT * FROM users WHERE id = $1', [request.user!.userId])).rows[0];
-    return profile(user);
+    return profile(user, examOfRequest(request.headers));
   });
 
   app.patch<{ Body: { lang: Lang } }>(

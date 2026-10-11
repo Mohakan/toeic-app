@@ -1,4 +1,5 @@
 import type { Plan } from './access';
+import { currentExam } from '../exams/current';
 
 /**
  * Client of the Toki Quest server (server/). Without EXPO_PUBLIC_API_URL, accounts are not offered
@@ -32,7 +33,12 @@ async function call<T>(method: 'GET' | 'POST' | 'PATCH' | 'DELETE', path: string
   try {
     res = await fetch(`${API_URL}${path}`, {
       method,
-      headers: { ...(body ? { 'content-type': 'application/json' } : {}), ...(token ? { authorization: `Bearer ${token}` } : {}) },
+      headers: {
+        // Each app of the family has its own plan: the server answers for this app's exam.
+        'x-toki-exam': currentExam.id,
+        ...(body ? { 'content-type': 'application/json' } : {}),
+        ...(token ? { authorization: `Bearer ${token}` } : {}),
+      },
       body: body ? JSON.stringify(body) : undefined,
       signal: controller.signal,
     });
