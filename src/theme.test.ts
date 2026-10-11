@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { EXAM_CONFIGS } from './exams/config';
 import { colors, fontFamilyFor } from './theme';
 
 /** WCAG relative luminance and contrast ratio. */
@@ -54,6 +55,8 @@ describe('Rubik typeface', () => {
 
   it('keeps Encre readable on the Bleu Ciel hero band and the white stat tiles', () => {
     expect(contrast(colors.ink, colors.primary)).toBeGreaterThanOrEqual(4.5);
+    // Every app of the family: Encre on its own hero color.
+    for (const config of Object.values(EXAM_CONFIGS)) expect(contrast(colors.ink, config.brand.hero), config.id).toBeGreaterThanOrEqual(4.5);
     expect(contrast(colors.inkSoft, colors.white)).toBeGreaterThanOrEqual(4.5);
     expect(contrast(colors.white, colors.primaryDark)).toBeGreaterThanOrEqual(4.5);
   });

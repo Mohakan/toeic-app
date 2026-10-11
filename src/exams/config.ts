@@ -34,6 +34,13 @@ export interface ExamConfig {
   tokiStages: { stage: TokiStage; from: number }[];
   /** The TOEIC Speaking & Writing tasks (read aloud, photos, opinions…) only exist in the TOEIC app. */
   toeicSpeaking: boolean;
+  /** Mock tests open in the free trial. */
+  freeMockIds: string[];
+  /**
+   * Identity of the app within the family: the color of the hero band (Encre text on it must
+   * reach AA, checked in theme.test.ts) and what Toki wears around his neck.
+   */
+  brand: { hero: string; accessory: 'headset' | 'scarf' };
 }
 
 const TOEIC_PARTS: { id: ToeicPart; section: Section }[] = [
@@ -78,6 +85,9 @@ export const TOEIC_CONFIG: ExamConfig = {
     { stage: 'golden', from: 900 },
   ],
   toeicSpeaking: true,
+  freeMockIds: ['demo-mini'],
+  // Bleu Ciel Toki; the headset recalls the Listening part.
+  brand: { hero: '#2E9BF0', accessory: 'headset' },
 };
 
 const B2_PARTS: { id: B2Part; section: Section }[] = [
@@ -130,6 +140,9 @@ export const B2_FIRST_CONFIG: ExamConfig = {
     { stage: 'golden', from: 180 },
   ],
   toeicSpeaking: false,
+  freeMockIds: ['fce-mini-1'],
+  // Lavande (derived, 5.6:1 with Encre); a student scarf for an exam taken at school or university.
+  brand: { hero: '#9B8CFF', accessory: 'scarf' },
 };
 
 export const EXAM_CONFIGS: Partial<Record<ExamId, ExamConfig>> = { toeic: TOEIC_CONFIG, b2First: B2_FIRST_CONFIG };

@@ -26,6 +26,7 @@ import Reanimated, {
   withTiming,
 } from 'react-native-reanimated';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { examConfig } from '../exams/current';
 import { useI18n } from '../i18n';
 import { isolateLatin } from '../i18n/bidi';
 import { tokiStage, type TokiExpression } from '../services/toki';
@@ -349,7 +350,8 @@ const styles = StyleSheet.create({
   maxWidth: { width: '100%', maxWidth: 560, alignSelf: 'center' },
   footer: { padding: space.md, backgroundColor: colors.bg, borderTopWidth: 1, borderTopColor: colors.line },
   hero: {
-    backgroundColor: colors.primary,
+    // Bleu Ciel in the TOEIC app; each app of the family has its own color (src/exams/config.ts).
+    backgroundColor: examConfig.brand.hero,
     borderBottomLeftRadius: 36,
     borderBottomRightRadius: 36,
     paddingHorizontal: space.lg,

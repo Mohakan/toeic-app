@@ -14,8 +14,23 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     ...config,
     name: exam.appName,
     slug: exam.slug,
+    ...(exam.icons ? { icon: `${exam.icons.dir}/icon.png` } : {}),
     ios: { ...config.ios, bundleIdentifier: exam.bundleId },
-    android: { ...config.android, package: exam.bundleId },
+    android: {
+      ...config.android,
+      package: exam.bundleId,
+      ...(exam.icons
+        ? {
+            adaptiveIcon: {
+              backgroundColor: exam.icons.background,
+              foregroundImage: `${exam.icons.dir}/android-icon-foreground.png`,
+              backgroundImage: `${exam.icons.dir}/android-icon-background.png`,
+              monochromeImage: `${exam.icons.dir}/android-icon-monochrome.png`,
+            },
+          }
+        : {}),
+    },
+    web: { ...config.web, ...(exam.icons ? { favicon: `${exam.icons.dir}/favicon.png` } : {}) },
     extra: { ...config.extra, exam: exam.id },
   };
 };

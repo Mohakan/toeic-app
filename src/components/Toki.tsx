@@ -1,6 +1,7 @@
 import { View } from 'react-native';
 import Svg, { Circle, Ellipse, G, Path } from 'react-native-svg';
 import type { TokiExpression, TokiStage } from '../services/toki';
+import { examConfig } from '../exams/current';
 import { colors } from '../theme';
 
 /**
@@ -15,6 +16,8 @@ const PEACH = colors.accentSoft;
 const SUN = colors.accent;
 const GOLD = colors.gold;
 const W = colors.white;
+/** The app's own color (Lavande in Toki Quest B2), for the scarf. */
+const BRAND = examConfig.brand.hero;
 
 interface Pose {
   /** Rotation of each wing around its shoulder, in degrees (0 = hanging down), or a full SVG transform. */
@@ -92,7 +95,9 @@ function Foot({ x }: { x: number }) {
 export function Toki({ expression = 'neutral', stage = 'apprentice', size = 96, mirrored = false }: { expression?: TokiExpression; stage?: TokiStage; size?: number; mirrored?: boolean }) {
   const pose = POSES[expression];
   const golden = stage === 'golden';
-  const headset = stage !== 'chick';
+  // What Toki wears around his neck depends on the app: a headset (TOEIC), a student scarf (B2).
+  const headset = stage !== 'chick' && examConfig.brand.accessory === 'headset';
+  const scarf = stage !== 'chick' && examConfig.brand.accessory === 'scarf';
   return (
     <View style={{ width: size, height: size * (130 / 120), transform: mirrored ? [{ scaleX: -1 }] : undefined }}>
       <Svg width="100%" height="100%" viewBox="0 0 120 130">
@@ -131,6 +136,15 @@ export function Toki({ expression = 'neutral', stage = 'apprentice', size = 96, 
         <Foot x={48} />
         <Foot x={72} />
 
+        {/* Student scarf, worn over the belly, with one striped end hanging down. */}
+        {scarf ? (
+          <G>
+            <Path d="M28 70 Q60 92 92 70 L92 79 Q60 101 28 79 Z" fill={BRAND} stroke={NAVY} strokeWidth={2} strokeLinejoin="round" />
+            <Path d="M68 86 L80 106 L71 110 L61 90 Z" fill={BRAND} stroke={NAVY} strokeWidth={2} strokeLinejoin="round" />
+            <Path d="M67 96 L74 92 M70 102 L77 98" stroke={W} strokeWidth={2.5} strokeLinecap="round" />
+          </G>
+        ) : null}
+
 
         {/* Bow tie (pro, golden) or scarf (pilot). */}
         {stage === 'pro' || golden ? (
@@ -139,7 +153,7 @@ export function Toki({ expression = 'neutral', stage = 'apprentice', size = 96, 
             <Circle cx={60} cy={90} r={3.5} fill={NAVY} />
           </G>
         ) : null}
-        {stage === 'pilot' ? <Path d="M62 88 Q78 92 92 86 Q90 96 76 100 Q84 92 70 94 Z" fill={SUN} stroke={NAVY} strokeWidth={2} strokeLinejoin="round" /> : null}
+        {stage === 'pilot' && !scarf ? <Path d="M62 88 Q78 92 92 86 Q90 96 76 100 Q84 92 70 94 Z" fill={SUN} stroke={NAVY} strokeWidth={2} strokeLinejoin="round" /> : null}
 
         {/* Face. */}
         <Eye cx={45} expression={expression} side="left" />

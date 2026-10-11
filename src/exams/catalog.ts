@@ -35,6 +35,11 @@ export interface ExamVariant {
   markOwner: string;
   /** Official score scale of the whole exam. */
   scale: ExamScale;
+  /**
+   * Icons made by scripts/make-icons.cjs for this app, with the background color of the Android
+   * adaptive icon. Without it, the app uses the icons of app.json (TOEIC).
+   */
+  icons?: { dir: string; background: string };
 }
 
 export const EXAMS: Record<ExamId, ExamVariant> = {
@@ -60,6 +65,7 @@ export const EXAMS: Record<ExamId, ExamVariant> = {
     markOwner: 'Cambridge University Press & Assessment',
     // Cambridge English Scale; B2 First reports 122 to 190 and passes from 160.
     scale: { min: 122, max: 190, step: 1 },
+    icons: { dir: './assets/b2', background: '#EFEDFF' },
   },
   ieltsAcademic: {
     id: 'ieltsAcademic',
