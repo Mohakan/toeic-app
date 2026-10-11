@@ -94,7 +94,7 @@ export const fceU08: Unit = unit(
       'Present regret: if only + could.',
       'Lamento sobre el presente → if only + pasado; «can’t» pasa a «could»: «If only I could speak».',
     )),
-    ru4('fce-u08-s1-q6', 5, 'I’m sure Leila forgot about the meeting.', 'MUST', 'Leila ___ about the meeting.', ['must have forgotten'], x(
+    ru4('fce-u08-s1-q6', 5, 'I’m sure Leila forgot about the meeting.', 'MUST', 'Leila ___ about the meeting.', ['must have forgotten', 'must’ve forgotten'], x(
       '« I’m sure » + fait passé → « must have » + participe passé « forgotten ».',
       '«I’m sure» + حدث في الماضي ← «must have» + اسم المفعول «forgotten».',
       'Past certainty → must have forgotten.',
@@ -156,7 +156,7 @@ export const fceU08: Unit = unit(
       'Past regret: if only + past perfect.',
       'Lamento sobre el pasado → if only + past perfect: «If only I had taken».',
     )),
-    ru4('fce-u08-s2-q6', 5, 'The streets are wet, so I’m sure it rained during the night.', 'MUST', 'It ___ during the night, because the streets are wet.', ['must have rained'], x(
+    ru4('fce-u08-s2-q6', 5, 'The streets are wet, so I’m sure it rained during the night.', 'MUST', 'It ___ during the night, because the streets are wet.', ['must have rained', 'must’ve rained'], x(
       'Déduction sûre sur le passé, à partir d’un indice (wet streets) → « must have rained ».',
       'استنتاج مؤكد عن الماضي انطلاقًا من دليل (wet streets) ← «must have rained».',
       'Certain past deduction → must have rained.',
@@ -168,11 +168,11 @@ export const fceU08: Unit = unit(
       'No way → can’t possibly have written.',
       '«There’s no way» = imposible → «can’t / couldn’t possibly have» + participio «written».',
     )),
-    ru4('fce-u08-s2-q8', 5, 'Ikram bought a guidebook, but it was unnecessary because her friend lent her one.', 'NEED', 'Ikram ___ a guidebook, because her friend lent her one.', ['need not have bought'], x(
-      'Achat fait mais inutile → « need not have bought » (le mot clé NEED doit rester tel quel, donc pas « needn’t »).',
-      'شراء تمّ لكنه لم يكن ضروريًا ← «need not have bought» (يجب أن تبقى الكلمة NEED كما هي، فلا نكتب «needn’t»).',
+    ru4('fce-u08-s2-q8', 5, 'Ikram bought a guidebook, but it was unnecessary because her friend lent her one.', 'NEED', 'Ikram ___ a guidebook, because her friend lent her one.', ['need not have bought', 'needn’t have bought'], x(
+      'Achat fait mais inutile → « need not have bought » ou « needn’t have bought » (le mot clé NEED reste tel quel ; la contraction de « not » est admise).',
+      'شراء تمّ لكنه لم يكن ضروريًا ← «need not have bought» أو «needn’t have bought» (تبقى الكلمة NEED كما هي، ويُقبل اختصار «not»).',
       'Done but unnecessary → need not have bought.',
-      'Compra hecha pero innecesaria → «need not have bought» (la palabra NEED no cambia, así que no «needn’t»).',
+      'Compra hecha pero innecesaria → «need not have bought» o «needn’t have bought» (NEED no cambia; se admite la contracción de «not»).',
     )),
     ru4('fce-u08-s2-q9', 5, 'It was wrong of you to post that photo without asking me.', 'SHOULD', 'You ___ that photo without asking me.', ['shouldn’t have posted', 'should not have posted'], x(
       'Critique d’une action passée faite → « shouldn’t have » + participe : « shouldn’t have posted ».',
