@@ -4,7 +4,7 @@ Choisie le 2026-10-11 parmi trois pistes. Les maquettes sont sur la planche « T
 
 La direction retenue combine :
 
-- **la structure de A** : bandeau Bleu Ciel en tête d'écran, cartes blanches flottantes, barre d'onglets Bleu Nuit ;
+- **la structure de A** : bandeau Bleu Ciel en tête d'écran, cartes blanches flottantes, barre d’onglets blanche ;
 - **le retour de jeu de B** : boutons et options en relief, bande de retour colorée avec Toki, pastille de combo ;
 - **la sobriété de C** pour les chiffres de résultat : grand chiffre en graisse légère, peu d'ornements.
 
@@ -36,7 +36,7 @@ La palette du brief Toki ne change pas. Ce sont son dosage et les formes qui cha
   - options en relief plus épais, lettre dans un carré arrondi qui se colore ;
   - bande de retour pleine largeur, avec Toki joyeux ou encourageant et une pastille orange de combo.
 - **Fin de série** : précision en grand chiffre léger, XP sur une tuile Or Score, bouton principal Orange Soleil.
-- **Onglets** : barre Bleu Nuit aux coins supérieurs arrondis. L'onglet actif est en Bleu Ciel avec un libellé en Encre ; les autres libellés sont en blanc.
+- **Onglets** : barre blanche aux coins supérieurs arrondis, avec une ombre légère vers le haut. L’onglet actif est dans une pastille bleu ciel clair, en Bleu Nuit. (La barre Bleu Nuit du premier lot a été abandonnée.)
 
 | Accueil (fr) | Accueil (ar) | Retour sur une réponse |
 | --- | --- | --- |

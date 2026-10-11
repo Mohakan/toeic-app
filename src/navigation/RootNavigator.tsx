@@ -59,20 +59,22 @@ function MainTabs() {
       initialRouteName="Path"
       screenOptions={({ route }) => ({
         headerShown: false,
-        // Bleu Nuit bar: white labels (10:1), the active tab on Bleu Ciel with Encre (5.3:1).
-        tabBarActiveTintColor: colors.ink,
-        tabBarInactiveTintColor: colors.white,
-        tabBarActiveBackgroundColor: colors.primary,
+        // White bar like the cards: the active tab sits in a light sky pill, in Bleu Nuit.
+        tabBarActiveTintColor: colors.primaryDark,
+        tabBarInactiveTintColor: colors.inkSoft,
+        tabBarActiveBackgroundColor: colors.primarySoft,
         tabBarLabelStyle: { fontSize: 12, fontFamily: fonts[600] },
         tabBarItemStyle: { borderRadius: radius.md, marginHorizontal: 4, marginVertical: 4 },
         tabBarStyle: {
           minHeight: 68,
           paddingTop: 4,
           paddingHorizontal: 8,
-          backgroundColor: colors.primaryDark,
+          backgroundColor: colors.white,
           borderTopWidth: 0,
           borderTopLeftRadius: radius.lg,
           borderTopRightRadius: radius.lg,
+          // The shadow rises from the bottom edge of the screen.
+          boxShadow: '0px -6px 20px rgba(20, 66, 122, 0.10)',
         },
         tabBarIcon: ({ focused, color, size }) => (
           <Ionicons name={tabIcons[route.name][focused ? 0 : 1]} size={size} color={color} />
