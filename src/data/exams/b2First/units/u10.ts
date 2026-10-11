@@ -122,7 +122,7 @@ W: Good. Email them to me before Thursday's lesson, and we'll go through the mis
     )),
     li4('fce-u10-s1-q6', 4, S1_INTERVIEW, 'Why did Nadia choose to work with seagrass?', ['She felt it was ignored despite its importance.', 'She had always loved diving in the Mediterranean.', 'Her university offered her a research post on it.'], x(
       '« Most people have never even heard of it » → « That’s exactly why… someone had to speak up for them ».',
-      '«Most people have never even heard of it» ← «That’s exactly why… someone had to speak up for them».',
+      'لا يعرف معظم الناس هذه الأعشاب («Most people have never even heard of it»)، ولهذا السبب بالذات اختارتها: «someone had to speak up for them».',
       'Nobody knows about it, so “someone had to speak up for them”.',
       '«Most people have never even heard of it» → «That’s exactly why… someone had to speak up for them».',
     )),
@@ -134,7 +134,7 @@ W: Good. Email them to me before Thursday's lesson, and we'll go through the mis
     )),
     li4('fce-u10-s1-q8', 4, S1_INTERVIEW, 'How does Nadia feel about the survival rate of the plants?', ['It is more encouraging than it might seem.', 'It shows the project should be stopped.', 'It is lower than she predicted.'], x(
       '« That sounds disappointing, but it’s actually better than we expected ».',
-      '«That sounds disappointing, but it’s actually better than we expected».',
+      'تبدو النسبة مخيّبة لكنها في الحقيقة أفضل من المتوقع: «That sounds disappointing, but it’s actually better than we expected».',
       '“It’s actually better than we expected”.',
       '«That sounds disappointing, but it’s actually better than we expected».',
     )),

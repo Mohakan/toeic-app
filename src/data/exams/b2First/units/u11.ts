@@ -110,7 +110,7 @@ export const fceU11: Unit = unit(
     ),
   },
   [
-    li2('fce-u11-s1-q1', 4, S1_TALK, 'The fee paid by volunteers did not include ___.', ['flights', 'the flights'], x(
+    li2('fce-u11-s1-q1', 4, S1_TALK, 'The fee paid by volunteers did not include ___.', ['flights'], x(
       '« covered food and accommodation but not flights » : le mot exact est « flights ».',
       '«covered food and accommodation but not flights»: الكلمة الدقيقة هي «flights».',
       'The fee covered everything “but not flights”.',
@@ -124,17 +124,17 @@ export const fceU11: Unit = unit(
     )),
     li2('fce-u11-s1-q3', 4, S1_TALK, 'The metal cages mainly protected the eggs from ___.', ['foxes'], x(
       '« mainly to stop foxes from digging up the eggs ».',
-      '«mainly to stop foxes from digging up the eggs».',
+      'كانت الأقفاص تحمي البيض من الثعالب أساسًا: «mainly to stop foxes from digging up the eggs».',
       'Cages “stop foxes from digging up the eggs”.',
       '«mainly to stop foxes from digging up the eggs».',
     )),
-    li2('fce-u11-s1-q4', 4, S1_TALK, 'Ines found it hardest to deal with ___.', ['tourists', 'the tourists'], x(
+    li2('fce-u11-s1-q4', 4, S1_TALK, 'Ines found it hardest to deal with ___.', ['tourists'], x(
       'Piège : « wasn’t the early starts. It was talking to tourists ».',
       'فخ: «wasn’t the early starts. It was talking to tourists».',
       'Not the early starts: “It was talking to tourists”.',
       'Trampa: «wasn’t the early starts. It was talking to tourists».',
     )),
-    li2('fce-u11-s1-q5', 4, S1_TALK, 'Baby turtles can go the wrong way because of the lights from ___.', ['beach bars', 'the beach bars'], x(
+    li2('fce-u11-s1-q5', 4, S1_TALK, 'Baby turtles can go the wrong way because of the lights from ___.', ['beach bars'], x(
       '« the lights from beach bars confuse them » ; le clair de lune, lui, les guide vers la mer.',
       '«the lights from beach bars confuse them»، أما ضوء القمر فيرشدها إلى البحر.',
       '“The lights from beach bars confuse them”.',
@@ -172,7 +172,7 @@ export const fceU11: Unit = unit(
     )),
   ],
   [
-    li2('fce-u11-s2-q1', 4, S2_TALK, 'To get fit for the trek, Samir suggests walking up ___ with a full backpack.', ['stairs', 'the stairs'], x(
+    li2('fce-u11-s2-q1', 4, S2_TALK, 'To get fit for the trek, Samir suggests walking up ___ with a full backpack.', ['stairs'], x(
       '« I’d recommend walking up stairs with a full backpack » ; la salle de sport est moins efficace selon lui.',
       '«I’d recommend walking up stairs with a full backpack»، والنادي الرياضي أقل فائدة حسب رأيه.',
       '“Walking up stairs with a full backpack”.',
@@ -186,7 +186,7 @@ export const fceU11: Unit = unit(
     )),
     li2('fce-u11-s2-q3', 4, S2_TALK, 'The item people most often regret not bringing is a ___.', ['sleeping bag', 'good sleeping bag'], x(
       '« don’t forget a good sleeping bag. That’s the item people most often regret not bringing ».',
-      '«don’t forget a good sleeping bag. That’s the item people most often regret not bringing».',
+      'كيس النوم هو أكثر ما يندم الناس على عدم إحضاره: «don’t forget a good sleeping bag. That’s the item people most often regret not bringing».',
       '“A good sleeping bag” is what people regret not bringing.',
       '«don’t forget a good sleeping bag. That’s the item people most often regret not bringing».',
     )),
@@ -228,7 +228,7 @@ export const fceU11: Unit = unit(
     )),
     li3('fce-u11-s2-q10', 4, S2_SPEAKERS, 'What does Speaker 5 say about their first job?', S2_OPTIONS, 4, x(
       '« I realised that this was what I wanted to do with my life. I changed my university application » → E.',
-      '«I realised that this was what I wanted to do with my life. I changed my university application» ← E.',
+      'اكتشف المتحدث المهنة التي يريدها وغيّر طلب الالتحاق بالجامعة: «I realised that this was what I wanted to do with my life» ← E.',
       'She changed her university plans to work with animals → E.',
       '«I realised that this was what I wanted to do with my life. I changed my university application» → E.',
     )),

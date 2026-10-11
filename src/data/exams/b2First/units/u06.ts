@@ -187,7 +187,7 @@ export const fceU06: Unit = unit(
     )),
     ru5('fce-u06-s2-q3', 4, S2_TEXT, 'Why does the writer think she slept better?', ['She stopped reading the news late at night.', 'She was more tired from walking.', 'She was less worried about her work.', 'She went to bed earlier than before.'], x(
       '« perhaps because I no longer read the news in bed until midnight ».',
-      '«perhaps because I no longer read the news in bed until midnight».',
+      'نامت أفضل لأنها توقفت عن قراءة الأخبار في السرير: «perhaps because I no longer read the news in bed until midnight».',
       'She “no longer read the news in bed until midnight”.',
       '«perhaps because I no longer read the news in bed until midnight».',
     )),

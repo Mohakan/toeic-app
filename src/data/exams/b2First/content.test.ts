@@ -20,7 +20,8 @@ const B2_PARTS = new Set(B2_FIRST_CONFIG.parts.map((p) => p.id));
 const OPTION_COUNT: Partial<Record<string, [min: number, max: number]>> = {
   RU1: [4, 4],
   RU5: [4, 4],
-  RU6: [6, 8],
+  // 7 sentences for 6 gaps in the real exam; a shorter mini-test text keeps 2 extra sentences.
+  RU6: [5, 8],
   RU7: [4, 6],
   LI1: [3, 3],
   LI3: [5, 8],

@@ -34,6 +34,7 @@ const RU6_SENTENCES = [
   'C On a busy Saturday, I queued for twenty minutes just to buy a glass of mint tea.',
   'D Tickets are free for local schools on weekday mornings.',
   'E As a child, she was frustrated that museums treated the sea as something to look at rather than experience.',
+  'F The building itself used to be a warehouse where fish was stored before being sent to Casablanca.',
 ];
 
 // RU7: community gardens.
