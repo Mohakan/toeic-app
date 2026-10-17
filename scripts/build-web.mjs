@@ -8,10 +8,13 @@
 import { execFileSync } from 'node:child_process';
 import { cpSync, mkdirSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const { EXAMS } = await import(join(root, 'src/exams/catalog.ts'));
+// import() takes a URL: a bare Windows path ("C:\…") is read as the scheme "c:".
+const { EXAMS } = await import(pathToFileURL(join(root, 'src/exams/catalog.ts')).href);
+// The Expo CLI is run with this Node, not through npx, which Windows only finds through a shell.
+const expoCli = join(root, 'node_modules/expo/bin/cli');
 const out = join(root, 'dist/web');
 
 const wanted = process.argv.slice(2);
@@ -25,7 +28,7 @@ for (const app of apps) {
   const dir = join(out, app.webPath);
   rmSync(dir, { recursive: true, force: true });
   console.log(`\n▶ ${app.appName} → ${app.webPath}/`);
-  execFileSync('npx', ['expo', 'export', '--platform', 'web', '--output-dir', dir], {
+  execFileSync(process.execPath, [expoCli, 'export', '--platform', 'web', '--output-dir', dir], {
     cwd: root,
     stdio: 'inherit',
     env: { ...process.env, EXPO_PUBLIC_EXAM: app.id, TOKI_WEB_EXPORT: '1' },
