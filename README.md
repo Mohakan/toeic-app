@@ -141,6 +141,7 @@ Stratégie complète : [prompts/commercialisation.md](prompts/commercialisation.
 npm install
 npx expo start        # puis i (iOS), a (Android) ou w (web)
 npm run web:build     # site de la famille (site/) et version web de chaque appli, dans dist/web
+npm run web:serve     # sert dist/web sur http://localhost:8090 (page d'accueil, /quest/, /b2/)
 npm test              # IRT, test adaptatif, simulation, intégrité du contenu
 npm run simulate      # affiche les métriques de validation
 npm run content:check # contrôle qualité du contenu

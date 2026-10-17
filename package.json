@@ -45,6 +45,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "web:build": "node --no-warnings scripts/build-web.mjs",
+    "web:serve": "npx --yes serve@14.2.4 dist/web -l 8090",
     "test": "vitest run src",
     "typecheck": "tsc --noEmit",
     "simulate": "vitest run scripts/simulate.test.ts --silent=false",
