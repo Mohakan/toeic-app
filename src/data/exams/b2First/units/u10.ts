@@ -278,7 +278,8 @@ M: Like this?
 W: Good. Now, at the roundabout, which exit are we taking?
 M: The second. No, sorry, the third. We're heading for the station.
 W: Correct. You're much calmer than you were last week. If you keep this up, I think you could book your test for next month.
-M: Really? My dad said I'd need at least another twenty lessons.`, 'What is the relationship between the speakers?', ['Driving instructor and learner', 'Mother and son', 'Examiner and candidate'], x(
+M: Really? My dad said I'd need at least another twenty lessons.
+W: Well, your dad isn't the one sitting next to you twice a week.`, 'What is the relationship between the speakers?', ['Driving instructor and learner', 'Mother and son', 'Examiner and candidate'], x(
       '« last week », « book your test » et « another twenty lessons » : une monitrice d’auto-école et son élève. Ce n’est pas l’examen (« you could book your test »).',
       '«last week» و«book your test» و«another twenty lessons»: مدرّبة سياقة وتلميذها، وليس الامتحان نفسه («you could book your test»).',
       'Lessons and a future test: instructor and learner.',

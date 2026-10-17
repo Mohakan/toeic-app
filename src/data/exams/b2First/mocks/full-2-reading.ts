@@ -250,7 +250,7 @@ export const fceFull2Reading: Exercise[] = [
     'Negative deduction about the past: can’t have + past participle.',
     'Deducción negativa sobre el pasado («I’m sure… didn’t»): «can’t have + participio» → «can’t have forgotten».',
   )),
-  ru4('fce-m4-ru4-3', 4, 'Lina has got up at six every day for years, so she doesn’t find it difficult.', 'USED', 'Lina ___ up at six every day.', ['is used to getting', "'s used to getting", 'has got used to getting', 'has become used to getting'], x(
+  ru4('fce-m4-ru4-3', 4, 'Lina has got up at six every day for years, so she doesn’t find it difficult.', 'USED', 'Lina ___ up at six every day.', ['is used to getting', 'has got used to getting', 'has become used to getting'], x(
     'Habitude acquise : « be used to + -ing » = être habitué à. Attention : « used to get up » parlerait d’une habitude passée terminée.',
     'عادة مكتسبة: «be used to + -ing» تعني «معتاد على». وانتبه: «used to get up» تدل على عادة ماضية انتهت.',
     'Being accustomed: be used to + -ing.',
@@ -288,7 +288,7 @@ export const fceFull2Reading: Exercise[] = [
     '“…the most useful thing anyone has ever told me.”',
     '«At the time I was furious. Now I think it was the most useful thing anyone has ever told me»: lo ve como un consejo valioso. No dice lamentar su enfado.',
   )),
-  ru5('fce-m4-ru5-3', 4, RU5_TEXT, 'After her first novel was rejected, Amal', ['tried to improve the way her characters spoke.', 'started writing a second novel straight away.', 'decided to give up writing for a year.', 'got a job in her parents’ shop.'], x(
+  ru5('fce-m4-ru5-3', 4, RU5_TEXT, 'After her first novel was rejected, Amal', ['tried to improve the way her characters spoke.', 'started writing a second novel straight away.', 'rewrote it for a different publisher.', 'got a job in her parents’ shop.'], x(
     'L’éditeur trouvait que tous les personnages parlaient pareil ; elle passe donc un an « doing almost nothing but listening » dans les bus et au marché. Elle ne commence pas tout de suite un autre livre (« rather than starting another book immediately »).',
     'رأى المحرّر أن الشخصيات كلها تتكلم بالطريقة نفسها، فقضت سنة «doing almost nothing but listening». ولم تبدأ كتابًا آخر فورًا («rather than starting another book immediately»).',
     'She spent a year “listening” so her characters would not all sound the same.',

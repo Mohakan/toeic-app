@@ -242,7 +242,7 @@ export const fceU08: Unit = unit(
       'Past criticism: ought to have checked.',
       'Crítica de algo que no se hizo → «ought to have» + participio (= should have): «ought to have checked».',
     )),
-    ru4('fce-u08-s3-q10', 5, 'We got lost because we didn’t take a map with us.', 'WOULD', 'If we had taken a map with us, we ___ lost.', ['would not have got', 'wouldn’t have got', 'would not have gotten', 'wouldn’t have gotten'], x(
+    ru4('fce-u08-s3-q10', 5, 'We got lost because we didn’t take a map with us.', 'WOULD', 'If we had taken a map with us, we ___ lost.', ['would not have got', 'wouldn’t have got', 'would not have gotten', 'wouldn’t have gotten', 'would never have got', 'would never have gotten'], x(
       'Condition irréelle dans le passé (3e conditionnel) → « would not have » + participe : « wouldn’t have got lost ».',
       'شرط غير واقعي في الماضي (النوع الثالث) ← «would not have» + اسم المفعول: «wouldn’t have got lost».',
       'Third conditional: wouldn’t have got lost.',

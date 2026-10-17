@@ -21,12 +21,12 @@ M: It’s not about whose turn it is. The rota on the fridge just isn’t workin
 W: That’s true. I forgot about it completely last month too. Maybe we should just do the washing-up straight after every meal, whoever cooked.
 M: Or the person who didn’t cook does it.
 W: Yes, that’s even fairer. Let’s try that.`;
-const LI1_OFFLINE = `So last month I deleted every social media app from my phone. Not forever, just for thirty days. Everyone expected me to say I felt calmer, slept better, all of that. And I did sleep a bit better. But the main thing I noticed was how much I’d been using my phone to avoid being bored. Waiting for a bus, queuing in a shop, I’d automatically reach for it. Without it, I actually started noticing things, and some of my best ideas for this channel came while I was just standing around doing nothing.`;
-const LI1_LESSON = `W: OK, mirror, signal… and pull out when it’s clear. Good. Now, at the end of this road, I want you to turn left.
-M: Left. Right. I mean, OK, left.
-W: Relax your shoulders, Hamza. You’re gripping the wheel as if it’s going to escape.
-M: Sorry. It’s just that the test is on Thursday and I keep thinking about the roundabout near the hospital.
-W: We’ll practise that one twice more today. Remember, the examiner wants to see that you’re safe, not that you’re fast. And this is the last lesson in your package, so if you want extra ones before Thursday, book them at the office.`;
+const LI1_HOMETOWN = `After four years studying in Madrid, I moved back to my hometown in September. Everyone assumed I’d done it to save money, and it’s true that the rent here is half what I was paying. But that’s not really what this year has been about. When I left at eighteen, I thought the town was the most boring place on earth. Now I’m going to the little theatre, joining walks with the history society, finding cafés I’d walked past a hundred times. It’s as if I’m visiting it for the first time, and I’m honestly enjoying it far more than I expected.`;
+const LI1_KNEE = `W: Right, Youssef, let’s see how far you can bend the knee today. Has it been swelling up since your last appointment?
+M: Only once, after I walked up to the stadium to watch the team play.
+W: That’s normal. And have you been doing the exercises I gave you, twice a day?
+M: Most days. My coach keeps asking when I can start training again.
+W: That’s not something I can promise yet. Dr Benali did a great job on the operation, but the muscles still need building up. Keep going with the exercises, and I’ll see you here at the clinic next Tuesday, same time.`;
 const LI1_BOOKS = `I joined an English-language book club at the university library in September, mostly to improve my vocabulary. I assumed the hardest part would be understanding the books, and the first one was quite a challenge, I admit. But actually, the reading is fine now. What still makes me nervous is the discussion itself. Everyone else seems to have such clever opinions, and by the time I’ve worked out how to say what I think, the conversation has moved on. The organiser says I should write a few notes beforehand, so I’m going to try that.`;
 const LI1_GYM = `Hello, this is Rania Saidi, membership number four-five-two-one. I’m calling about the email you sent yesterday saying my membership will renew automatically next month. I’m actually very happy with the gym, so this isn’t a complaint. It’s just that I’m starting a job in Casablanca in January, so I won’t be able to come any more. Could someone tell me what I need to do to stop the payments? I couldn’t find the option in the app. You can call me back on this number any time after five. Thanks.`;
 const LI1_PHOTOS = `M: What did you think of the photography exhibition, then?
@@ -100,17 +100,17 @@ export const fceFull1Listening: Exercise[] = [
     '“The rota… just isn’t working.” “That’s true.”',
     '«The rota on the fridge just isn’t working» — «That’s true»; luego friega quien no ha cocinado.',
   )),
-  li1('fce-m3-li1-4', 5, LI1_OFFLINE, 'You hear a young man talking about a month without social media. What is his main point?', ['Being bored turned out to be useful to him.', 'It greatly improved the quality of his sleep.', 'He has decided to give up social media for good.'], x(
-    '« The main thing I noticed… some of my best ideas came while I was just standing around doing nothing » ; il a dormi « a bit better » seulement, et c’était « not forever ».',
-    '«The main thing I noticed… some of my best ideas came while I was just standing around doing nothing»؛ أما النوم فتحسّن «a bit» فقط، والتجربة «not forever».',
-    '“Some of my best ideas came while… doing nothing.”',
-    '«The main thing I noticed… some of my best ideas came while I was just standing around doing nothing»; durmió solo «a bit better».',
+  li1('fce-m3-li1-4', 5, LI1_HOMETOWN, 'You hear a young woman talking about moving back to her hometown. What is her main point?', ['She is discovering the town in a new way.', 'She moved back mainly to save money.', 'She regrets leaving the big city.'], x(
+    'L’argent n’est pas l’essentiel (« that’s not really what this year has been about ») : « It’s as if I’m visiting it for the first time ».',
+    'المال ليس الأساس («that’s not really what this year has been about»)، بل تكتشف مدينتها من جديد: «It’s as if I’m visiting it for the first time».',
+    '“It’s as if I’m visiting it for the first time.”',
+    'El dinero no es lo principal («that’s not really what this year has been about»): «It’s as if I’m visiting it for the first time».',
   )),
-  li1('fce-m3-li1-5', 4, LI1_LESSON, 'You hear a woman talking to a young man in a car. Who is she?', ['his driving instructor', 'the examiner on his driving test', 'a friend helping him to practise'], x(
-    'Le test est jeudi (« the examiner wants… ») et « this is the last lesson in your package… book them at the office » : c’est sa monitrice.',
-    'الامتحان يوم الخميس، وتقول «this is the last lesson in your package… book them at the office»: إنها مدرّبة القيادة.',
-    '“The last lesson in your package… book them at the office.”',
-    'El examen es el jueves y «this is the last lesson in your package… book them at the office»: es su profesora de autoescuela.',
+  li1('fce-m3-li1-5', 4, LI1_KNEE, 'You hear a woman talking to a young man about his knee. Who is she?', ['his physiotherapist', 'his football coach', 'the surgeon who operated on him'], x(
+    'Elle donne des exercices (« the exercises I gave you »), parle d’opération faite par « Dr Benali » et de rendez-vous « at the clinic » : c’est sa kinésithérapeute.',
+    'تعطيه تمارين («the exercises I gave you»)، والعملية أجراها «Dr Benali»، والموعد «at the clinic»: إنها أخصائية العلاج الطبيعي.',
+    '“The exercises I gave you… see you here at the clinic.”',
+    'Le da ejercicios («the exercises I gave you»), la operación la hizo «Dr Benali» y lo cita «at the clinic»: es su fisioterapeuta.',
   )),
   li1('fce-m3-li1-6', 4, LI1_BOOKS, 'You hear a woman talking about a book club. What does she find difficult?', ['expressing her ideas quickly enough in discussions', 'understanding the books the club reads', 'finding enough time to finish each book'], x(
     '« The reading is fine now. What still makes me nervous is the discussion… by the time I’ve worked out how to say what I think, the conversation has moved on. »',

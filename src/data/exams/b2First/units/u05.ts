@@ -208,7 +208,7 @@ export const fceU05: Unit = unit(
       '“make up for” = compensate for.',
       '«make up for» = compensar (un error); «put up with» = soportar, «catch up with» = alcanzar a alguien.',
     )),
-    ru2('fce-u05-s3-q6', 4, 'You can join the desert trip ___ that your parents sign the permission form.', ['provided', 'providing'], x(
+    ru2('fce-u05-s3-q6', 4, 'You can join the desert trip ___ that your parents sign the permission form.', ['provided', 'providing', 'assuming'], x(
       'Condition devant « that » + présent : « provided (that) » ou « providing (that) » = à condition que.',
       'شرط قبل «that» + المضارع: «provided (that)» أو «providing (that)» = بشرط أن.',
       '“provided / providing that” = on condition that.',
