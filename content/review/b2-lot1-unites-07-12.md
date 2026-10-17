@@ -16,3 +16,22 @@
 | `fce-u11-s3-q6` | MINEUR | 5. Explications (ar) | L’arabe dit « صارتا صديقتين », ce qui fait du locuteur une femme, alors que son genre n’est pas donné et que le français reste neutre. « المنافسة » est aussi ambigu (« la compétition » ou « la concurrente »). | ar : «فازت الخصمة بسهولة، ثم نشأت بينهما صداقة: «We message each other almost every day now»، وستأتي إلى سوسة ← E.» |
 | `fce-u09-s3-q1` | MINEUR | 5. Explications (ar) | La phrase arabe est bancale : « كان الفخار » est suivi directement du verbe anglais « seemed », ce qui fait deux verbes. | ar : «حميد: في مراهقته كان الفخار يبدو له «hopelessly old-fashioned».» |
 | `fce-u09-s3-q5` | MINEUR | 5. Explications (es) | « se deshizo » se lit d’abord comme « s’est défait tout seul », alors que le français (« a été défait ») et l’arabe (« فُكّت ») disent que Doña Rosa l’a défait. | es : « Elena: su guitarra «isn’t perfect… I wouldn’t swap it for any guitar in the shop». En cambio, Doña Rosa deshizo la primera alfombra de Diego. » |
+
+## Corrections appliquées (2026-10-17)
+
+| id | suite donnée |
+| --- | --- |
+| `fce-u08-s3-q4` | BLOQUANT corrigé : ajout de « wish that I lived / could live / was living / were living » (4 à 5 mots, WISH inchangé). |
+| `fce-u12-s3-q7` | BLOQUANT corrigé : ajout de « so rapidly that » et « so rapidly ». |
+| `fce-u08-s3-q7` | DOUTEUX, variante ajoutée : « might have gone ». « It’s possible that the parcel was delivered to the wrong address » et « The parcel might have gone to the wrong address » disent la même chose : le colis a fini à la mauvaise adresse. La liste accepte déjà « might have been sent », qui est plus éloigné. « might have been taken » n’est pas ajouté, car il évoque un transport par quelqu’un et pas une livraison. |
+| `fce-u08-s3-q10` | DOUTEUX, variantes ajoutées : « would not have been » et « would never have been ». « we wouldn’t have been lost » est l’irréel du passé exact de « we got lost » : l’état remplace le changement d’état, mais le sens ne change pas. |
+| `fce-u12-s3-q8` | DOUTEUX, variantes ajoutées : « matter how much the guitar » et « matter what the guitar ». Elles tiennent dans le trou (« No ___ costs »), font 4 à 5 mots, gardent MATTER et ont le sens de « Whatever the price is ». La répétition de « guitar » est maladroite, mais elle n’est pas fautive. |
+| `fce-u12-s3-q9` | MINEUR corrigé : passage à « No sooner » (mot clé SOONER, phrase 2 « No ___ than the power failed. », réponses « sooner had the concert begun / started »). Explications réécrites dans les 4 langues, comme le proposait la relecture. |
+| `fce-u10-s3-q10` | MINEUR corrigé : les distracteurs donnent eux aussi une raison et ont une longueur proche de la clé (« Excited, because she has always wanted to work with students », « Unsure, because teaching may leave her too little time for films »). Le script ne contient aucun de ces deux sens. La clé et les explications ne changent pas. |
+| `fce-u09-s3-q9` | MINEUR corrigé : nouvelle question, « Which person could not accept the idea of a family possession going to a stranger? ». Seule la section D (le métier à tisser « being sold to a stranger ») y répond. Les explications restent valables. |
+| `fce-u08-s3-q2` | Rien à faire : le moteur ignore désormais les virgules, donc « otherwise, we’ll be » est déjà accepté. |
+| `fce-u11-s3-q6` | MINEUR corrigé : l’arabe ne donne plus de genre au locuteur et utilise « الخصمة » au lieu de « المنافسة ». |
+| `fce-u09-s3-q1` | MINEUR corrigé : l’arabe dit maintenant « كان الفخار يبدو له «hopelessly old-fashioned» ». |
+| `fce-u09-s3-q5` | MINEUR corrigé : l’espagnol dit maintenant « En cambio, Doña Rosa deshizo la primera alfombra de Diego. ». |
+
+Contrôles : `npx tsc --noEmit` et `npx vitest run src/data/exams/b2First src/services/typedAnswer.test.ts` passent (2 fichiers, 17 tests).
