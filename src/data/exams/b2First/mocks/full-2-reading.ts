@@ -25,7 +25,7 @@ const RU2_TEXT = `When Inès, a nursing student from Sfax, joined an online lang
 
 What made the exchange work, they agree, was that (3) ___ of them was an expert. ‘When Hanna corrected me, I never felt stupid, because ten minutes later I would be correcting her,’ says Inès. Researchers who study language learning are not surprised. They point out that people learn faster when they feel relaxed, and (4) ___ is far easier to relax with a friend than with a teacher.
 
-Last summer, Hanna finally travelled to Tunisia. (5) ___ having spoken almost every week for two years, the two young women were nervous about meeting face to face. ‘I was afraid we would have nothing to say,’ laughs Hanna. In the end, they talked (6) ___ three in the morning. Hanna, (7) ___ Arabic is now good enough to joke with Inès’s grandmother, is planning to spend a semester in Tunis. ‘The language was the reason we met,’ she says, ‘but it’s no longer the reason we stay in touch. (8) ___ anything, we sometimes forget to practise.’`;
+Last summer, Hanna finally travelled to Tunisia. (5) ___ though they had spoken almost every week for two years, the two young women were nervous about meeting face to face. ‘I was afraid we would have nothing to say,’ laughs Hanna. In the end, they stayed up talking (6) ___ the sun came up. Hanna, (7) ___ Arabic is now good enough to joke with Inès’s grandmother, is planning to spend a semester in Tunis. ‘The language was the reason we met,’ she says, ‘but it’s no longer the reason we stay in touch. (8) ___ anything, we sometimes forget to practise.’`;
 
 // RU3: second-hand fashion.
 const RU3_TEXT = `When Yasmine Belkacem opened a stall selling second-hand clothes at a market in Marseille, her friends thought it was a strange (1) ___ (DECIDE) for a business graduate. Five years later, her shop has a waiting list for its monthly sales. The (2) ___ (POPULAR) of pre-owned fashion among young people has grown remarkably in that time. For many buyers, the main reason is (3) ___ (ENVIRONMENT): producing a single pair of new jeans can use thousands of litres of water. Others are attracted by the prices, or simply by the (4) ___ (EXCITE) of finding a unique piece that nobody else is wearing.
@@ -162,17 +162,17 @@ export const fceFull2Reading: Exercise[] = [
     'Dummy subject: “it is easier to…”.',
     'Sujeto formal «it» delante de «is easier to + infinitivo»: el sujeto real es «to relax with a friend».',
   ), RU2_TEXT),
-  ru2('fce-m4-ru2-5', 4, 'Gap (5): ___ having spoken almost every week for two years, the two young women were nervous about meeting face to face.', ['Despite'], x(
-    'Concession suivie d’une forme en -ing (« having spoken ») : « Despite ». « Although » exigerait un sujet et un verbe conjugué, « In spite » demanderait « of ».',
-    'تعارض متبوع بصيغة -ing («having spoken»): «Despite». أما «Although» فتحتاج إلى فاعل وفعل، و«In spite» تحتاج إلى «of».',
-    'Contrast + -ing form → “Despite”.',
-    'Concesión seguida de una forma en -ing («having spoken»): «Despite». «Although» exigiría sujeto y verbo, e «In spite» necesitaría «of».',
+  ru2('fce-m4-ru2-5', 4, 'Gap (5): ___ though they had spoken almost every week for two years, the two young women were nervous about meeting face to face.', ['Even'], x(
+    'Concession avant « though » : « Even though » = bien que. Malgré deux ans d’échanges, elles étaient nerveuses.',
+    'تعارض قبل «though»: «Even though» تعني «على الرغم من أنّ»، فرغم عامين من الحديث كانتا متوترتين.',
+    'Concession: “Even though” + clause.',
+    'Concesión delante de «though»: «Even though» = aunque. A pesar de dos años de charlas, estaban nerviosas.',
   ), RU2_TEXT),
-  ru2('fce-m4-ru2-6', 3, 'Gap (6): In the end, they talked ___ three in the morning.', ['until', 'till'], x(
-    'Limite dans le temps d’une action qui dure (« talked ») : « until » (ou « till ») three in the morning.',
-    'نهاية زمنية لفعل ممتد («talked»): «until» (أو «till») three in the morning.',
+  ru2('fce-m4-ru2-6', 3, 'Gap (6): In the end, they stayed up talking ___ the sun came up.', ['until', 'till'], x(
+    'Limite dans le temps d’une action qui dure (« stayed up talking ») : « until » (ou « till ») the sun came up.',
+    'نهاية زمنية لفعل ممتد («stayed up talking»): «until» (أو «till») the sun came up.',
     'End point of an ongoing action: “until”.',
-    'Límite temporal de una acción que dura («talked»): «until» (o «till») three in the morning.',
+    'Límite temporal de una acción que dura («stayed up talking»): «until» (o «till») the sun came up.',
   ), RU2_TEXT),
   ru2('fce-m4-ru2-7', 4, 'Gap (7): Hanna, ___ Arabic is now good enough to joke with Inès’s grandmother, is planning to spend a semester in Tunis.', ['whose'], x(
     'Pronom relatif possessif : « Hanna, whose Arabic… » = l’arabe de Hanna. Le nom « Arabic » suit directement le trou.',

@@ -1,4 +1,4 @@
-import type { Exercise } from '../../../../types';
+import type { Exercise, Localized } from '../../../../types';
 import { x } from '../../../curriculum/build';
 import { ru1, ru2, ru3, ru4, ru5, ru6, ru7 } from '../build';
 
@@ -27,10 +27,8 @@ Researchers have found that (3) ___ (REPEAT) matters far more than motivation. C
 This explains why people who rely on (6) ___ (DETERMINE) alone so often give up. Experts advise starting with tiny changes; small (7) ___ (IMPROVE), they say, add up over time. The same logic works in reverse. The trick is to make bad habits (8) ___ (CONVENIENT): if your phone is charging in another room, you are far less likely to scroll through it in bed.`;
 
 /** Word formation item of the shared RU3 text (the ru3 helper takes no passage). */
-const ru3t = (...args: Parameters<typeof ru3>): Exercise => {
-  const exercise = ru3(...args);
-  return exercise.kind === 'type' ? { ...exercise, item: { ...exercise.item, passage: RU3_TEXT } } : exercise;
-};
+const ru3t = (id: string, level: number, prompt: string, cue: string, answers: [string, ...string[]], explain: Localized): Exercise =>
+  ru3(id, level, prompt, cue, answers, explain, RU3_TEXT);
 
 // RU5: a young mountain guide.
 const RU5_TEXT = `The first time I led a group to the summit of Toubkal on my own, I was twenty-one and more frightened than any of the eight people following me. I had grown up in Imlil, a village at the foot of the mountain, and I had climbed it dozens of times with my uncle, who has been a guide for thirty years. But climbing behind someone and being the one everybody looks to are two very different things. That morning, as we set off in the dark, I kept repeating his advice in my head: walk slower than you want to, and never let them see you worry.

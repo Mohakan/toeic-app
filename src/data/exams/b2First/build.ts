@@ -19,9 +19,9 @@ export const ru1 = (id: string, level: number, prompt: string, options: Options,
 export const ru2 = (id: string, level: number, prompt: string, answers: Answers, explain: Localized, passage?: string): Exercise =>
   typed(id, 'RU2', 'grammar', level, prompt, answers, explain, { passage, maxWords: 1 });
 
-/** Part 3: word formation; `cue` is the stem given in capitals. */
-export const ru3 = (id: string, level: number, prompt: string, cue: string, answers: Answers, explain: Localized): Exercise =>
-  typed(id, 'RU3', 'vocab', level, prompt, answers, explain, { cue, maxWords: 1 });
+/** Part 3: word formation; `cue` is the stem given in capitals. A mock test shares one `passage`. */
+export const ru3 = (id: string, level: number, prompt: string, cue: string, answers: Answers, explain: Localized, passage?: string): Exercise =>
+  typed(id, 'RU3', 'vocab', level, prompt, answers, explain, { cue, maxWords: 1, passage });
 
 /** Part 4: key word transformation, 2 to 5 words including the unchanged key word. */
 export const ru4 = (id: string, level: number, lead: string, cue: string, prompt: string, answers: Answers, explain: Localized): Exercise =>
