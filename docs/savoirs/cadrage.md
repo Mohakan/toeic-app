@@ -122,12 +122,27 @@ Les jeux existants (QCM, associations, phrases à remettre en ordre) sont réuti
 
 ## Décisions (2026-10-17)
 
-- **Prix** : un achat unique par année scolaire, avec un accès à vie au contenu de cette année. Une partie du contenu est ouverte gratuitement pour essayer.
+- **Prix** : un achat unique par année scolaire, avec un accès à vie au contenu de cette année. Une partie du contenu est ouverte gratuitement pour essayer. Confirmé : on achète chaque année séparément, il n'y a pas d'achat unique pour les quatre années.
 - **Paiement** : l'achat intégré des stores seulement ; pas de Konnect pour l'instant.
 - **Suivi** : pas d'espace parent ni enseignant.
+- **Élèves mineurs** : la famille garde ses règles actuelles, et Savoirs y apporte les ajustements décrits dans « Élèves mineurs ».
 - **Langues** : les explications sont en français par défaut. L'arabe, l'anglais et l'espagnol sont proposés en option, et la liste peut s'étendre par configuration aux élèves étrangers non francophones.
+
+## Élèves mineurs
+
+La plupart des élèves ont de 15 à 19 ans. La famille a déjà les règles qu'il faut (`store/conformite.md`, ligne 15) :
+
+- les comptes sont ouverts dès 13 ans ;
+- un parent donne son accord entre 13 et 15 ans ;
+- les applis sont hors du programme « Familles » de Google et de la catégorie Enfants d'Apple.
+
+Savoirs garde ces règles. Il reste à adapter les points suivants :
+
+- **Données** : la politique de confidentialité doit mentionner l'année scolaire, la section et les langues d'explication. Ce sont les seules données propres à l'appli.
+- **INPDP** : la déclaration doit inclure Toki Quest Savoirs et ses comptes d'élèves mineurs (ligne 25 de `store/conformite.md`).
+- **Achats** : ils passent par les stores, qui appliquent leurs propres contrôles parentaux (par exemple « Demander l'autorisation d'acheter » sur iPhone). L'appli n'ajoute pas de paiement à elle.
+- **Fiches des stores** : la classification d'âge et la description doivent indiquer un public de lycéens.
 
 ## Questions ouvertes
 
-- L'accès à vie se paie-t-il bien par année scolaire, comme le suppose la section « Prix », ou un seul achat ouvre-t-il les quatre années ? Dans ce second cas, le modèle d'achat actuel suffit tel quel.
-- Les élèves sont souvent mineurs. Il faut adapter l'accord des parents, la collecte de données et les textes légaux (`store/conformite.md`).
+Aucune pour l'instant. Tous les points sont tranchés (voir « Décisions »).
