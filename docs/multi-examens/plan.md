@@ -97,7 +97,7 @@ L'essentiel pour le code : `ExamConfig` est construit autour d'un examen et d'un
 
 - **EAS** : créer le projet `toki-quest-b2` (`bunx eas-cli init` ou `npx eas-cli@latest init` avec `EXPO_PUBLIC_EXAM=b2First`). Créer aussi les fiches App Store et Play Store, ainsi que le produit `toki_quest_b2_full`.
 - **Serveur** : renseigner `STORE_APPS` en production.
-- **Contenu B2** : un examen blanc complet, puis le Writing et le Speaking (correction par IA).
+- **Contenu B2** : suivre les lots de `docs/multi-examens/b2-60h.md`, qui visent 60 heures de travail (lot 1 terminé : 2 examens blancs complets et une 3e série par unité). Le Writing et le Speaking (correction par IA) sont les lots 7 et 8.
 - **Toki Quest Academic** : même chemin que B2.
 - **Toki dans les applis** : aligner `src/components/Toki.tsx` et `scripts/make-icons.cjs` sur la planche Figma. Il faut que le casque passe sur la tête (il est dessiné autour du cou aujourd'hui) et que les plumes de la queue prennent la couleur de l'appli. Il faut aussi dessiner la toque et le livre.
 - **Site** : choisir l'hébergement de `tokiquest.app` et y publier `dist/web`.

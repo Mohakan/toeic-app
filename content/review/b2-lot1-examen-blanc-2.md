@@ -67,3 +67,30 @@ Le sujet est plutôt **dans la moitié facile** d'un vrai sujet :
 - **LI1** : les 8 extraits ont des questions de types variés (opinion, but, relation, lieu, accord, surprise, fonction), avec de bons pièges. Exemples : l'opinion de la femme sur le film, « You won't need to », « My dad says ».
 - **LI3** : chaque locuteur a un distracteur bien construit (H pour le locuteur 1, G pour le locuteur 3).
 - **LI4** : les distracteurs reprennent des éléments réels de l'entretien (le téléphone, les réseaux sociaux, les magazines, l'Afrique) sans être défendables.
+
+## Corrections appliquées (2026-10-17)
+
+Fichiers modifiés : `src/data/exams/b2First/mocks/full-2-reading.ts` et `full-2-listening.ts`. Toute clé, phrase ou explication modifiée l'est dans les 4 langues (fr, ar, en, es).
+
+| id | correction |
+| --- | --- |
+| `fce-m4-ru3-8` | BLOQUANT corrigé : réponses `['production', 'overproduction']`, phrase « Overproduction est aussi accepté » ajoutée aux 4 explications. |
+| `fce-m4-ru4-3` | BLOQUANT corrigé : `'has grown used to getting'` ajouté ; explications mises à jour. `'has been used to getting'` non retenu (peu idiomatique ici). |
+| `fce-m4-ru4-5` | BLOQUANT corrigé : les 17 formes proposées ajoutées (`suggested getting`, `suggested (that) we/they (should) catch/get`), toutes de 5 mots au plus ; explications citent « take / catch / get ». |
+| `fce-m4-ru4-4` | BLOQUANT corrigé par un nouvel item à deux changements : « It’s three years since Omar took up the guitar. » (BEEN) → « Omar ___ the guitar for three years. » ; réponses `['has been playing', 'has been learning', 'has been learning to play']`. Il teste « It’s … since + prétérit » → « for » + present perfect continu, et la reformulation de « take up ». Niveau 4 conservé ; nouvelles explications. |
+| `fce-m4-ru7-1` à `-10` | À CORRIGER corrigé : items remis dans l'ordre proposé et renumérotés. Nouvel ordre (ancien id → nouveau) : 3→1, 9→2, 5→3, 1→4, 8→5, 6→6, 2→7, 10→8, 7→9, 4→10. Clés : B E C A D C A E D B. |
+| `fce-m4-ru7` (texte) | Allongé de 467 à 604 mots : un détail neutre par section (lieux des spectacles pour A, travail au centre de Kiel pour B, origine du coréen pour C, la ferme pour D, croissance de l'entreprise pour E). Aucun ajout ne répond à une autre question ; chaque question garde une seule section. |
+| `fce-m4-ru7-5` (ancien `ru7-8`) | MINEUR corrigé : « Which person overcame a long-standing difficulty in talking to people they did not know? ». Clé et explications inchangées. |
+| `fce-m4-ru3-7` | Difficulté : remplacé par « …how to repair clothes that are often thrown away (7) ___ (NECESSARY). » → `['unnecessarily']`, niveau 5, explications du rapport. |
+| `fce-m4-ru3-1` | Difficulté (second préfixe négatif, double transformation) : « her friends thought the plan was (1) ___ (REAL): nobody, they said, could make a living from other people’s old clothes. » → `['unrealistic', 'unrealisable', 'unrealizable']`, niveau 5. RU3 passe à 207 mots. |
+| `fce-m4-ru5-5` | Difficulté : question de référence sur le 5e paragraphe (qui n'en avait pas) : « what does ‘it’ refer to in ‘most of them throw it away’? » → clé « Their own background and the place they come from. », niveau 5. L'ancienne question (« mixed feelings ») est supprimée. |
+| `fce-m4-ru6-1` à `-6` | Difficulté : A devient « They had both been sailing since they were children, so the open sea held few surprises for them. » (semble aller au trou 1, contredite par « We weren’t athletes or sailors »). Clés inchangées ; l'explication de `ru6-1` signale le piège. |
+| `fce-m4-li2-3` | Distracteur ajouté : « We’d packed a tent and a gas stove. We used the stove almost every day, but the tent only five or six times… » (« gas stove » plutôt que « small stove », pour ne pas brouiller `li2-8` « a small ___ »). Clé `tent` ; explications mises à jour. |
+| `fce-m4-li2-7` | Prompt reformulé : « Adam recommends buying ___ and dates in villages rather than carrying energy bars. » Clé `bread`, toujours entendue telle quelle. |
+| `fce-m4-ru2-3` | DOUTEUX : « each » était défendable ; texte et prompt réécrits (« …was an expert: they were both learners. »). Clé `neither` ; explications indiquent pourquoi « each » est exclu. |
+| `fce-m4-ru4-1` | DOUTEUX accepté : `'quite as well as'` (4 mots, même sens). |
+| `fce-m4-ru4-2` | DOUTEUX accepté : `"can't possibly have forgotten"` (5 mots, même sens). |
+| `fce-m4-ru1-7` | MINEUR : explication en anglais → « Phrasal verb: “fit in with” = match its surroundings. » |
+| `fce-m4-li4-6` | MINEUR : citation corrigée en « he’d stopped putting out poison for them after seeing it » en fr, ar et es. |
+
+Contrôles : `npx tsc --noEmit` et `npx vitest run src/data/exams/b2First src/services/typedAnswer.test.ts` passent. Chaque item modifié a été refait à l'aveugle : une seule réponse défendable à chaque fois.
