@@ -42,8 +42,8 @@ Chaque notion a une fiche courte, qui tient sur un écran :
 | Élément | Exemple (SVT, 2e année) |
 | --- | --- |
 | Le mot, avec son article et sa prononciation (audio) | **la mitose** |
-| Une définition en français simple, en une ou deux phrases | Division d'une cellule en deux cellules filles identiques. |
-| L'explication dans la langue choisie par l'élève (ici l'arabe) | انقسام الخلية إلى خليتين متطابقتين |
+| L'explication en français simple, en une ou deux phrases | Division d'une cellule en deux cellules filles identiques. |
+| Les explications dans les langues activées par l'élève, s'il en a choisi | arabe : انقسام الخلية إلى خليتين متطابقتين · anglais : *mitosis* |
 | Un petit dessin | une cellule qui se divise en deux, dans le style de Toki |
 | Une phrase telle qu'on la lit en cours ou dans un énoncé | « Décrire les étapes de la mitose. » |
 | Le piège à éviter | ne pas confondre avec la méiose |
@@ -53,21 +53,23 @@ En arabe, les termes employés sont ceux que l'élève a appris au collège, pou
 
 ## Langues des explications
 
-Le contenu à apprendre est toujours en français. Les explications, elles, sont données dans une langue que l'élève choisit.
+Le contenu à apprendre est toujours en français.
 
-- **Choix de l'élève** : il choisit sa langue d'explication à l'inscription et peut la changer dans son profil. Elle ne dépend pas de la langue de l'interface. Par exemple, l'interface peut être en français et les explications en arabe.
-- **Liste fixée par la configuration de l'appli** : la liste des langues proposées est déclarée dans la configuration, et l'arabe est la langue par défaut au lancement. Pour ouvrir l'appli aux élèves d'une autre langue, il suffit d'ajouter la langue à la configuration et ses traductions au contenu. Le code n'a pas besoin de changer.
+- **Par défaut, en français** : l'explication en français simple est toujours affichée. C'est le cœur de l'appli, puisque l'élève doit apprendre à comprendre les cours en français.
+- **Arabe, anglais, espagnol en option** : l'élève peut activer une ou plusieurs de ces langues, à l'inscription ou dans son profil. Leur explication s'affiche alors sous celle en français. Aucune n'est activée par défaut.
+- **Indépendante de l'interface** : le choix des langues d'explication ne dépend pas de la langue de l'interface. Par exemple, l'interface peut être en arabe et les explications en français seulement.
+- **Liste fixée par la configuration de l'appli** : la liste des langues proposées en option est déclarée dans la configuration. Pour ouvrir l'appli aux élèves étrangers d'une autre langue, il suffit d'ajouter la langue à la configuration et ses traductions au contenu. Le code n'a pas besoin de changer.
 - **Langue complète obligatoire** : une langue n'est proposée que si toutes les notions ont leur explication dans cette langue. Le contrôle automatique du contenu le vérifie, pour que l'élève ne tombe jamais sur une explication manquante.
 - **Sens de lecture** : les langues qui s'écrivent de droite à gauche (arabe, persan, ourdou, etc.) affichent l'explication dans ce sens, alors que le mot français reste de gauche à droite.
-- **Memory** : le jeu associe le mot français à son équivalent dans la langue choisie.
 
 ## Prix
 
-- **Abonnement par année** : un abonnement annuel ouvre tout le contenu de l'année de l'élève, dans toutes ses matières, avec le rattrapage des années précédentes.
-- **Essai gratuit** : une partie du contenu reste ouverte sans abonnement, pour essayer :
+- **Accès à vie par année scolaire** : un achat unique ouvre, pour toujours, tout le contenu d'une année scolaire, dans toutes les matières de la section de l'élève et avec le rattrapage des années précédentes. Il n'y a pas d'abonnement à renouveler. L'élève achète l'année suivante quand il passe en classe supérieure. Il garde l'accès aux années déjà achetées, par exemple pour réviser le bac.
+- **Essai gratuit** : une partie du contenu reste ouverte sans achat, pour essayer :
   - le test de niveau initial ;
   - le premier chapitre de chaque matière de l'année ;
   - le début du parcours « consignes ».
+- **Paiement** : uniquement l'achat intégré des stores au lancement. Le paiement local Konnect n'est pas prévu pour l'instant.
 - **Pas de suivi** : il n'y a pas d'espace parent ni d'espace enseignant. La progression reste celle de l'élève, dans son compte.
 
 ## Jeux et exercices
@@ -78,7 +80,7 @@ L'esprit est celui de la famille : des séries courtes, un retour immédiat avec
 | --- | --- |
 | Quiz | QCM sur le sens d'un mot ou d'une notion |
 | Mot et image | associer le mot au bon dessin, ou l'inverse |
-| Memory | retrouver les paires mot français et mot arabe |
+| Memory | retrouver les paires : mot français et dessin, ou mot français et son équivalent dans une langue activée |
 | Schéma à légender | placer les mots sur un schéma (cellule, circuit, triangle, montage de chimie) |
 | Phrase à trous | compléter une phrase de cours ou d'énoncé |
 | Vrai ou faux | une définition ou un exemple |
@@ -96,7 +98,7 @@ Les jeux existants (QCM, associations, phrases à remettre en ordre) sont réuti
    1. les mathématiques et les sciences de 1re année, car c'est là que le passage au français est le plus rude ;
    2. les années suivantes, puis les sections ;
    3. le parcours « consignes », commun à toutes les matières, dès le départ.
-3. **Rédaction** : un guide d'écriture par matière, sur le modèle de `docs/multi-examens/b2-contenu.md`. Il fixe la longueur des définitions, le niveau de langue, le style des dessins et l'arabe employé.
+3. **Rédaction** : un guide d'écriture par matière, sur le modèle de `docs/multi-examens/b2-contenu.md`. Il fixe la longueur des définitions, le niveau de langue, le style des dessins et la façon d'écrire les explications dans chaque langue.
 4. **Relecture** :
    - un contrôle automatique (format, champs remplis, doublons) ;
    - une relecture en aveugle et selon la grille, comme pour B2 (`content/review/GRILLE.md`, adaptée aux matières) ;
@@ -109,8 +111,8 @@ Les jeux existants (QCM, associations, phrases à remettre en ordre) sont réuti
 | --- | --- | --- |
 | Appli sans examen | `ExamConfig` : parties, échelle de score, tests blancs | Un modèle « matières » : matière, année, section, chapitre, notion |
 | Choix de l'année et de la section | Objectif de score à l'accueil | Écran de choix de l'année et de la section, modifiable dans le profil |
-| Langues des explications | Explications en fr, ar, en, es, liées à la langue de l'interface | Une liste de langues dans la configuration, un choix de l'élève séparé de l'interface, un contrôle de complétude par langue |
-| Abonnement annuel | Achat unique du plan complet (`toki_quest_full`) et droits sans fin | Abonnement des stores avec renouvellement et expiration, suivi par le serveur (notifications Apple et Google) ; droits limités dans le temps |
+| Langues des explications | Explications en fr, ar, en, es, liées à la langue de l'interface | Le français toujours affiché ; une liste de langues en option dans la configuration (ar, en, es au lancement) ; un choix de l'élève séparé de l'interface ; un contrôle de complétude par langue |
+| Accès à vie par année | Un seul achat unique, le plan complet (`toki_quest_full`), avec des droits sans fin | Un achat unique par année scolaire (par exemple `toki_quest_savoirs_1`, jusqu'à `toki_quest_savoirs_4`) ; des droits par appli et par année sur le serveur, qui garde le modèle actuel d'achat sans expiration |
 | Contenu gratuit | Tests blancs gratuits (`freeMockIds`) | Une liste de chapitres ouverts par matière et par année |
 | Test de niveau | Une échelle par examen | Un test par matière, sur les notions des années jusqu'à celle de l'élève |
 | Contenu en français | `EnglishText`, voix anglaise | Un composant de texte et une voix françaises pour le contenu |
@@ -120,13 +122,12 @@ Les jeux existants (QCM, associations, phrases à remettre en ordre) sont réuti
 
 ## Décisions (2026-10-17)
 
-- **Prix** : un abonnement par année, avec une partie du contenu ouverte gratuitement pour essayer.
+- **Prix** : un achat unique par année scolaire, avec un accès à vie au contenu de cette année. Une partie du contenu est ouverte gratuitement pour essayer.
+- **Paiement** : l'achat intégré des stores seulement ; pas de Konnect pour l'instant.
 - **Suivi** : pas d'espace parent ni enseignant.
-- **Langues** : les explications sont dans la langue choisie par l'élève, parmi celles déclarées dans la configuration. La liste peut s'étendre aux élèves étrangers non francophones.
+- **Langues** : les explications sont en français par défaut. L'arabe, l'anglais et l'espagnol sont proposés en option, et la liste peut s'étendre par configuration aux élèves étrangers non francophones.
 
 ## Questions ouvertes
 
-- Faut-il proposer le paiement local Konnect dès le lancement, puisque le public est d'abord tunisien ? Les règles des stores pour les abonnements s'appliquent dans l'appli.
-- L'abonnement suit-il l'année scolaire (de septembre à août), ou court-il douze mois à partir de l'achat ?
+- L'accès à vie se paie-t-il bien par année scolaire, comme le suppose la section « Prix », ou un seul achat ouvre-t-il les quatre années ? Dans ce second cas, le modèle d'achat actuel suffit tel quel.
 - Les élèves sont souvent mineurs. Il faut adapter l'accord des parents, la collecte de données et les textes légaux (`store/conformite.md`).
-- Quelles langues d'explication ajouter après l'arabe, et dans quel ordre ?

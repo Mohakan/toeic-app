@@ -78,13 +78,18 @@ Cette appli s'adresse aux lycéens tunisiens, de la 1re à la 4e année secondai
 
 Le cadrage complet est dans `docs/savoirs/cadrage.md` : parcours, fiche notion, jeux, méthode de contenu, besoins du code et questions ouvertes.
 
-Décisions du 2026-10-17 : un abonnement par année avec une partie du contenu ouverte gratuitement, pas de suivi par les parents ni par les enseignants, et des explications dans une langue choisie par l'élève parmi celles déclarées dans la configuration.
+Décisions du 2026-10-17 :
+
+- un achat unique par année scolaire, avec un accès à vie et une partie du contenu ouverte gratuitement ;
+- l'achat intégré des stores seulement, sans Konnect pour l'instant ;
+- pas de suivi par les parents ni par les enseignants ;
+- des explications en français par défaut, avec l'arabe, l'anglais et l'espagnol en option ; la configuration peut ajouter d'autres langues.
 
 L'essentiel pour le code : `ExamConfig` est construit autour d'un examen et d'une échelle de score. Savoirs demande :
 
 - un modèle « matières » : matière, année, section, chapitre, notion ;
-- un contenu en français avec des explications dans plusieurs langues, chacune vérifiée comme complète ;
-- un abonnement annuel des stores, alors que le serveur ne gère aujourd'hui que l'achat unique ;
+- un contenu en français, avec des explications en option dans d'autres langues, chacune vérifiée comme complète ;
+- un produit d'achat par année scolaire. Le serveur garde son modèle d'achat sans expiration, mais ses droits devront aussi porter sur l'année ;
 - de nouveaux jeux : mot et image, memory, schéma à légender ;
 - un champ `scale` facultatif dans le catalogue.
 
