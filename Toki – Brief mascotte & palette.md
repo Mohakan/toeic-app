@@ -4,7 +4,7 @@ Oct 7, 2026 · @Zoubeir · mis à jour le 17 oct. 2026 (famille de quatre applis
 
 ## Contexte
 
-Toki est la mascotte de **Toki Quest**, une famille d'applications mobiles (iOS et Android, avec une version web) qui font apprendre de façon ludique. Trois applis préparent aux certifications d'anglais. Leur public : des francophones, des arabophones et des hispanophones de 15 à 35 ans, lycéens, étudiants et jeunes actifs, qui ont besoin d'un score ou d'un certificat pour un emploi, des études ou une mobilité. La quatrième aide les lycéens dont le français n'est pas la langue maternelle à comprendre les mots et les notions de leurs cours (voir « Toki Quest Savoirs » plus bas).
+Toki est la mascotte de **Toki Quest**, une famille d'applications mobiles (iOS et Android, avec une version web) qui font apprendre de façon ludique. Trois applis préparent aux certifications d'anglais. Leur public : des francophones, des arabophones et des hispanophones de 15 à 35 ans, lycéens, étudiants et jeunes actifs, qui ont besoin d'un score ou d'un certificat pour un emploi, des études ou une mobilité. La quatrième aide les lycéens tunisiens, dont le français n'est pas la langue maternelle, à comprendre les mots et les notions de leurs cours, de la 1re à la 4e année secondaire (voir « Toki Quest Savoirs » plus bas).
 
 La famille compte quatre applis. Elles sont construites sur un **socle commun** (même code, mêmes écrans, même compte) et ont chacune leur fiche dans les stores :
 
@@ -13,7 +13,7 @@ La famille compte quatre applis. Elles sont construites sur un **socle commun** 
 | **Toki Quest** | TOEIC® Listening & Reading | Jeunes actifs, emploi | En staging |
 | **Toki Quest B2** | Cambridge English B2 First | Lycéens et étudiants, études et mobilité | Prête à construire |
 | **Toki Quest Academic** | IELTS™ Academic | Études supérieures à l'étranger | Prévue |
-| **Toki Quest Savoirs** | Aucun examen : le français des matières du lycée | Lycéens dont le français n'est pas la langue maternelle | Prévue |
+| **Toki Quest Savoirs** | Aucun examen : le français des matières, de la 1re à la 4e année secondaire | Lycéens tunisiens | Prévue |
 
 Les noms des applis ne contiennent aucune marque d'examen. L'examen est nommé dans le sous-titre des stores, avec la mention « appli indépendante, non affiliée à … ».
 
@@ -198,23 +198,31 @@ Rubik reste la police des applis, car elle couvre le latin et l'arabe. Manrope e
 
 ## Toki Quest Savoirs (quatrième appli, prévue)
 
-**Promesse** : comprendre les mots et les notions difficiles des cours du lycée enseignés en français, expliqués simplement, avec Toki.
+Le cadrage complet est dans `docs/savoirs/cadrage.md`.
 
-**Public** : des lycéens dont le français n'est pas la langue maternelle, tout au long de leurs années de lycée. Par exemple :
+**Promesse** : comprendre en jouant les mots et les notions difficiles des cours du lycée enseignés en français, de la 1re à la 4e année secondaire.
 
-- les élèves du Maghreb, dont les matières scientifiques passent à l'enseignement en français au lycée ;
-- les élèves nouvellement arrivés en France ou dans un pays francophone ;
-- les élèves des lycées français à l'étranger.
+**Public** : les lycéens tunisiens. Leur langue maternelle est l'arabe, et ils ont souvent fait leurs matières scientifiques en arabe jusqu'à la 9e année de base. Au lycée, ces matières passent au français.
 
-**Matières** : français, mathématiques, physique, chimie, SVT, technique et informatique.
+**Matières** : français, mathématiques, physique, chimie, SVT, technique et informatique. Les notions sont relevées dans les supports de cours de chaque année ; les définitions, les exemples et les dessins sont écrits pour l'appli.
 
 **Ce qui la distingue des trois autres** :
 
-- Il n'y a pas d'examen ni de score sur une échelle officielle. La progression se mesure en notions maîtrisées, par matière et par année.
-- Le contenu est en français. L'explication de chaque mot ou notion est donnée en français simple et dans la langue de l'élève (arabe, anglais, espagnol).
-- Les consignes et les verbes d'énoncé (« justifier », « en déduire », « montrer que ») ont leur propre parcours, car ils comptent dans toutes les matières.
+- **Pas d'examen** : l'élève indique son année scolaire et sa section. Un test de niveau initial le place ensuite dans un parcours personnalisé, avec du rattrapage sur les années précédentes si besoin.
+- **Progression** : elle se mesure en notions maîtrisées, par matière et par année.
+- **Fiches notions** : chaque notion a une fiche courte. On y trouve le mot et sa prononciation, une définition en français simple, l'explication en arabe, un petit dessin, une phrase de cours et le piège à éviter.
+- **Jeux** :
+  - quiz ;
+  - mot et image ;
+  - memory français et arabe ;
+  - schéma à légender ;
+  - phrase à trous ;
+  - défi chrono ;
+  - un parcours sur les consignes (« justifier », « en déduire », « montrer que »), commun à toutes les matières.
 
-**Identité** : Framboise, Toki avec le livre des savoirs. Le nom ne contient aucune marque, et les visuels ne reprennent aucun logo de ministère, de programme officiel ni d'éditeur scolaire.
+**Illustrations** : de petits dessins vectoriels dans le style de Toki, avec des contours Bleu Nuit et des formes rondes. Ils ne contiennent pas de texte, pour que les légendes restent traduisibles et utilisables dans les jeux. Toki apparaît dans les fiches pour montrer ou commenter le dessin.
+
+**Identité** : Framboise, Toki avec le livre des savoirs. Le nom ne contient aucune marque, et les visuels ne reprennent aucun logo de ministère, de programme officiel ni d'éditeur scolaire. Aucun dessin ne recopie une illustration de manuel.
 
 ## Site de la famille
 
@@ -239,6 +247,7 @@ Les adresses ne contiennent aucune marque d'examen. Tant qu'une appli n'est pas 
 - [ ] Icône d'app iOS et Android (1024 × 1024 px) et version 48 px lisible, **pour chacune des quatre applis** : même Toki, fond, accessoire et plumes de la queue propres à l'appli
 - [ ] Les quatre accessoires (casque, écharpe, toque, livre) sur des calques séparés, compatibles avec les 5 stades et les 10 expressions
 - [ ] Versions miroir pour l'interface en arabe
+- [ ] Toki Quest Savoirs : une planche de 10 petits dessins de notions (cellule, triangle rectangle, circuit, montage de chimie, etc.) pour fixer le style des illustrations
 - [ ] Fichiers sources vectoriels (SVG / Figma) avec calques séparés pour l'animation
 - [ ] Palette exportée en styles Figma ou variables, avec une variable « couleur de l'appli » qui prend la valeur de chaque appli
 

@@ -74,18 +74,11 @@ Lancer une variante : `EXPO_PUBLIC_EXAM=b2First npx expo start`. La valeur sera 
 
 ## Toki Quest Savoirs (prévue)
 
-Le public, les matières et l'identité sont décrits dans le brief. Pour le code, cette appli ne rentre pas telle quelle dans le modèle actuel :
+Cette appli s'adresse aux lycéens tunisiens, de la 1re à la 4e année secondaire. Elle explique en jouant les mots et notions des matières enseignées en français. L'élève indique son année et sa section, passe un test de niveau initial, puis suit un parcours personnalisé.
 
-- `ExamConfig` est construit autour d'un examen : parties, échelle de score, seuils CECR, tests blancs. Savoirs n'a ni examen ni score officiel. Il lui faut un modèle « matières » : matière, année, notion, mot, avec une progression en part de notions maîtrisées.
-- Le contenu est en français, avec des explications dans la langue de l'élève. Aujourd'hui, `EnglishText` et la reconnaissance vocale supposent un contenu en anglais.
-- Le catalogue devra accepter une appli sans échelle de score (le champ `scale` deviendrait facultatif).
+Le cadrage complet est dans `docs/savoirs/cadrage.md` : parcours, fiche notion, jeux, méthode de contenu, besoins du code et questions ouvertes.
 
-Étapes proposées :
-
-1. Avec des enseignants, définir la liste des notions par matière et par année. Commencer par les mathématiques et la physique de la première année, car c'est souvent là que l'enseignement passe au français.
-2. Généraliser le catalogue et la configuration pour une appli sans examen.
-3. Écrire les types d'exercices : mot et définition, schéma légendé, consigne à comprendre.
-4. Faire relire le contenu avec la même méthode que pour B2 (`content/review/GRILLE.md`, adaptée aux matières).
+L'essentiel pour le code : `ExamConfig` est construit autour d'un examen et d'une échelle de score. Savoirs demande un modèle « matières » (matière, année, section, chapitre, notion) et un contenu en français avec des explications en arabe. Il faut aussi de nouveaux jeux (mot et image, memory, schéma à légender) et rendre `scale` facultatif dans le catalogue.
 
 ## Reste à faire
 

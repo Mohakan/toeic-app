@@ -7,7 +7,7 @@ const APPS = [
   { key: 'quest', short: 'TQ', name: 'Toki Quest', exam: 'Listening & Reading', label: 'Ciel', hero: '#2E9BF0', soft: '#E7F3FE', accessory: 'Casque audio', web: '/quest/', pitch: "L'anglais du monde pro, écoute et lecture." },
   { key: 'b2', short: 'B2', name: 'Toki Quest B2', exam: 'English B2 First', label: 'Lavande', hero: '#9B8CFF', soft: '#EFEDFF', accessory: 'Écharpe étudiante', web: '/b2/', pitch: 'Le niveau B2 pour les études et la mobilité.' },
   { key: 'academic', short: 'AC', name: 'Toki Quest Academic', exam: 'Academic English', label: 'Turquoise', hero: '#3CC8C8', soft: '#E3F8F8', accessory: 'Toque de diplômé', web: null, pitch: "L'anglais universitaire pour partir étudier." },
-  { key: 'school', short: 'FR', name: 'Toki Quest Savoirs', exam: 'Le français des matières', label: 'Framboise', hero: '#E782B4', soft: '#FBEAF3', accessory: 'Livre des savoirs', web: null, pitch: 'Les mots et notions des cours du lycée, expliqués simplement.' },
+  { key: 'school', short: 'FR', name: 'Toki Quest Savoirs', exam: 'Le français des matières', label: 'Framboise', hero: '#E782B4', soft: '#FBEAF3', accessory: 'Livre des savoirs', web: null, pitch: 'Les mots et notions des cours, de la 1re à la 4e année secondaire, expliqués en jouant.' },
 ];
 
 const NIGHT = '#14427A';
