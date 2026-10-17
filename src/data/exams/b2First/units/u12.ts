@@ -182,4 +182,66 @@ export const fceU12: Unit = unit(
       '«No sooner» al inicio → inversión «had I closed», luego «than»: «No sooner had I closed».',
     )),
   ],
+  [
+    ru2('fce-u12-s3-q1', 5, 'Hardly ___ the match started when the floodlights went out and the players had to leave the pitch.', ['had'], x(
+      '« Hardly » en tête → inversion avec le past perfect : « Hardly had the match started when… ».',
+      '«Hardly» في أول الجملة ← قلب مع الماضي التام: «Hardly had the match started when…».',
+      'Hardly + inversion: had the match started.',
+      '«Hardly» al inicio → inversión con el past perfect: «Hardly had the match started when…».',
+    )),
+    ru2('fce-u12-s3-q2', 6, 'Not ___ the last guest had left did we realise how tired we were.', ['until', 'till'], x(
+      '« Not until » + proposition, puis inversion « did we realise » : nous ne l’avons compris qu’après le départ du dernier invité.',
+      '«Not until» + جملة ثم قلب «did we realise»: لم ندرك تعبنا إلا بعد مغادرة آخر ضيف.',
+      '“Not until… did we realise”.',
+      '«Not until» + oración y luego inversión «did we realise»: solo nos dimos cuenta cuando se fue el último invitado.',
+    )),
+    ru2('fce-u12-s3-q3', 5, 'The tickets sold out so quickly ___ many fans ended up watching the concert online.', ['that'], x(
+      'Conséquence : « so » + adverbe + « that » : « so quickly that many fans… ».',
+      'النتيجة: «so» + ظرف + «that»: «so quickly that many fans…».',
+      'so + adverb + that.',
+      'Consecuencia: «so» + adverbio + «that»: «so quickly that many fans…».',
+    )),
+    ru3('fce-u12-s3-q4', 5, 'Amira spoke with such ___ that nobody in the room dared to interrupt her.', 'CONFIDENT', ['confidence'], x(
+      'Après « with such », il faut un nom indénombrable (such + nom + that) : confident → confidence.',
+      'بعد «with such» نحتاج إلى اسم غير معدود (such + اسم + that): confident ← confidence.',
+      '“with such” + noun: confidence.',
+      'Después de «with such» hace falta un sustantivo incontable (such + sustantivo + that): confident → confidence.',
+    )),
+    ru3('fce-u12-s3-q5', 5, 'Unless the club finds a new sponsor before the summer, its ___ will be in serious doubt.', 'SURVIVE', ['survival'], x(
+      'Après « its », un nom : survive → survival (-al, le e disparaît).',
+      'بعد «its» نحتاج إلى اسم: survive ← survival (‎-al مع حذف e).',
+      'After “its” → noun: survival.',
+      'Después de «its», un sustantivo: survive → survival (-al, desaparece la e).',
+    )),
+    ru4('fce-u12-s3-q6', 5, 'Don’t leave your bag on the seat; someone might take it.', 'BETTER', 'You ___ your bag on the seat; someone might take it.', ['had better not leave'], x(
+      'Mise en garde : had better + not + infinitif sans to : « You had better not leave ». « not » se place après « better ».',
+      'تحذير: had better + not + مصدر دون to: «You had better not leave»، و«not» تأتي بعد «better».',
+      'had better not + bare infinitive.',
+      'Advertencia: had better + not + infinitivo sin to: «You had better not leave». «not» va después de «better».',
+    )),
+    ru4('fce-u12-s3-q7', 5, 'Nadia was such a fast talker that I couldn’t follow her.', 'SO', 'Nadia talked ___ I couldn’t follow her.', ['so fast that', 'so quickly that', 'so fast', 'so quickly'], x(
+      'Avec un verbe, « such a fast talker » devient « so » + adverbe : « talked so fast (that) ». « that » est facultatif.',
+      'مع الفعل يتحول «such a fast talker» إلى «so» + ظرف: «talked so fast (that)»، و«that» اختيارية.',
+      'Verb + so + adverb (+ that).',
+      'Con un verbo, «such a fast talker» pasa a «so» + adverbio: «talked so fast (that)». «that» es opcional.',
+    )),
+    ru4('fce-u12-s3-q8', 5, 'Whatever the price is, I’m going to buy that guitar.', 'MATTER', 'No ___ costs, I’m going to buy that guitar.', ['matter how much it', 'matter what it'], x(
+      '« Whatever the price » = « No matter how much it costs » (ou « No matter what it costs »).',
+      '«Whatever the price» = «No matter how much it costs» (أو «No matter what it costs»).',
+      'No matter how much / what it costs.',
+      '«Whatever the price» = «No matter how much it costs» (o «No matter what it costs»).',
+    )),
+    ru4('fce-u12-s3-q9', 6, 'The concert had only just begun when the power failed.', 'HARDLY', '___ begun when the power failed.', ['Hardly had the concert'], x(
+      '« only just » = « hardly » ; placé en tête, il entraîne l’inversion : « Hardly had the concert begun when… ».',
+      '«only just» = «hardly»، وفي أول الجملة يستلزم القلب: «Hardly had the concert begun when…».',
+      'Hardly at the start + inversion.',
+      '«only just» = «hardly»; al inicio provoca la inversión: «Hardly had the concert begun when…».',
+    )),
+    ru4('fce-u12-s3-q10', 5, 'Karim behaves like the owner of the café, but he only works there.', 'THOUGH', 'Karim behaves ___ the café, but he only works there.', ['as though he owned', 'as though he owns', 'as though he ran', 'as though he runs'], x(
+      'Impression fausse : « as though » + prétérit (« as though he owned the café ») ; le présent est aussi accepté.',
+      'انطباع غير صحيح: «as though» + ماضٍ («as though he owned the café»)، ويُقبل المضارع أيضًا.',
+      'as though + past: as though he owned.',
+      'Impresión falsa: «as though» + pasado («as though he owned the café»); también se acepta el presente.',
+    )),
+  ],
 );

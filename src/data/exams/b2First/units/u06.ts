@@ -60,6 +60,36 @@ const S2_SENTENCES = [
   'G. Many of them also sell their vegetables at weekly markets.',
 ];
 
+const S3_TEXT = `At nineteen, Salma Haddad spends most Sunday mornings being shouted at. She is a youth football referee in Rabat, and she started almost by accident. "My little brother's team arrived for a match one day and the referee never came," she explains. "Somebody had to do it, and I was the only adult there who understood the offside rule."
+
+That first match, she admits, was a disaster. She forgot to start her watch, gave a penalty she still believes was wrong, and spent the second half trying to avoid the eyes of the parents along the touchline. Yet when the coach asked whether she would come back the following week, she heard herself saying yes.
+
+What kept her going was not the football itself so much as the challenge of staying calm. "Players and parents test you all the time," she says. "If you lose your temper, you've lost the match, whatever the score." She now attends a monthly course run by the national federation, where she has learned, among other things, to explain a decision in a few words rather than arguing about it.
+
+The role has changed her in ways she did not anticipate. At university she used to dread speaking in seminars; now, she says, a room of twenty students seems "rather relaxing" compared with two hundred angry spectators.
+
+She is realistic about the future. Few women referee at the top level, and she knows the path is long. "I'm not doing this to become famous," she insists. "I'm doing it because those kids deserve a fair game. And, honestly, I'd miss the shouting."`;
+
+const S3_GAPPED = `The summer I turned eighteen, my uncle offered me a job in his bakery in the old part of Tunis. I accepted immediately, mainly because the pay was good. (1) My shift began at two in the morning, when the rest of the city was asleep.
+
+On my first night, my uncle handed me an apron and pointed at a mountain of dough. (2) He showed me just once how to fold and shape a loaf, then left me to get on with it. My first attempts looked more like stones than bread.
+
+The real problem, though, was not the work but the hours. During the day I could hardly stay awake, and I began cancelling plans with my friends. (3) After a fortnight, I seriously considered telling my uncle that I wanted to stop.
+
+What changed my mind was the customers. At six o'clock, the first of them would arrive: taxi drivers finishing their night, nurses on their way to the hospital, students heading for early lectures. (4) Some of them had been buying their bread there for thirty years, and they knew my uncle's whole family history.
+
+By the end of August, I could shape two hundred loaves an hour without thinking. (5) I still feel guilty if I sleep in the afternoon, but whenever I smell fresh bread, I am back in that hot little room at four in the morning.`;
+
+const S3_SENTENCES = [
+  'A. Those were the only hours when the oven was cool enough to clean.',
+  'B. Eventually, they simply stopped inviting me.',
+  'C. What he had failed to mention was the timetable.',
+  'D. More importantly, I had learned to love the strange, quiet world of the night.',
+  'E. Luckily, the rest of the class had the same problem.',
+  'F. He was not a man who believed in long explanations.',
+  'G. Every one of them seemed to have a story to tell.',
+];
+
 export const fceU06: Unit = unit(
   {
     id: 'fce-u06',
@@ -232,6 +262,68 @@ export const fceU06: Unit = unit(
       'الإنتاج الضئيل يفسّر لماذا لن تُطعم مدينة كاملة، ثم تقدّم «however» ما يمكنها فعله.',
       'Too small an amount → cannot feed a city; “however” → what they can do.',
       'La producción demasiado pequeña explica por qué no alimentarán una ciudad; «however» introduce luego lo que sí pueden hacer.',
+    )),
+  ],
+  [
+    ru5('fce-u06-s3-q1', 4, S3_TEXT, 'How did Salma begin refereeing?', ['She stepped in when the official referee did not appear.', 'Her brother’s coach asked her to train as a referee.', 'She wanted to understand the offside rule better.', 'She used to play in her brother’s team.'], x(
+      '« the referee never came… Somebody had to do it » : elle a remplacé l’arbitre absent.',
+      '«the referee never came… Somebody had to do it»: حلّت محلّ الحكم الغائب.',
+      'The referee “never came” and “somebody had to do it”.',
+      '«the referee never came… Somebody had to do it»: sustituyó al árbitro ausente.',
+    )),
+    ru5('fce-u06-s3-q2', 4, S3_TEXT, 'What is surprising about Salma’s reaction to her first match?', ['She agreed to return although it had gone badly.', 'She thought the parents had treated her unfairly.', 'She asked the coach for advice about the penalty.', 'She believed she had made no serious mistakes.'], x(
+      '« Yet » oppose le match raté (« a disaster ») à sa réponse : « she heard herself saying yes ».',
+      '«Yet» تقابل المباراة الفاشلة («a disaster») بجوابها: «she heard herself saying yes».',
+      '“Yet” contrasts “a disaster” with her saying yes.',
+      '«Yet» opone el partido fallido («a disaster») a su respuesta: «she heard herself saying yes».',
+    )),
+    ru5('fce-u06-s3-q3', 4, S3_TEXT, 'According to Salma, what matters most for a referee?', ['Keeping control of your emotions.', 'Knowing every rule perfectly.', 'Being fit enough to follow the play.', 'Explaining each decision in detail.'], x(
+      '« the challenge of staying calm… If you lose your temper, you’ve lost the match ». Le piège « in detail » contredit « in a few words ».',
+      '«the challenge of staying calm… If you lose your temper, you’ve lost the match». والفخ «in detail» يناقض «in a few words».',
+      'Staying calm: “If you lose your temper, you’ve lost the match”.',
+      '«the challenge of staying calm… If you lose your temper, you’ve lost the match». La trampa «in detail» contradice «in a few words».',
+    )),
+    ru5('fce-u06-s3-q4', 5, S3_TEXT, 'Why does Salma now describe a seminar as “rather relaxing”?', ['Speaking in front of others no longer frightens her as it once did.', 'She prefers her studies to refereeing.', 'Her fellow students are calmer than she used to think.', 'She spends less time preparing for her seminars.'], x(
+      '« she used to dread speaking in seminars » ; comparé à « two hundred angry spectators », parler en public ne lui fait plus peur.',
+      '«she used to dread speaking in seminars»، ومقارنةً بـ«two hundred angry spectators» لم تعد تخاف من الكلام أمام الناس.',
+      'She “used to dread speaking”; now it seems easy by comparison.',
+      '«she used to dread speaking in seminars»; comparado con «two hundred angry spectators», hablar en público ya no le da miedo.',
+    )),
+    ru5('fce-u06-s3-q5', 5, S3_TEXT, 'What does the last paragraph show about Salma?', ['She is motivated by fairness rather than ambition.', 'She expects to referee at the top level soon.', 'She finds the shouting the hardest part of the job.', 'She thinks women should not have to wait so long for success.'], x(
+      '« I’m not doing this to become famous… those kids deserve a fair game » : la justice, pas l’ambition.',
+      '«I’m not doing this to become famous… those kids deserve a fair game»: الدافع هو العدل لا الطموح.',
+      'Not “to become famous” but because kids “deserve a fair game”.',
+      '«I’m not doing this to become famous… those kids deserve a fair game»: la justicia, no la ambición.',
+    )),
+    ru6('fce-u06-s3-q6', 4, S3_GAPPED, 'Which sentence fits gap 1?', S3_SENTENCES, 2, x(
+      '« he » = l’oncle, et « the timetable » est précisé juste après : « My shift began at two in the morning ».',
+      '«he» = العمّ، و«the timetable» يتّضح مباشرة بعدها: «My shift began at two in the morning».',
+      '“he” = the uncle; “the timetable” is explained next: a 2 a.m. start.',
+      '«he» = el tío, y «the timetable» se aclara justo después: «My shift began at two in the morning».',
+    )),
+    ru6('fce-u06-s3-q7', 4, S3_GAPPED, 'Which sentence fits gap 2?', S3_SENTENCES, 5, x(
+      '« long explanations » prépare « He showed me just once… then left me to get on with it ».',
+      '«long explanations» تمهّد لـ«He showed me just once… then left me to get on with it».',
+      'No long explanations → he showed her “just once”.',
+      '«long explanations» prepara «He showed me just once… then left me to get on with it».',
+    )),
+    ru6('fce-u06-s3-q8', 5, S3_GAPPED, 'Which sentence fits gap 3?', S3_SENTENCES, 1, x(
+      '« they » = « my friends » : à force d’annulations, ils ne l’invitent plus. « Eventually » suit « I began cancelling plans ».',
+      '«they» = «my friends»: بعد كثرة الإلغاء توقفوا عن دعوته. و«Eventually» تأتي بعد «I began cancelling plans».',
+      '“they” = his friends, after he kept cancelling plans.',
+      '«they» = «my friends»: tras tantas cancelaciones, dejan de invitarlo. «Eventually» sigue a «I began cancelling plans».',
+    )),
+    ru6('fce-u06-s3-q9', 4, S3_GAPPED, 'Which sentence fits gap 4?', S3_SENTENCES, 6, x(
+      '« them » = les clients énumérés juste avant ; « a story to tell » est illustré par « Some of them… thirty years ».',
+      '«them» = الزبائن المذكورون قبلها، و«a story to tell» يوضّحها «Some of them… thirty years».',
+      '“them” = the customers; “Some of them…” gives the stories.',
+      '«them» = los clientes enumerados justo antes; «a story to tell» se ilustra con «Some of them… thirty years».',
+    )),
+    ru6('fce-u06-s3-q10', 4, S3_GAPPED, 'Which sentence fits gap 5?', S3_SENTENCES, 3, x(
+      '« More importantly » ajoute un acquis plus profond que la technique (two hundred loaves) ; « the night » annonce le souvenir de « four in the morning ».',
+      '«More importantly» تضيف مكسبًا أعمق من المهارة (two hundred loaves)، و«the night» تمهّد لذكرى «four in the morning».',
+      '“More importantly” adds to the skill; “the night” links to the memory.',
+      '«More importantly» añade un logro más profundo que la técnica (two hundred loaves); «the night» anuncia el recuerdo de «four in the morning».',
     )),
   ],
 );
