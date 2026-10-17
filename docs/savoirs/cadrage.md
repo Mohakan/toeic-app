@@ -12,7 +12,7 @@ Toki Quest Savoirs reprend les supports de cours de la 1re à la 4e année secon
 
 - Les élèves tunisiens du lycée, de la 1re à la 4e année secondaire (année du baccalauréat).
 - Leur langue maternelle est l'arabe ; le français est leur langue d'enseignement.
-- Plus tard, l'appli pourra s'ouvrir aux autres pays du Maghreb et aux élèves arabophones arrivés dans un lycée francophone. Le contenu sera alors adapté à leurs programmes.
+- L'appli est prévue pour s'ouvrir aux élèves étrangers, non francophones, qui suivent un enseignement en français. Ils peuvent venir d'autres pays du Maghreb, être arrivés dans un lycée francophone ou fréquenter un lycée français à l'étranger. Il suffit d'ajouter la langue de leurs explications (voir « Langues des explications »). Le contenu restera calé sur le programme tunisien tant qu'un autre programme n'est pas ajouté.
 
 ## Matières
 
@@ -43,13 +43,32 @@ Chaque notion a une fiche courte, qui tient sur un écran :
 | --- | --- |
 | Le mot, avec son article et sa prononciation (audio) | **la mitose** |
 | Une définition en français simple, en une ou deux phrases | Division d'une cellule en deux cellules filles identiques. |
-| L'explication en arabe | انقسام الخلية إلى خليتين متطابقتين |
+| L'explication dans la langue choisie par l'élève (ici l'arabe) | انقسام الخلية إلى خليتين متطابقتين |
 | Un petit dessin | une cellule qui se divise en deux, dans le style de Toki |
 | Une phrase telle qu'on la lit en cours ou dans un énoncé | « Décrire les étapes de la mitose. » |
 | Le piège à éviter | ne pas confondre avec la méiose |
 | Les liens | le même mot dans une autre matière, et les mots de la même famille |
 
-Les termes arabes sont ceux que l'élève a appris au collège, pour faire le pont entre ses deux langues d'étude.
+En arabe, les termes employés sont ceux que l'élève a appris au collège, pour faire le pont entre ses deux langues d'étude.
+
+## Langues des explications
+
+Le contenu à apprendre est toujours en français. Les explications, elles, sont données dans une langue que l'élève choisit.
+
+- **Choix de l'élève** : il choisit sa langue d'explication à l'inscription et peut la changer dans son profil. Elle ne dépend pas de la langue de l'interface. Par exemple, l'interface peut être en français et les explications en arabe.
+- **Liste fixée par la configuration de l'appli** : la liste des langues proposées est déclarée dans la configuration, et l'arabe est la langue par défaut au lancement. Pour ouvrir l'appli aux élèves d'une autre langue, il suffit d'ajouter la langue à la configuration et ses traductions au contenu. Le code n'a pas besoin de changer.
+- **Langue complète obligatoire** : une langue n'est proposée que si toutes les notions ont leur explication dans cette langue. Le contrôle automatique du contenu le vérifie, pour que l'élève ne tombe jamais sur une explication manquante.
+- **Sens de lecture** : les langues qui s'écrivent de droite à gauche (arabe, persan, ourdou, etc.) affichent l'explication dans ce sens, alors que le mot français reste de gauche à droite.
+- **Memory** : le jeu associe le mot français à son équivalent dans la langue choisie.
+
+## Prix
+
+- **Abonnement par année** : un abonnement annuel ouvre tout le contenu de l'année de l'élève, dans toutes ses matières, avec le rattrapage des années précédentes.
+- **Essai gratuit** : une partie du contenu reste ouverte sans abonnement, pour essayer :
+  - le test de niveau initial ;
+  - le premier chapitre de chaque matière de l'année ;
+  - le début du parcours « consignes ».
+- **Pas de suivi** : il n'y a pas d'espace parent ni d'espace enseignant. La progression reste celle de l'élève, dans son compte.
 
 ## Jeux et exercices
 
@@ -90,15 +109,24 @@ Les jeux existants (QCM, associations, phrases à remettre en ordre) sont réuti
 | --- | --- | --- |
 | Appli sans examen | `ExamConfig` : parties, échelle de score, tests blancs | Un modèle « matières » : matière, année, section, chapitre, notion |
 | Choix de l'année et de la section | Objectif de score à l'accueil | Écran de choix de l'année et de la section, modifiable dans le profil |
+| Langues des explications | Explications en fr, ar, en, es, liées à la langue de l'interface | Une liste de langues dans la configuration, un choix de l'élève séparé de l'interface, un contrôle de complétude par langue |
+| Abonnement annuel | Achat unique du plan complet (`toki_quest_full`) et droits sans fin | Abonnement des stores avec renouvellement et expiration, suivi par le serveur (notifications Apple et Google) ; droits limités dans le temps |
+| Contenu gratuit | Tests blancs gratuits (`freeMockIds`) | Une liste de chapitres ouverts par matière et par année |
 | Test de niveau | Une échelle par examen | Un test par matière, sur les notions des années jusqu'à celle de l'élève |
-| Contenu en français | `EnglishText`, voix anglaise | Une police et une voix françaises pour le contenu, et des explications en arabe |
+| Contenu en français | `EnglishText`, voix anglaise | Un composant de texte et une voix françaises pour le contenu |
 | Jeux | QCM, association, remise en ordre, réponse tapée | Mot et image, memory, schéma à légender, défi chrono |
 | Images | Photos de la partie 1 du TOEIC | Bibliothèque de dessins vectoriels |
 | Catalogue | `scale` obligatoire | `scale` facultatif pour une appli sans examen |
 
+## Décisions (2026-10-17)
+
+- **Prix** : un abonnement par année, avec une partie du contenu ouverte gratuitement pour essayer.
+- **Suivi** : pas d'espace parent ni enseignant.
+- **Langues** : les explications sont dans la langue choisie par l'élève, parmi celles déclarées dans la configuration. La liste peut s'étendre aux élèves étrangers non francophones.
+
 ## Questions ouvertes
 
-- Le prix : est-ce un achat unique, ou un abonnement par année scolaire ? Faut-il prévoir le paiement local (Konnect) dès le lancement, puisque le public est tunisien ?
+- Faut-il proposer le paiement local Konnect dès le lancement, puisque le public est d'abord tunisien ? Les règles des stores pour les abonnements s'appliquent dans l'appli.
+- L'abonnement suit-il l'année scolaire (de septembre à août), ou court-il douze mois à partir de l'achat ?
 - Les élèves sont souvent mineurs. Il faut adapter l'accord des parents, la collecte de données et les textes légaux (`store/conformite.md`).
-- Faut-il un espace parent ou enseignant pour suivre la progression ?
-- Les explications sont-elles aussi données en anglais, en plus de l'arabe ?
+- Quelles langues d'explication ajouter après l'arabe, et dans quel ordre ?

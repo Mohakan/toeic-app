@@ -210,11 +210,13 @@ Le cadrage complet est dans `docs/savoirs/cadrage.md`.
 
 - **Pas d'examen** : l'élève indique son année scolaire et sa section. Un test de niveau initial le place ensuite dans un parcours personnalisé, avec du rattrapage sur les années précédentes si besoin.
 - **Progression** : elle se mesure en notions maîtrisées, par matière et par année.
-- **Fiches notions** : chaque notion a une fiche courte. On y trouve le mot et sa prononciation, une définition en français simple, l'explication en arabe, un petit dessin, une phrase de cours et le piège à éviter.
+- **Fiches notions** : chaque notion a une fiche courte. On y trouve le mot et sa prononciation, une définition en français simple, l'explication dans la langue choisie par l'élève, un petit dessin, une phrase de cours et le piège à éviter.
+- **Langues des explications** : l'élève choisit sa langue parmi celles prévues par la configuration de l'appli, avec l'arabe par défaut. La liste peut s'étendre pour accueillir des élèves étrangers non francophones.
+- **Abonnement par année**, avec une partie du contenu ouverte gratuitement pour essayer. Il n'y a pas de suivi par les parents ni par les enseignants.
 - **Jeux** :
   - quiz ;
   - mot et image ;
-  - memory français et arabe ;
+  - memory, entre le français et la langue de l'élève ;
   - schéma à légender ;
   - phrase à trous ;
   - défi chrono ;

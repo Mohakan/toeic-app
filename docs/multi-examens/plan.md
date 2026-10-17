@@ -78,7 +78,15 @@ Cette appli s'adresse aux lycéens tunisiens, de la 1re à la 4e année secondai
 
 Le cadrage complet est dans `docs/savoirs/cadrage.md` : parcours, fiche notion, jeux, méthode de contenu, besoins du code et questions ouvertes.
 
-L'essentiel pour le code : `ExamConfig` est construit autour d'un examen et d'une échelle de score. Savoirs demande un modèle « matières » (matière, année, section, chapitre, notion) et un contenu en français avec des explications en arabe. Il faut aussi de nouveaux jeux (mot et image, memory, schéma à légender) et rendre `scale` facultatif dans le catalogue.
+Décisions du 2026-10-17 : un abonnement par année avec une partie du contenu ouverte gratuitement, pas de suivi par les parents ni par les enseignants, et des explications dans une langue choisie par l'élève parmi celles déclarées dans la configuration.
+
+L'essentiel pour le code : `ExamConfig` est construit autour d'un examen et d'une échelle de score. Savoirs demande :
+
+- un modèle « matières » : matière, année, section, chapitre, notion ;
+- un contenu en français avec des explications dans plusieurs langues, chacune vérifiée comme complète ;
+- un abonnement annuel des stores, alors que le serveur ne gère aujourd'hui que l'achat unique ;
+- de nouveaux jeux : mot et image, memory, schéma à légender ;
+- un champ `scale` facultatif dans le catalogue.
 
 ## Reste à faire
 
