@@ -45,7 +45,7 @@ We started training in January. I’d imagined the long hills would be the probl
 
 From Seville we rode south to Tarifa, where we took the ferry across to Tangier. People had told us the crossing would take two hours, but in fact it was barely one, and the hardest part was pushing the bikes up the ramp onto the boat.
 
-In northern Morocco we followed small roads through the Rif mountains. We’d packed a tent, but we only used it five or six times, because everywhere we went, families invited us to stay. One farmer in a village near Chefchaouen even repaired a broken wheel for us. He wouldn’t take any money; he just asked us to send him a postcard from home.
+In northern Morocco we followed small roads through the Rif mountains. We’d packed a tent and a gas stove. We used the stove almost every day, but the tent only five or six times, because everywhere we went, families invited us to stay. One farmer in a village near Chefchaouen even repaired a broken wheel for us. He wouldn’t take any money; he just asked us to send him a postcard from home.
 
 The biggest surprise of the trip was the weather. We’d brought plenty of sun cream and expected heat, but crossing the Middle Atlas we were caught in snow, and we had to wait three days in a small town until the pass reopened. That’s where the extra week went, along with a few days I spent in bed with a stomach bug in Fes.
 
@@ -155,10 +155,10 @@ export const fceFull2Listening: Exercise[] = [
     'Se oye: «the hardest part was pushing the bikes up the ramp». La duración («two hours») es una trampa.',
   )),
   li2('fce-m4-li2-3', 3, LI2_TALK, 'In northern Morocco, they only used their ___ five or six times.', ['tent'], x(
-    'On entend : « We’d packed a tent, but we only used it five or six times », car des familles les invitaient.',
-    'نسمع: «We’d packed a tent, but we only used it five or six times»، لأن العائلات كانت تستضيفهما.',
-    'Heard: “a tent… we only used it five or six times”.',
-    'Se oye: «We’d packed a tent, but we only used it five or six times», porque las familias los invitaban.',
+    'On entend : « We used the stove almost every day, but the tent only five or six times », car des familles les invitaient. Le réchaud (« stove ») servait presque tous les jours.',
+    'نسمع: «We used the stove almost every day, but the tent only five or six times»، لأن العائلات كانت تستضيفهما، أما الموقد («stove») فاستُعمل كل يوم تقريبًا.',
+    'Heard: “the tent only five or six times”; the stove was used almost every day.',
+    'Se oye: «We used the stove almost every day, but the tent only five or six times», porque las familias los invitaban. El hornillo («stove») se usaba casi a diario.',
   )),
   li2('fce-m4-li2-4', 4, LI2_TALK, 'Instead of money, a farmer asked them to send him a ___.', ['postcard'], x(
     'On entend : « He wouldn’t take any money; he just asked us to send him a postcard from home ».',
@@ -178,7 +178,7 @@ export const fceFull2Listening: Exercise[] = [
     'Heard: “in bed with a stomach bug in Fes”.',
     'Se oye: «a few days I spent in bed with a stomach bug in Fes».',
   )),
-  li2('fce-m4-li2-7', 4, LI2_TALK, 'The best food for energy turned out to be dates and ___.', ['bread'], x(
+  li2('fce-m4-li2-7', 4, LI2_TALK, 'Adam recommends buying ___ and dates in villages rather than carrying energy bars.', ['bread'], x(
     'On entend : « the best fuel turned out to be dates and bread ». Les barres énergétiques (« energy bars ») n’ont presque pas servi.',
     'نسمع: «the best fuel turned out to be dates and bread». أما ألواح الطاقة («energy bars») فبالكاد استُعملت.',
     'Heard: “dates and bread”; the energy bars were hardly touched.',
@@ -267,10 +267,10 @@ export const fceFull2Listening: Exercise[] = [
     'Antes, «I took that personally, as if I’d failed»; ahora, «the days without a photo are part of the work, not a waste of it».',
   )),
   li4('fce-m4-li4-6', 4, LI4_INTERVIEW, 'Why is Yara particularly proud of her vulture photo?', ['It changed how someone treated the birds.', 'It won an important prize.', 'It shows the bird in an unusual place.'], x(
-    'Un fermier « had stopped putting out poison for them after seeing it », et cela compte plus que « any prize ». La photo n’a rien gagné.',
-    'كتب لها مزارع أنه «had stopped putting out poison for them after seeing it»، وهذا أهمّ عندها من «any prize». فالصورة لم تفز بشيء.',
+    'Un fermier lui a écrit : « he’d stopped putting out poison for them after seeing it », et cela compte plus que « any prize ». La photo n’a rien gagné.',
+    'كتب لها مزارع: «he’d stopped putting out poison for them after seeing it»، وهذا أهمّ عندها من «any prize». فالصورة لم تفز بشيء.',
     'A farmer “stopped putting out poison for them after seeing it”.',
-    'Un granjero «had stopped putting out poison for them after seeing it», y eso vale más que «any prize». La foto no ganó nada.',
+    'Un granjero le escribió: «he’d stopped putting out poison for them after seeing it», y eso vale más que «any prize». La foto no ganó nada.',
   )),
   li4('fce-m4-li4-7', 4, LI4_INTERVIEW, 'What is Yara’s main advice to young people?', ['Get to know the wildlife near where you live.', 'Buy the best equipment you can afford.', 'Travel abroad to gain experience.'], x(
     '« Start where you are… Learn the birds in your local park » ; elle déconseille de dépenser ses économies en matériel et de partir en Afrique.',

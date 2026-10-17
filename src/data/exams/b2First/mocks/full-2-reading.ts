@@ -19,14 +19,14 @@ Not everyone is convinced, however. Some older residents worry that the shiny pa
 // RU2: language-exchange friendships.
 const RU2_TEXT = `When Inès, a nursing student from Sfax, joined an online language exchange, she simply wanted to improve her German before an internship in Hamburg. She was paired (1) ___ Hanna, a student in Leipzig who was hoping to learn Arabic. Twice a week they spoke for an hour: thirty minutes in German, thirty in Arabic. ‘At first we only talked about the weather and our courses,’ Inès remembers. ‘But it wasn’t (2) ___ before we were telling each other everything.’
 
-What made the exchange work, they agree, was that (3) ___ of them was an expert. ‘When Hanna corrected me, I never felt stupid, because ten minutes later I would be correcting her,’ says Inès. Researchers who study language learning are not surprised. They point out that people learn faster when they feel relaxed, and (4) ___ is far easier to relax with a friend than with a teacher.
+What made the exchange work, they agree, was that (3) ___ of them was an expert: they were both learners. ‘When Hanna corrected me, I never felt stupid, because ten minutes later I would be correcting her,’ says Inès. Researchers who study language learning are not surprised. They point out that people learn faster when they feel relaxed, and (4) ___ is far easier to relax with a friend than with a teacher.
 
 Last summer, Hanna finally travelled to Tunisia. (5) ___ though they had spoken almost every week for two years, the two young women were nervous about meeting face to face. ‘I was afraid we would have nothing to say,’ laughs Hanna. In the end, they stayed up talking (6) ___ the sun came up. Hanna, (7) ___ Arabic is now good enough to joke with Inès’s grandmother, is planning to spend a semester in Tunis. ‘The language was the reason we met,’ she says, ‘but it’s no longer the reason we stay in touch. (8) ___ anything, we sometimes forget to practise.’`;
 
 // RU3: second-hand fashion.
-const RU3_TEXT = `When Yasmine Belkacem opened a stall selling second-hand clothes at a market in Marseille, her friends thought it was a strange (1) ___ (DECIDE) for a business graduate. Five years later, her shop has a waiting list for its monthly sales. The (2) ___ (POPULAR) of pre-owned fashion among young people has grown remarkably in that time. For many buyers, the main reason is (3) ___ (ENVIRONMENT): producing a single pair of new jeans can use thousands of litres of water. Others are attracted by the prices, or simply by the (4) ___ (EXCITE) of finding a unique piece that nobody else is wearing.
+const RU3_TEXT = `When Yasmine Belkacem opened a stall selling second-hand clothes at a market in Marseille, her friends thought the plan was (1) ___ (REAL): nobody, they said, could make a living from other people’s old clothes. Five years later, her shop has a waiting list for its monthly sales. The (2) ___ (POPULAR) of pre-owned fashion among young people has grown remarkably in that time. For many buyers, the main reason is (3) ___ (ENVIRONMENT): producing a single pair of new jeans can use thousands of litres of water. Others are attracted by the prices, or simply by the (4) ___ (EXCITE) of finding a unique piece that nobody else is wearing.
 
-Yasmine admits that some of the clothes she receives are badly (5) ___ (WEAR) or stained, so she has to be very (6) ___ (SELECT) about what she puts on sale. ‘I would rather sell fewer items than disappoint a customer,’ she explains. She also runs workshops where she shows people how to repair (7) ___ (DAMAGE) clothes instead of throwing them away. Critics argue that buying second-hand does little to reduce the (8) ___ (PRODUCE) of new clothes. Yasmine disagrees: ‘Every jacket that gets a second life is one less that needs to be made.’`;
+Yasmine admits that some of the clothes she receives are badly (5) ___ (WEAR) or stained, so she has to be very (6) ___ (SELECT) about what she puts on sale. ‘I would rather sell fewer items than disappoint a customer,’ she explains. She also runs workshops where she shows people how to repair clothes that are often thrown away (7) ___ (NECESSARY). Critics argue that buying second-hand does little to reduce the (8) ___ (PRODUCE) of new clothes. Yasmine disagrees: ‘Every jacket that gets a second life is one less that needs to be made.’`;
 
 // RU5: a novelist who began writing at sixteen.
 const RU5_TEXT = `Amal Rahmouni was sixteen when she started writing her first novel, in the back pages of her maths exercise book, during lessons she found impossible to follow. ‘My teacher thought I was taking very careful notes,’ she says, smiling. ‘In a way, I was. I was writing down everything people around me said, and exactly the way they said it.’ Twelve years and four novels later, she is one of the most talked-about young writers in Spain, and her latest book, set in the Valencia neighbourhood where she grew up as the daughter of Moroccan parents, has been translated into eleven languages.
@@ -54,7 +54,7 @@ Surprisingly, both women say they never argued seriously. They put this down to 
 
 Since their return, they have been invited to speak at schools all over Spain and Morocco. What they want young people to understand, they say, is not that ocean rowing is for everyone. (6) ___ ‘We weren’t athletes or sailors,’ says Rania. ‘We were just two people who decided to take a ridiculous idea seriously.’`;
 const RU6_SENTENCES = [
-  'A Their families followed their progress every day on a map that was updated online.',
+  'A They had both been sailing since they were children, so the open sea held few surprises for them.',
   'B It was only when she started comparing the prices of second-hand boats the next morning that I realised she meant it.',
   'C What makes their achievement even more remarkable is that, until quite recently, both were complete beginners.',
   'D That way, small irritations never had the chance to grow into real resentment.',
@@ -67,19 +67,19 @@ const RU6_SENTENCES = [
 const RU7_TEXT = `Five students talk about the year they took off between school and university.
 
 A — Yanis, Oran
-I spent my year as a technician with a small theatre company touring villages in the south of France. I had never touched a lighting desk before, and I was younger than everyone else in the company by at least ten years, which I found intimidating at first. Solving technical problems ten minutes before a show taught me to stay calm when things go wrong, and that has helped me more in my engineering exams than any revision technique I learnt at school.
+I spent my year as a technician with a small theatre company touring villages in the south of France. We performed somewhere different almost every night, in school halls, churches and once in a car park, to audiences of anything from twelve people to three hundred. I had never touched a lighting desk before, and I was younger than everyone else in the company by at least ten years, which I found intimidating at first. Solving technical problems ten minutes before a show taught me to stay calm when things go wrong, and that has helped me more in my engineering exams than any revision technique I learnt at school.
 
 B — Clara, Hamburg
-I had a clear plan: to volunteer on a turtle conservation project in Costa Rica. In reality, the project was badly run, and most of the volunteers seemed more interested in the beaches than in the turtles. I left after a month, feeling I had wasted my savings. Looking back, though, that disappointment taught me to check things properly before committing to them. I spent the rest of the year as an intern at a marine research centre in Kiel, which is how I chose my degree.
+I had a clear plan: to volunteer on a turtle conservation project in Costa Rica. In reality, the project was badly run, and most of the volunteers seemed more interested in the beaches than in the turtles. I left after a month, feeling I had wasted my savings. Looking back, though, that disappointment taught me to check things properly before committing to them. I spent the rest of the year as an intern at a marine research centre in Kiel. The scientists there were studying how warmer water affects fish in the Baltic Sea, and although my tasks were fairly basic, like labelling samples and entering data, I found the work fascinating. That is how I chose my degree.
 
 C — Rim, Sousse
-Unlike most of my friends, I didn’t go abroad. I worked as a receptionist at the local hospital and taught myself Korean in the evenings. People assumed I’d be bored, but it was the first time I had chosen what to learn for myself, and I discovered that I learn far better without the pressure of exams. My only regret is that I didn’t keep in touch with my school friends, who had all gone to university. When I finally started, a year behind them, I felt rather lonely.
+Unlike most of my friends, I didn’t go abroad. I worked as a receptionist at the local hospital and taught myself Korean in the evenings. I chose it because of the TV dramas my sister and I watched together, and by the summer I could follow them without subtitles. People assumed I’d be bored, but it was the first time I had chosen what to learn for myself, and I discovered that I learn far better without the pressure of exams. My only regret is that I didn’t keep in touch with my school friends, who had all gone to university. When I finally started, a year behind them, I felt rather lonely.
 
 D — Mateo, Bilbao
-I went to Australia on a working holiday visa with my best friend. Within three weeks we had fallen out over money and gone our separate ways. Being alone on the other side of the world was hard, but it forced me to start conversations with strangers, something I had always been terrible at. I picked fruit, worked on a sheep farm and ended up sharing a house with people from six different countries. I still chat to some of them online every week.
+I went to Australia on a working holiday visa with my best friend. Within three weeks we had fallen out over money and gone our separate ways. Being alone on the other side of the world was hard, but it forced me to start conversations with strangers, something I had always been terrible at. I picked fruit, worked on a sheep farm and ended up sharing a house with people from six different countries. The farm was three hours from the nearest town and the days started before sunrise, but after years of sitting in classrooms I loved being outdoors from morning till night. I still chat to some of my housemates online every week.
 
 E — Aya, Lyon
-My gap year wasn’t really a year off: I spent it helping my aunt set up a small catering business in Marrakech. I dealt with suppliers, did the accounts and even built the website. I was paid very little, but at nineteen I was trusted with decisions that most people only make in their thirties. The one thing I would do differently is take a proper holiday at the end. I went straight from the busiest summer of the business into my first term, and I spent most of it exhausted.`;
+My gap year wasn’t really a year off: I spent it helping my aunt set up a small catering business in Marrakech. We started with a few family weddings, and by the end of the summer we were cooking for conferences of three hundred guests. I dealt with suppliers, did the accounts and even built the website. I was paid very little, but at nineteen I was trusted with decisions that most people only make in their thirties. The one thing I would do differently is take a proper holiday at the end. I went straight from the busiest summer of the business into my first term, and I spent most of it exhausted.`;
 const RU7_SECTIONS = ['A', 'B', 'C', 'D', 'E'];
 
 export const fceFull2Reading: Exercise[] = [
@@ -123,7 +123,7 @@ export const fceFull2Reading: Exercise[] = [
   ru1('fce-m4-ru1-7', 4, 'Gap (7): Some older residents worry that the shiny panels do not ___ in with their traditional mud-brick houses.', ['fit', 'match', 'suit', 'go'], x(
     'Verbe à particule « fit in with » = s’accorder avec, s’intégrer à. « Match » et « suit » s’emploient sans « in with », et « go with » ne prend pas « in ».',
     'الفعل المركب «fit in with» يعني «ينسجم مع». أما «match» و«suit» فتُستعملان دون «in with»، و«go with» لا تأخذ «in».',
-    'Phrasal verb: “fit in with” = look right next to.',
+    'Phrasal verb: “fit in with” = match its surroundings.',
     'Phrasal verb «fit in with» = encajar con. «Match» y «suit» se usan sin «in with», y «go with» no lleva «in».',
   ), RU1_TEXT),
   ru1('fce-m4-ru1-8', 4, 'Gap (8): Most families agree that a slightly more modern look is a small ___ to pay for reliable electricity.', ['price', 'cost', 'fee', 'charge'], x(
@@ -146,11 +146,11 @@ export const fceFull2Reading: Exercise[] = [
     'Fixed phrase: “it wasn’t long before…”.',
     'Expresión «it wasn’t long before…» = no pasó mucho tiempo antes de que… El contraste con «At first» lo anuncia.',
   ), RU2_TEXT),
-  ru2('fce-m4-ru2-3', 4, 'Gap (3): What made the exchange work, they agree, was that ___ of them was an expert.', ['neither'], x(
-    'Il s’agit de deux personnes et le verbe est au singulier affirmatif (« was ») : « neither of them » = aucune des deux. « None » s’emploie pour plus de deux.',
-    'الحديث عن شخصين والفعل مفرد مثبت («was»): «neither of them» تعني «لا أحد منهما». أما «none» فتُستعمل لأكثر من اثنين.',
-    'Two people, positive verb → “neither of them”.',
-    'Son dos personas y el verbo es afirmativo («was»): «neither of them» = ninguna de las dos. «None» se usa para más de dos.',
+  ru2('fce-m4-ru2-3', 4, 'Gap (3): What made the exchange work, they agree, was that ___ of them was an expert: they were both learners.', ['neither'], x(
+    'Il s’agit de deux personnes, le verbe est affirmatif (« was ») et la suite précise « they were both learners » : « neither of them » = aucune des deux. « Each » contredirait cette précision, et « none » s’emploie pour plus de deux.',
+    'الحديث عن شخصين والفعل مثبت («was»)، وتوضّح البقية «they were both learners»: «neither of them» تعني «لا أحد منهما». أما «each» فتناقض هذا التوضيح، و«none» تُستعمل لأكثر من اثنين.',
+    'Two people, positive verb, and “they were both learners” → “neither of them”, not “each”.',
+    'Son dos personas, el verbo es afirmativo («was») y lo que sigue precisa «they were both learners»: «neither of them» = ninguna de las dos. «Each» contradiría esa precisión, y «none» se usa para más de dos.',
   ), RU2_TEXT),
   ru2('fce-m4-ru2-4', 4, 'Gap (4): They point out that people learn faster when they feel relaxed, and ___ is far easier to relax with a friend than with a teacher.', ['it'], x(
     'Sujet apparent « it » devant « is easier to + infinitif » : le vrai sujet est « to relax with a friend ».',
@@ -184,11 +184,11 @@ export const fceFull2Reading: Exercise[] = [
   ), RU2_TEXT),
 
   // ── Part 3 ──
-  ru3('fce-m4-ru3-1', 3, 'Gap (1): Her friends thought it was a strange ___ for a business graduate.', 'DECIDE', ['decision'], x(
-    'Après l’article « a » et l’adjectif « strange », il faut un nom : « decision ».',
-    'بعد أداة النكرة «a» والصفة «strange» نحتاج إلى اسم: «decision».',
-    '“a strange ___” needs a noun: decision.',
-    'Tras el artículo «a» y el adjetivo «strange» hace falta un sustantivo: «decision».',
+  ru3('fce-m4-ru3-1', 5, 'Gap (1): Her friends thought the plan was ___: nobody, they said, could make a living from other people’s old clothes.', 'REAL', ['unrealistic', 'unrealisable', 'unrealizable'], x(
+    'Après « was », un adjectif attribut. La suite (« nobody… could make a living ») montre que les amis n’y croyaient pas : préfixe négatif et suffixe, « unrealistic » (un- + -istic).',
+    'بعد «was» نحتاج إلى صفة خبرية، وما يليها («nobody… could make a living») يبيّن أن الأصدقاء لم يصدّقوا الفكرة: بادئة نافية ولاحقة، «unrealistic» (un- + -istic).',
+    'Adjective after “was”; “nobody could make a living” → negative: unrealistic.',
+    'Tras «was», un adjetivo atributo. Lo que sigue («nobody… could make a living») muestra que sus amigos no creían en la idea: prefijo negativo y sufijo, «unrealistic» (un- + -istic).',
   ), RU3_TEXT),
   ru3('fce-m4-ru3-2', 4, 'Gap (2): The ___ of pre-owned fashion among young people has grown remarkably in that time.', 'POPULAR', ['popularity'], x(
     'Entre « The » et « of », il faut un nom, sujet de « has grown » : « popularity » (suffixe -ity).',
@@ -220,49 +220,49 @@ export const fceFull2Reading: Exercise[] = [
     'Adjective after “very”: selective.',
     'Tras «be very», un adjetivo: «selective» = exigente al elegir. Lo confirma «I would rather sell fewer items».',
   ), RU3_TEXT),
-  ru3('fce-m4-ru3-7', 3, 'Gap (7): She also runs workshops where she shows people how to repair ___ clothes instead of throwing them away.', 'DAMAGE', ['damaged'], x(
-    'Devant le nom « clothes », un adjectif ; on répare des vêtements abîmés → participe passé « damaged ».',
-    'قبل الاسم «clothes» نحتاج إلى صفة، والملابس التي تُصلَح هي الملابس التالفة ← اسم المفعول «damaged».',
-    'Adjective before “clothes”: damaged.',
-    'Delante del sustantivo «clothes», un adjetivo; se repara la ropa estropeada → participio «damaged».',
+  ru3('fce-m4-ru3-7', 5, 'Gap (7): She also runs workshops where she shows people how to repair clothes that are often thrown away ___.', 'NECESSARY', ['unnecessarily'], x(
+    'Après le verbe « thrown away », il faut un adverbe. Le sens (des vêtements qu’on pourrait réparer) impose le préfixe négatif : « unnecessarily » (un- + -ly).',
+    'بعد الفعل «thrown away» نحتاج إلى ظرف، والمعنى (ملابس يمكن إصلاحها) يقتضي البادئة النافية: «unnecessarily» (un- + -ly).',
+    'Adverb after “thrown away”, with a negative prefix: unnecessarily.',
+    'Tras el verbo «thrown away» hace falta un adverbio, y el sentido (ropa que se podría reparar) exige el prefijo negativo: «unnecessarily» (un- + -ly).',
   ), RU3_TEXT),
-  ru3('fce-m4-ru3-8', 4, 'Gap (8): Critics argue that buying second-hand does little to reduce the ___ of new clothes.', 'PRODUCE', ['production'], x(
-    'Entre « the » et « of », il faut un nom désignant l’action de fabriquer : « production ». « Product » désigne l’objet fabriqué.',
-    'بين «the» و«of» نحتاج إلى اسم يدلّ على عملية التصنيع: «production». أما «product» فتعني المنتَج نفسه.',
-    '“the ___ of new clothes” = the making of them: production.',
-    'Entre «the» y «of» hace falta un sustantivo que designe la acción de fabricar: «production». «Product» es el objeto fabricado.',
+  ru3('fce-m4-ru3-8', 4, 'Gap (8): Critics argue that buying second-hand does little to reduce the ___ of new clothes.', 'PRODUCE', ['production', 'overproduction'], x(
+    'Entre « the » et « of », il faut un nom désignant l’action de fabriquer : « production ». « Product » désigne l’objet fabriqué. « Overproduction » (surproduction) est aussi accepté.',
+    'بين «the» و«of» نحتاج إلى اسم يدلّ على عملية التصنيع: «production». أما «product» فتعني المنتَج نفسه. وتُقبل أيضًا «overproduction» أي الإفراط في الإنتاج.',
+    '“the ___ of new clothes” = the making of them: production; “overproduction” is also accepted.',
+    'Entre «the» y «of» hace falta un sustantivo que designe la acción de fabricar: «production». «Product» es el objeto fabricado. También se acepta «overproduction» (sobreproducción).',
   ), RU3_TEXT),
 
   // ── Part 4 ──
-  ru4('fce-m4-ru4-1', 4, 'Karim speaks Spanish better than anyone else in our class.', 'WELL', 'Nobody else in our class speaks Spanish ___ Karim.', ['as well as', 'so well as'], x(
-    'Le superlatif implicite devient une comparaison d’égalité négative : « Nobody else… speaks Spanish as well as Karim ».',
-    'تتحوّل المقارنة إلى مساواة منفية: «Nobody else… speaks Spanish as well as Karim».',
-    '“better than anyone” → “nobody… as well as”.',
-    'La comparación se convierte en igualdad negativa: «Nobody else… speaks Spanish as well as Karim».',
+  ru4('fce-m4-ru4-1', 4, 'Karim speaks Spanish better than anyone else in our class.', 'WELL', 'Nobody else in our class speaks Spanish ___ Karim.', ['as well as', 'so well as', 'quite as well as'], x(
+    'Le superlatif implicite devient une comparaison d’égalité négative : « Nobody else… speaks Spanish as well as Karim ». « Quite as well as » garde le même sens.',
+    'تتحوّل المقارنة إلى مساواة منفية: «Nobody else… speaks Spanish as well as Karim». وتُقبل «quite as well as» بالمعنى نفسه.',
+    '“better than anyone” → “nobody… (quite) as well as”.',
+    'La comparación se convierte en igualdad negativa: «Nobody else… speaks Spanish as well as Karim». «Quite as well as» mantiene el mismo sentido.',
   )),
-  ru4('fce-m4-ru4-2', 5, 'I’m sure Nadia didn’t forget your birthday on purpose.', "CAN'T", 'Nadia ___ your birthday on purpose.', ["can't have forgotten"], x(
-    'Déduction négative sur le passé (« I’m sure… didn’t ») : « can’t have + participe passé » → « can’t have forgotten ».',
-    'استنتاج منفي عن الماضي («I’m sure… didn’t»): «can’t have + اسم المفعول» ← «can’t have forgotten».',
-    'Negative deduction about the past: can’t have + past participle.',
-    'Deducción negativa sobre el pasado («I’m sure… didn’t»): «can’t have + participio» → «can’t have forgotten».',
+  ru4('fce-m4-ru4-2', 5, 'I’m sure Nadia didn’t forget your birthday on purpose.', "CAN'T", 'Nadia ___ your birthday on purpose.', ["can't have forgotten", "can't possibly have forgotten"], x(
+    'Déduction négative sur le passé (« I’m sure… didn’t ») : « can’t have + participe passé » → « can’t have forgotten ». « Can’t possibly have forgotten » renforce la certitude sans changer le sens.',
+    'استنتاج منفي عن الماضي («I’m sure… didn’t»): «can’t have + اسم المفعول» ← «can’t have forgotten». وتُقبل «can’t possibly have forgotten» التي تؤكّد اليقين دون تغيير المعنى.',
+    'Negative deduction about the past: can’t (possibly) have + past participle.',
+    'Deducción negativa sobre el pasado («I’m sure… didn’t»): «can’t have + participio» → «can’t have forgotten». «Can’t possibly have forgotten» refuerza la certeza sin cambiar el sentido.',
   )),
-  ru4('fce-m4-ru4-3', 4, 'Lina has got up at six every day for years, so she doesn’t find it difficult.', 'USED', 'Lina ___ up at six every day.', ['is used to getting', 'has got used to getting', 'has become used to getting'], x(
-    'Habitude acquise : « be used to + -ing » = être habitué à. Attention : « used to get up » parlerait d’une habitude passée terminée.',
-    'عادة مكتسبة: «be used to + -ing» تعني «معتاد على». وانتبه: «used to get up» تدل على عادة ماضية انتهت.',
-    'Being accustomed: be used to + -ing.',
-    'Costumbre adquirida: «be used to + -ing» = estar acostumbrado a. Ojo: «used to get up» indicaría un hábito pasado ya terminado.',
+  ru4('fce-m4-ru4-3', 4, 'Lina has got up at six every day for years, so she doesn’t find it difficult.', 'USED', 'Lina ___ up at six every day.', ['is used to getting', 'has got used to getting', 'has become used to getting', 'has grown used to getting'], x(
+    'Habitude acquise : « be used to + -ing » = être habitué à (ou « has got / become / grown used to getting »). Attention : « used to get up » parlerait d’une habitude passée terminée.',
+    'عادة مكتسبة: «be used to + -ing» تعني «معتاد على» (أو «has got / become / grown used to getting»). وانتبه: «used to get up» تدل على عادة ماضية انتهت.',
+    'Being accustomed: be (or get / become / grow) used to + -ing.',
+    'Costumbre adquirida: «be used to + -ing» = estar acostumbrado a (o «has got / become / grown used to getting»). Ojo: «used to get up» indicaría un hábito pasado ya terminado.',
   )),
-  ru4('fce-m4-ru4-4', 4, 'Omar started learning the guitar three years ago, and he is still learning it.', 'BEEN', 'Omar ___ the guitar for three years.', ['has been learning'], x(
-    'Action commencée dans le passé et toujours en cours, avec « for » : present perfect continu « has been learning ».',
-    'فعل بدأ في الماضي وما زال مستمرًا، مع «for»: المضارع التام المستمر «has been learning».',
-    'Started in the past and still going + “for” → present perfect continuous.',
-    'Acción que empezó en el pasado y continúa, con «for»: present perfect continuo «has been learning».',
+  ru4('fce-m4-ru4-4', 4, 'It’s three years since Omar took up the guitar.', 'BEEN', 'Omar ___ the guitar for three years.', ['has been playing', 'has been learning', 'has been learning to play'], x(
+    'Deux changements : « It’s three years since + prétérit » devient « for three years » avec le present perfect continu, et « take up » (commencer une activité qui dure encore) se reformule par « play » ou « learn » : « has been playing ».',
+    'تغييران: «It’s three years since + الماضي البسيط» يصبح «for three years» مع المضارع التام المستمر، و«take up» (البدء في نشاط ما زال مستمرًا) يُعاد صوغه بـ«play» أو «learn»: «has been playing».',
+    '“It’s three years since… took up” → has been playing for three years.',
+    'Dos cambios: «It’s three years since + pasado simple» pasa a «for three years» con el present perfect continuo, y «take up» (empezar una actividad que continúa) se reformula con «play» o «learn»: «has been playing».',
   )),
-  ru4('fce-m4-ru4-5', 4, '‘Why don’t we take the train instead of driving?’ said Lina.', 'SUGGESTED', 'Lina ___ the train instead of driving.', ['suggested taking', 'suggested catching', 'suggested that we take', 'suggested that we should take', 'suggested we take', 'suggested we should take', 'suggested that they take', 'suggested they take', 'suggested that they should take', 'suggested they should take'], x(
-    '« Why don’t we…? » est une proposition → « suggest + -ing » ou « suggest (that) we (should) + base verbale ». Jamais « suggest to take ».',
-    '«Why don’t we…?» اقتراح ← «suggest + -ing» أو «suggest (that) we (should) + الفعل المجرد»، ولا يصح «suggest to take».',
-    'Suggestion → suggest + -ing (never “suggest to”).',
-    '«Why don’t we…?» es una propuesta → «suggest + -ing» o «suggest (that) we (should) + infinitivo sin to». Nunca «suggest to take».',
+  ru4('fce-m4-ru4-5', 4, '‘Why don’t we take the train instead of driving?’ said Lina.', 'SUGGESTED', 'Lina ___ the train instead of driving.', ['suggested taking', 'suggested catching', 'suggested getting', 'suggested that we take', 'suggested that we should take', 'suggested we take', 'suggested we should take', 'suggested that they take', 'suggested they take', 'suggested that they should take', 'suggested they should take', 'suggested that we catch', 'suggested we catch', 'suggested that we should catch', 'suggested we should catch', 'suggested that we get', 'suggested we get', 'suggested that we should get', 'suggested we should get', 'suggested that they catch', 'suggested they catch', 'suggested that they should catch', 'suggested they should catch', 'suggested that they get', 'suggested they get', 'suggested that they should get', 'suggested they should get'], x(
+    '« Why don’t we…? » est une proposition → « suggest + -ing » ou « suggest (that) we/they (should) + base verbale », avec « take », « catch » ou « get » the train. Jamais « suggest to take ».',
+    '«Why don’t we…?» اقتراح ← «suggest + -ing» أو «suggest (that) we/they (should) + الفعل المجرد»، مع «take» أو «catch» أو «get» the train، ولا يصح «suggest to take».',
+    'Suggestion → suggest + -ing or suggest (that) we (should) take/catch/get; never “suggest to”.',
+    '«Why don’t we…?» es una propuesta → «suggest + -ing» o «suggest (that) we/they (should) + infinitivo sin to», con «take», «catch» o «get» the train. Nunca «suggest to take».',
   )),
   ru4('fce-m4-ru4-6', 5, 'People say that the old bridge was built by the Romans.', 'SAID', 'The old bridge ___ built by the Romans.', ['is said to have been'], x(
     'Passif de « say » avec infinitif passé, car la construction est antérieure : « is said to have been built ».',
@@ -296,11 +296,11 @@ export const fceFull2Reading: Exercise[] = [
     '“…something to fall back on.”',
     '«If I failed as a writer, at least I would have something to fall back on»: la farmacia era un plan B. Fue su hermano quien la empujó hacia la escritura.',
   )),
-  ru5('fce-m4-ru5-5', 4, RU5_TEXT, 'How did Amal react to suddenly becoming well known?', ['She had mixed feelings about it.', 'She found it mostly frightening.', 'She felt she did not deserve it.', 'She was disappointed that it did not increase her sales.'], x(
-    '« Wonderful and terrifying in equal measure » : autant de joie que de peur, donc des sentiments partagés, et non surtout de la peur.',
-    '«Wonderful and terrifying in equal measure»: فرح وخوف بالقدر نفسه، أي مشاعر متضاربة، لا خوف في الغالب.',
-    '“Wonderful and terrifying in equal measure” = mixed feelings.',
-    '«Wonderful and terrifying in equal measure»: tanta alegría como miedo, es decir, sentimientos encontrados, no sobre todo miedo.',
+  ru5('fce-m4-ru5-5', 5, RU5_TEXT, 'In the fifth paragraph, what does ‘it’ refer to in ‘most of them throw it away’?', ['Their own background and the place they come from.', 'The advice that Amal gives them.', 'The first book that they write.', 'Their chance of finding an agent.'], x(
+    '« It » reprend « the only real advantage a young writer has », c’est-à-dire avoir grandi dans sa rue, avec sa famille (« Nobody else has grown up in your street, with your family »). Les jeunes le gâchent en copiant les auteurs qu’ils admirent.',
+    'الضمير «it» يعود على «the only real advantage a young writer has»، أي النشأة في شارعه ومع عائلته («Nobody else has grown up in your street, with your family»)، ويضيّعه الشباب بتقليد الكتّاب الذين يعجبون بهم.',
+    '“it” = “the only real advantage a young writer has”: growing up in your street, with your family.',
+    '«It» retoma «the only real advantage a young writer has», es decir, haber crecido en su calle, con su familia («Nobody else has grown up in your street, with your family»). Los jóvenes lo desperdician copiando a los autores que admiran.',
   )),
   ru5('fce-m4-ru5-6', 4, RU5_TEXT, 'Why does Amal write her first drafts by hand?', ['It stops her from constantly changing what she has written.', 'It is quicker than typing on a computer.', 'It reminds her of the time when she was sixteen.', 'It makes her handwriting easier to read.'], x(
     '« On a screen, I keep going back to change things, and I never get to the end. On paper, the mistakes stay there » : le papier l’empêche de tout réécrire. Elle reconnaît que c’est plus lent (« twice as long »).',
@@ -311,10 +311,10 @@ export const fceFull2Reading: Exercise[] = [
 
   // ── Part 6 ──
   ru6('fce-m4-ru6-1', 4, RU6_TEXT, 'Which sentence fits gap 1?', RU6_SENTENCES, 2, x(
-    'C annonce que les deux femmes étaient « complete beginners », ce que la phrase suivante précise : « Neither of them had sat in a rowing boat before the age of twenty-five ».',
-    'الجملة C تذكر أن المرأتين كانتا «complete beginners»، وتوضّح ذلك الجملة التالية: «Neither of them had sat in a rowing boat before the age of twenty-five».',
-    'C (“complete beginners”) is explained by “Neither of them had sat in a rowing boat…”.',
-    'C anuncia que eran «complete beginners», y la frase siguiente lo precisa: «Neither of them had sat in a rowing boat before the age of twenty-five».',
+    'C annonce que les deux femmes étaient « complete beginners », ce que la phrase suivante précise : « Neither of them had sat in a rowing boat before the age of twenty-five ». A est un piège : Rania dit plus loin « We weren’t athletes or sailors ».',
+    'الجملة C تذكر أن المرأتين كانتا «complete beginners»، وتوضّح ذلك الجملة التالية: «Neither of them had sat in a rowing boat before the age of twenty-five». أما A ففخّ، إذ تقول رانيا لاحقًا: «We weren’t athletes or sailors».',
+    'C (“complete beginners”) is explained by “Neither of them had sat in a rowing boat…”; A is contradicted by “We weren’t athletes or sailors”.',
+    'C anuncia que eran «complete beginners», y la frase siguiente lo precisa: «Neither of them had sat in a rowing boat before the age of twenty-five». A es una trampa: Rania dice más adelante «We weren’t athletes or sailors».',
   )),
   ru6('fce-m4-ru6-2', 4, RU6_TEXT, 'Which sentence fits gap 2?', RU6_SENTENCES, 1, x(
     'Après « I thought she was joking », B montre le moment où Rania comprend que c’était sérieux : « I realised she meant it ».',
@@ -348,35 +348,35 @@ export const fceFull2Reading: Exercise[] = [
   )),
 
   // ── Part 7 ──
-  ru7('fce-m4-ru7-1', 4, RU7_TEXT, 'Which person says that something they learnt at work has helped them with their studies?', RU7_SECTIONS, 0, x(
-    'Yanis (A) : rester calme face aux pannes « has helped me more in my engineering exams than any revision technique ».',
-    'يانيس (A): تعلّم الهدوء أمام الأعطال، و«has helped me more in my engineering exams than any revision technique».',
-    'A: it “has helped me more in my engineering exams”.',
-    'Yanis (A): mantener la calma ante los fallos «has helped me more in my engineering exams than any revision technique».',
-  )),
-  ru7('fce-m4-ru7-2', 3, RU7_TEXT, 'Which person was much younger than the people they worked with?', RU7_SECTIONS, 0, x(
-    'Yanis (A) : « I was younger than everyone else in the company by at least ten years ».',
-    'يانيس (A): «I was younger than everyone else in the company by at least ten years».',
-    'A: “younger than everyone else… by at least ten years”.',
-    'Yanis (A): «I was younger than everyone else in the company by at least ten years».',
-  )),
-  ru7('fce-m4-ru7-3', 4, RU7_TEXT, 'Which person was disappointed by the way a project was organised?', RU7_SECTIONS, 1, x(
+  ru7('fce-m4-ru7-1', 4, RU7_TEXT, 'Which person was disappointed by the way a project was organised?', RU7_SECTIONS, 1, x(
     'Clara (B) : « the project was badly run » ; elle est partie au bout d’un mois.',
     'كلارا (B): «the project was badly run»، وغادرت بعد شهر.',
     'B: “the project was badly run”.',
     'Clara (B): «the project was badly run»; se marchó al cabo de un mes.',
   )),
-  ru7('fce-m4-ru7-4', 4, RU7_TEXT, 'Which person says a bad experience made them more careful about future decisions?', RU7_SECTIONS, 1, x(
-    'Clara (B) : « that disappointment taught me to check things properly before committing to them ». Mateo (D) tire une autre leçon : parler aux inconnus.',
-    'كلارا (B): «that disappointment taught me to check things properly before committing to them». أما ماتيو (D) فتعلّم درسًا آخر: التحدث إلى الغرباء.',
-    'B: it “taught me to check things properly before committing”.',
-    'Clara (B): «that disappointment taught me to check things properly before committing to them». Mateo (D) aprende otra cosa: hablar con desconocidos.',
+  ru7('fce-m4-ru7-2', 4, RU7_TEXT, 'Which person was given a lot of responsibility at a young age?', RU7_SECTIONS, 4, x(
+    'Aya (E) : « at nineteen I was trusted with decisions that most people only make in their thirties ».',
+    'آية (E): «at nineteen I was trusted with decisions that most people only make in their thirties».',
+    'E: “at nineteen I was trusted with decisions…”.',
+    'Aya (E): «at nineteen I was trusted with decisions that most people only make in their thirties».',
   )),
-  ru7('fce-m4-ru7-5', 4, RU7_TEXT, 'Which person discovered a way of learning that suits them better?', RU7_SECTIONS, 2, x(
+  ru7('fce-m4-ru7-3', 4, RU7_TEXT, 'Which person discovered a way of learning that suits them better?', RU7_SECTIONS, 2, x(
     'Rim (C) : « I discovered that I learn far better without the pressure of exams ».',
     'ريم (C): «I discovered that I learn far better without the pressure of exams».',
     'C: “I learn far better without the pressure of exams”.',
     'Rim (C): «I discovered that I learn far better without the pressure of exams».',
+  )),
+  ru7('fce-m4-ru7-4', 4, RU7_TEXT, 'Which person says that something they learnt at work has helped them with their studies?', RU7_SECTIONS, 0, x(
+    'Yanis (A) : rester calme face aux pannes « has helped me more in my engineering exams than any revision technique ».',
+    'يانيس (A): تعلّم الهدوء أمام الأعطال، و«has helped me more in my engineering exams than any revision technique».',
+    'A: it “has helped me more in my engineering exams”.',
+    'Yanis (A): mantener la calma ante los fallos «has helped me more in my engineering exams than any revision technique».',
+  )),
+  ru7('fce-m4-ru7-5', 5, RU7_TEXT, 'Which person overcame a long-standing difficulty in talking to people they did not know?', RU7_SECTIONS, 3, x(
+    'Mateo (D) : « it forced me to start conversations with strangers, something I had always been terrible at ».',
+    'ماتيو (D): «it forced me to start conversations with strangers, something I had always been terrible at».',
+    'D: talking to strangers, “something I had always been terrible at”.',
+    'Mateo (D): «it forced me to start conversations with strangers, something I had always been terrible at».',
   )),
   ru7('fce-m4-ru7-6', 4, RU7_TEXT, 'Which person felt isolated when they began university?', RU7_SECTIONS, 2, x(
     'Rim (C) : « When I finally started, a year behind them, I felt rather lonely ». Mateo (D) est seul pendant son voyage, pas à l’université.',
@@ -384,28 +384,28 @@ export const fceFull2Reading: Exercise[] = [
     'C: “When I finally started… I felt rather lonely.”',
     'Rim (C): «When I finally started, a year behind them, I felt rather lonely». Mateo (D) estuvo solo durante el viaje, no en la universidad.',
   )),
-  ru7('fce-m4-ru7-7', 3, RU7_TEXT, 'Which person stopped travelling with the friend they had set off with?', RU7_SECTIONS, 3, x(
+  ru7('fce-m4-ru7-7', 3, RU7_TEXT, 'Which person was much younger than the people they worked with?', RU7_SECTIONS, 0, x(
+    'Yanis (A) : « I was younger than everyone else in the company by at least ten years ».',
+    'يانيس (A): «I was younger than everyone else in the company by at least ten years».',
+    'A: “younger than everyone else… by at least ten years”.',
+    'Yanis (A): «I was younger than everyone else in the company by at least ten years».',
+  )),
+  ru7('fce-m4-ru7-8', 4, RU7_TEXT, 'Which person wishes they had rested before starting university?', RU7_SECTIONS, 4, x(
+    'Aya (E) : « The one thing I would do differently is take a proper holiday at the end… I spent most of it exhausted ».',
+    'آية (E): «The one thing I would do differently is take a proper holiday at the end… I spent most of it exhausted».',
+    'E: she would “take a proper holiday at the end”.',
+    'Aya (E): «The one thing I would do differently is take a proper holiday at the end… I spent most of it exhausted».',
+  )),
+  ru7('fce-m4-ru7-9', 3, RU7_TEXT, 'Which person stopped travelling with the friend they had set off with?', RU7_SECTIONS, 3, x(
     'Mateo (D) : « we had fallen out over money and gone our separate ways ».',
     'ماتيو (D): «we had fallen out over money and gone our separate ways».',
     'D: “fallen out over money and gone our separate ways”.',
     'Mateo (D): «we had fallen out over money and gone our separate ways».',
   )),
-  ru7('fce-m4-ru7-8', 5, RU7_TEXT, 'Which person overcame a difficulty in dealing with people they did not know?', RU7_SECTIONS, 3, x(
-    'Mateo (D) : « it forced me to start conversations with strangers, something I had always been terrible at ».',
-    'ماتيو (D): «it forced me to start conversations with strangers, something I had always been terrible at».',
-    'D: talking to strangers, “something I had always been terrible at”.',
-    'Mateo (D): «it forced me to start conversations with strangers, something I had always been terrible at».',
-  )),
-  ru7('fce-m4-ru7-9', 4, RU7_TEXT, 'Which person was given a lot of responsibility at a young age?', RU7_SECTIONS, 4, x(
-    'Aya (E) : « at nineteen I was trusted with decisions that most people only make in their thirties ».',
-    'آية (E): «at nineteen I was trusted with decisions that most people only make in their thirties».',
-    'E: “at nineteen I was trusted with decisions…”.',
-    'Aya (E): «at nineteen I was trusted with decisions that most people only make in their thirties».',
-  )),
-  ru7('fce-m4-ru7-10', 4, RU7_TEXT, 'Which person wishes they had rested before starting university?', RU7_SECTIONS, 4, x(
-    'Aya (E) : « The one thing I would do differently is take a proper holiday at the end… I spent most of it exhausted ».',
-    'آية (E): «The one thing I would do differently is take a proper holiday at the end… I spent most of it exhausted».',
-    'E: she would “take a proper holiday at the end”.',
-    'Aya (E): «The one thing I would do differently is take a proper holiday at the end… I spent most of it exhausted».',
+  ru7('fce-m4-ru7-10', 4, RU7_TEXT, 'Which person says a bad experience made them more careful about future decisions?', RU7_SECTIONS, 1, x(
+    'Clara (B) : « that disappointment taught me to check things properly before committing to them ». Mateo (D) tire une autre leçon : parler aux inconnus.',
+    'كلارا (B): «that disappointment taught me to check things properly before committing to them». أما ماتيو (D) فتعلّم درسًا آخر: التحدث إلى الغرباء.',
+    'B: it “taught me to check things properly before committing”.',
+    'Clara (B): «that disappointment taught me to check things properly before committing to them». Mateo (D) aprende otra cosa: hablar con desconocidos.',
   )),
 ];
