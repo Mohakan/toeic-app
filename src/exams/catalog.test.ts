@@ -43,4 +43,15 @@ describe('exam catalog', () => {
       expect(Number.isInteger((v.scale.max - v.scale.min) / v.scale.step), v.id).toBe(true);
     }
   });
+
+  it('gives every app its own trademark-free web path, linked from the family site when live', () => {
+    const site = readFileSync(join(__dirname, '../../site/app.js'), 'utf8');
+    expect(new Set(variants.map((v) => v.webPath)).size).toBe(variants.length);
+    for (const v of variants) {
+      expect(v.webPath, v.id).toMatch(/^\/[a-z0-9-]+$/);
+      expect(v.webPath, v.id).not.toMatch(/toeic|ielts|cambridge|first|ets/i);
+      // The landing page links the live web versions only; a planned app shows "Bientôt".
+      expect(site.includes(`web: '${v.webPath}/'`), v.id).toBe(v.status === 'live');
+    }
+  });
 });

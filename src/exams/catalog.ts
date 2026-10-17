@@ -40,6 +40,11 @@ export interface ExamVariant {
    * adaptive icon. Without it, the app uses the icons of app.json (TOEIC).
    */
   icons?: { dir: string; background: string };
+  /**
+   * Path of the web version on the family site (tokiquest.app), without the trademark. The web
+   * export of the app is built for this path (scripts/build-web.mjs).
+   */
+  webPath: string;
 }
 
 export const EXAMS: Record<ExamId, ExamVariant> = {
@@ -53,6 +58,7 @@ export const EXAMS: Record<ExamId, ExamVariant> = {
     examLabel: 'TOEIC® Listening & Reading',
     markOwner: 'ETS',
     scale: { min: 10, max: 990, step: 5 },
+    webPath: '/quest',
   },
   b2First: {
     id: 'b2First',
@@ -66,6 +72,7 @@ export const EXAMS: Record<ExamId, ExamVariant> = {
     // Cambridge English Scale; B2 First reports 122 to 190 and passes from 160.
     scale: { min: 122, max: 190, step: 1 },
     icons: { dir: './assets/b2', background: '#EFEDFF' },
+    webPath: '/b2',
   },
   ieltsAcademic: {
     id: 'ieltsAcademic',
@@ -78,6 +85,7 @@ export const EXAMS: Record<ExamId, ExamVariant> = {
     markOwner: 'the British Council, IDP IELTS and Cambridge University Press & Assessment',
     // Overall band score, in half bands.
     scale: { min: 0, max: 9, step: 0.5 },
+    webPath: '/academic',
   },
 };
 
