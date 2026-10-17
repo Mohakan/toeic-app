@@ -29,6 +29,15 @@ describe('typed answers', () => {
     expect(isAcceptedAnswer("Ali's car", ['Ali car'])).toBe(false);
   });
 
+  it('accepts a number in figures for the number in words, as Cambridge does', () => {
+    expect(isAcceptedAnswer('12 weeks', ['twelve weeks'])).toBe(true);
+    expect(isAcceptedAnswer('four', ['4'])).toBe(true);
+    expect(isAcceptedAnswer('25', ['twenty-five'])).toBe(true);
+    expect(isAcceptedAnswer('fourteen', ['four'])).toBe(false);
+    expect(isAcceptedAnswer('someone', ['some 1'])).toBe(false);
+    expect(isAcceptedAnswer('13 weeks', ['twelve weeks'])).toBe(false);
+  });
+
   it('counts a contraction as two words, as Cambridge does', () => {
     expect(countWords("wasn't able to")).toBe(4);
     expect(countWords('had been told')).toBe(3);
