@@ -10,3 +10,17 @@ Bilan (60 items, `fce-u01-s3` à `fce-u06-s3`) : OK 48 · BLOQUANT 1 · À CORRI
 | `fce-u06-s3-q4` | MINEUR | 2. Distracteurs (RU5) | La clé « Speaking in front of others no longer frightens her as it once did. » (67 caractères) est nettement plus longue que les distracteurs (38 à 54). Un candidat peut la choisir pour sa seule longueur. | Remplacer la clé par : « She is no longer afraid of speaking in public. ». Les explications restent valables. |
 | `fce-u05-s3-q5`, `fce-u05-s3-q9`, `fce-u05-s3-q10` | MINEUR | 4. Niveau | Les trois items sont au niveau 5 (C1), mais « make up for » et « so as not to » sont du B2, et « On the other hand » du B1. | Passer `fce-u05-s3-q5` et `fce-u05-s3-q9` au niveau 4, et `fce-u05-s3-q10` au niveau 3. |
 | `fce-u03-s3-q1` | MINEUR | 5. Explications | Le français précise « (-sion, le d devient s) ». L’arabe et l’espagnol s’arrêtent à « (-sion) » et omettent le changement d’orthographe, que les autres items de la série signalent (y → i, chute du e). | ar : « بعد صيغة التفضيل «the hardest» نحتاج إلى اسم، و«made» تذكّر بـ «make a decision»: decide ← decision (‎-sion مع تحوّل d إلى s). » / es : « Después del superlativo «the hardest» hace falta un sustantivo; «made» recuerda «make a decision»: decide → decision (-sion, la d pasa a s). » |
+
+## Corrections appliquées (2026-10-17)
+
+| id | correction |
+| --- | --- |
+| `fce-u04-s3-q9` | Ajout de `'are not to be used'` aux réponses acceptées (5 mots, contient BE, même sens d’interdiction ; « aren’t to be used » est reconnu automatiquement). Clé et explications inchangées. |
+| `fce-u04-s3-q6` | Phrase 1 remplacée par « Someone delivers fresh bread to our door every morning. ». Clé, mot clé et explications (fr, ar, en, es) inchangés : ils parlaient déjà de « quelqu’un » qui fait le travail. |
+| `fce-u06-s3-q6` … `fce-u06-s3-q10` | Phrase en trop E remplacée par « E. Luckily, my uncle let me take a short nap after the first batch. » (`S3_SENTENCES`, partagée par les 5 questions). Vérifié : E ne va dans aucun trou — trou 1 (avant le premier service), trou 2 (avant la démonstration, aucune fournée encore), trou 3 (contredit « The real problem… the hours » et « After a fortnight, I seriously considered… stop », et B y est seule possible à cause de « they » = « my friends »), trou 4 (rien sur les clients), trou 5 (rien sur la nuit, D seule reprend « the night » / « four in the morning ») — mais reste un piège plausible pour le trou 3 (sommeil). Chaque trou garde une seule phrase possible ; ordre A–G et index de clé (2, 5, 1, 6, 3) inchangés. Les explications ne citaient pas E : aucune modification. |
+| `fce-u06-s3-q4` | Clé remplacée par « She is no longer afraid of speaking in public. » (46 caractères, dans la fourchette des distracteurs 38–54). Explications inchangées (elles disent déjà « parler en public ne lui fait plus peur » dans les 4 langues). |
+| `fce-u05-s3-q5`, `fce-u05-s3-q9` | Niveau 5 → 4. |
+| `fce-u05-s3-q10` | Niveau 5 → 3. |
+| `fce-u03-s3-q1` | Explications arabe et espagnole complétées avec le changement d’orthographe (d → s), selon le texte proposé. Français et anglais inchangés. |
+
+Aucune suggestion du rapport n’a été écartée. Les unités 01 et 02 n’avaient aucune remarque : non modifiées.

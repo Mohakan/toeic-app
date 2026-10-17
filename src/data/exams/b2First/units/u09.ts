@@ -228,7 +228,7 @@ export const fceU09: Unit = unit(
   [
     ru7('fce-u09-s3-q1', 4, CRAFTS, 'Which person once considered the craft out of date?', SECTIONS, 0, x(
       'Hamid : adolescent, la poterie « seemed hopelessly old-fashioned ».',
-      'حميد: في مراهقته كان الفخار «seemed hopelessly old-fashioned».',
+      'حميد: في مراهقته كان الفخار يبدو له «hopelessly old-fashioned».',
       'A: it “seemed hopelessly old-fashioned”.',
       'Hamid: de adolescente, la cerámica «seemed hopelessly old-fashioned».',
     )),
@@ -254,7 +254,7 @@ export const fceU09: Unit = unit(
       'Elena : sa guitare « isn’t perfect… I wouldn’t swap it for any guitar in the shop ». Le premier tapis de Diego, lui, a été défait.',
       'إيلينا: قيثارتها «isn’t perfect… I wouldn’t swap it for any guitar in the shop». أما أول سجادة لدييغو فقد فُكّت.',
       'B: not perfect, but she “wouldn’t swap it”.',
-      'Elena: su guitarra «isn’t perfect… I wouldn’t swap it for any guitar in the shop». La primera alfombra de Diego, en cambio, se deshizo.',
+      'Elena: su guitarra «isn’t perfect… I wouldn’t swap it for any guitar in the shop». En cambio, Doña Rosa deshizo la primera alfombra de Diego.',
     )),
     ru7('fce-u09-s3-q6', 4, CRAFTS, 'Which person says the craft brought benefits in another area of their life?', SECTIONS, 2, x(
       'Nour : plus calme et concentrée, « which helped my university work enormously ».',
@@ -274,7 +274,7 @@ export const fceU09: Unit = unit(
       'C: proud, but felt “a bit of a fraud”.',
       'Nour: en la exposición, «I was proud… but… also made me feel a bit of a fraud»: orgullo e incomodidad.',
     )),
-    ru7('fce-u09-s3-q9', 4, CRAFTS, 'Which person could not accept the idea of losing something that had belonged to the family?', SECTIONS, 3, x(
+    ru7('fce-u09-s3-q9', 4, CRAFTS, 'Which person could not accept the idea of a family possession going to a stranger?', SECTIONS, 3, x(
       'Diego : « I couldn’t bear the thought of the loom being sold to a stranger » : le métier à tisser de sa grand-mère.',
       'دييغو: «I couldn’t bear the thought of the loom being sold to a stranger»، أي نول جدته.',
       'D: couldn’t bear the loom “being sold”.',

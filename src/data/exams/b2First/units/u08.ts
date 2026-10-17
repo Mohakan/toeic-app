@@ -206,7 +206,7 @@ export const fceU08: Unit = unit(
       'Present: if it weren’t for = without.',
       'Situación presente → «If it weren’t for + sustantivo» (= de no ser por), versión en presente de «If it hadn’t been for».',
     )),
-    ru4('fce-u08-s3-q4', 5, 'I’m sorry that I don’t live closer to the university.', 'WISH', 'I ___ closer to the university.', ['wish I lived', 'wish I could live', 'wish I was living', 'wish I were living'], x(
+    ru4('fce-u08-s3-q4', 5, 'I’m sorry that I don’t live closer to the university.', 'WISH', 'I ___ closer to the university.', ['wish I lived', 'wish I could live', 'wish I was living', 'wish I were living', 'wish that I lived', 'wish that I could live', 'wish that I was living', 'wish that I were living'], x(
       'Regret sur le présent → wish + prétérit : « wish I lived » (ou « could live »).',
       'ندم على الحاضر ← wish + الماضي البسيط: «wish I lived» (أو «could live»).',
       'Present regret: wish + past simple.',
@@ -224,7 +224,7 @@ export const fceU08: Unit = unit(
       'Past certainty: must have left.',
       '«I’m certain» + hecho pasado → «must have» + participio «left».',
     )),
-    ru4('fce-u08-s3-q7', 6, 'It’s possible that the parcel was delivered to the wrong address.', 'MIGHT', 'The parcel ___ to the wrong address.', ['might have been delivered', 'might’ve been delivered', 'might have been sent', 'might’ve been sent'], x(
+    ru4('fce-u08-s3-q7', 6, 'It’s possible that the parcel was delivered to the wrong address.', 'MIGHT', 'The parcel ___ to the wrong address.', ['might have been delivered', 'might’ve been delivered', 'might have been sent', 'might’ve been sent', 'might have gone'], x(
       'Possibilité dans le passé, au passif → « might have been » + participe : « might have been delivered ».',
       'احتمال في الماضي بصيغة المبني للمجهول ← «might have been» + اسم المفعول: «might have been delivered».',
       'Past possibility, passive: might have been delivered.',
@@ -242,7 +242,7 @@ export const fceU08: Unit = unit(
       'Past criticism: ought to have checked.',
       'Crítica de algo que no se hizo → «ought to have» + participio (= should have): «ought to have checked».',
     )),
-    ru4('fce-u08-s3-q10', 5, 'We got lost because we didn’t take a map with us.', 'WOULD', 'If we had taken a map with us, we ___ lost.', ['would not have got', 'wouldn’t have got', 'would not have gotten', 'wouldn’t have gotten', 'would never have got', 'would never have gotten'], x(
+    ru4('fce-u08-s3-q10', 5, 'We got lost because we didn’t take a map with us.', 'WOULD', 'If we had taken a map with us, we ___ lost.', ['would not have got', 'wouldn’t have got', 'would not have gotten', 'wouldn’t have gotten', 'would never have got', 'would never have gotten', 'would not have been', 'would never have been'], x(
       'Condition irréelle dans le passé (3e conditionnel) → « would not have » + participe : « wouldn’t have got lost ».',
       'شرط غير واقعي في الماضي (النوع الثالث) ← «would not have» + اسم المفعول: «wouldn’t have got lost».',
       'Third conditional: wouldn’t have got lost.',

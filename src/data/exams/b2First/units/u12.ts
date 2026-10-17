@@ -219,23 +219,23 @@ export const fceU12: Unit = unit(
       'had better not + bare infinitive.',
       'Advertencia: had better + not + infinitivo sin to: «You had better not leave». «not» va después de «better».',
     )),
-    ru4('fce-u12-s3-q7', 5, 'Nadia was such a fast talker that I couldn’t follow her.', 'SO', 'Nadia talked ___ I couldn’t follow her.', ['so fast that', 'so quickly that', 'so fast', 'so quickly'], x(
+    ru4('fce-u12-s3-q7', 5, 'Nadia was such a fast talker that I couldn’t follow her.', 'SO', 'Nadia talked ___ I couldn’t follow her.', ['so fast that', 'so quickly that', 'so rapidly that', 'so fast', 'so quickly', 'so rapidly'], x(
       'Avec un verbe, « such a fast talker » devient « so » + adverbe : « talked so fast (that) ». « that » est facultatif.',
       'مع الفعل يتحول «such a fast talker» إلى «so» + ظرف: «talked so fast (that)»، و«that» اختيارية.',
       'Verb + so + adverb (+ that).',
       'Con un verbo, «such a fast talker» pasa a «so» + adverbio: «talked so fast (that)». «that» es opcional.',
     )),
-    ru4('fce-u12-s3-q8', 5, 'Whatever the price is, I’m going to buy that guitar.', 'MATTER', 'No ___ costs, I’m going to buy that guitar.', ['matter how much it', 'matter what it'], x(
+    ru4('fce-u12-s3-q8', 5, 'Whatever the price is, I’m going to buy that guitar.', 'MATTER', 'No ___ costs, I’m going to buy that guitar.', ['matter how much it', 'matter what it', 'matter how much the guitar', 'matter what the guitar'], x(
       '« Whatever the price » = « No matter how much it costs » (ou « No matter what it costs »).',
       '«Whatever the price» = «No matter how much it costs» (أو «No matter what it costs»).',
       'No matter how much / what it costs.',
       '«Whatever the price» = «No matter how much it costs» (o «No matter what it costs»).',
     )),
-    ru4('fce-u12-s3-q9', 6, 'The concert had only just begun when the power failed.', 'HARDLY', '___ begun when the power failed.', ['Hardly had the concert'], x(
-      '« only just » = « hardly » ; placé en tête, il entraîne l’inversion : « Hardly had the concert begun when… ».',
-      '«only just» = «hardly»، وفي أول الجملة يستلزم القلب: «Hardly had the concert begun when…».',
-      'Hardly at the start + inversion.',
-      '«only just» = «hardly»; al inicio provoca la inversión: «Hardly had the concert begun when…».',
+    ru4('fce-u12-s3-q9', 6, 'The concert had only just begun when the power failed.', 'SOONER', 'No ___ than the power failed.', ['sooner had the concert begun', 'sooner had the concert started'], x(
+      '« only just… when » = « No sooner… than » ; « No sooner » en tête entraîne l’inversion : « No sooner had the concert begun than… ».',
+      '«only just… when» = «No sooner… than»، و«No sooner» في أول الجملة تستلزم القلب: «No sooner had the concert begun than…».',
+      'No sooner + inversion + than.',
+      '«only just… when» = «No sooner… than»; «No sooner» al inicio provoca la inversión: «No sooner had the concert begun than…».',
     )),
     ru4('fce-u12-s3-q10', 5, 'Karim behaves like the owner of the café, but he only works there.', 'THOUGH', 'Karim behaves ___ the café, but he only works there.', ['as though he owned', 'as though he owns', 'as though he ran', 'as though he runs'], x(
       'Impression fausse : « as though » + prétérit (« as though he owned the café ») ; le présent est aussi accepté.',

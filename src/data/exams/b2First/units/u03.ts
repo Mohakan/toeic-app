@@ -185,9 +185,9 @@ export const fceU03: Unit = unit(
   [
     ru3('fce-u03-s3-q1', 3, 'Choosing which university to apply to was the hardest ___ Rayan had ever made.', 'DECIDE', ['decision'], x(
       'Après le superlatif « the hardest », il faut un nom ; « made » rappelle « make a decision » : decide → decision (-sion, le d devient s).',
-      'بعد صيغة التفضيل «the hardest» نحتاج إلى اسم، و«made» تذكّر بـ «make a decision»: decide ← decision (‎-sion).',
+      'بعد صيغة التفضيل «the hardest» نحتاج إلى اسم، و«made» تذكّر بـ «make a decision»: decide ← decision (‎-sion مع تحوّل d إلى s).',
       'Noun after “the hardest”: decision.',
-      'Después del superlativo «the hardest» hace falta un sustantivo; «made» recuerda «make a decision»: decide → decision (-sion).',
+      'Después del superlativo «the hardest» hace falta un sustantivo; «made» recuerda «make a decision»: decide → decision (-sion, la d pasa a s).',
     )),
     ru3('fce-u03-s3-q2', 3, 'There has been a big ___ in air quality since the city banned cars from the centre.', 'IMPROVE', ['improvement'], x(
       '« a big … in » demande un nom : improve → improvement (-ment).',

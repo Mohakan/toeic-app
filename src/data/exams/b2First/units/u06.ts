@@ -85,7 +85,7 @@ const S3_SENTENCES = [
   'B. Eventually, they simply stopped inviting me.',
   'C. What he had failed to mention was the timetable.',
   'D. More importantly, I had learned to love the strange, quiet world of the night.',
-  'E. Luckily, the rest of the class had the same problem.',
+  'E. Luckily, my uncle let me take a short nap after the first batch.',
   'F. He was not a man who believed in long explanations.',
   'G. Every one of them seemed to have a story to tell.',
 ];
@@ -283,7 +283,7 @@ export const fceU06: Unit = unit(
       'Staying calm: “If you lose your temper, you’ve lost the match”.',
       '«the challenge of staying calm… If you lose your temper, you’ve lost the match». La trampa «in detail» contradice «in a few words».',
     )),
-    ru5('fce-u06-s3-q4', 5, S3_TEXT, 'Why does Salma now describe a seminar as “rather relaxing”?', ['Speaking in front of others no longer frightens her as it once did.', 'She prefers her studies to refereeing.', 'Her fellow students are calmer than she used to think.', 'She spends less time preparing for her seminars.'], x(
+    ru5('fce-u06-s3-q4', 5, S3_TEXT, 'Why does Salma now describe a seminar as “rather relaxing”?', ['She is no longer afraid of speaking in public.', 'She prefers her studies to refereeing.', 'Her fellow students are calmer than she used to think.', 'She spends less time preparing for her seminars.'], x(
       '« she used to dread speaking in seminars » ; comparé à « two hundred angry spectators », parler en public ne lui fait plus peur.',
       '«she used to dread speaking in seminars»، ومقارنةً بـ«two hundred angry spectators» لم تعد تخاف من الكلام أمام الناس.',
       'She “used to dread speaking”; now it seems easy by comparison.',

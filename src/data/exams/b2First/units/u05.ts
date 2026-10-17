@@ -202,7 +202,7 @@ export const fceU05: Unit = unit(
       '“turn up” = arrive, come; “forty came” confirms it.',
       '«turn up» = presentarse, aparecer; «but forty came» confirma que se cuentan los asistentes.',
     )),
-    ru1('fce-u05-s3-q5', 5, 'After losing the first set, Lina played brilliantly to ___ up for her early mistakes.', ['make', 'catch', 'keep', 'put'], x(
+    ru1('fce-u05-s3-q5', 4, 'After losing the first set, Lina played brilliantly to ___ up for her early mistakes.', ['make', 'catch', 'keep', 'put'], x(
       '« make up for » = compenser, rattraper (une erreur) ; « put up with » = supporter, « catch up with » = rattraper quelqu’un.',
       '«make up for» = يعوّض (عن خطأ)، أما «put up with» = يتحمّل، و«catch up with» = يلحق بشخص.',
       '“make up for” = compensate for.',
@@ -226,13 +226,13 @@ export const fceU05: Unit = unit(
       '“due to” + noun = because of.',
       '«due to» + sustantivo = debido a; es la causa de la cancelación.',
     )),
-    ru2('fce-u05-s3-q9', 5, 'Malak left home an hour early so as ___ to be late for her job interview.', ['not'], x(
+    ru2('fce-u05-s3-q9', 4, 'Malak left home an hour early so as ___ to be late for her job interview.', ['not'], x(
       'But négatif : « so as not to » + base verbale = pour ne pas ; « not » se place avant « to ».',
       'غاية منفية: «so as not to» + المصدر = لكي لا، و«not» تأتي قبل «to».',
       'Negative purpose: “so as not to”.',
       'Finalidad negativa: «so as not to» + infinitivo = para no; «not» va delante de «to».',
     )),
-    ru2('fce-u05-s3-q10', 5, 'The hostel was cheap and close to the beach. On the other ___, the rooms were tiny and rather noisy.', ['hand'], x(
+    ru2('fce-u05-s3-q10', 3, 'The hostel was cheap and close to the beach. On the other ___, the rooms were tiny and rather noisy.', ['hand'], x(
       '« On the other hand » oppose les défauts (tiny, noisy) aux avantages (cheap, close).',
       '«On the other hand» تقابل العيوب (tiny وnoisy) بالمزايا (cheap وclose).',
       '“On the other hand” introduces the contrasting point.',

@@ -295,7 +295,7 @@ export const fceU11: Unit = unit(
     )),
     li3('fce-u11-s3-q6', 4, S3_SPEAKERS, 'What does Speaker 1 say about taking part in a competition?', S3_OPTIONS, 4, x(
       'L’adversaire a gagné facilement, puis « We message each other almost every day now » ; elle viendra à Sousse → E.',
-      'فازت المنافسة بسهولة، ثم صارتا صديقتين: «We message each other almost every day now»، وستأتي إلى سوسة ← E.',
+      'فازت الخصمة بسهولة، ثم نشأت بينهما صداقة: «We message each other almost every day now»، وستأتي إلى سوسة ← E.',
       'The opponent won, and now they “message each other almost every day” → E.',
       'Su rival le ganó, y ahora «We message each other almost every day now»; vendrá a Susa → E.',
     )),

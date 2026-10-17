@@ -310,7 +310,7 @@ W: Around eleven. Your money's on the kitchen table, as usual, and my number's o
       'A library footstep “never quite fits the character”.',
       '«a library footstep never quite fits the character. A nervous teenager doesn’t walk like a tired soldier». Son algunos directores quienes creen poder prescindir de ella.',
     )),
-    li4('fce-u10-s3-q10', 5, S3_INTERVIEW, 'How does Lucía feel about teaching a course?', ['Anxious, because she has never had to explain her methods', 'Excited about working with young directors', 'Unsure whether she will have enough time'], x(
+    li4('fce-u10-s3-q10', 5, S3_INTERVIEW, 'How does Lucía feel about teaching a course?', ['Anxious, because she has never had to explain her methods', 'Excited, because she has always wanted to work with students', 'Unsure, because teaching may leave her too little time for films'], x(
       '« that frightens me more than any film. I’ve never had to explain what I do » : elle a peur parce qu’elle n’a jamais expliqué sa méthode.',
       '«that frightens me more than any film. I’ve never had to explain what I do»: هي قلقة لأنها لم تشرح طريقتها قط.',
       'It “frightens” her: she has “never had to explain” her work.',

@@ -218,7 +218,7 @@ export const fceU04: Unit = unit(
       'Request: asked + person + to + verb.',
       'Petición en estilo indirecto: ask + persona + to + infinitivo: «asked her brother to turn».',
     )),
-    ru4('fce-u04-s3-q6', 4, 'A local baker delivers fresh bread to our door every morning.', 'HAVE', 'We ___ to our door every morning.', ['have fresh bread delivered'], x(
+    ru4('fce-u04-s3-q6', 4, 'Someone delivers fresh bread to our door every morning.', 'HAVE', 'We ___ to our door every morning.', ['have fresh bread delivered'], x(
       'Quelqu’un fait le travail pour nous → have + objet + participe passé : « have fresh bread delivered ».',
       'شخص آخر يقوم بالعمل لصالحنا ← have + مفعول به + اسم المفعول: «have fresh bread delivered».',
       'Causative: have + fresh bread + delivered.',
@@ -236,7 +236,7 @@ export const fceU04: Unit = unit(
       'Present opinion, past event: are thought to have escaped.',
       'Opinión presente (think), hecho pasado (escaped) → «are thought to have» + participio; el sujeto plural da «are».',
     )),
-    ru4('fce-u04-s3-q9', 4, 'You can’t use mobile phones during the exam.', 'BE', 'Mobile phones ___ during the exam.', ['can’t be used', 'cannot be used', 'mustn’t be used', 'must not be used', 'may not be used'], x(
+    ru4('fce-u04-s3-q9', 4, 'You can’t use mobile phones during the exam.', 'BE', 'Mobile phones ___ during the exam.', ['can’t be used', 'cannot be used', 'mustn’t be used', 'must not be used', 'may not be used', 'are not to be used'], x(
       'Passif avec modal : can’t + be + participe passé : « can’t be used » (interdiction).',
       'المبني للمجهول مع فعل ناقص: can’t + be + اسم المفعول: «can’t be used» (منع).',
       'Modal passive: can’t be used.',

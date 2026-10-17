@@ -44,19 +44,19 @@ There are things about the job I would change. Tourism has brought money to the 
 Would I ever do anything else? Sometimes, on a freezing night in the refuge, listening to someone snore on the other side of the dormitory, I wonder. Then the next morning I watch the sun come up over the ridge, and I see the faces of the people who have just reached the top, many of whom did not believe they could. That moment never gets old. My uncle says that the day it does, I should stop. I don’t think that day is coming any time soon.`;
 
 // RU6: restoring an old neighbourhood cinema.
-const RU6_TEXT = `When the Rex cinema in our neighbourhood closed in 2009, most people assumed it would be turned into flats. For ten years the building stood empty, its famous neon sign broken and its doors covered in posters. (1) ___ Then, in 2019, a group of students from the local film school decided to find out who owned it.
+const RU6_TEXT = `For more than seventy years, the Rex was where families from the surrounding streets spent their Saturday evenings. When it closed in 2009, most people assumed it would be turned into flats. For ten years the building stood empty, its famous neon sign broken and its doors covered in posters. (1) ___ Then, in 2019, a group of students from the local film school decided to find out who owned it.
 
-The answer surprised them. The building belonged to the city council, which had no plans for it and was paying a security company to keep it locked. (2) ___ The council agreed, on one condition: the students had eighteen months to prove that the project could pay for itself.
+The answer surprised them. Most of them had assumed it belonged to a property developer waiting for prices to rise. In fact, the building belonged to the city council, which had no plans for it and was paying a security company to keep it locked. (2) ___ The council agreed, on one condition: the students had eighteen months to prove that the project could pay for itself.
 
-The first challenge was the building itself. Water had come through the roof, and much of the original decoration had been damaged. (3) ___ Instead, volunteers spent their weekends carefully cleaning the plaster ceiling, and a retired carpenter rebuilt the ticket office using photographs from the 1950s.
+The first challenge was the building itself. Water had come through the roof, and much of the original decoration had been damaged. (3) ___ Instead, volunteers spent their weekends carefully cleaning the plaster ceiling, and a retired carpenter rebuilt the ticket office using photographs from the 1950s. Few of them had ever done this kind of work before, so a local painter gave up her Saturdays to show them how.
 
-Money was the next problem. Old projectors were cheap to buy but impossible to repair, while a modern digital one cost more than the group had raised in a whole year. (4) ___ Within a month, more than six hundred people had contributed, many of them pensioners who remembered queuing outside the Rex as teenagers.
+Money was the next problem. Old projectors were cheap to buy but impossible to repair, while a modern digital one cost more than the group had raised in a whole year. (4) ___ Within a month, more than six hundred people had contributed, many of them pensioners who remembered queuing outside the Rex as teenagers. The rest of the money came from a local bank, which agreed to sponsor the Saturday matinées.
 
-The Rex reopened last October with a screening of a classic Egyptian musical. (5) ___ Since then, the programme has mixed new releases with older films, and every Sunday morning there is a free screening for children.
+The Rex reopened last October with a screening of a classic Egyptian musical. (5) ___ Since then, the programme has mixed new releases with older films, and every Sunday morning there is a free screening for children. Once a month, students from the film school also show their own short films, followed by a discussion with the audience.
 
-Not everyone has been won over. Some residents complain about noise from the queues on Friday nights, and the café next door says it has lost customers to the cinema bar. (6) ___ Even so, the cinema covered its costs within its first year, and the council has now given the students a ten-year lease.`;
+Not everyone has been won over. Some residents complain about noise from the queues on Friday nights, and the café next door says it has lost customers to the cinema bar. (6) ___ Even so, the cinema covered its costs within its first year, and the council has now given the students a ten-year lease. Most of them have graduated since the project began, but every one of them still works a shift at the Rex at least once a month.`;
 const RU6_SENTENCES = [
-  'A In desperation, they launched an online appeal, offering a seat with the donor’s name on it in return for a contribution.',
+  'A In desperation, they launched an online appeal, promising that everyone who made a contribution would have their name printed on a wall in the foyer.',
   'B The council, however, refused to give them any more time.',
   'C Every one of the three hundred seats was sold, and some of the audience sang along to every song.',
   'D Local children used its entrance as a goal for street football, and pigeons nested above the screen.',
