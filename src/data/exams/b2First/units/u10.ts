@@ -238,13 +238,16 @@ M: That's right. We're still unpacking, to be honest.`, 'What is the relationshi
     )),
   ],
   [
-    li1('fce-u10-s3-q1', 4, `M: So how's it going with your new flatmate?
-W: Better than I expected, actually. When Sofia moved in, I was a bit worried, because she plays the cello and practises every evening. I imagined I'd never get any peace. But she's really considerate, she always checks whether I'm studying first, and to be honest, I've started looking forward to it. It's like having a free concert while I cook.
-M: Lucky you. My flatmate plays video games till three in the morning.`, 'How does the woman feel about Sofia’s practising now?', ['She has come to enjoy it.', 'It makes it difficult for her to study.', 'She wishes Sofia practised less often.'], x(
-      'Elle était inquiète au début, mais « I’ve started looking forward to it… like having a free concert ». Sofia vérifie toujours si elle étudie.',
-      'كانت قلقة في البداية، لكن «I’ve started looking forward to it… like having a free concert»، وصوفيا تتأكد دائمًا إن كانت تدرس.',
-      'She has “started looking forward to it”.',
-      'Al principio le preocupaba, pero «I’ve started looking forward to it… like having a free concert». Sofía siempre pregunta si está estudiando.',
+    li1('fce-u10-s3-q1', 4, `W: You look cheerful. Didn't you have the dentist this morning?
+M: I did. I'd been dreading it for weeks. I hadn't been for about five years, and I was sure she'd find something awful. I hardly slept last night.
+W: And?
+M: One tiny filling, and I barely felt it. She just told me to floss more often. Honestly, I walked out feeling ten kilos lighter.
+W: So you'll go back next year?
+M: Let's not get carried away.`, 'How does the man feel after his appointment?', ['Relieved that it went better than he feared', 'Worried about going back next year', 'Annoyed that the dentist criticised him'], x(
+      'Il redoutait le rendez-vous, mais « One tiny filling, and I barely felt it… I walked out feeling ten kilos lighter » : il est soulagé.',
+      'كان يخشى الموعد، لكن «One tiny filling, and I barely felt it… I walked out feeling ten kilos lighter»: إنه مرتاح.',
+      'He had dreaded it; he left “feeling ten kilos lighter”.',
+      'Temía la cita, pero «One tiny filling, and I barely felt it… I walked out feeling ten kilos lighter»: está aliviado.',
     )),
     li1('fce-u10-s3-q2', 4, `Hello, this is Hamza from the Medina Sports Centre, with a message for Laila Berrada. You booked a place on our beginners' swimming course, which was due to start next Monday. I'm afraid the pool has to close for a week because of a problem with the heating, so the course will now begin on Monday the twenty-third instead. Your place is still reserved, and you don't need to do anything. If the new date doesn't suit you, though, we'll give you a full refund. Thanks, and sorry for the inconvenience.`, 'Why is Hamza calling Laila?', ['To tell her that a course will start later', 'To offer her a place on a different course', 'To ask her to confirm her booking'], x(
       '« the course will now begin on Monday the twenty-third instead » : le cours est repoussé. « you don’t need to do anything » exclut une confirmation.',
@@ -252,38 +255,36 @@ M: Lucky you. My flatmate plays video games till three in the morning.`, 'How do
       'The course “will now begin… instead”; no action needed.',
       '«the course will now begin on Monday the twenty-third instead»: el curso se aplaza. «you don’t need to do anything» descarta una confirmación.',
     )),
-    li1('fce-u10-s3-q3', 4, `W: So what did you think of the exhibition?
-M: The photos themselves were amazing. That series of fishermen in Essaouira at dawn, I could have looked at it for hours.
-W: Me too. But the way they'd organised it...
-M: I know. Tiny labels you could hardly read, and the rooms were so packed that you had to queue to see each picture.
-W: They should have limited the number of visitors at a time.
-M: Exactly. I'd go back, but only on a weekday morning.`, 'What do both speakers think about the exhibition?', ['It was badly managed.', 'Some of the photographs were disappointing.', 'The tickets were too expensive.'], x(
-      '« the way they’d organised it… », « Tiny labels », « so packed », « They should have limited… » : l’organisation est critiquée ; les photos sont « amazing ».',
-      '«the way they’d organised it…» و«Tiny labels» و«so packed» و«They should have limited…»: الانتقاد موجّه إلى التنظيم، أما الصور فـ«amazing».',
-      'Both criticise the organisation; the photos were “amazing”.',
-      '«the way they’d organised it…», «Tiny labels», «so packed», «They should have limited…»: critican la organización; las fotos son «amazing».',
+    li1('fce-u10-s3-q3', 4, `M: So, was the escape room worth it?
+W: The puzzles were really clever, I'll give them that. There was one with a map and a box of old keys that took the four of us ages.
+M: Sounds fun.
+W: It was, but we got out in thirty-five minutes, and you pay for an hour. For forty euros each, I expected a lot more. Mind you, the staff were lovely.
+M: So you wouldn't go again?
+W: Not at that price, no.`, 'What is the woman’s opinion of the escape room?', ['It was poor value for money.', 'The puzzles were too difficult.', 'The staff were unhelpful.'], x(
+      '« For forty euros each, I expected a lot more… Not at that price » : trop cher pour trente-cinq minutes. Les énigmes sont « clever » et le personnel « lovely ».',
+      '«For forty euros each, I expected a lot more… Not at that price»: السعر مرتفع مقابل خمس وثلاثين دقيقة، أما الألغاز فـ«clever» والموظفون «lovely».',
+      '“For forty euros each, I expected a lot more”.',
+      '«For forty euros each, I expected a lot more… Not at that price»: demasiado caro para treinta y cinco minutos. Los enigmas son «clever» y el personal «lovely».',
     )),
-    li1('fce-u10-s3-q4', 5, `M: Is it normal for it to move this much?
-W: Oh, this is nothing. Wait until we're out of the harbour. If you start feeling sick, go outside and look at the horizon. It really helps.
-M: Good idea. And how long until we get to Tangier?
-W: About an hour and a half. You'll see the mountains on the Moroccan side long before that, though. Have you left your car down below?
-M: Yes, on the lower level. I hope I can remember where.`, 'Where are the speakers?', ['On a boat that has just left port', 'In a port, waiting to board', 'On a coach travelling to Tangier'], x(
-      '« it… move[s] this much », « Wait until we’re out of the harbour », « go outside and look at the horizon », la voiture « on the lower level » : ils sont déjà sur un ferry.',
-      '«it… move[s] this much» و«Wait until we’re out of the harbour» و«go outside and look at the horizon» والسيارة «on the lower level»: هما على متن عبّارة.',
-      'It moves, they are leaving the harbour, the car is below: a ferry.',
-      '«it… move[s] this much», «Wait until we’re out of the harbour», «go outside and look at the horizon», el coche «on the lower level»: ya están en un ferri.',
+    li1('fce-u10-s3-q4', 5, `W: Right, cover your left eye and read me the smallest line you can.
+M: P... E... Z... I think that's an O. The bottom one's just a blur.
+W: That's fine. And now with this lens in front? Better or worse?
+M: Oh, much better. Everything's sharper.
+W: Good. Your prescription has changed a little since last time. If you'd like to choose some new frames, they're on the wall behind you, and the ones with a green sticker are half price this month. Your glasses will be ready to collect next Thursday.`, 'Where are the speakers?', ['At an optician’s', 'At a doctor’s surgery', 'In a camera shop'], x(
+      'Lecture de lignes de lettres, « this lens », « new frames » et « Your glasses will be ready » : c’est un opticien. « prescription » seul ne suffit pas à désigner un médecin.',
+      'قراءة أسطر الحروف و«this lens» و«new frames» و«Your glasses will be ready»: إنه محل نظارات، وكلمة «prescription» وحدها لا تعني الطبيب.',
+      'Eye test, “lens”, “frames”, “glasses”: an optician’s.',
+      'Leer líneas de letras, «this lens», «new frames» y «Your glasses will be ready»: es una óptica. «prescription» por sí solo no indica un médico.',
     )),
-    li1('fce-u10-s3-q5', 4, `W: OK, Rayan, when you're ready, check your mirror and pull out slowly.
-M: Like this?
-W: Good. Now, at the roundabout, which exit are we taking?
-M: The second. No, sorry, the third. We're heading for the station.
-W: Correct. You're much calmer than you were last week. If you keep this up, I think you could book your test for next month.
-M: Really? My dad said I'd need at least another twenty lessons.
-W: Well, your dad isn't the one sitting next to you twice a week.`, 'What is the relationship between the speakers?', ['Driving instructor and learner', 'Mother and son', 'Examiner and candidate'], x(
-      '« last week », « book your test » et « another twenty lessons » : une monitrice d’auto-école et son élève. Ce n’est pas l’examen (« you could book your test »).',
-      '«last week» و«book your test» و«another twenty lessons»: مدرّبة سياقة وتلميذها، وليس الامتحان نفسه («you could book your test»).',
-      'Lessons and a future test: instructor and learner.',
-      '«last week», «book your test» y «another twenty lessons»: una profesora de autoescuela y su alumno. No es el examen («you could book your test»).',
+    li1('fce-u10-s3-q5', 4, `W: Thanks so much for coming at such short notice, Yassine. The girls have had dinner, so it's just a bath and bed by eight.
+M: No problem. Is Lina still afraid of the dark?
+W: A little. Leave the hall light on. Oh, and don't let them talk you into another episode of that cartoon. They'll try.
+M: They always do. What time will you be back?
+W: Around eleven. Your money's on the kitchen table, as usual, and my number's on the fridge.`, 'What is the relationship between the speakers?', ['Babysitter and parent', 'Husband and wife', 'Teacher and parent'], x(
+      '« coming at such short notice », « The girls… bed by eight » et « Your money’s on the kitchen table, as usual » : elle paie Yassine pour garder ses filles.',
+      '«coming at such short notice» و«The girls… bed by eight» و«Your money’s on the kitchen table, as usual»: تدفع ليسين ليعتني ببناتها.',
+      'She pays him, “as usual”, to look after the girls.',
+      '«coming at such short notice», «The girls… bed by eight» y «Your money’s on the kitchen table, as usual»: le paga a Yassine por cuidar a sus hijas.',
     )),
     li4('fce-u10-s3-q6', 4, S3_INTERVIEW, 'What does Lucía say about her work when it is done well?', ['Audiences don’t notice that the sounds were added.', 'It is recorded at the same time as the actors’ voices.', 'It makes the actors’ voices easier to hear.'], x(
       '« If I do my job well, nobody in the cinema realises the sounds weren’t there all along » ; les sons sont ajoutés « afterwards ».',
