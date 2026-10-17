@@ -64,3 +64,29 @@ Le Listening est bien calibré : les pièges sont nombreux et le schéma « d'ab
 | `fce-m3-ru7-8` | MINEUR | 5. Explications | L'explication anglaise met entre guillemets une citation qui n'est pas dans le texte (« worn twice and then thrown away »). Le texte dit « wear twice and then throw away ». | en : C hated clothes “people wear twice and then throw away”. |
 | `fce-m3-li4-4` | MINEUR | 5. Explications | Les explications fr et es citent « If the tomatoes are bad, there are no tomatoes. » en coupant la phrase sans points de suspension. Le script dit « …there are no tomatoes on the menu. » | fr : « « It changes every week, because I write it… after I’ve been to the market. If the tomatoes are bad, there are no tomatoes on the menu. » » ; es : «It changes every week, because I write it… after I’ve been to the market. If the tomatoes are bad, there are no tomatoes on the menu.» |
 | `fce-m3-ru2-5` | MINEUR | 5. Explications (arabe) | « تقريبًا أبدًا » est un calque de « almost never », peu naturel en arabe standard. | ar : «‏«hardly ever» تعني «نادرًا ما»: ظرف التكرار «ever» يكمّل «hardly» قبل الفعل.» |
+
+## Corrections appliquées (2026-10-17)
+
+Fichiers modifiés : `src/data/exams/b2First/mocks/full-1-reading.ts` et `full-1-listening.ts`. Toute explication modifiée l'a été dans les 4 langues (fr, ar, en, es).
+
+| id | correction |
+| --- | --- |
+| `fce-m3-ru2-8` | « as much as » est correct à cet endroit (« autant que ») : réponses `['well', 'much']` et explications reprises du rapport. |
+| `fce-m3-ru4-3` | Réponses `['in spite of the', 'in spite of']`. Les 4 explications disent désormais que l'article est facultatif (« in spite of (the) heavy rain »). La version plus exigeante (« ___ heavily ») n'est pas appliquée, car elle n'était pas validée. |
+| `fce-m3-li2-3` | Réponses `['school building', 'school']` ; mention « school seul est aussi accepté » ajoutée aux 4 explications. |
+| `fce-m3-ru4-6` | Réponses `['are thought to have arrived']` (« were thought » change le sens). |
+| `fce-m3-ru4-2` | Réponses `['was due to']` (« mainly » et « entirely » ajoutent une nuance absente). |
+| `fce-m3-ru6-4` | Phrase A réécrite : « …promising that everyone who made a contribution would have their name printed on a wall in the foyer. » L'incohérence avec les 300 sièges de C disparaît ; l'indice « contribution » → « had contributed » est conservé. |
+| `fce-m3-ru2-6` | **« in » refusé, trou réécrit.** « He almost gave in » veut dire « céder » (à une pression, à quelqu'un) : face à des bugs, c'est défendable mais pas pleinement naturel. Le trou devient « …he almost gave ___ on coding altogether. », où seul « up » convient (« give up on sth »). Réponse `['up']` ; explications adaptées (« give up on sth »). |
+| `fce-m3-li2-9` | **« school » accepté** : le mot s'entend tel quel dans le script ; le piège porte sur le lieu (« the market ») et non sur le type d'école, donc le sens est conservé. On applique la même règle qu'en `li2-3` et `li2-7`. Réponses `['primary school', 'school']` ; mention ajoutée aux 4 explications. |
+| `fce-m3-ru4-1` | Remplacé : « Leila speaks English much better than I do. » → NEARLY → « I don't speak English ___ Leila. », réponses `['nearly as well as', 'nearly so well as']` (4 mots). Deux transformations (« much better » → « not nearly as well as ») ; niveau passé de 3 à 4 ; 4 explications réécrites. |
+| `fce-m3-ru7-2` | Question paraphrasée : « Which person had to start again after a first attempt failed completely? » (clé A inchangée). |
+| `fce-m3-ru7-9` | Question paraphrasée : « Which person now employs some of their fellow students? » (clé E inchangée). |
+| `fce-m3-ru7-8` | Citation anglaise corrigée : C hated clothes “people wear twice and then throw away”. |
+| `fce-m3-li4-4` | Citation complétée (« …there are no tomatoes on the menu. ») en fr et en es, et aussi en ar, qui coupait la phrase de la même façon. |
+| `fce-m3-ru2-5` | Arabe remplacé : «hardly ever» تعني «نادرًا ما»… |
+| `RU6_TEXT` | Allongé de 301 à 408 mots, soit environ 530 avec les six phrases insérées : une phrase d'introduction sur l'histoire du Rex, et une phrase neutre dans chaque paragraphe (le promoteur immobilier, la peintre bénévole, la banque, les courts métrages des étudiants, les anciens étudiants). Les phrases qui entourent les trous sont inchangées. Contrôle à l'aveugle refait : D, E, G, A, C, F, et B ne convient toujours à aucun trou. |
+| `RU7_TEXT` | Allongé de 488 à 627 mots : une ou deux phrases neutres par section (marchés et herbes en A, variété des vélos en B, tri et recyclage en C, artisans en D, clients et chiens en E). Aucune ne crée de nouvelle correspondance. Contrôle à l'aveugle refait sur les 10 questions : D, A, E, C, B, D, A, C, E, B, chaque question n'ayant qu'une seule section possible. |
+| Ordre RU7 | Pas de réordonnancement : les réponses ne suivent pas l'ordre des sections. Elles sont déjà mélangées (D A E C B D A C E B), comme au vrai examen ; les identifiants `ru7-1` à `-10` sont donc inchangés. |
+
+Contrôles : `npx tsc --noEmit` passe, et `npx vitest run src/data/exams/b2First src/services/typedAnswer.test.ts` aussi (17 tests).

@@ -17,7 +17,7 @@ const RU2_TEXT = `Yassine Mansouri was only thirteen (1) ___ he built his first 
 
 Now nineteen and studying computer science in Lille, Yassine believes that coding is one of the most useful skills a young person can learn, and (4) ___ just for those who want to work in IT. ‘You don’t need to be a genius at maths,’ he insists. ‘What matters most is patience. Programs hardly (5) ___ work the first time, so you have to get used to finding your own mistakes.’
 
-He admits there were moments when he almost gave (6) ___. ‘Some bugs took me days to fix. But every time I solved one, I understood a little more about (7) ___ computers actually work.’ These days he runs free coding workshops for younger students in his old neighbourhood. ‘The aim isn’t to turn everyone into a programmer,’ he explains. ‘It’s to show them that technology is something they can create, as (8) ___ as something they use.’`;
+He admits there were moments when he almost gave (6) ___ on coding altogether. ‘Some bugs took me days to fix. But every time I solved one, I understood a little more about (7) ___ computers actually work.’ These days he runs free coding workshops for younger students in his old neighbourhood. ‘The aim isn’t to turn everyone into a programmer,’ he explains. ‘It’s to show them that technology is something they can create, as (8) ___ as something they use.’`;
 
 // RU3: the science of habits. The stems appear in the text, as in the real exam.
 const RU3_TEXT = `Why is it so hard to stop checking our phones? According to psychologists, around 40 per cent of what we do each day is not the result of a conscious (1) ___ (DECIDE) but of habit. When an action is repeated in the same situation, the brain gradually learns to carry it out almost (2) ___ (EFFORT), freeing our attention for other tasks.
@@ -48,7 +48,7 @@ const RU6_TEXT = `For more than seventy years, the Rex was where families from t
 
 The answer surprised them. Most of them had assumed it belonged to a property developer waiting for prices to rise. In fact, the building belonged to the city council, which had no plans for it and was paying a security company to keep it locked. (2) ___ The council agreed, on one condition: the students had eighteen months to prove that the project could pay for itself.
 
-The first challenge was the building itself. Water had come through the roof, and much of the original decoration had been damaged. (3) ___ Instead, volunteers spent their weekends carefully cleaning the plaster ceiling, and a retired carpenter rebuilt the ticket office using photographs from the 1950s. Few of them had ever done this kind of work before, so a local painter gave up her Saturdays to show them how.
+The first challenge was the building itself. Water had come through the roof, and much of the original decoration had been damaged. (3) ___ Instead, volunteers spent their weekends carefully cleaning the plaster ceiling, and a retired carpenter rebuilt the ticket office using photographs from the 1950s. Few of the volunteers had ever done this kind of work before, so a local painter gave up her Saturdays to show them how.
 
 Money was the next problem. Old projectors were cheap to buy but impossible to repair, while a modern digital one cost more than the group had raised in a whole year. (4) ___ Within a month, more than six hundred people had contributed, many of them pensioners who remembered queuing outside the Rex as teenagers. The rest of the money came from a local bank, which agreed to sponsor the Saturday matinées.
 
@@ -69,7 +69,7 @@ const RU6_SENTENCES = [
 const RU7_TEXT = `Five young people describe how they started their own small businesses.
 
 A — Rania, Sfax
-My grandparents have olive groves outside Sfax, so when I started making soap in my student flat, the main ingredient was free. My very first batch was a disaster: it never hardened, and I had to throw the whole lot away. Once I got the recipe right, I sold bars to friends for almost nothing, because I was embarrassed to ask for more. Eventually a customer told me I was undervaluing my work. I doubled my prices, expecting complaints, and not a single person stopped buying. These days I sell at two weekend markets in the city centre, and I’ve started adding dried herbs from my grandmother’s garden. My favourite bar still smells of the lavender she grows by her kitchen door.
+My grandparents have olive groves outside Sfax, so when I started making soap in my student flat, the main ingredient was free. My very first batch was a disaster: it never hardened, and I had to throw the whole lot away. Once I got the recipe right, I sold bars to friends for almost nothing, because I was embarrassed to ask for more. Eventually a customer told me I was undervaluing my work. I doubled my prices, expecting complaints, and not a single person stopped buying. These days I sell at two weekend markets in the city centre, and I’ve started adding dried herbs from my grandmother’s garden.
 
 B — Jonas, Hamburg
 I’d been fixing my friends’ bikes for years before someone suggested I should charge for it. Now I have a small van full of tools and I go to people’s homes or offices, so they don’t have to waste time taking their bike to a shop. What I love most is the variety: one morning I’m fixing a child’s first bike, and that afternoon a racing bike worth more than my van. I’ve never paid for any kind of advertising; every customer I have heard about me from someone else. Winter used to be a worry, because hardly anyone cycles when the roads are icy, so now I run evening classes where people learn to do basic repairs themselves.
@@ -162,15 +162,15 @@ export const fceFull1Reading: Exercise[] = [
   ), RU2_TEXT),
   ru2('fce-m3-ru2-5', 4, 'Gap (5): ‘Programs hardly ___ work the first time, so you have to get used to finding your own mistakes.’', ['ever'], x(
     '« Hardly ever » = presque jamais. L’adverbe de fréquence complète « hardly » devant le verbe.',
-    '«hardly ever» تعني «نادرًا جدًّا / تقريبًا أبدًا». ظرف التكرار «ever» يكمّل «hardly» قبل الفعل.',
+    '«hardly ever» تعني «نادرًا ما»: ظرف التكرار «ever» يكمّل «hardly» قبل الفعل.',
     '“hardly ever” = almost never.',
     '«Hardly ever» = casi nunca. El adverbio completa «hardly» delante del verbo.',
   ), RU2_TEXT),
-  ru2('fce-m3-ru2-6', 3, 'Gap (6): He admits there were moments when he almost gave ___.', ['up'], x(
-    'Verbe à particule « give up » = abandonner, ce qui correspond aux bugs qui lui ont pris des jours.',
-    'الفعل المركب «give up» يعني «يستسلم / يتخلى»، وهو ما يناسب الأخطاء البرمجية التي استغرقت أيامًا.',
-    'Phrasal verb: “give up” = stop trying.',
-    'Phrasal verb «give up» = rendirse, que encaja con los errores que tardaba días en resolver.',
+  ru2('fce-m3-ru2-6', 3, 'Gap (6): He admits there were moments when he almost gave ___ on coding altogether.', ['up'], x(
+    'Verbe à particule « give up on sth » = abandonner qqch, ce qui correspond aux bugs qui lui ont pris des jours.',
+    'الفعل المركب «give up on sth» يعني «يتخلى عن شيء»، وهو ما يناسب الأخطاء البرمجية التي استغرقت أيامًا.',
+    'Phrasal verb: “give up on sth” = stop trying.',
+    'Phrasal verb «give up on sth» = abandonar algo, que encaja con los errores que tardaba días en resolver.',
   ), RU2_TEXT),
   ru2('fce-m3-ru2-7', 4, 'Gap (7): ‘Every time I solved one, I understood a little more about ___ computers actually work.’', ['how'], x(
     'Question indirecte après « about » : « how computers work » = la façon dont fonctionnent les ordinateurs.',
@@ -178,11 +178,11 @@ export const fceFull1Reading: Exercise[] = [
     'Indirect question: “about how computers work”.',
     'Pregunta indirecta tras «about»: «how computers work» = cómo funcionan los ordenadores.',
   ), RU2_TEXT),
-  ru2('fce-m3-ru2-8', 4, 'Gap (8): ‘It’s to show them that technology is something they can create, as ___ as something they use.’', ['well'], x(
-    'Locution « as well as » = autant que, en plus de : la technologie est à créer, pas seulement à utiliser.',
-    'العبارة «as well as» تعني «وكذلك / بالإضافة إلى»: التكنولوجيا شيء يُصنع لا يُستعمل فقط.',
-    'Linker: “as well as” = and also.',
-    'Locución «as well as» = además de: la tecnología se crea, no solo se usa.',
+  ru2('fce-m3-ru2-8', 4, 'Gap (8): ‘It’s to show them that technology is something they can create, as ___ as something they use.’', ['well', 'much'], x(
+    'Locution « as well as » (en plus de) ou « as much as » (autant que) : la technologie est à créer, pas seulement à utiliser.',
+    'العبارة «as well as» (بالإضافة إلى) أو «as much as» (بقدر ما): التكنولوجيا شيء يُصنع لا يُستعمل فقط.',
+    'Linker: “as well as” (or “as much as”).',
+    'Locución «as well as» (además de) o «as much as» (tanto como): la tecnología se crea, no solo se usa.',
   ), RU2_TEXT),
 
   // ── Part 3 ──
@@ -236,23 +236,23 @@ export const fceFull1Reading: Exercise[] = [
   )),
 
   // ── Part 4 ──
-  ru4('fce-m3-ru4-1', 3, 'Leila speaks English better than I do.', 'AS', 'I don’t speak English ___ Leila.', ['as well as', 'so well as'], x(
-    'Comparatif de supériorité → comparatif d’égalité négatif : « not as well as » ; « well » est l’adverbe de « speak ».',
-    'صيغة التفضيل ← مقارنة المساواة المنفية: «not as well as»؛ والظرف «well» يصف الفعل «speak».',
-    '“better than” → “not as well as”.',
-    'Comparativo de superioridad → comparativo de igualdad negativo: «not as well as»; «well» es el adverbio de «speak».',
+  ru4('fce-m3-ru4-1', 4, 'Leila speaks English much better than I do.', 'NEARLY', 'I don’t speak English ___ Leila.', ['nearly as well as', 'nearly so well as'], x(
+    '« Much better than » → comparatif d’égalité négatif renforcé : « not nearly as well as » (loin d’être aussi bien que) ; « well » est l’adverbe de « speak ».',
+    '«much better than» ← مقارنة المساواة المنفية المؤكَّدة: «not nearly as well as» (أقلّ بكثير من)؛ والظرف «well» يصف الفعل «speak».',
+    '“much better than” → “not nearly as well as”.',
+    '«Much better than» → comparativo de igualdad negativo reforzado: «not nearly as well as» (ni de lejos tan bien como); «well» es el adverbio de «speak».',
   )),
-  ru4('fce-m3-ru4-2', 4, 'The flight was delayed because of a strike by air traffic controllers.', 'DUE', 'The delay to the flight ___ a strike by air traffic controllers.', ['was due to', 'was entirely due to', 'was mainly due to'], x(
+  ru4('fce-m3-ru4-2', 4, 'The flight was delayed because of a strike by air traffic controllers.', 'DUE', 'The delay to the flight ___ a strike by air traffic controllers.', ['was due to'], x(
     'Le nom « delay » devient sujet : « The delay… was due to » = était dû à ; « due to » remplace « because of ».',
     'يصبح الاسم «delay» فاعلًا: «The delay… was due to» أي «كان بسبب»؛ و«due to» تحل محل «because of».',
     '“because of” → “was due to”.',
     'El sustantivo «delay» pasa a ser sujeto: «The delay… was due to» = se debió a.',
   )),
-  ru4('fce-m3-ru4-3', 4, 'Although the rain was heavy, the match continued.', 'SPITE', 'The match continued ___ heavy rain.', ['in spite of the'], x(
-    '« Although » + proposition → « in spite of » + groupe nominal ; « the » est nécessaire devant « heavy rain ».',
-    '«Although» + جملة ← «in spite of» + مركّب اسمي؛ ونحتاج إلى «the» قبل «heavy rain».',
-    '“Although + clause” → “in spite of the + noun”.',
-    '«Although» + oración → «in spite of» + sintagma nominal; hace falta «the» delante de «heavy rain».',
+  ru4('fce-m3-ru4-3', 4, 'Although the rain was heavy, the match continued.', 'SPITE', 'The match continued ___ heavy rain.', ['in spite of the', 'in spite of'], x(
+    '« Although » + proposition → « in spite of » + groupe nominal : « in spite of (the) heavy rain ». L’article est facultatif.',
+    '«Although» + جملة ← «in spite of» + مركّب اسمي: «in spite of (the) heavy rain». وأداة التعريف «the» اختيارية.',
+    '“Although + clause” → “in spite of (the) + noun”; the article is optional.',
+    '«Although» + oración → «in spite of» + sintagma nominal: «in spite of (the) heavy rain». El artículo es opcional.',
   )),
   ru4('fce-m3-ru4-4', 4, 'Maya managed to find a cheap flight to Istanbul in the end.', 'SUCCEEDED', 'In the end, Maya ___ a cheap flight to Istanbul.', ['succeeded in finding'], x(
     '« Manage to do sth » = « succeed in doing sth » : « succeed » + « in » + forme en -ing.',
@@ -266,7 +266,7 @@ export const fceFull1Reading: Exercise[] = [
     '“look forward to” + -ing: seeing.',
     '«Can’t wait to» = «be looking forward to»; «to» es preposición, así que va con -ing: «seeing».',
   )),
-  ru4('fce-m3-ru4-6', 5, 'People think that the island’s first inhabitants arrived 3,000 years ago.', 'THOUGHT', 'The island’s first inhabitants ___ 3,000 years ago.', ['are thought to have arrived', 'were thought to have arrived'], x(
+  ru4('fce-m3-ru4-6', 5, 'People think that the island’s first inhabitants arrived 3,000 years ago.', 'THOUGHT', 'The island’s first inhabitants ___ 3,000 years ago.', ['are thought to have arrived'], x(
     'Passif impersonnel : « People think that… arrived » → « are thought to have arrived » ; l’infinitif passé marque l’action antérieure.',
     'المبني للمجهول غير الشخصي: «People think that… arrived» ← «are thought to have arrived»؛ والمصدر الماضي «to have arrived» يدل على حدث سابق.',
     'Passive reporting: “are thought to have arrived”.',
@@ -356,7 +356,7 @@ export const fceFull1Reading: Exercise[] = [
     'D: “so I took out a bank loan”.',
     'Mehdi (D): «I needed proper lights and lenses, so I took out a bank loan».',
   )),
-  ru7('fce-m3-ru7-2', 3, RU7_TEXT, 'Which person had to throw away the first things they made?', RU7_SECTIONS, 0, x(
+  ru7('fce-m3-ru7-2', 3, RU7_TEXT, 'Which person had to start again after a first attempt failed completely?', RU7_SECTIONS, 0, x(
     'Rania (A) : « My very first batch was a disaster… I had to throw the whole lot away ».',
     'رانية (A): «My very first batch was a disaster… I had to throw the whole lot away».',
     'A: “I had to throw the whole lot away”.',
@@ -395,10 +395,10 @@ export const fceFull1Reading: Exercise[] = [
   ru7('fce-m3-ru7-8', 5, RU7_TEXT, 'Which person started the business because of something they disliked about consumer habits?', RU7_SECTIONS, 2, x(
     'Camila (C) : « I’ve always hated the idea of buying clothes that people wear twice and then throw away ».',
     'كاميلا (C): «I’ve always hated the idea of buying clothes that people wear twice and then throw away».',
-    'C hated clothes “worn twice and then thrown away”.',
+    'C hated clothes “people wear twice and then throw away”.',
     'Camila (C): «I’ve always hated the idea of buying clothes that people wear twice and then throw away».',
   )),
-  ru7('fce-m3-ru7-9', 3, RU7_TEXT, 'Which person now has other people working for them?', RU7_SECTIONS, 4, x(
+  ru7('fce-m3-ru7-9', 3, RU7_TEXT, 'Which person now employs some of their fellow students?', RU7_SECTIONS, 4, x(
     'Sara (E) : « I now have three other students working for me ».',
     'سارة (E): «I now have three other students working for me».',
     'E: “three other students working for me”.',

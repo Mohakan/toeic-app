@@ -144,11 +144,11 @@ export const fceFull1Listening: Exercise[] = [
     'Heard: ten weeks normally, but “twelve weeks”.',
     'Se oye: «normally… ten weeks, but… I ended up staying for twelve weeks».',
   )),
-  li2('fce-m3-li2-3', 4, LI2_TALK, 'The interns lived in an old ___ at the edge of a fishing village.', ['school building'], x(
-    'On entend : « We lived in an old school building at the edge of a fishing village ».',
-    'نسمع: «We lived in an old school building at the edge of a fishing village».',
-    'Heard: “an old school building”.',
-    'Se oye: «We lived in an old school building at the edge of a fishing village».',
+  li2('fce-m3-li2-3', 4, LI2_TALK, 'The interns lived in an old ___ at the edge of a fishing village.', ['school building', 'school'], x(
+    'On entend : « We lived in an old school building at the edge of a fishing village ». « School » seul est aussi accepté.',
+    'نسمع: «We lived in an old school building at the edge of a fishing village». وتُقبل كلمة «school» وحدها أيضًا.',
+    'Heard: “an old school building” (“school” also accepted).',
+    'Se oye: «We lived in an old school building at the edge of a fishing village». También se acepta «school» solo.',
   )),
   li2('fce-m3-li2-4', 4, LI2_TALK, 'In practice, each night patrol was a group of ___ people.', ['four'], x(
     'On entend : « supposed to be groups of six, but… in practice we worked in groups of four ».',
@@ -180,11 +180,11 @@ export const fceFull1Listening: Exercise[] = [
     'Heard: not plastic but “sand extraction”.',
     'Se oye: «I assumed… plastic… but on that island the most serious danger is actually sand extraction».',
   )),
-  li2('fce-m3-li2-9', 4, LI2_TALK, 'The talks for the local community were moved to the ___.', ['primary school'], x(
-    'On entend : « We tried the market at first… so we moved the talks to the primary school ».',
-    'نسمع: «We tried the market at first… so we moved the talks to the primary school».',
-    'Heard: market first, then “the primary school”.',
-    'Se oye: «We tried the market at first… so we moved the talks to the primary school».',
+  li2('fce-m3-li2-9', 4, LI2_TALK, 'The talks for the local community were moved to the ___.', ['primary school', 'school'], x(
+    'On entend : « We tried the market at first… so we moved the talks to the primary school ». « School » seul est aussi accepté.',
+    'نسمع: «We tried the market at first… so we moved the talks to the primary school». وتُقبل كلمة «school» وحدها أيضًا.',
+    'Heard: market first, then “the primary school” (“school” also accepted).',
+    'Se oye: «We tried the market at first… so we moved the talks to the primary school». También se acepta «school» solo.',
   )),
   li2('fce-m3-li2-10', 5, LI2_TALK, 'Yasmine has now applied for a master’s in ___.', ['environmental law'], x(
     'On entend : « I’d always thought I’d go into research… I’ve applied for a master’s in environmental law ».',
@@ -245,10 +245,10 @@ export const fceFull1Listening: Exercise[] = [
     '«The real problem was the building… That pushed our opening back by four months»; el crowdfunding «raised more than we needed».',
   )),
   li4('fce-m3-li4-4', 3, LI4_INTERVIEW, 'What does Nour say about her menu?', ['It depends on what she finds at the market.', 'Customers’ favourite dishes always stay on it.', 'She would like it to be longer.'], x(
-    '« It changes every week, because I write it… after I’ve been to the market. If the tomatoes are bad, there are no tomatoes. »',
-    'تتغيّر القائمة كل أسبوع حسب السوق: «I write it… after I’ve been to the market. If the tomatoes are bad, there are no tomatoes».',
+    '« It changes every week, because I write it… after I’ve been to the market. If the tomatoes are bad, there are no tomatoes on the menu. »',
+    'تتغيّر القائمة كل أسبوع حسب السوق: «I write it… after I’ve been to the market. If the tomatoes are bad, there are no tomatoes on the menu».',
     '“I write it… after I’ve been to the market.”',
-    '«It changes every week, because I write it… after I’ve been to the market. If the tomatoes are bad, there are no tomatoes.»',
+    '«It changes every week, because I write it… after I’ve been to the market. If the tomatoes are bad, there are no tomatoes on the menu.»',
   )),
   li4('fce-m3-li4-5', 4, LI4_INTERVIEW, 'How does Nour deal with online reviews now?', ['She only acts on comments that several people make.', 'She replies to each review personally.', 'She has stopped reading them altogether.'], x(
     '« One person complaining… doesn’t mean much. But if five people say the same thing, then we listen and we change it. »',
