@@ -22,7 +22,9 @@ En français, les notions sont celles de l'étude de la langue et des textes : f
 
 ## Parcours de l'élève
 
-1. **Année scolaire** : à l'inscription, l'élève choisit son année (1re, 2e, 3e ou 4e) et, à partir de la 2e, sa section. Le contenu est ciblé d'après ces deux réponses.
+1. **Année scolaire et section** : au premier lancement, l'appli ne pose que ces deux questions. L'élève choisit son année (1re, 2e, 3e ou 4e) puis, à partir de la 2e, sa section ; en 1re année, il n'a donc qu'une question. Le contenu est ciblé d'après ces deux réponses.
+   - L'appli ne demande ni prénom, ni objectif, ni temps par jour, contrairement aux applis d'anglais. Les langues d'explication gardent leur réglage par défaut (le français) et se changent dans le profil.
+   - L'élève peut corriger son année et sa section dans le profil, par exemple à la rentrée.
    - En 1re année, le tronc est commun.
    - En 2e année, les sections sont Lettres, Sciences, Économie et services, et Technologies de l'informatique.
    - En 3e et 4e année, les sections sont Lettres, Mathématiques, Sciences expérimentales, Sciences techniques, Sciences de l'informatique, et Économie et gestion.
@@ -56,7 +58,7 @@ En arabe, les termes employés sont ceux que l'élève a appris au collège, pou
 Le contenu à apprendre est toujours en français.
 
 - **Par défaut, en français** : l'explication en français simple est toujours affichée. C'est le cœur de l'appli, puisque l'élève doit apprendre à comprendre les cours en français.
-- **Arabe, anglais, espagnol en option** : l'élève peut activer une ou plusieurs de ces langues, à l'inscription ou dans son profil. Leur explication s'affiche alors sous celle en français. Aucune n'est activée par défaut.
+- **Arabe, anglais, espagnol en option** : l'élève peut activer une ou plusieurs de ces langues dans son profil. Leur explication s'affiche alors sous celle en français. Aucune n'est activée par défaut.
 - **Indépendante de l'interface** : le choix des langues d'explication ne dépend pas de la langue de l'interface. Par exemple, l'interface peut être en arabe et les explications en français seulement.
 - **Liste fixée par la configuration de l'appli** : la liste des langues proposées en option est déclarée dans la configuration. Pour ouvrir l'appli aux élèves étrangers d'une autre langue, il suffit d'ajouter la langue à la configuration et ses traductions au contenu. Le code n'a pas besoin de changer.
 - **Langue complète obligatoire** : une langue n'est proposée que si toutes les notions ont leur explication dans cette langue. Le contrôle automatique du contenu le vérifie, pour que l'élève ne tombe jamais sur une explication manquante.
@@ -110,7 +112,7 @@ Les jeux existants (QCM, associations, phrases à remettre en ordre) sont réuti
 | Besoin | Aujourd'hui | À faire |
 | --- | --- | --- |
 | Appli sans examen | `ExamConfig` : parties, échelle de score, tests blancs | Un modèle « matières » : matière, année, section, chapitre, notion |
-| Choix de l'année et de la section | Objectif de score à l'accueil | Écran de choix de l'année et de la section, modifiable dans le profil |
+| Choix de l'année et de la section | Accueil en trois questions : prénom, objectif de score, temps par jour | Un accueil réduit à l'année et à la section, modifiables dans le profil |
 | Langues des explications | Explications en fr, ar, en, es, liées à la langue de l'interface | Le français toujours affiché ; une liste de langues en option dans la configuration (ar, en, es au lancement) ; un choix de l'élève séparé de l'interface ; un contrôle de complétude par langue |
 | Accès à vie par année | Un seul achat unique, le plan complet (`toki_quest_full`), avec des droits sans fin | Un achat unique par année scolaire (par exemple `toki_quest_savoirs_1`, jusqu'à `toki_quest_savoirs_4`) ; des droits par appli et par année sur le serveur, qui garde le modèle actuel d'achat sans expiration |
 | Contenu gratuit | Tests blancs gratuits (`freeMockIds`) | Une liste de chapitres ouverts par matière et par année |
@@ -127,6 +129,7 @@ Les jeux existants (QCM, associations, phrases à remettre en ordre) sont réuti
 - **Suivi** : pas d'espace parent ni enseignant.
 - **Élèves mineurs** : la famille garde ses règles actuelles, et Savoirs y apporte les ajustements décrits dans « Élèves mineurs ».
 - **Langues** : les explications sont en français par défaut. L'arabe, l'anglais et l'espagnol sont proposés en option, et la liste peut s'étendre par configuration aux élèves étrangers non francophones.
+- **Accueil** : seulement l'année scolaire et la section.
 
 ## Élèves mineurs
 
@@ -138,7 +141,8 @@ La plupart des élèves ont de 15 à 19 ans. La famille a déjà les règles qu'
 
 Savoirs garde ces règles. Il reste à adapter les points suivants :
 
-- **Données** : la politique de confidentialité doit mentionner l'année scolaire, la section et les langues d'explication. Ce sont les seules données propres à l'appli.
+- **Données** : la politique de confidentialité doit mentionner l'année scolaire, la section et les langues d'explication. Ce sont les seules données propres à l'appli, et elles restent sur le téléphone tant que l'élève ne crée pas de compte.
+- **Compte** : il reste facultatif, comme dans les autres applis. Il ne sert qu'à retrouver ses achats et sa progression sur un autre appareil. S'il est créé, les règles de la famille s'appliquent (année de naissance, accord parental entre 13 et 15 ans).
 - **INPDP** : la déclaration doit inclure Toki Quest Savoirs et ses comptes d'élèves mineurs (ligne 25 de `store/conformite.md`).
 - **Achats** : ils passent par les stores, qui appliquent leurs propres contrôles parentaux (par exemple « Demander l'autorisation d'acheter » sur iPhone). L'appli n'ajoute pas de paiement à elle.
 - **Fiches des stores** : la classification d'âge et la description doivent indiquer un public de lycéens.

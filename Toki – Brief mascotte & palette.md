@@ -208,7 +208,7 @@ Le cadrage complet est dans `docs/savoirs/cadrage.md`.
 
 **Ce qui la distingue des trois autres** :
 
-- **Pas d'examen** : l'élève indique son année scolaire et sa section. Un test de niveau initial le place ensuite dans un parcours personnalisé, avec du rattrapage sur les années précédentes si besoin.
+- **Pas d'examen** : à l'accueil, l'élève indique seulement son année scolaire et sa section. Un test de niveau initial le place ensuite dans un parcours personnalisé, avec du rattrapage sur les années précédentes si besoin.
 - **Progression** : elle se mesure en notions maîtrisées, par matière et par année.
 - **Fiches notions** : chaque notion a une fiche courte. On y trouve le mot et sa prononciation, une définition en français simple, l'explication en français simple et, si l'élève le souhaite, dans d'autres langues, un petit dessin, une phrase de cours et le piège à éviter.
 - **Langues des explications** : le français par défaut. L'arabe, l'anglais et l'espagnol sont en option, et la configuration de l'appli peut en ajouter d'autres pour accueillir des élèves étrangers non francophones.
