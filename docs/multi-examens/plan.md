@@ -1,6 +1,6 @@
-# Toki Quest : une famille d'applis par examen
+# Toki Quest : une famille d'applis
 
-Décidé le 2026-10-11. Le code est commun ; chaque examen a sa propre appli dans les stores.
+Décidé le 2026-10-11. Le code est commun ; chaque examen a sa propre appli dans les stores. Le 2026-10-17, une quatrième appli sans examen, Toki Quest Savoirs, a été ajoutée au plan (voir plus bas).
 
 ## Noms et marques
 
@@ -9,6 +9,7 @@ Décidé le 2026-10-11. Le code est commun ; chaque examen a sa propre appli dan
 | TOEIC® Listening & Reading | **Toki Quest** | Préparation au TOEIC® | `app.tokiquest` | `toki_quest_full` | en staging |
 | Cambridge English B2 First | **Toki Quest B2** | Préparation au B2 First de Cambridge | `app.tokiquest.b2` | `toki_quest_b2_full` | prêt à construire |
 | IELTS™ Academic | **Toki Quest Academic** | Préparation à l'IELTS™ Academic | `app.tokiquest.academic` | `toki_quest_academic_full` | prévu |
+| Aucun : le français des matières | **Toki Quest Savoirs** | Les mots et notions des cours du lycée | `app.tokiquest.savoirs` (proposé) | `toki_quest_savoirs_full` (proposé) | prévu |
 
 - **Les noms d'applis ne contiennent aucune marque d'examen.** TOEIC appartient à ETS, IELTS au British Council, à IDP et à Cambridge, et B2 First à Cambridge University Press & Assessment. Apple (règle 5.2.1) et Google peuvent refuser un nom qui reprend la marque d'un tiers. L'examen est donc nommé dans le sous-titre et les mots-clés, avec la mention « appli indépendante, non affiliée à … ».
   - Un test vérifie que les noms d'applis ne contiennent pas ces marques (`src/exams/catalog.test.ts`).
@@ -25,10 +26,10 @@ Décidé le 2026-10-11. Le code est commun ; chaque examen a sa propre appli dan
 
 ## Cohérence visuelle
 
-Les trois applis gardent la charte : Toki, Rubik, le bandeau, les composants (`docs/design/direction-visuelle.md`). Chaque appli ne change que :
+Les quatre applis gardent la charte : Toki, Rubik, le bandeau, les composants (`docs/design/direction-visuelle.md`). La référence est le brief `Toki – Brief mascotte & palette.md`, aligné sur la planche Figma « Design Toki mascot ». Chaque appli ne change que :
 
-- **la couleur du bandeau et du fond de l'icône** : bleu ciel pour TOEIC, une teinte à choisir pour les autres, avec le contraste AA vérifié dans `src/theme.test.ts` ;
-- **l'accessoire de Toki** : un casque audio pour TOEIC (existant), une écharpe d'étudiant pour B2, une toque de diplômé pour Academic.
+- **sa couleur** (bandeau, fond de l'icône, plumes de la queue de Toki) : Bleu Ciel pour TOEIC, Lavande pour B2, Turquoise pour Academic, Framboise pour Savoirs. Le contraste AA avec l'Encre est vérifié dans `src/theme.test.ts` ;
+- **l'accessoire de Toki** : un casque audio pour TOEIC, une écharpe étudiante pour B2, une toque de diplômé pour Academic, un livre des savoirs pour Savoirs.
 
 ## Fait (étape 2, lot 1)
 
@@ -62,9 +63,41 @@ Lancer une variante : `EXPO_PUBLIC_EXAM=b2First npx expo start`. La valeur sera 
 
   Il a été relu (voir `content/review/SYNTHESE-b2.md`).
 
+## Version web et site de la famille (2026-10-17)
+
+- `site/` est la page d'accueil de `tokiquest.app`, adaptée de la planche Figma : Toki, les quatre applis, un lien vers la version web de chaque appli lancée, la palette et la mention de non-affiliation. C'est du HTML, du CSS et du JavaScript sans étape de construction.
+- Chaque appli du catalogue a un chemin web sans marque (`webPath` dans `src/exams/catalog.ts`) : `/quest`, `/b2`, `/academic`. Un test vérifie que le site ne propose un lien que vers les applis lancées.
+- `npm run web:build` exporte la version web de chaque appli lancée dans `dist/web/<chemin>` et copie le site à la racine de `dist/web`, prêt pour un hébergement statique. `npm run web:build -- b2First` n'exporte qu'une appli.
+  - Pendant cet export, `TOKI_WEB_EXPORT=1` fixe `experiments.baseUrl` au chemin de l'appli. Les builds natives et le serveur de développement restent à la racine.
+- En production, le serveur doit accepter l'origine du site : `CORS_ORIGINS=https://tokiquest.app`.
+- Sur le web, l'achat intégré n'existe pas : le bouton d'achat annonce que le paiement arrive bientôt (comportement existant). Les fonctions d'écoute et de micro demandent Chrome ou Edge.
+
+## Toki Quest Savoirs (prévue)
+
+Cette appli s'adresse aux lycéens tunisiens, de la 1re à la 4e année secondaire. Elle explique en jouant les mots et notions des matières enseignées en français. L'élève indique son année et sa section, passe un test de niveau initial, puis suit un parcours personnalisé.
+
+Le cadrage complet est dans `docs/savoirs/cadrage.md` : parcours, fiche notion, jeux, méthode de contenu, besoins du code et questions ouvertes.
+
+Décisions du 2026-10-17 :
+
+- un achat unique par année scolaire, avec un accès à vie et une partie du contenu ouverte gratuitement ;
+- l'achat intégré des stores seulement, sans Konnect pour l'instant ;
+- pas de suivi par les parents ni par les enseignants ;
+- des explications en français par défaut, avec l'arabe, l'anglais et l'espagnol en option ; la configuration peut ajouter d'autres langues.
+
+L'essentiel pour le code : `ExamConfig` est construit autour d'un examen et d'une échelle de score. Savoirs demande :
+
+- un modèle « matières » : matière, année, section, chapitre, notion ;
+- un contenu en français, avec des explications en option dans d'autres langues, chacune vérifiée comme complète ;
+- un produit d'achat par année scolaire. Le serveur garde son modèle d'achat sans expiration, mais ses droits devront aussi porter sur l'année ;
+- de nouveaux jeux : mot et image, memory, schéma à légender ;
+- un champ `scale` facultatif dans le catalogue.
+
 ## Reste à faire
 
 - **EAS** : créer le projet `toki-quest-b2` (`bunx eas-cli init` ou `npx eas-cli@latest init` avec `EXPO_PUBLIC_EXAM=b2First`). Créer aussi les fiches App Store et Play Store, ainsi que le produit `toki_quest_b2_full`.
 - **Serveur** : renseigner `STORE_APPS` en production.
 - **Contenu B2** : un examen blanc complet, puis le Writing et le Speaking (correction par IA).
 - **Toki Quest Academic** : même chemin que B2.
+- **Toki dans les applis** : aligner `src/components/Toki.tsx` et `scripts/make-icons.cjs` sur la planche Figma. Il faut que le casque passe sur la tête (il est dessiné autour du cou aujourd'hui) et que les plumes de la queue prennent la couleur de l'appli. Il faut aussi dessiner la toque et le livre.
+- **Site** : choisir l'hébergement de `tokiquest.app` et y publier `dist/web`.

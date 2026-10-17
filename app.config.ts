@@ -30,6 +30,9 @@ export default ({ config }: ConfigContext): ExpoConfig => {
           }
         : {}),
     },
+    // The web export is served under the app's path of the family site; native builds and the
+    // development server keep the root.
+    ...(process.env.TOKI_WEB_EXPORT === '1' ? { experiments: { ...config.experiments, baseUrl: exam.webPath } } : {}),
     web: { ...config.web, ...(exam.icons ? { favicon: `${exam.icons.dir}/favicon.png` } : {}) },
     extra: { ...config.extra, exam: exam.id },
   };
