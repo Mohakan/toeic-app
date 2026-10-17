@@ -269,15 +269,15 @@ export const fceU11: Unit = unit(
       'Not clouds: “it’s light pollution”.',
       'Trampa: «What ruins a night sky isn’t clouds, it’s light pollution».',
     )),
-    li2('fce-u11-s3-q2', 4, S3_TALK, 'Guests are told that their night vision is most likely to be spoilt by their ___.', ['phone screen', 'phone', 'phones', 'phone screens'], x(
+    li2('fce-u11-s3-q2', 4, S3_TALK, 'Guests are told that their night vision is most likely to be spoilt by their ___.', ['phone screen', 'phone'], x(
       '« the thing most likely to spoil that is your phone screen, so keep it in your pocket ».',
-      '«the thing most likely to spoil that is your phone screen, so keep it in your pocket».',
+      'أكثر ما يفسد الرؤية الليلية هو شاشة الهاتف: «the thing most likely to spoil that is your phone screen».',
       '“Most likely to spoil that is your phone screen”.',
       '«the thing most likely to spoil that is your phone screen, so keep it in your pocket».',
     )),
     li2('fce-u11-s3-q3', 4, S3_TALK, 'To see where they are walking, guests should use the ___ in their tent.', ['red torch', 'torch'], x(
       '« use the red torch you’ll find in your tent. Red light doesn’t affect your night vision ».',
-      '«use the red torch you’ll find in your tent. Red light doesn’t affect your night vision».',
+      'يُستعمل المصباح الأحمر الموجود في الخيمة: «use the red torch you’ll find in your tent».',
       '“Use the red torch you’ll find in your tent”.',
       '«use the red torch you’ll find in your tent. Red light doesn’t affect your night vision».',
     )),

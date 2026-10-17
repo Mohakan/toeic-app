@@ -81,7 +81,7 @@ What changed my mind was the customers. At six o'clock, the first of them would 
 By the end of August, I could shape two hundred loaves an hour without thinking. (5) I still feel guilty if I sleep in the afternoon, but whenever I smell fresh bread, I am back in that hot little room at four in the morning.`;
 
 const S3_SENTENCES = [
-  'A. Those were the only hours when the oven was cool enough to clean.',
+  'A. The tourists who came later in the morning were far less patient.',
   'B. Eventually, they simply stopped inviting me.',
   'C. What he had failed to mention was the timetable.',
   'D. More importantly, I had learned to love the strange, quiet world of the night.',
@@ -309,9 +309,9 @@ export const fceU06: Unit = unit(
     )),
     ru6('fce-u06-s3-q8', 5, S3_GAPPED, 'Which sentence fits gap 3?', S3_SENTENCES, 1, x(
       '« they » = « my friends » : à force d’annulations, ils ne l’invitent plus. « Eventually » suit « I began cancelling plans ».',
-      '«they» = «my friends»: بعد كثرة الإلغاء توقفوا عن دعوته. و«Eventually» تأتي بعد «I began cancelling plans».',
-      '“they” = his friends, after he kept cancelling plans.',
-      '«they» = «my friends»: tras tantas cancelaciones, dejan de invitarlo. «Eventually» sigue a «I began cancelling plans».',
+      '«they» = «my friends»: بعد كثرة الإلغاء توقفوا عن دعوة الراوي. و«Eventually» تأتي بعد «I began cancelling plans».',
+      '“they” = the friends, after the narrator kept cancelling plans.',
+      '«they» = «my friends»: tras tantas cancelaciones, dejan de invitar al narrador. «Eventually» sigue a «I began cancelling plans».',
     )),
     ru6('fce-u06-s3-q9', 4, S3_GAPPED, 'Which sentence fits gap 4?', S3_SENTENCES, 6, x(
       '« them » = les clients énumérés juste avant ; « a story to tell » est illustré par « Some of them… thirty years ».',
