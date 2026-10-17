@@ -29,6 +29,10 @@ describe('typed answers', () => {
     expect(isAcceptedAnswer("Ali's car", ['Ali car'])).toBe(false);
   });
 
+  it('ignores commas inside an answer', () => {
+    expect(isAcceptedAnswer("otherwise, we'll be", ["otherwise we'll be"])).toBe(true);
+  });
+
   it('accepts a number in figures for the number in words, as Cambridge does', () => {
     expect(isAcceptedAnswer('12 weeks', ['twelve weeks'])).toBe(true);
     expect(isAcceptedAnswer('four', ['4'])).toBe(true);

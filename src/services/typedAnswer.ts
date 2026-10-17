@@ -1,6 +1,6 @@
 /**
  * Typed answers are compared loosely on form and strictly on spelling: case, repeated spaces,
- * curly quotes and a final full stop do not matter, a wrong letter does (as on the real exams,
+ * curly quotes, commas and a final full stop do not matter, a wrong letter does (as on the real exams,
  * where spelling must be correct).
  */
 export function normalizeAnswer(text: string): string {
@@ -9,6 +9,8 @@ export function normalizeAnswer(text: string): string {
     .replace(/[’‘`´]/g, "'")
     .replace(/[“”]/g, '"')
     .toLowerCase()
+    // Commas do not change an answer ("otherwise, we'll" = "otherwise we'll").
+    .replace(/,/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
     .replace(/[.!?,;:]+$/, '')
