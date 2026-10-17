@@ -182,4 +182,66 @@ export const fceU07: Unit = unit(
       '«many» + plural; plural irregular: life → lives (la f pasa a v).',
     )),
   ],
+  [
+    ru3('fce-u07-s3-q1', 4, 'Tarek grew more and more ___ after waiting forty minutes for a bus that never came.', 'PATIENT', ['impatient'], x(
+      '« a bus that never came » → il perd patience ; « grew » + adjectif, et devant p le préfixe est im- : impatient.',
+      '«a bus that never came» ← فقد صبره، و«grew» + صفة، وقبل p تكون السابقة im-: impatient.',
+      'He lost patience; im- before p: impatient.',
+      '«a bus that never came» → pierde la paciencia; «grew» + adjetivo, y delante de p el prefijo es im-: impatient.',
+    )),
+    ru3('fce-u07-s3-q2', 4, 'Hiba’s heartbeat was slightly ___, so the doctor asked her to come back for more tests.', 'REGULAR', ['irregular'], x(
+      '« so… more tests » → quelque chose ne va pas ; devant r, le préfixe est ir- : irregular.',
+      '«so… more tests» ← هناك خلل، وقبل r تكون السابقة ir-: irregular.',
+      'More tests → a problem; ir- before r: irregular.',
+      '«so… more tests» → algo va mal; delante de r, el prefijo es ir-: irregular.',
+    )),
+    ru3('fce-u07-s3-q3', 5, 'It seems completely ___ to drive to the gym only to spend an hour walking on a treadmill.', 'LOGIC', ['illogical'], x(
+      '« only to » souligne l’absurdité → adjectif négatif ; logic → logical, et devant l le préfixe est il- : illogical.',
+      '«only to» تُبرز التناقض ← صفة منفية: logic ← logical، وقبل l تكون السابقة il-: illogical.',
+      'Absurd → negative adjective: illogical (il- before l).',
+      '«only to» subraya lo absurdo → adjetivo negativo: logic → logical, y delante de l el prefijo es il-: illogical.',
+    )),
+    ru3('fce-u07-s3-q4', 4, 'My sister and I ___ about almost everything, but we both support the same football team.', 'AGREE', ['disagree'], x(
+      '« but we both support the same team » ne contraste qu’avec un désaccord : agree → disagree (dis-).',
+      '«but we both support the same team» لا تُقابل إلا الخلاف: agree ← disagree (dis-).',
+      '“but” + shared team → they usually disagree.',
+      '«but we both support the same team» solo contrasta con un desacuerdo: agree → disagree (dis-).',
+    )),
+    ru3('fce-u07-s3-q5', 5, 'The hotel advert was ___: the “sea-view” room actually looked out onto a car park.', 'LEAD', ['misleading'], x(
+      'La publicité donne une fausse idée (« actually… car park ») → mis- = mal, et adjectif en -ing : misleading.',
+      'الإعلان يعطي فكرة خاطئة («actually… car park») ← mis- = بشكل خاطئ مع صفة بـ‎-ing: misleading.',
+      'It gave a false idea: misleading.',
+      'El anuncio da una idea falsa («actually… car park») → mis- = mal, y adjetivo en -ing: misleading.',
+    )),
+    ru3('fce-u07-s3-q6', 4, 'Ahmed ___ and missed the first half of his exam because his alarm didn’t go off.', 'SLEEP', ['overslept'], x(
+      'Le réveil n’a pas sonné → il a dormi trop longtemps : over- + slept (prétérit irrégulier) = overslept.',
+      'لم يرنّ المنبّه ← نام أكثر من اللازم: over- + slept (ماضٍ شاذ) = overslept.',
+      'Slept too long, in the past: overslept.',
+      'El despertador no sonó → durmió demasiado: over- + slept (pasado irregular) = overslept.',
+    )),
+    ru3('fce-u07-s3-q7', 4, 'My teacher liked my ideas but asked me to ___ the conclusion because it was far too short.', 'WRITE', ['rewrite'], x(
+      'Écrire de nouveau une partie déjà faite → re- : rewrite (base verbale après « to »).',
+      'كتابة جزء مكتوب من جديد ← re-: rewrite (مصدر بعد «to»).',
+      'Write again: rewrite.',
+      'Volver a escribir una parte ya hecha → re-: rewrite (infinitivo tras «to»).',
+    )),
+    ru3('fce-u07-s3-q8', 4, 'Sami wrote his answers so ___ that the teacher could hardly read them.', 'CARE', ['carelessly'], x(
+      '« so … that » + verbe « wrote » → adverbe ; « could hardly read » → sens négatif : care → careless → carelessly.',
+      '«so … that» مع الفعل «wrote» ← ظرف، و«could hardly read» ← معنى سلبي: care ← careless ← carelessly.',
+      'Adverb with a negative sense: carelessly.',
+      '«so … that» con el verbo «wrote» → adverbio; «could hardly read» → sentido negativo: care → careless → carelessly.',
+    )),
+    ru3('fce-u07-s3-q9', 5, 'Because two papers were cancelled, the exams finished ___ early and we had the whole afternoon free.', 'EXPECT', ['unexpectedly'], x(
+      'Adverbe devant « early », et la fin anticipée était imprévue : expect → expected → unexpectedly (trois changements).',
+      'ظرف قبل «early»، والانتهاء المبكر لم يكن متوقعًا: expect ← expected ← unexpectedly (ثلاثة تغييرات).',
+      'Adverb before “early”, not planned: unexpectedly.',
+      'Adverbio ante «early», y el final adelantado fue imprevisto: expect → expected → unexpectedly (tres cambios).',
+    )),
+    ru3('fce-u07-s3-q10', 4, 'The ___ of the welcome we received in the village made us forget how tired we were.', 'WARM', ['warmth'], x(
+      '« The … of » → nom ; changement irrégulier : warm → warmth.',
+      '«The … of» ← اسم، وتغيير شاذ: warm ← warmth.',
+      '“The ___ of” → noun: warmth.',
+      '«The … of» → sustantivo; cambio irregular: warm → warmth.',
+    )),
+  ],
 );

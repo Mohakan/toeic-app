@@ -8,6 +8,9 @@ const VOLUNTEER =
 const CYCLING =
   'When Matteo moved to Lyon for his studies, he found it hard to (1) ___ friends. Then he decided to (2) ___ advantage of the city’s excellent bike lanes and set up a weekend cycling club. The club is now so popular that Matteo is a little worried (3) ___ finding enough leaders for all the rides.';
 
+const DUNES =
+  'Every spring, Anouar and his friends from Tozeur (1) ___ a real effort to clean up the desert trails near their town. Most visitors are not (2) ___ of how much plastic is left in the sand, so the group also (3) ___ research into where the rubbish comes from and shares the results online.';
+
 /** Unit fce-u01: Part 1 multiple-choice cloze, collocations and fixed phrases. */
 export const fceU01: Unit = unit(
   {
@@ -191,6 +194,68 @@ export const fceU01: Unit = unit(
       'صفة + حرف جر: «proud of» + اسم.',
       '“proud of” + noun.',
       'Adjetivo + preposición: «proud of» + sustantivo.',
+    )),
+  ],
+  [
+    ru1('fce-u01-s3-q1', 3, '(1) Every spring, Anouar and his friends ___ a real effort to clean up the desert trails near their town.', ['make', 'do', 'take', 'have'], x(
+      'Collocation : « make an effort » = faire un effort (jamais « do an effort »).',
+      'متلازمة: «make an effort» = يبذل جهدًا (ولا نقول «do an effort»).',
+      'Collocation: “make an effort”, never “do an effort”.',
+      'Colocación: «make an effort» = hacer un esfuerzo (nunca «do an effort»).',
+    ), DUNES),
+    ru1('fce-u01-s3-q2', 4, '(2) Most visitors are not ___ of how much plastic is left in the sand.', ['aware', 'familiar', 'sensitive', 'alert'], x(
+      'La préposition « of » décide : « aware of » = conscient de. On dit « familiar with », « sensitive to », « alert to ».',
+      'حرف الجر «of» هو الحاسم: «aware of» = مدرك لـ. أما «familiar» فتأتي مع «with»، و«sensitive» و«alert» مع «to».',
+      '“of” decides: “aware of”; “familiar with”, “sensitive/alert to”.',
+      'La preposición «of» decide: «aware of» = consciente de. Se dice «familiar with», «sensitive to», «alert to».',
+    ), DUNES),
+    ru1('fce-u01-s3-q3', 3, '(3) The group also ___ research into where the rubbish comes from.', ['does', 'makes', 'takes', 'gets'], x(
+      'Collocation : « do research (into) » = faire des recherches sur ; « make research » est incorrect.',
+      'متلازمة: «do research (into)» = يُجري بحثًا في، ولا يصح «make research».',
+      'Collocation: “do research into”.',
+      'Colocación: «do research (into)» = investigar sobre; «make research» es incorrecto.',
+    ), DUNES),
+    ru1('fce-u01-s3-q4', 3, 'Grandma Fatima loves it when we ___ her a visit on Sunday afternoons.', ['pay', 'make', 'do', 'take'], x(
+      'Expression figée : « pay someone a visit » = rendre visite à quelqu’un.',
+      'تعبير ثابت: «pay someone a visit» = يزور شخصًا ما.',
+      'Fixed phrase: “pay someone a visit”.',
+      'Expresión fija: «pay someone a visit» = hacerle una visita a alguien.',
+    )),
+    ru1('fce-u01-s3-q5', 3, 'The old wooden roof ___ fire during the storm, but luckily nobody was hurt.', ['caught', 'lit', 'burned', 'made'], x(
+      'Collocation : « catch fire » = prendre feu ; « lit » et « burned » ne se construisent pas avec « fire » ici.',
+      'متلازمة: «catch fire» = تشتعل فيه النار؛ ولا تُستعمل «lit» ولا «burned» مع «fire» بهذا المعنى.',
+      'Collocation: “catch fire” = start burning.',
+      'Colocación: «catch fire» = prenderse fuego; «lit» y «burned» no se combinan así con «fire».',
+    )),
+    ru1('fce-u01-s3-q6', 3, 'Lucía’s accent is very similar ___ her mother’s, so people often confuse them on the phone.', ['to', 'with', 'as', 'from'], x(
+      'Adjectif + préposition : « similar to » = semblable à.',
+      'صفة + حرف جر: «similar to» = مشابه لـ.',
+      '“similar to” = like.',
+      'Adjetivo + preposición: «similar to» = parecido a.',
+    )),
+    ru1('fce-u01-s3-q7', 3, 'I always ___ my best in exams, even when the questions are really difficult.', ['do', 'make', 'take', 'have'], x(
+      'Expression figée : « do your best » = faire de son mieux.',
+      'تعبير ثابت: «do your best» = يبذل قصارى جهده.',
+      'Fixed phrase: “do your best”.',
+      'Expresión fija: «do your best» = hacer todo lo posible.',
+    )),
+    ru1('fce-u01-s3-q8', 4, 'With the right training, Yuki is perfectly capable ___ running a half marathon in under two hours.', ['of', 'for', 'to', 'at'], x(
+      'Adjectif + préposition : « capable of » + -ing ; « able » se construit avec « to », pas « capable ».',
+      'صفة + حرف جر: «capable of» + صيغة ‎-ing؛ أما «able» فتأتي مع «to».',
+      '“capable of” + -ing (but “able to”).',
+      'Adjetivo + preposición: «capable of» + -ing; «able» va con «to», no «capable».',
+    )),
+    ru1('fce-u01-s3-q9', 4, 'The storm ___ a lot of damage to the olive trees on my uncle’s farm near Sfax.', ['did', 'made', 'gave', 'put'], x(
+      'Collocation : « do damage (to) » = causer des dégâts ; « make damage » est une erreur fréquente.',
+      'متلازمة: «do damage (to)» = يُلحق ضررًا بـ، و«make damage» خطأ شائع.',
+      'Collocation: “do damage to”.',
+      'Colocación: «do damage (to)» = causar daños; «make damage» es un error frecuente.',
+    )),
+    ru1('fce-u01-s3-q10', 3, 'After weeks of thinking, Halima finally ___ a decision about which job offer to accept.', ['made', 'did', 'got', 'had'], x(
+      'Collocation : « make a decision » = prendre une décision.',
+      'متلازمة: «make a decision» = يتخذ قرارًا.',
+      'Collocation: “make a decision”.',
+      'Colocación: «make a decision» = tomar una decisión.',
     )),
   ],
 );

@@ -8,6 +8,9 @@ const MARRAKECH =
 const CODING =
   'Youssef never took a coding class: at sixteen, he taught (1) ___ to code with free videos online. He practised every evening, (2) ___ though he had a lot of homework. Within a year he had built his first app, a simple game (3) ___ helped younger children practise their times tables.';
 
+const FERRY =
+  'The ferry from Tangier to Tarifa takes less (1) ___ an hour, but last August the queue at the port lasted all afternoon, and (2) ___ was almost dark when we finally boarded. I was so tired when we reached Spain that I fell asleep in a small café, and the owner was kind (3) ___ to let me stay until closing time.';
+
 /** Unit fce-u02: Part 2 open cloze, grammar words. */
 export const fceU02: Unit = unit(
   {
@@ -181,6 +184,68 @@ export const fceU02: Unit = unit(
       '«such a lot of» + اسم + «that» (النتيجة).',
       '“such a lot of … that”.',
       '«such a lot of» + sustantivo + «that» (consecuencia).',
+    )),
+  ],
+  [
+    ru2('fce-u02-s3-q1', 3, '(1) The ferry from Tangier to Tarifa takes less ___ an hour.', ['than'], x(
+      'Comparatif : « less … than » = moins de… ; « than » introduit le second terme (an hour).',
+      'صيغة المقارنة: «less … than» = أقل من؛ و«than» تقدّم الطرف الثاني (an hour).',
+      'Comparative: “less than an hour”.',
+      'Comparativo: «less … than» = menos de…; «than» introduce el segundo término (an hour).',
+    ), FERRY),
+    ru2('fce-u02-s3-q2', 3, '(2) The queue lasted all afternoon, and ___ was almost dark when we finally boarded.', ['it'], x(
+      'Le verbe « was » a besoin d’un sujet : « it » impersonnel pour l’heure et la lumière (it was dark).',
+      'الفعل «was» يحتاج إلى فاعل: الضمير «it» غير الشخصي للوقت والضوء (it was dark).',
+      'Empty subject for time/light: “it was dark”.',
+      'El verbo «was» necesita sujeto: «it» impersonal para la hora y la luz (it was dark).',
+    ), FERRY),
+    ru2('fce-u02-s3-q3', 4, '(3) The owner was kind ___ to let me stay until closing time.', ['enough'], x(
+      'Adjectif + « enough » + to + verbe : « kind enough to » = assez gentil pour.',
+      'صفة + «enough» + to + فعل: «kind enough to» = لطيف بما يكفي لـ.',
+      'adjective + “enough to”.',
+      'Adjetivo + «enough» + to + verbo: «kind enough to» = tan amable como para.',
+    ), FERRY),
+    ru2('fce-u02-s3-q4', 3, 'Every country has ___ own traditions for celebrating the new year.', ['its'], x(
+      'Possessif devant « own » : « every country » est singulier et non humain → « its own ».',
+      'ضمير الملكية قبل «own»: «every country» مفرد وغير عاقل ← «its own».',
+      '“every country” → “its own”.',
+      'Posesivo delante de «own»: «every country» es singular y no persona → «its own».',
+    )),
+    ru2('fce-u02-s3-q5', 3, 'I moved to Montreal three years ___, and I still find the winters hard.', ['ago', 'back'], x(
+      'Durée + « ago » = il y a (avec un passé simple : moved) ; « back » est aussi possible à l’oral.',
+      'مدة + «ago» = منذ (مع الماضي البسيط: moved)، وتُقبل «back» أيضًا في اللغة المحكية.',
+      'Period + “ago” with the past simple.',
+      'Período + «ago» = hace (con pasado simple: moved); «back» también es posible en lenguaje oral.',
+    )),
+    ru2('fce-u02-s3-q6', 3, 'Our flat ___ broken into while we were on holiday in Crete.', ['was', 'got'], x(
+      'Passif au passé : « was » (ou « got ») + participe « broken into » ; l’appartement subit l’action.',
+      'المبني للمجهول في الماضي: «was» (أو «got») + اسم المفعول «broken into»؛ فالشقة وقع عليها الفعل.',
+      'Past passive: was/got + broken into.',
+      'Pasiva en pasado: «was» (o «got») + participio «broken into»; el piso recibe la acción.',
+    )),
+    ru2('fce-u02-s3-q7', 3, 'Very ___ people came to the meeting, so it was cancelled.', ['few'], x(
+      '« very few » + nom pluriel = très peu de ; « so it was cancelled » montre le petit nombre.',
+      '«very few» + اسم جمع = قليل جدًا من؛ وعبارة «so it was cancelled» تدل على قلة العدد.',
+      '“very few” + plural noun; the meeting was cancelled.',
+      '«very few» + sustantivo plural = muy pocos; «so it was cancelled» indica el número reducido.',
+    )),
+    ru2('fce-u02-s3-q8', 4, 'Nobody knows ___ the match will go ahead, because heavy storms are forecast.', ['whether', 'if'], x(
+      'Question indirecte fermée (oui ou non) après « knows » : « whether » ou « if ».',
+      'سؤال غير مباشر جوابه نعم أو لا بعد «knows»: «whether» أو «if».',
+      'Indirect yes/no question: whether / if.',
+      'Pregunta indirecta cerrada (sí o no) tras «knows»: «whether» o «if».',
+    )),
+    ru2('fce-u02-s3-q9', 4, '___ surprised me most about Seoul was how quiet the metro was.', ['What'], x(
+      '« What » = « la chose qui » : il forme le sujet de « was » (What surprised me most was…).',
+      '«What» = «الشيء الذي»: تكوّن فاعل الفعل «was» (What surprised me most was…).',
+      '“What” = the thing that, subject of “was”.',
+      '«What» = «lo que»: forma el sujeto de «was» (What surprised me most was…).',
+    )),
+    ru2('fce-u02-s3-q10', 3, 'I’ll wait here ___ you get back from the shop.', ['until', 'till'], x(
+      '« until » (ou « till ») = jusqu’à ce que : l’attente s’arrête au retour.',
+      '«until» (أو «till») = إلى أن: ينتهي الانتظار عند العودة.',
+      '“until / till” = up to the time when.',
+      '«until» (o «till») = hasta que: la espera termina con la vuelta.',
     )),
   ],
 );

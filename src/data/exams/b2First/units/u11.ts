@@ -59,6 +59,35 @@ const S2_OPTIONS = [
   'G. I learned how to deal with difficult customers.',
 ];
 
+const S3_TALK = `Good evening, everyone, and welcome to the camp. My name's Karima, and I'll be your guide for the two nights you're spending with us here in the desert near Zagora. Before it gets dark, let me explain how things work.
+
+People often ask me why we're so far from the nearest town. It's simple. What ruins a night sky isn't clouds, it's light pollution. Here, the closest streetlight is more than forty kilometres away, so on a clear night you can see thousands of stars with your own eyes.
+
+We have two telescopes, but please don't rush to them straight away. Your eyes need time to adjust to the dark, and the thing most likely to spoil that is your phone screen, so keep it in your pocket. If you need to see where you're walking, use the red torch you'll find in your tent. Red light doesn't affect your night vision.
+
+Tonight we'll be looking at Saturn. Most guests expect the colour of the planet to be the highlight, but what really makes people gasp is seeing its rings for the first time.
+
+One practical point: the desert gets surprisingly cold after midnight, sometimes below five degrees, so bring a blanket out with you, not just a jacket. And tomorrow, after breakfast, there's an optional camel ride to the dunes. It isn't included in the price, so sign up at reception if you're interested.
+
+Right, the sun's going down. Let's head over to the viewing area.`;
+
+const S3_SPEAKERS = `Speaker 1: I'd spent weeks studying my first opponent's games online before the chess tournament in Tunis, and I'd convinced myself she was some kind of enemy. She beat me easily. Afterwards we got talking over a terrible cup of coffee in the hall, and it turned out we support the same football team. We message each other almost every day now, and next spring she's coming to stay with my family in Sousse.
+Speaker 2: I'm not competitive at all. My grandfather had wanted to enter the regional couscous competition for years, but his hands shake too much now, so he asked me to cook his recipe for him. I only agreed because I couldn't bear to say no to him. We came fourth, and he talked about it for weeks as if we'd won.
+Speaker 3: I trained for five months with a running club for the half marathon in Valencia, early mornings along the old river bed, and I loved every minute of it: the jokes, the long breakfasts afterwards. The race itself was a bit of an anticlimax, to be honest. It was hot, I never found my rhythm, and I just wanted it to be over. I've rejoined the club, but I'm not sure I'll race again.
+Speaker 4: I signed up for a weekend coding competition for students in Lisbon, mostly out of curiosity. I was studying economics at the time. Our team's app didn't win anything, but over those two days I realised that building something from nothing was what I wanted to spend my life doing. I switched to computer science the following September, and I've never looked back.
+Speaker 5: I'd read my poems to friends dozens of times, so when I entered a poetry slam in Marrakech, I assumed it would feel the same. It didn't. I walked onto the stage, saw three hundred faces, and my mouth went completely dry. I even forgot my first line. I'd honestly never imagined my body could react like that. I got through it in the end, and I even reached the second round.`;
+
+const S3_OPTIONS = [
+  'A. I took part mainly to please someone else.',
+  'B. Losing taught me more than winning would have.',
+  'C. The preparation was more enjoyable than the event itself.',
+  'D. I was disappointed by the way the event was organised.',
+  'E. I became friends with someone I competed against.',
+  'F. I hadn’t expected to feel so nervous.',
+  'G. I entered without any hope of doing well.',
+  'H. The experience changed the direction of my studies.',
+];
+
 export const fceU11: Unit = unit(
   {
     id: 'fce-u11',
@@ -231,6 +260,68 @@ export const fceU11: Unit = unit(
       'اكتشف المتحدث المهنة التي يريدها وغيّر طلب الالتحاق بالجامعة: «I realised that this was what I wanted to do with my life» ← E.',
       'She changed her university plans to work with animals → E.',
       '«I realised that this was what I wanted to do with my life. I changed my university application» → E.',
+    )),
+  ],
+  [
+    li2('fce-u11-s3-q1', 5, S3_TALK, 'According to Karima, what spoils a night sky most is ___.', ['light pollution'], x(
+      'Piège : « What ruins a night sky isn’t clouds, it’s light pollution ».',
+      'فخ: «What ruins a night sky isn’t clouds, it’s light pollution».',
+      'Not clouds: “it’s light pollution”.',
+      'Trampa: «What ruins a night sky isn’t clouds, it’s light pollution».',
+    )),
+    li2('fce-u11-s3-q2', 4, S3_TALK, 'Guests are told that their night vision is most likely to be spoilt by their ___.', ['phone screen', 'phone', 'phones', 'phone screens'], x(
+      '« the thing most likely to spoil that is your phone screen, so keep it in your pocket ».',
+      '«the thing most likely to spoil that is your phone screen, so keep it in your pocket».',
+      '“Most likely to spoil that is your phone screen”.',
+      '«the thing most likely to spoil that is your phone screen, so keep it in your pocket».',
+    )),
+    li2('fce-u11-s3-q3', 4, S3_TALK, 'To see where they are walking, guests should use the ___ in their tent.', ['red torch', 'torch'], x(
+      '« use the red torch you’ll find in your tent. Red light doesn’t affect your night vision ».',
+      '«use the red torch you’ll find in your tent. Red light doesn’t affect your night vision».',
+      '“Use the red torch you’ll find in your tent”.',
+      '«use the red torch you’ll find in your tent. Red light doesn’t affect your night vision».',
+    )),
+    li2('fce-u11-s3-q4', 5, S3_TALK, 'What impresses guests most when they look at Saturn is its ___.', ['rings'], x(
+      'Piège : on attend « the colour of the planet », mais « what really makes people gasp is seeing its rings ».',
+      'فخ: يتوقع الضيوف «the colour of the planet»، لكن «what really makes people gasp is seeing its rings».',
+      'Not the colour: “seeing its rings”.',
+      'Trampa: se espera «the colour of the planet», pero «what really makes people gasp is seeing its rings».',
+    )),
+    li2('fce-u11-s3-q5', 4, S3_TALK, 'Because nights are cold, guests should bring a ___ outside, not just a jacket.', ['blanket'], x(
+      '« bring a blanket out with you, not just a jacket » : la veste ne suffit pas.',
+      '«bring a blanket out with you, not just a jacket»: السترة وحدها لا تكفي.',
+      '“Bring a blanket… not just a jacket”.',
+      '«bring a blanket out with you, not just a jacket»: la chaqueta no basta.',
+    )),
+    li3('fce-u11-s3-q6', 4, S3_SPEAKERS, 'What does Speaker 1 say about taking part in a competition?', S3_OPTIONS, 4, x(
+      'L’adversaire a gagné facilement, puis « We message each other almost every day now » ; elle viendra à Sousse → E.',
+      'فازت المنافسة بسهولة، ثم صارتا صديقتين: «We message each other almost every day now»، وستأتي إلى سوسة ← E.',
+      'The opponent won, and now they “message each other almost every day” → E.',
+      'Su rival le ganó, y ahora «We message each other almost every day now»; vendrá a Susa → E.',
+    )),
+    li3('fce-u11-s3-q7', 4, S3_SPEAKERS, 'What does Speaker 2 say about taking part in a competition?', S3_OPTIONS, 0, x(
+      'Pour son grand-père : « I only agreed because I couldn’t bear to say no to him » → A.',
+      'من أجل جده: «I only agreed because I couldn’t bear to say no to him» ← A.',
+      'Agreed only for the grandfather’s sake → A.',
+      'Por su abuelo: «I only agreed because I couldn’t bear to say no to him» → A.',
+    )),
+    li3('fce-u11-s3-q8', 4, S3_SPEAKERS, 'What does Speaker 3 say about taking part in a competition?', S3_OPTIONS, 2, x(
+      'L’entraînement : « I loved every minute of it » ; la course : « a bit of an anticlimax » → C.',
+      'التدريب: «I loved every minute of it»، أما السباق فـ«a bit of an anticlimax» ← C.',
+      'Loved the training; the race was “an anticlimax” → C.',
+      'El entrenamiento: «I loved every minute of it»; la carrera: «a bit of an anticlimax» → C.',
+    )),
+    li3('fce-u11-s3-q9', 5, S3_SPEAKERS, 'What does Speaker 4 say about taking part in a competition?', S3_OPTIONS, 7, x(
+      'En économie, le locuteur a compris ce qu’il voulait faire : « I switched to computer science the following September » → H. Ne pas gagner n’est pas la leçon (pas B).',
+      'كان المتحدث يدرس الاقتصاد ثم اكتشف ما يريده: «I switched to computer science the following September» ← H. وعدم الفوز ليس هو الدرس (ليس B).',
+      'Economics → “switched to computer science” → H.',
+      'Estudiaba economía y descubrió su vocación: «I switched to computer science the following September» → H. No ganar no es la lección (no B).',
+    )),
+    li3('fce-u11-s3-q10', 4, S3_SPEAKERS, 'What does Speaker 5 say about taking part in a competition?', S3_OPTIONS, 5, x(
+      'Le locuteur pensait que ce serait comme devant ses amis, mais « my mouth went completely dry… I’d honestly never imagined my body could react like that » → F.',
+      'ظنّ المتحدث أن الأمر سيكون كما مع أصدقائه، لكن «my mouth went completely dry… I’d honestly never imagined my body could react like that» ← F.',
+      'Dry mouth, forgot the first line: “never imagined” it → F.',
+      'Creía que sería como leer ante sus amigos, pero «my mouth went completely dry… I’d honestly never imagined my body could react like that» → F.',
     )),
   ],
 );

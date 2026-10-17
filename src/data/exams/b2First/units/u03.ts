@@ -182,4 +182,66 @@ export const fceU03: Unit = unit(
       'Adjetivo delante del sustantivo «team»: nation → national (-al).',
     )),
   ],
+  [
+    ru3('fce-u03-s3-q1', 3, 'Choosing which university to apply to was the hardest ___ Rayan had ever made.', 'DECIDE', ['decision'], x(
+      'Après le superlatif « the hardest », il faut un nom ; « made » rappelle « make a decision » : decide → decision (-sion, le d devient s).',
+      'بعد صيغة التفضيل «the hardest» نحتاج إلى اسم، و«made» تذكّر بـ «make a decision»: decide ← decision (‎-sion).',
+      'Noun after “the hardest”: decision.',
+      'Después del superlativo «the hardest» hace falta un sustantivo; «made» recuerda «make a decision»: decide → decision (-sion).',
+    )),
+    ru3('fce-u03-s3-q2', 3, 'There has been a big ___ in air quality since the city banned cars from the centre.', 'IMPROVE', ['improvement'], x(
+      '« a big … in » demande un nom : improve → improvement (-ment).',
+      '«a big … in» تحتاج إلى اسم: improve ← improvement (‎-ment).',
+      '“a big ___ in” → noun: improvement.',
+      '«a big … in» pide un sustantivo: improve → improvement (-ment).',
+    )),
+    ru3('fce-u03-s3-q3', 3, 'For my grandmother, ___ means having the whole family around the table on Fridays.', 'HAPPY', ['happiness'], x(
+      'Le trou est le sujet de « means » : il faut un nom ; happy → happiness (-ness, le y devient i).',
+      'الفراغ فاعل الفعل «means» فنحتاج إلى اسم: happy ← happiness (‎-ness مع تحوّل y إلى i).',
+      'Subject of “means” → noun: happiness.',
+      'El hueco es el sujeto de «means»: hace falta un sustantivo; happy → happiness (-ness, la y pasa a i).',
+    )),
+    ru3('fce-u03-s3-q4', 4, 'Drawing and music classes are a great way to develop children’s ___ and imagination.', 'CREATE', ['creativity', 'creativeness'], x(
+      'Après « children’s » et coordonné à « imagination », il faut un nom de qualité : create → creative → creativity (-ity).',
+      'بعد «children’s» ومعطوفًا على «imagination» نحتاج إلى اسم يدل على صفة: create ← creative ← creativity (‎-ity).',
+      'Quality noun next to “imagination”: creativity.',
+      'Después de «children’s» y coordinado con «imagination», hace falta un sustantivo de cualidad: create → creative → creativity (-ity).',
+    )),
+    ru3('fce-u03-s3-q5', 3, 'Moving into a student flat gave Ines a new sense of ___ from her parents.', 'INDEPENDENT', ['independence'], x(
+      '« a sense of » + nom : independent → independence (-ence).',
+      '«a sense of» + اسم: independent ← independence (‎-ence).',
+      '“a sense of” + noun: independence.',
+      '«a sense of» + sustantivo: independent → independence (-ence).',
+    )),
+    ru3('fce-u03-s3-q6', 3, 'We spent a ___ weekend in a small village in the Alps, far from the noise of the city.', 'PEACE', ['peaceful'], x(
+      'Adjectif entre « a » et « weekend » ; « far from the noise » donne le sens : peace → peaceful (-ful).',
+      'صفة بين «a» و«weekend»، وعبارة «far from the noise» تحدد المعنى: peace ← peaceful (‎-ful).',
+      'Adjective before “weekend”: peaceful.',
+      'Adjetivo entre «a» y «weekend»; «far from the noise» da el sentido: peace → peaceful (-ful).',
+    )),
+    ru3('fce-u03-s3-q7', 4, 'Only the most ___ travellers dare to try the fried insects at the night market in Bangkok.', 'ADVENTURE', ['adventurous'], x(
+      '« the most » + adjectif devant « travellers » ; « dare to » indique le goût du risque : adventure → adventurous (-ous, le e disparaît).',
+      '«the most» + صفة قبل «travellers»، و«dare to» تدل على حب المغامرة: adventure ← adventurous (‎-ous مع حذف e).',
+      'Superlative adjective: adventurous.',
+      '«the most» + adjetivo delante de «travellers»; «dare to» indica gusto por el riesgo: adventure → adventurous (-ous, desaparece la e).',
+    )),
+    ru3('fce-u03-s3-q8', 4, 'Our old car broke down twice last month, so we need something more ___.', 'RELY', ['reliable'], x(
+      '« more » + adjectif ; les pannes montrent qu’on veut une voiture fiable : rely → reliable (-able, le y devient i).',
+      '«more» + صفة، والأعطال تبيّن أننا نريد سيارة يُعتمد عليها: rely ← reliable (‎-able مع تحوّل y إلى i).',
+      '“more” + adjective: reliable.',
+      '«more» + adjetivo; las averías muestran que se quiere un coche fiable: rely → reliable (-able, la y pasa a i).',
+    )),
+    ru3('fce-u03-s3-q9', 3, 'Regular exercise is one of the most ___ ways to reduce stress before exams.', 'EFFECT', ['effective'], x(
+      '« the most » + adjectif devant « ways » : effect → effective (-ive).',
+      '«the most» + صفة قبل «ways»: effect ← effective (‎-ive).',
+      'Adjective before “ways”: effective.',
+      '«the most» + adjetivo delante de «ways»: effect → effective (-ive).',
+    )),
+    ru3('fce-u03-s3-q10', 3, 'Many young people in Dakar are joining ___ groups to protect the beaches from plastic.', 'ENVIRONMENT', ['environmental', 'environmentalist'], x(
+      'Mot devant le nom « groups » : environment → environmental (-al) ; « environmentalist » est aussi accepté.',
+      'كلمة قبل الاسم «groups»: environment ← environmental (‎-al)، وتُقبل أيضًا «environmentalist».',
+      'Adjective before “groups”: environmental.',
+      'Palabra delante del sustantivo «groups»: environment → environmental (-al); también se acepta «environmentalist».',
+    )),
+  ],
 );

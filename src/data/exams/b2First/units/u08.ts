@@ -187,4 +187,66 @@ export const fceU08: Unit = unit(
       'Norma que se debe cumplir → «be supposed to» + infinitivo: «are supposed to switch».',
     )),
   ],
+  [
+    ru4('fce-u08-s3-q1', 5, 'If the price doesn’t come down, I won’t buy the new console.', 'UNLESS', 'I won’t buy the new console ___ down.', ['unless the price comes', 'unless the price goes', 'unless its price comes', 'unless its price goes'], x(
+      '« If… doesn’t come down » = « unless the price comes down » : présent affirmatif après unless.',
+      '«If… doesn’t come down» = «unless the price comes down»: مضارع مثبت بعد unless.',
+      'if… doesn’t = unless + positive present.',
+      '«If… doesn’t come down» = «unless the price comes down»: presente afirmativo tras unless.',
+    )),
+    ru4('fce-u08-s3-q2', 5, 'We should take a taxi, because if we don’t, we’ll be late for the concert.', 'OTHERWISE', 'We should take a taxi; ___ late for the concert.', ['otherwise we’ll be', 'otherwise we will be'], x(
+      '« if we don’t » = « otherwise » (sinon) ; on garde le futur : « otherwise we’ll be late ».',
+      '«if we don’t» = «otherwise» (وإلا)، ونحتفظ بالمستقبل: «otherwise we’ll be late».',
+      'if we don’t = otherwise + we’ll be.',
+      '«if we don’t» = «otherwise» (si no); se mantiene el futuro: «otherwise we’ll be late».',
+    )),
+    ru4('fce-u08-s3-q3', 6, 'My brother is the only reason I manage to get up on time every morning.', 'WERE', 'If it ___ my brother, I would never get up on time.', ['weren’t for', 'were not for'], x(
+      'Situation présente → « If it weren’t for + nom » (= sans), version au présent de « If it hadn’t been for ».',
+      'حال في الحاضر ← «If it weren’t for + اسم» (= لولا)، وهي صيغة الحاضر من «If it hadn’t been for».',
+      'Present: if it weren’t for = without.',
+      'Situación presente → «If it weren’t for + sustantivo» (= de no ser por), versión en presente de «If it hadn’t been for».',
+    )),
+    ru4('fce-u08-s3-q4', 5, 'I’m sorry that I don’t live closer to the university.', 'WISH', 'I ___ closer to the university.', ['wish I lived', 'wish I could live', 'wish I was living', 'wish I were living'], x(
+      'Regret sur le présent → wish + prétérit : « wish I lived » (ou « could live »).',
+      'ندم على الحاضر ← wish + الماضي البسيط: «wish I lived» (أو «could live»).',
+      'Present regret: wish + past simple.',
+      'Lamento sobre el presente → wish + pasado: «wish I lived» (o «could live»).',
+    )),
+    ru4('fce-u08-s3-q5', 5, 'It’s a shame we didn’t leave earlier – now we’re stuck in traffic.', 'ONLY', 'If ___ earlier – now we’re stuck in traffic.', ['only we had left', 'only we’d left', 'only we had set off', 'only we’d set off'], x(
+      'Regret sur une action passée → if only + past perfect : « If only we had left ».',
+      'ندم على فعل في الماضي ← if only + الماضي التام: «If only we had left».',
+      'Past regret: if only + past perfect.',
+      'Lamento sobre una acción pasada → if only + past perfect: «If only we had left».',
+    )),
+    ru4('fce-u08-s3-q6', 5, 'I’m certain Nour left her keys at the café, because she had them when we arrived.', 'MUST', 'Nour ___ her keys at the café, because she had them when we arrived.', ['must have left', 'must’ve left'], x(
+      '« I’m certain » + fait passé → « must have » + participe passé « left ».',
+      '«I’m certain» + حدث في الماضي ← «must have» + اسم المفعول «left».',
+      'Past certainty: must have left.',
+      '«I’m certain» + hecho pasado → «must have» + participio «left».',
+    )),
+    ru4('fce-u08-s3-q7', 6, 'It’s possible that the parcel was delivered to the wrong address.', 'MIGHT', 'The parcel ___ to the wrong address.', ['might have been delivered', 'might’ve been delivered', 'might have been sent', 'might’ve been sent'], x(
+      'Possibilité dans le passé, au passif → « might have been » + participe : « might have been delivered ».',
+      'احتمال في الماضي بصيغة المبني للمجهول ← «might have been» + اسم المفعول: «might have been delivered».',
+      'Past possibility, passive: might have been delivered.',
+      'Posibilidad en el pasado, en pasiva → «might have been» + participio: «might have been delivered».',
+    )),
+    ru4('fce-u08-s3-q8', 5, 'Imane spent the whole weekend revising, but it wasn’t necessary because the test was cancelled.', 'NEED', 'Imane ___ the whole weekend revising, because the test was cancelled.', ['need not have spent', 'needn’t have spent'], x(
+      'Elle a révisé, mais c’était inutile → « needn’t have » + participe : « needn’t have spent ».',
+      'راجعت دروسها لكن ذلك لم يكن ضروريًا ← «needn’t have» + اسم المفعول: «needn’t have spent».',
+      'Done but unnecessary: needn’t have spent.',
+      'Repasó, pero era innecesario → «needn’t have» + participio: «needn’t have spent».',
+    )),
+    ru4('fce-u08-s3-q9', 5, 'It was a mistake for us not to check the weather forecast before the hike.', 'OUGHT', 'We ___ the weather forecast before the hike.', ['ought to have checked', 'ought to have looked at'], x(
+      'Critique d’une action passée non faite → « ought to have » + participe (= should have) : « ought to have checked ».',
+      'لوم على فعل لم يُنجز في الماضي ← «ought to have» + اسم المفعول (= should have): «ought to have checked».',
+      'Past criticism: ought to have checked.',
+      'Crítica de algo que no se hizo → «ought to have» + participio (= should have): «ought to have checked».',
+    )),
+    ru4('fce-u08-s3-q10', 5, 'We got lost because we didn’t take a map with us.', 'WOULD', 'If we had taken a map with us, we ___ lost.', ['would not have got', 'wouldn’t have got', 'would not have gotten', 'wouldn’t have gotten'], x(
+      'Condition irréelle dans le passé (3e conditionnel) → « would not have » + participe : « wouldn’t have got lost ».',
+      'شرط غير واقعي في الماضي (النوع الثالث) ← «would not have» + اسم المفعول: «wouldn’t have got lost».',
+      'Third conditional: wouldn’t have got lost.',
+      'Condición irreal en el pasado (tercer condicional) → «would not have» + participio: «wouldn’t have got lost».',
+    )),
+  ],
 );

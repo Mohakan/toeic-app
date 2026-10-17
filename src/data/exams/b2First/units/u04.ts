@@ -187,4 +187,66 @@ export const fceU04: Unit = unit(
       'Pregunta cerrada en estilo indirecto: «if» + sujeto + verbo; el present perfect pasa a past perfect: «if she had ever been».',
     )),
   ],
+  [
+    ru4('fce-u04-s3-q1', 4, 'The organisers will announce the winners on Saturday evening.', 'WILL', 'The winners ___ on Saturday evening.', ['will be announced'], x(
+      'Futur actif (will announce) → passif « will be announced » : will + be + participe passé.',
+      'المستقبل المبني للمعلوم (will announce) ← المبني للمجهول «will be announced»: will + be + اسم المفعول.',
+      'Future passive: will be + announced.',
+      'Futuro activo (will announce) → pasiva «will be announced»: will + be + participio.',
+    )),
+    ru4('fce-u04-s3-q2', 4, 'A famous Moroccan architect designed the new library.', 'BY', 'The new library ___ a famous Moroccan architect.', ['was designed by'], x(
+      'Prétérit actif → passif « was designed » ; l’agent est introduit par « by ».',
+      'الماضي المبني للمعلوم ← المبني للمجهول «was designed»، ويُقدَّم الفاعل بـ «by».',
+      'Past passive + agent: was designed by.',
+      'Pasado activo → pasiva «was designed»; el agente se introduce con «by».',
+    )),
+    ru4('fce-u04-s3-q3', 4, '“I’m studying for my driving test,” Amal said.', 'WAS', 'Amal said that ___ for her driving test.', ['she was studying'], x(
+      'Discours indirect : le présent continu recule au passé continu (am studying → was studying) et « I » devient « she ».',
+      'الكلام المنقول: يتراجع المضارع المستمر إلى الماضي المستمر (am studying ← was studying)، و«I» تصبح «she».',
+      'Backshift: am studying → was studying; I → she.',
+      'Estilo indirecto: el presente continuo pasa a pasado continuo (am studying → was studying) y «I» pasa a «she».',
+    )),
+    ru4('fce-u04-s3-q4', 4, '“What time does the museum open?” the tourist asked me.', 'WHAT', 'The tourist asked me ___ opened.', ['what time the museum', 'at what time the museum'], x(
+      'Question rapportée : ordre sujet + verbe (the museum opened), sans « does » ; le présent recule en « opened ».',
+      'السؤال المنقول: ترتيب الفاعل ثم الفعل (the museum opened) دون «does»، ويتراجع المضارع إلى «opened».',
+      'Reported question: what time + the museum + opened, no “does”.',
+      'Pregunta indirecta: orden sujeto + verbo (the museum opened), sin «does»; el presente retrocede a «opened».',
+    )),
+    ru4('fce-u04-s3-q5', 4, '“Could you turn the music down, please?” Hiba said to her brother.', 'ASKED', 'Hiba ___ the music down.', ['asked her brother to turn', 'asked him to turn'], x(
+      'Demande polie rapportée : ask + personne + to + base verbale : « asked her brother to turn ».',
+      'الطلب المهذب المنقول: ask + الشخص + to + المصدر: «asked her brother to turn».',
+      'Request: asked + person + to + verb.',
+      'Petición en estilo indirecto: ask + persona + to + infinitivo: «asked her brother to turn».',
+    )),
+    ru4('fce-u04-s3-q6', 4, 'A local baker delivers fresh bread to our door every morning.', 'HAVE', 'We ___ to our door every morning.', ['have fresh bread delivered'], x(
+      'Quelqu’un fait le travail pour nous → have + objet + participe passé : « have fresh bread delivered ».',
+      'شخص آخر يقوم بالعمل لصالحنا ← have + مفعول به + اسم المفعول: «have fresh bread delivered».',
+      'Causative: have + fresh bread + delivered.',
+      'Otra persona hace el trabajo por nosotros → have + objeto + participio: «have fresh bread delivered».',
+    )),
+    ru4('fce-u04-s3-q7', 4, 'When I was a child, I often walked to school with my cousins, but I don’t now.', 'USED', 'As a child, I ___ to school with my cousins.', ['used to walk', 'often used to walk', 'used to often walk'], x(
+      'Habitude passée terminée (but I don’t now) → « used to » + base verbale : « used to walk ».',
+      'عادة في الماضي انتهت (but I don’t now) ← «used to» + المصدر: «used to walk».',
+      'Finished past habit → used to + base verb.',
+      'Hábito pasado que ya terminó (but I don’t now) → «used to» + infinitivo: «used to walk».',
+    )),
+    ru4('fce-u04-s3-q8', 5, 'People think that the thieves escaped through the back window.', 'THOUGHT', 'The thieves ___ through the back window.', ['are thought to have escaped'], x(
+      'Opinion présente (think), fait passé (escaped) → « are thought to have » + participe ; le sujet pluriel donne « are ».',
+      'رأي في الحاضر (think) وحدث في الماضي (escaped) ← «are thought to have» + اسم المفعول؛ والفاعل الجمع يستلزم «are».',
+      'Present opinion, past event: are thought to have escaped.',
+      'Opinión presente (think), hecho pasado (escaped) → «are thought to have» + participio; el sujeto plural da «are».',
+    )),
+    ru4('fce-u04-s3-q9', 4, 'You can’t use mobile phones during the exam.', 'BE', 'Mobile phones ___ during the exam.', ['can’t be used', 'cannot be used', 'mustn’t be used', 'must not be used', 'may not be used'], x(
+      'Passif avec modal : can’t + be + participe passé : « can’t be used » (interdiction).',
+      'المبني للمجهول مع فعل ناقص: can’t + be + اسم المفعول: «can’t be used» (منع).',
+      'Modal passive: can’t be used.',
+      'Pasiva con modal: can’t + be + participio: «can’t be used» (prohibición).',
+    )),
+    ru4('fce-u04-s3-q10', 5, '“I didn’t break the window,” said Rayan.', 'DENIED', 'Rayan ___ the window.', ['denied breaking', 'denied having broken', 'denied that he had broken', 'denied he had broken', 'denied that he broke', 'denied he broke'], x(
+      '« I didn’t… » = nier : deny + -ing (ou deny that + passé) : « denied breaking » ; pas de « not » après « denied ».',
+      '«I didn’t…» نفيٌ للفعل: deny + ‎-ing (أو deny that + الماضي): «denied breaking»، ولا نضع «not» بعد «denied».',
+      'deny + -ing: denied breaking (no “not”).',
+      '«I didn’t…» = negar: deny + -ing (o deny that + pasado): «denied breaking»; sin «not» tras «denied».',
+    )),
+  ],
 );

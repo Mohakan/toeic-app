@@ -22,6 +22,17 @@ M: Mostly when something goes wrong! If the translation's good, nobody thinks ab
 W: And what advice would you give someone who wants to do what you do?
 M: Play a lot of games, obviously, but read even more. Novels, comics, newspapers. The best translators I know aren't the ones with the biggest vocabulary in their second language. They're the ones who write beautifully in their first.`;
 
+const S3_INTERVIEW = `M: My guest today is Lucía Ortega, a foley artist from Madrid. Lucía, for listeners who've never heard the term, what exactly do you do?
+W: I recreate everyday sounds for films: footsteps, a door closing, clothes rustling. Most of what's recorded on set is just the actors' voices, so everything else has to be added afterwards, in a studio. If I do my job well, nobody in the cinema realises the sounds weren't there all along.
+M: How did you end up doing it?
+W: I trained as a drummer, actually, and I was playing in a band that was going nowhere. A friend who edited short films asked me to help with a scene set in the rain, and I spent a whole night experimenting with rice and a frying pan. By the morning I was hooked.
+M: People imagine you use very sophisticated equipment.
+W: The microphones are expensive, yes, but the objects certainly aren't. My studio is full of junk: old shoes, broken umbrellas, celery. Snapping celery is the best broken bone you'll ever hear. The real skill is timing, matching a footstep exactly to the actor's foot. That's where the drumming helps.
+M: Has technology made your job easier?
+W: In some ways. There are huge online libraries of recorded sounds now, and some directors think they can do without people like me. But a library footstep never quite fits the character. A nervous teenager doesn't walk like a tired soldier.
+M: What's next for you?
+W: A film school has asked me to teach a course, and that frightens me more than any film. I've never had to explain what I do. I just do it.`;
+
 export const fceU10: Unit = unit(
   {
     id: 'fce-u10',
@@ -224,6 +235,84 @@ M: That's right. We're still unpacking, to be honest.`, 'What is the relationshi
       '«The best translators… are the ones who write beautifully in their first»: أي في لغتهم الأم، والمفردات الأجنبية لا تكفي.',
       'The best ones “write beautifully in their first” language.',
       '«The best translators… are the ones who write beautifully in their first»: en su lengua materna; el vocabulario extranjero no basta.',
+    )),
+  ],
+  [
+    li1('fce-u10-s3-q1', 4, `M: So how's it going with your new flatmate?
+W: Better than I expected, actually. When Sofia moved in, I was a bit worried, because she plays the cello and practises every evening. I imagined I'd never get any peace. But she's really considerate, she always checks whether I'm studying first, and to be honest, I've started looking forward to it. It's like having a free concert while I cook.
+M: Lucky you. My flatmate plays video games till three in the morning.`, 'How does the woman feel about Sofia’s practising now?', ['She has come to enjoy it.', 'It makes it difficult for her to study.', 'She wishes Sofia practised less often.'], x(
+      'Elle était inquiète au début, mais « I’ve started looking forward to it… like having a free concert ». Sofia vérifie toujours si elle étudie.',
+      'كانت قلقة في البداية، لكن «I’ve started looking forward to it… like having a free concert»، وصوفيا تتأكد دائمًا إن كانت تدرس.',
+      'She has “started looking forward to it”.',
+      'Al principio le preocupaba, pero «I’ve started looking forward to it… like having a free concert». Sofía siempre pregunta si está estudiando.',
+    )),
+    li1('fce-u10-s3-q2', 4, `Hello, this is Hamza from the Medina Sports Centre, with a message for Laila Berrada. You booked a place on our beginners' swimming course, which was due to start next Monday. I'm afraid the pool has to close for a week because of a problem with the heating, so the course will now begin on Monday the twenty-third instead. Your place is still reserved, and you don't need to do anything. If the new date doesn't suit you, though, we'll give you a full refund. Thanks, and sorry for the inconvenience.`, 'Why is Hamza calling Laila?', ['To tell her that a course will start later', 'To offer her a place on a different course', 'To ask her to confirm her booking'], x(
+      '« the course will now begin on Monday the twenty-third instead » : le cours est repoussé. « you don’t need to do anything » exclut une confirmation.',
+      '«the course will now begin on Monday the twenty-third instead»: تأجّلت الدورة، و«you don’t need to do anything» تنفي طلب التأكيد.',
+      'The course “will now begin… instead”; no action needed.',
+      '«the course will now begin on Monday the twenty-third instead»: el curso se aplaza. «you don’t need to do anything» descarta una confirmación.',
+    )),
+    li1('fce-u10-s3-q3', 4, `W: So what did you think of the exhibition?
+M: The photos themselves were amazing. That series of fishermen in Essaouira at dawn, I could have looked at it for hours.
+W: Me too. But the way they'd organised it...
+M: I know. Tiny labels you could hardly read, and the rooms were so packed that you had to queue to see each picture.
+W: They should have limited the number of visitors at a time.
+M: Exactly. I'd go back, but only on a weekday morning.`, 'What do both speakers think about the exhibition?', ['It was badly managed.', 'Some of the photographs were disappointing.', 'The tickets were too expensive.'], x(
+      '« the way they’d organised it… », « Tiny labels », « so packed », « They should have limited… » : l’organisation est critiquée ; les photos sont « amazing ».',
+      '«the way they’d organised it…» و«Tiny labels» و«so packed» و«They should have limited…»: الانتقاد موجّه إلى التنظيم، أما الصور فـ«amazing».',
+      'Both criticise the organisation; the photos were “amazing”.',
+      '«the way they’d organised it…», «Tiny labels», «so packed», «They should have limited…»: critican la organización; las fotos son «amazing».',
+    )),
+    li1('fce-u10-s3-q4', 5, `M: Is it normal for it to move this much?
+W: Oh, this is nothing. Wait until we're out of the harbour. If you start feeling sick, go outside and look at the horizon. It really helps.
+M: Good idea. And how long until we get to Tangier?
+W: About an hour and a half. You'll see the mountains on the Moroccan side long before that, though. Have you left your car down below?
+M: Yes, on the lower level. I hope I can remember where.`, 'Where are the speakers?', ['On a boat that has just left port', 'In a port, waiting to board', 'On a coach travelling to Tangier'], x(
+      '« it… move[s] this much », « Wait until we’re out of the harbour », « go outside and look at the horizon », la voiture « on the lower level » : ils sont déjà sur un ferry.',
+      '«it… move[s] this much» و«Wait until we’re out of the harbour» و«go outside and look at the horizon» والسيارة «on the lower level»: هما على متن عبّارة.',
+      'It moves, they are leaving the harbour, the car is below: a ferry.',
+      '«it… move[s] this much», «Wait until we’re out of the harbour», «go outside and look at the horizon», el coche «on the lower level»: ya están en un ferri.',
+    )),
+    li1('fce-u10-s3-q5', 4, `W: OK, Rayan, when you're ready, check your mirror and pull out slowly.
+M: Like this?
+W: Good. Now, at the roundabout, which exit are we taking?
+M: The second. No, sorry, the third. We're heading for the station.
+W: Correct. You're much calmer than you were last week. If you keep this up, I think you could book your test for next month.
+M: Really? My dad said I'd need at least another twenty lessons.`, 'What is the relationship between the speakers?', ['Driving instructor and learner', 'Mother and son', 'Examiner and candidate'], x(
+      '« last week », « book your test » et « another twenty lessons » : une monitrice d’auto-école et son élève. Ce n’est pas l’examen (« you could book your test »).',
+      '«last week» و«book your test» و«another twenty lessons»: مدرّبة سياقة وتلميذها، وليس الامتحان نفسه («you could book your test»).',
+      'Lessons and a future test: instructor and learner.',
+      '«last week», «book your test» y «another twenty lessons»: una profesora de autoescuela y su alumno. No es el examen («you could book your test»).',
+    )),
+    li4('fce-u10-s3-q6', 4, S3_INTERVIEW, 'What does Lucía say about her work when it is done well?', ['Audiences don’t notice that the sounds were added.', 'It is recorded at the same time as the actors’ voices.', 'It makes the actors’ voices easier to hear.'], x(
+      '« If I do my job well, nobody in the cinema realises the sounds weren’t there all along » ; les sons sont ajoutés « afterwards ».',
+      '«If I do my job well, nobody in the cinema realises the sounds weren’t there all along»، والأصوات تُضاف «afterwards».',
+      '“Nobody… realises the sounds weren’t there all along”.',
+      '«If I do my job well, nobody in the cinema realises the sounds weren’t there all along»; los sonidos se añaden «afterwards».',
+    )),
+    li4('fce-u10-s3-q7', 4, S3_INTERVIEW, 'How did Lucía start doing foley work?', ['She helped a friend with a film project.', 'She studied sound engineering at college.', 'Her band needed sound effects for a video.'], x(
+      '« A friend who edited short films asked me to help with a scene set in the rain » ; elle était batteuse, pas ingénieure du son.',
+      '«A friend who edited short films asked me to help with a scene set in the rain»، وكانت عازفة طبول لا مهندسة صوت.',
+      'A friend asked her to help with a rain scene.',
+      '«A friend who edited short films asked me to help with a scene set in the rain»; era batería, no ingeniera de sonido.',
+    )),
+    li4('fce-u10-s3-q8', 4, S3_INTERVIEW, 'According to Lucía, what is the most important skill in her job?', ['Precise timing', 'Choosing the right microphones', 'Finding unusual objects'], x(
+      '« The real skill is timing, matching a footstep exactly to the actor’s foot » ; les objets, eux, sont de la « junk ».',
+      '«The real skill is timing, matching a footstep exactly to the actor’s foot»، أما الأشياء فمجرد «junk».',
+      '“The real skill is timing”.',
+      '«The real skill is timing, matching a footstep exactly to the actor’s foot»; los objetos son «junk».',
+    )),
+    li4('fce-u10-s3-q9', 5, S3_INTERVIEW, 'What is Lucía’s opinion of online sound libraries?', ['Their sounds can’t reflect a particular character.', 'They will soon replace foley artists completely.', 'They are too expensive for most directors.'], x(
+      '« a library footstep never quite fits the character. A nervous teenager doesn’t walk like a tired soldier ». Ce sont certains réalisateurs qui croient pouvoir se passer d’elle.',
+      '«a library footstep never quite fits the character. A nervous teenager doesn’t walk like a tired soldier». أما الاستغناء عنها فهو رأي بعض المخرجين لا رأيها.',
+      'A library footstep “never quite fits the character”.',
+      '«a library footstep never quite fits the character. A nervous teenager doesn’t walk like a tired soldier». Son algunos directores quienes creen poder prescindir de ella.',
+    )),
+    li4('fce-u10-s3-q10', 5, S3_INTERVIEW, 'How does Lucía feel about teaching a course?', ['Anxious, because she has never had to explain her methods', 'Excited about working with young directors', 'Unsure whether she will have enough time'], x(
+      '« that frightens me more than any film. I’ve never had to explain what I do » : elle a peur parce qu’elle n’a jamais expliqué sa méthode.',
+      '«that frightens me more than any film. I’ve never had to explain what I do»: هي قلقة لأنها لم تشرح طريقتها قط.',
+      'It “frightens” her: she has “never had to explain” her work.',
+      '«that frightens me more than any film. I’ve never had to explain what I do»: le da miedo porque nunca ha explicado su método.',
     )),
   ],
 );

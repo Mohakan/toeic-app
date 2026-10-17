@@ -177,4 +177,66 @@ export const fceU05: Unit = unit(
       '«or» / «otherwise» = si no: consecuencia de no darse prisa.',
     )),
   ],
+  [
+    ru1('fce-u05-s3-q1', 4, 'The open-air festival in Tangier was ___ off altogether after the organisers ran out of money.', ['called', 'put', 'taken', 'set'], x(
+      '« altogether » = complètement : la fête n’aura pas lieu, donc « call off » (annuler) et non « put off » (reporter).',
+      '«altogether» = نهائيًا: لن يُقام المهرجان، فالصحيح «call off» (يلغي) لا «put off» (يؤجل).',
+      '“altogether” = cancelled for good: “called off”, not “put off”.',
+      '«altogether» = del todo: el festival no se celebrará, así que «call off» (cancelar) y no «put off» (aplazar).',
+    )),
+    ru1('fce-u05-s3-q2', 4, 'It took Nadia almost three weeks to ___ over the flu she caught during her exams.', ['get', 'come', 'look', 'turn'], x(
+      '« get over an illness » = se remettre d’une maladie ; « look over » = examiner.',
+      '«get over an illness» = يتعافى من مرض، أما «look over» = يراجع أو يفحص.',
+      '“get over” = recover from.',
+      '«get over an illness» = recuperarse de una enfermedad; «look over» = revisar.',
+    )),
+    ru1('fce-u05-s3-q3', 3, 'Our car ___ down on the motorway near Seville, so we had to call a mechanic.', ['broke', 'let', 'cut', 'fell'], x(
+      'Une voiture qui « breaks down » tombe en panne ; d’où « call a mechanic ».',
+      'السيارة التي «breaks down» تتعطّل، ولذلك «call a mechanic».',
+      'A car “breaks down”; hence the mechanic.',
+      'Un coche que «breaks down» se avería; por eso «call a mechanic».',
+    )),
+    ru1('fce-u05-s3-q4', 4, 'Only a dozen people ___ up for the first meeting of the film club, but forty came the following week.', ['turned', 'brought', 'held', 'gave'], x(
+      '« turn up » = venir, se présenter ; « but forty came » confirme qu’on compte les présents.',
+      '«turn up» = يحضر أو يأتي، و«but forty came» تؤكد أن الحديث عن عدد الحاضرين.',
+      '“turn up” = arrive, come; “forty came” confirms it.',
+      '«turn up» = presentarse, aparecer; «but forty came» confirma que se cuentan los asistentes.',
+    )),
+    ru1('fce-u05-s3-q5', 5, 'After losing the first set, Lina played brilliantly to ___ up for her early mistakes.', ['make', 'catch', 'keep', 'put'], x(
+      '« make up for » = compenser, rattraper (une erreur) ; « put up with » = supporter, « catch up with » = rattraper quelqu’un.',
+      '«make up for» = يعوّض (عن خطأ)، أما «put up with» = يتحمّل، و«catch up with» = يلحق بشخص.',
+      '“make up for” = compensate for.',
+      '«make up for» = compensar (un error); «put up with» = soportar, «catch up with» = alcanzar a alguien.',
+    )),
+    ru2('fce-u05-s3-q6', 4, 'You can join the desert trip ___ that your parents sign the permission form.', ['provided', 'providing'], x(
+      'Condition devant « that » + présent : « provided (that) » ou « providing (that) » = à condition que.',
+      'شرط قبل «that» + المضارع: «provided (that)» أو «providing (that)» = بشرط أن.',
+      '“provided / providing that” = on condition that.',
+      'Condición ante «that» + presente: «provided (that)» o «providing (that)» = siempre que.',
+    )),
+    ru2('fce-u05-s3-q7', 4, 'Omar still went to school ___ though he had a terrible cold.', ['even'], x(
+      '« even though » = bien que, renforcé par « still » : il est allé à l’école malgré son rhume.',
+      '«even though» = على الرغم من أن، وتقوّيها «still»: ذهب إلى المدرسة رغم الزكام.',
+      '“even though” + clause, with “still” = contrast.',
+      '«even though» = aunque, reforzado por «still»: fue al colegio a pesar del resfriado.',
+    )),
+    ru2('fce-u05-s3-q8', 4, 'Due ___ a strike by air traffic controllers, all flights to Lisbon were cancelled.', ['to'], x(
+      '« due to » + nom = à cause de ; c’est la cause de l’annulation des vols.',
+      '«due to» + اسم = بسبب، وهو سبب إلغاء الرحلات.',
+      '“due to” + noun = because of.',
+      '«due to» + sustantivo = debido a; es la causa de la cancelación.',
+    )),
+    ru2('fce-u05-s3-q9', 5, 'Malak left home an hour early so as ___ to be late for her job interview.', ['not'], x(
+      'But négatif : « so as not to » + base verbale = pour ne pas ; « not » se place avant « to ».',
+      'غاية منفية: «so as not to» + المصدر = لكي لا، و«not» تأتي قبل «to».',
+      'Negative purpose: “so as not to”.',
+      'Finalidad negativa: «so as not to» + infinitivo = para no; «not» va delante de «to».',
+    )),
+    ru2('fce-u05-s3-q10', 5, 'The hostel was cheap and close to the beach. On the other ___, the rooms were tiny and rather noisy.', ['hand'], x(
+      '« On the other hand » oppose les défauts (tiny, noisy) aux avantages (cheap, close).',
+      '«On the other hand» تقابل العيوب (tiny وnoisy) بالمزايا (cheap وclose).',
+      '“On the other hand” introduces the contrasting point.',
+      '«On the other hand» opone los defectos (tiny, noisy) a las ventajas (cheap, close).',
+    )),
+  ],
 );
