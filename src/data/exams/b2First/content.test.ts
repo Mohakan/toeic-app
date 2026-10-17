@@ -60,7 +60,8 @@ describe('Toki Quest B2 content', () => {
   it('has a path, a placement bank and mock tests', () => {
     expect.soft(b2FirstUnits.length).toBeGreaterThanOrEqual(12);
     expect.soft(b2FirstAssessmentBank.length).toBeGreaterThanOrEqual(48);
-    expect.soft(b2FirstMockTests.length).toBeGreaterThanOrEqual(2);
+    expect.soft(b2FirstMockTests.length).toBeGreaterThanOrEqual(4);
+    expect.soft(b2FirstMockTests.filter((m) => m.kind === 'full').length).toBeGreaterThanOrEqual(2);
   });
 
   it('uses unique ids, all starting with "fce-"', () => {
@@ -73,10 +74,10 @@ describe('Toki Quest B2 content', () => {
     }
   });
 
-  it('writes every unit for B1 to C1, with a complete mini-lesson and two sets of at least 8 exercises', () => {
+  it('writes every unit for B1 to C1, with a complete mini-lesson and three sets of at least 8 exercises', () => {
     for (const u of b2FirstUnits) {
       expect.soft(u.level >= 3 && u.level <= 5, u.id).toBe(true);
-      expect.soft(u.sets.length, u.id).toBeGreaterThanOrEqual(2);
+      expect.soft(u.sets.length, u.id).toBeGreaterThanOrEqual(3);
       for (const set of u.sets) expect.soft(set.exercises.length, set.id).toBeGreaterThanOrEqual(8);
       checkExplain(`${u.id}/title`, u.title);
       checkExplain(`${u.id}/goal`, u.lesson.goal);
@@ -146,6 +147,19 @@ describe('Toki Quest B2 content', () => {
     for (const mock of b2FirstMockTests) {
       const count = Object.fromEntries(mock.sections.map((s) => [s.part, s.items.length]));
       expect.soft(count, mock.id).toEqual(mock.kind === 'mini' ? B2_FIRST_CONFIG.blueprints.mini : B2_FIRST_CONFIG.blueprints.full);
+    }
+  });
+
+  it('gives full mock tests the texts of the real exam: one shared text or recording per part', () => {
+    const shared = ['RU1', 'RU2', 'RU3', 'RU5', 'RU6', 'RU7', 'LI2', 'LI3', 'LI4'];
+    for (const mock of b2FirstMockTests.filter((m) => m.kind === 'full')) {
+      for (const section of mock.sections.filter((s) => shared.includes(s.part))) {
+        const texts = new Set(section.items.map((i) => (i.skill === 'listening' ? i.audio : i.passage)));
+        expect.soft(texts.size, `${mock.id} ${section.part}`).toBe(1);
+      }
+      // Listening Part 1: eight separate extracts.
+      const li1 = mock.sections.find((s) => s.part === 'LI1')?.items ?? [];
+      expect.soft(new Set(li1.map((i) => i.audio)).size, `${mock.id} LI1`).toBe(li1.length);
     }
   });
 
