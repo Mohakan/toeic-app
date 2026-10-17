@@ -9,10 +9,6 @@ import { ru1, ru2, ru3, ru4, ru5, ru6, ru7 } from '../build';
  * everyday transformations, a novelist who began at sixteen, ocean rowing, gap years.
  */
 
-/** Part 3 helper: `ru3` takes no text, so the shared gapped text is attached here. */
-const withText = (exercise: Exercise, passage: string): Exercise =>
-  exercise.kind === 'type' ? { ...exercise, item: { ...exercise.item, passage } } : exercise;
-
 // RU1: solar power in desert towns.
 const RU1_TEXT = `For centuries, the people of the oasis towns of southern Morocco have (1) ___ the desert sun as an enemy, something to hide from during the long summer afternoons. Today, many of them are beginning to see it in a very different light. Near Ouarzazate, rows of giant mirrors stretch as (2) ___ as the eye can see, producing electricity for hundreds of thousands of homes. But some of the most interesting changes are (3) ___ place on a much smaller scale.
 
@@ -188,54 +184,54 @@ export const fceFull2Reading: Exercise[] = [
   ), RU2_TEXT),
 
   // ── Part 3 ──
-  withText(ru3('fce-m4-ru3-1', 3, 'Gap (1): Her friends thought it was a strange ___ for a business graduate.', 'DECIDE', ['decision'], x(
+  ru3('fce-m4-ru3-1', 3, 'Gap (1): Her friends thought it was a strange ___ for a business graduate.', 'DECIDE', ['decision'], x(
     'Après l’article « a » et l’adjectif « strange », il faut un nom : « decision ».',
     'بعد أداة النكرة «a» والصفة «strange» نحتاج إلى اسم: «decision».',
     '“a strange ___” needs a noun: decision.',
     'Tras el artículo «a» y el adjetivo «strange» hace falta un sustantivo: «decision».',
-  )), RU3_TEXT),
-  withText(ru3('fce-m4-ru3-2', 4, 'Gap (2): The ___ of pre-owned fashion among young people has grown remarkably in that time.', 'POPULAR', ['popularity'], x(
+  ), RU3_TEXT),
+  ru3('fce-m4-ru3-2', 4, 'Gap (2): The ___ of pre-owned fashion among young people has grown remarkably in that time.', 'POPULAR', ['popularity'], x(
     'Entre « The » et « of », il faut un nom, sujet de « has grown » : « popularity » (suffixe -ity).',
     'بين «The» و«of» نحتاج إلى اسم يكون فاعلًا لـ«has grown»: «popularity» (اللاحقة -ity).',
     '“The ___ of” needs a noun: popularity.',
     'Entre «The» y «of» hace falta un sustantivo, sujeto de «has grown»: «popularity» (sufijo -ity).',
-  )), RU3_TEXT),
-  withText(ru3('fce-m4-ru3-3', 4, 'Gap (3): For many buyers, the main reason is ___: producing a single pair of new jeans can use thousands of litres of water.', 'ENVIRONMENT', ['environmental'], x(
+  ), RU3_TEXT),
+  ru3('fce-m4-ru3-3', 4, 'Gap (3): For many buyers, the main reason is ___: producing a single pair of new jeans can use thousands of litres of water.', 'ENVIRONMENT', ['environmental'], x(
     'Après « is », un adjectif attribut : « environmental » (raison liée à l’environnement, illustrée par l’eau consommée).',
     'بعد «is» نحتاج إلى صفة خبرية: «environmental» (سبب بيئي يوضّحه استهلاك الماء).',
     'Adjective after “is”: environmental.',
     'Tras «is», un adjetivo atributo: «environmental» (motivo ambiental, ilustrado por el agua consumida).',
-  )), RU3_TEXT),
-  withText(ru3('fce-m4-ru3-4', 4, 'Gap (4): Others are attracted by the prices, or simply by the ___ of finding a unique piece that nobody else is wearing.', 'EXCITE', ['excitement'], x(
+  ), RU3_TEXT),
+  ru3('fce-m4-ru3-4', 4, 'Gap (4): Others are attracted by the prices, or simply by the ___ of finding a unique piece that nobody else is wearing.', 'EXCITE', ['excitement'], x(
     'Entre « the » et « of », il faut un nom : « excitement » (suffixe -ment).',
     'بين «the» و«of» نحتاج إلى اسم: «excitement» (اللاحقة -ment).',
     '“the ___ of” needs a noun: excitement.',
     'Entre «the» y «of» hace falta un sustantivo: «excitement» (sufijo -ment).',
-  )), RU3_TEXT),
-  withText(ru3('fce-m4-ru3-5', 4, 'Gap (5): Yasmine admits that some of the clothes she receives are badly ___ or stained.', 'WEAR', ['worn'], x(
+  ), RU3_TEXT),
+  ru3('fce-m4-ru3-5', 4, 'Gap (5): Yasmine admits that some of the clothes she receives are badly ___ or stained.', 'WEAR', ['worn'], x(
     'Après « are badly », un participe passé à valeur d’adjectif, coordonné à « stained » : « worn » (participe irrégulier de « wear »).',
     'بعد «are badly» نحتاج إلى اسم مفعول بمعنى الصفة، معطوف على «stained»: «worn» (اسم المفعول الشاذ من «wear»).',
     'Past participle like “stained”: worn.',
     'Tras «are badly», un participio con valor de adjetivo, coordinado con «stained»: «worn» (participio irregular de «wear»).',
-  )), RU3_TEXT),
-  withText(ru3('fce-m4-ru3-6', 5, 'Gap (6): So she has to be very ___ about what she puts on sale.', 'SELECT', ['selective'], x(
+  ), RU3_TEXT),
+  ru3('fce-m4-ru3-6', 5, 'Gap (6): So she has to be very ___ about what she puts on sale.', 'SELECT', ['selective'], x(
     'Après « be very », un adjectif : « selective » = exigeant dans ses choix. L’idée est confirmée par « I would rather sell fewer items ».',
     'بعد «be very» نحتاج إلى صفة: «selective» أي «انتقائي». ويؤكّد ذلك قولها «I would rather sell fewer items».',
     'Adjective after “very”: selective.',
     'Tras «be very», un adjetivo: «selective» = exigente al elegir. Lo confirma «I would rather sell fewer items».',
-  )), RU3_TEXT),
-  withText(ru3('fce-m4-ru3-7', 3, 'Gap (7): She also runs workshops where she shows people how to repair ___ clothes instead of throwing them away.', 'DAMAGE', ['damaged'], x(
+  ), RU3_TEXT),
+  ru3('fce-m4-ru3-7', 3, 'Gap (7): She also runs workshops where she shows people how to repair ___ clothes instead of throwing them away.', 'DAMAGE', ['damaged'], x(
     'Devant le nom « clothes », un adjectif ; on répare des vêtements abîmés → participe passé « damaged ».',
     'قبل الاسم «clothes» نحتاج إلى صفة، والملابس التي تُصلَح هي الملابس التالفة ← اسم المفعول «damaged».',
     'Adjective before “clothes”: damaged.',
     'Delante del sustantivo «clothes», un adjetivo; se repara la ropa estropeada → participio «damaged».',
-  )), RU3_TEXT),
-  withText(ru3('fce-m4-ru3-8', 4, 'Gap (8): Critics argue that buying second-hand does little to reduce the ___ of new clothes.', 'PRODUCE', ['production'], x(
+  ), RU3_TEXT),
+  ru3('fce-m4-ru3-8', 4, 'Gap (8): Critics argue that buying second-hand does little to reduce the ___ of new clothes.', 'PRODUCE', ['production'], x(
     'Entre « the » et « of », il faut un nom désignant l’action de fabriquer : « production ». « Product » désigne l’objet fabriqué.',
     'بين «the» و«of» نحتاج إلى اسم يدلّ على عملية التصنيع: «production». أما «product» فتعني المنتَج نفسه.',
     '“the ___ of new clothes” = the making of them: production.',
     'Entre «the» y «of» hace falta un sustantivo que designe la acción de fabricar: «production». «Product» es el objeto fabricado.',
-  )), RU3_TEXT),
+  ), RU3_TEXT),
 
   // ── Part 4 ──
   ru4('fce-m4-ru4-1', 4, 'Karim speaks Spanish better than anyone else in our class.', 'WELL', 'Nobody else in our class speaks Spanish ___ Karim.', ['as well as', 'so well as'], x(

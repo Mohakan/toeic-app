@@ -28,17 +28,17 @@ Quietly is aimed at students and remote workers looking for a calm place to stud
 D — StreetStories
 StreetStories offers audio walking tours narrated by local residents rather than professional guides, and that is what makes it special. On the tour of the old port, a retired fisherman described the harbour as it was fifty years ago, and I found it genuinely moving. Some recordings are of poor quality, with traffic in the background, but somehow that only adds to the charm. Each tour costs three euros, which seems fair. I have already done four, and next month I am going to record one about my own neighbourhood, as the app invites users to do.`;
 
-const YOUNG_BUSINESS = `A — Salma, Tunis
-It started with my grandmother’s wardrobe. When she moved into a smaller flat, she gave me bags of old dresses and curtains, and instead of taking them to a charity shop, I turned them into tote bags and sold them to classmates. Two years later I sell online to customers as far away as Canada. People assume the hardest part is the sewing, but I could already do that. What I hadn’t bargained for was having to learn photography from scratch, because nobody buys a bag from a blurry picture. I still work from my bedroom, which my mother tolerates more or less patiently. My one rule is that every bag is made from something that already existed. A supplier has offered me cheap new fabric several times, and I’ve always said no.
+const CRAFTS = `A — Hamid, Safi
+My family has made pottery in Safi for four generations, but as a teenager I wanted nothing to do with it. Clay under my fingernails, the heat of the kiln: it all seemed hopelessly old-fashioned. I studied accounting instead and worked in an office in Casablanca for three years. It was my father’s illness that brought me back, because someone had to keep the workshop going. What I didn’t expect was how quickly my hands remembered things I thought I’d forgotten. Now I combine both worlds: I paint plates with the traditional blue patterns, but I sell most of them through an online shop I built myself. My father still inspects every piece before it leaves, and he’s far harder to please than any customer.
 
-B — Lukas, Graz
-I make hot sauce. It began as a joke: one summer I grew far too many chillies on my balcony and had no idea what to do with them. A friend tasted my first batch and dared me to sell it at the Saturday market. I sold out in an hour, which was flattering but misleading, because the following weeks were much slower. What I underestimated was the paperwork. Food safety rules are strict, quite rightly, and it took four months and two failed inspections before my kitchen was approved. I very nearly gave up at that point. Now I supply three local restaurants, and the head chef of one of them has started suggesting new flavours, which I find really exciting.
+B — Elena, Granada
+I’d played the guitar since I was eight, so when a workshop near the Alhambra advertised for an apprentice, I applied the same day. I imagined I’d be building instruments within weeks. In reality, I spent my first six months sanding wood and sweeping the floor, and I was told off almost daily for being impatient. I very nearly left more than once. The turning point came when the master let me choose the wood for my first guitar on my own. It took me fourteen months to finish, and it isn’t perfect: one of the joints is slightly uneven. I still play it every evening, though, and I wouldn’t swap it for any guitar in the shop.
 
-C — Valentina, Bogotá
-I set up a dog-walking service in my second year at university, mainly because I needed money and I love animals. I expected it to be a nice little side job. In fact, within six months I had more clients than I could handle, and I had to take on two other students to help. Becoming somebody’s boss at twenty felt strange. One of them was older than me, and at first I found it incredibly awkward to tell him he was late. My grades suffered that year, I’ll admit, and I had to retake an exam. These days I’m stricter with myself: the business gets my afternoons, never my mornings.
+C — Nour, Amman
+I took up Arabic calligraphy one long winter when I was recovering from a knee operation and couldn’t do much else. I found a teacher through a cultural centre, an elderly man who refused to let me touch a pen for the first month: only a reed, ink and endless rows of single letters. At first it felt pointless, but gradually I noticed I was calmer and could concentrate for hours, which helped my university work enormously. Last spring, three of my pieces were shown in an exhibition alongside work by professional artists. I was proud, of course, but I’ll admit that seeing my name next to theirs also made me feel a bit of a fraud.
 
-D — Youssef, Casablanca
-My website matches secondary school pupils with university students who give maths lessons online. The idea came from my own experience: I failed maths at fifteen, and a cousin got me through the next exam over video calls. Building the site was the easy part, since I’d studied programming. Persuading parents to trust it was much harder. For the first year, almost all my customers were people my family knew, and I wondered whether strangers would ever sign up. Then a teacher mentioned the site on a popular radio programme, and the next morning there were two hundred new registrations. I’d love to say I planned that, but it was pure luck.`;
+D — Diego, Oaxaca
+My grandmother wove rugs on a wooden loom in our village outside Oaxaca, and when she died, nobody in the family knew how to use it. I was twenty-three and working as a waiter in Mexico City. I couldn’t bear the thought of the loom being sold to a stranger, so I moved back and asked her old neighbour, Doña Rosa, to teach me. She agreed on one condition: in return, I would teach the technique to at least two young people from the village. Learning was slow, and my first rug was so uneven that Doña Rosa unpicked it and made me start again. This year I finally kept my side of the deal: two teenagers now come to the workshop every Saturday.`;
 
 /** Unit fce-u09: multiple matching (Part 7), finding the paraphrase. */
 export const fceU09: Unit = unit(
@@ -226,65 +226,65 @@ export const fceU09: Unit = unit(
     )),
   ],
   [
-    ru7('fce-u09-s3-q1', 5, YOUNG_BUSINESS, 'Which person says that an early success gave a false impression of how the business would go?', SECTIONS, 1, x(
-      'Lukas : « I sold out in an hour, which was flattering but misleading, because the following weeks were much slower ».',
-      'لوكاس: «I sold out in an hour, which was flattering but misleading, because the following weeks were much slower».',
-      'B: sold out, “flattering but misleading”.',
-      'Lukas: «I sold out in an hour, which was flattering but misleading, because the following weeks were much slower».',
+    ru7('fce-u09-s3-q1', 4, CRAFTS, 'Which person once considered the craft out of date?', SECTIONS, 0, x(
+      'Hamid : adolescent, la poterie « seemed hopelessly old-fashioned ».',
+      'حميد: في مراهقته كان الفخار «seemed hopelessly old-fashioned».',
+      'A: it “seemed hopelessly old-fashioned”.',
+      'Hamid: de adolescente, la cerámica «seemed hopelessly old-fashioned».',
     )),
-    ru7('fce-u09-s3-q2', 4, YOUNG_BUSINESS, 'Which person had to master a skill they had not expected to need?', SECTIONS, 0, x(
-      'Salma : « What I hadn’t bargained for was having to learn photography from scratch » ; la couture, elle savait déjà la faire.',
-      'سلمى: «What I hadn’t bargained for was having to learn photography from scratch»، أما الخياطة فكانت تتقنها من قبل.',
-      'A: she “hadn’t bargained for” learning photography.',
-      'Salma: «What I hadn’t bargained for was having to learn photography from scratch»; coser ya sabía.',
+    ru7('fce-u09-s3-q2', 4, CRAFTS, 'Which person had unrealistic expectations about how fast they would progress?', SECTIONS, 1, x(
+      'Elena : « I imagined I’d be building instruments within weeks. In reality, I spent my first six months sanding wood ».',
+      'إيلينا: «I imagined I’d be building instruments within weeks. In reality, I spent my first six months sanding wood».',
+      'B: “within weeks”… in reality six months of sanding.',
+      'Elena: «I imagined I’d be building instruments within weeks. In reality, I spent my first six months sanding wood».',
     )),
-    ru7('fce-u09-s3-q3', 4, YOUNG_BUSINESS, 'Which person felt uncomfortable about being in charge of other people?', SECTIONS, 2, x(
-      'Valentina : « Becoming somebody’s boss at twenty felt strange… I found it incredibly awkward to tell him he was late ».',
-      'فالنتينا: «Becoming somebody’s boss at twenty felt strange… I found it incredibly awkward to tell him he was late».',
-      'C: being a boss felt “awkward”.',
-      'Valentina: «Becoming somebody’s boss at twenty felt strange… I found it incredibly awkward to tell him he was late».',
+    ru7('fce-u09-s3-q3', 4, CRAFTS, 'Which person took up the craft at a time when they were unable to do much else?', SECTIONS, 2, x(
+      'Nour : « when I was recovering from a knee operation and couldn’t do much else ».',
+      'نور: «when I was recovering from a knee operation and couldn’t do much else».',
+      'C: recovering from an operation.',
+      'Nour: «when I was recovering from a knee operation and couldn’t do much else».',
     )),
-    ru7('fce-u09-s3-q4', 4, YOUNG_BUSINESS, 'Which person admits that the business had a negative effect on their studies?', SECTIONS, 2, x(
-      'Valentina : « My grades suffered that year, I’ll admit, and I had to retake an exam ».',
-      'فالنتينا: «My grades suffered that year, I’ll admit, and I had to retake an exam».',
-      'C: “my grades suffered”.',
-      'Valentina: «My grades suffered that year, I’ll admit, and I had to retake an exam».',
+    ru7('fce-u09-s3-q4', 5, CRAFTS, 'Which person was taught on condition that they would pass the skill on to others?', SECTIONS, 3, x(
+      'Diego : Doña Rosa « agreed on one condition: in return, I would teach the technique to at least two young people ».',
+      'دييغو: وافقت دونيا روسا «on one condition: in return, I would teach the technique to at least two young people».',
+      'D: “one condition”: teach two young people.',
+      'Diego: Doña Rosa «agreed on one condition: in return, I would teach the technique to at least two young people».',
     )),
-    ru7('fce-u09-s3-q5', 5, YOUNG_BUSINESS, 'Which person has turned down an offer that would go against a principle of their business?', SECTIONS, 0, x(
-      'Salma : sa règle est de n’utiliser que des tissus qui existaient déjà, et l’offre de « cheap new fabric », « I’ve always said no ».',
-      'سلمى: قاعدتها ألّا تستعمل إلا أقمشة موجودة من قبل، ولذلك رفضت عرض «cheap new fabric»: «I’ve always said no».',
-      'A: her “one rule”, so she refused new fabric.',
-      'Salma: su regla es usar solo telas que ya existían; ante la «cheap new fabric», «I’ve always said no».',
+    ru7('fce-u09-s3-q5', 4, CRAFTS, 'Which person values their first piece of work despite its faults?', SECTIONS, 1, x(
+      'Elena : sa guitare « isn’t perfect… I wouldn’t swap it for any guitar in the shop ». Le premier tapis de Diego, lui, a été défait.',
+      'إيلينا: قيثارتها «isn’t perfect… I wouldn’t swap it for any guitar in the shop». أما أول سجادة لدييغو فقد فُكّت.',
+      'B: not perfect, but she “wouldn’t swap it”.',
+      'Elena: su guitarra «isn’t perfect… I wouldn’t swap it for any guitar in the shop». La primera alfombra de Diego, en cambio, se deshizo.',
     )),
-    ru7('fce-u09-s3-q6', 4, YOUNG_BUSINESS, 'Which person benefited from publicity that they had not arranged themselves?', SECTIONS, 3, x(
-      'Youssef : un professeur a parlé du site à la radio, deux cents inscriptions, et « I’d love to say I planned that, but it was pure luck ».',
-      'يوسف: ذكر أستاذ الموقع في برنامج إذاعي فجاءت مئتا تسجيل، و«I’d love to say I planned that, but it was pure luck».',
-      'D: a radio mention, “pure luck”.',
-      'Youssef: un profesor habló de la web en la radio y «I’d love to say I planned that, but it was pure luck».',
+    ru7('fce-u09-s3-q6', 4, CRAFTS, 'Which person says the craft brought benefits in another area of their life?', SECTIONS, 2, x(
+      'Nour : plus calme et concentrée, « which helped my university work enormously ».',
+      'نور: صارت أهدأ وأكثر تركيزًا، «which helped my university work enormously».',
+      'C: it “helped my university work”.',
+      'Nour: más tranquila y concentrada, «which helped my university work enormously».',
     )),
-    ru7('fce-u09-s3-q7', 4, YOUNG_BUSINESS, 'Which person almost abandoned the business because of official requirements?', SECTIONS, 1, x(
-      'Lukas : la « paperwork », les règles d’hygiène et « two failed inspections » : « I very nearly gave up at that point ».',
-      'لوكاس: الأوراق الإدارية وقواعد السلامة الغذائية و«two failed inspections»: «I very nearly gave up at that point».',
-      'B: paperwork and inspections, “nearly gave up”.',
-      'Lukas: el papeleo, las normas de higiene y «two failed inspections»: «I very nearly gave up at that point».',
+    ru7('fce-u09-s3-q7', 5, CRAFTS, 'Which person works with a relative who is a stricter judge than the people who buy their work?', SECTIONS, 0, x(
+      'Hamid : son père inspecte chaque pièce et « he’s far harder to please than any customer ».',
+      'حميد: والده يفحص كل قطعة و«he’s far harder to please than any customer».',
+      'A: father “harder to please than any customer”.',
+      'Hamid: su padre revisa cada pieza y «he’s far harder to please than any customer».',
     )),
-    ru7('fce-u09-s3-q8', 4, YOUNG_BUSINESS, 'Which person got the idea for the business from a difficulty they had experienced?', SECTIONS, 3, x(
-      'Youssef : « The idea came from my own experience: I failed maths at fifteen ». Salma, elle, part d’un cadeau, pas d’une difficulté.',
-      'يوسف: «The idea came from my own experience: I failed maths at fifteen». أما فكرة سلمى فجاءت من هدية لا من صعوبة.',
-      'D: he “failed maths at fifteen”.',
-      'Youssef: «The idea came from my own experience: I failed maths at fifteen». Lo de Salma nace de un regalo, no de una dificultad.',
+    ru7('fce-u09-s3-q8', 5, CRAFTS, 'Which person had mixed feelings about receiving public recognition?', SECTIONS, 2, x(
+      'Nour : à l’exposition, « I was proud… but… also made me feel a bit of a fraud » : fierté et malaise.',
+      'نور: في المعرض «I was proud… but… also made me feel a bit of a fraud»: فخر وحرج معًا.',
+      'C: proud, but felt “a bit of a fraud”.',
+      'Nour: en la exposición, «I was proud… but… also made me feel a bit of a fraud»: orgullo e incomodidad.',
     )),
-    ru7('fce-u09-s3-q9', 5, YOUNG_BUSINESS, 'Which person is pleased that a customer is contributing ideas to their product?', SECTIONS, 1, x(
-      'Lukas : un restaurant client, et « the head chef… has started suggesting new flavours, which I find really exciting ».',
-      'لوكاس: رئيس الطهاة في أحد المطاعم الزبونة «has started suggesting new flavours, which I find really exciting».',
-      'B: a chef he supplies suggests flavours.',
-      'Lukas: un restaurante cliente, y «the head chef… has started suggesting new flavours, which I find really exciting».',
+    ru7('fce-u09-s3-q9', 4, CRAFTS, 'Which person could not accept the idea of losing something that had belonged to the family?', SECTIONS, 3, x(
+      'Diego : « I couldn’t bear the thought of the loom being sold to a stranger » : le métier à tisser de sa grand-mère.',
+      'دييغو: «I couldn’t bear the thought of the loom being sold to a stranger»، أي نول جدته.',
+      'D: couldn’t bear the loom “being sold”.',
+      'Diego: «I couldn’t bear the thought of the loom being sold to a stranger»: el telar de su abuela.',
     )),
-    ru7('fce-u09-s3-q10', 4, YOUNG_BUSINESS, 'Which person now limits the amount of time they give to the business?', SECTIONS, 2, x(
-      'Valentina : « the business gets my afternoons, never my mornings » = une limite de temps.',
-      'فالنتينا: «the business gets my afternoons, never my mornings» = وضعت حدًّا للوقت.',
-      'C: “afternoons, never my mornings”.',
-      'Valentina: «the business gets my afternoons, never my mornings» = un límite de tiempo.',
+    ru7('fce-u09-s3-q10', 4, CRAFTS, 'Which person thought about giving up during their training?', SECTIONS, 1, x(
+      'Elena : « I very nearly left more than once » pendant son apprentissage.',
+      'إيلينا: «I very nearly left more than once» خلال فترة تدريبها.',
+      'B: “very nearly left more than once”.',
+      'Elena: «I very nearly left more than once» durante su aprendizaje.',
     )),
   ],
 );

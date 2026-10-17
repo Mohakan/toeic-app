@@ -41,7 +41,7 @@ Le niveau d'un item va de 1 à 6 : 1 = A1, 2 = A2, 3 = B1, 4 = B2, 5 = C1, 6 = C
 | --- | --- | --- |
 | RU1 Texte à trous (QCM) | `ru1(id, niveau, phrase, [clé, d1, d2, d3], expl, texte?)` | Un trou `___`. Quatre options du même type : collocation, verbe à particule, nuance de sens. **La clé vient en premier.** |
 | RU2 Texte à trous libre | `ru2(id, niveau, phrase, [réponse, variante…], expl, texte?)` | **Un seul mot** : article, préposition, auxiliaire, pronom relatif, connecteur, quantifieur. On liste toutes les réponses correctes. |
-| RU3 Formation des mots | `ru3(id, niveau, phrase, 'RADICAL', [réponse…], expl)` | Radical en MAJUSCULES, réponse en un mot, différente du radical (préfixe, suffixe, négation, pluriel). |
+| RU3 Formation des mots | `ru3(id, niveau, phrase, 'RADICAL', [réponse…], expl, texte?)` | Radical en MAJUSCULES, réponse en un mot, différente du radical (préfixe, suffixe, négation, pluriel). Dans un examen blanc complet, les 8 items partagent un texte. |
 | RU4 Transformation avec mot clé | `ru4(id, niveau, phrase1, 'MOT', 'phrase 2 avec ___', [réponse…], expl)` | Réponse de **2 à 5 mots** (une contraction compte pour 2), qui **contient le mot clé** inchangé. On liste les variantes acceptables. |
 | RU5 Compréhension | `ru5(id, niveau, texte, question, [clé, d1, d2, d3], expl)` | Texte de 150 à 300 mots, partagé par plusieurs questions. |
 | RU6 Phrases manquantes | `ru6(id, niveau, texte, 'Which sentence fits gap 2?', [A…G], indexClé, expl)` | Texte avec trous numérotés `(1)`, `(2)`… et 7 phrases A–G, dans le même ordre pour toutes les questions du texte. Une phrase en trop. |
@@ -56,6 +56,10 @@ Le niveau d'un item va de 1 à 6 : 1 = A1, 2 = A2, 3 = B1, 4 = B2, 5 = C1, 6 = C
 - Une seule réponse défendable. Les distracteurs sont plausibles mais faux.
 - Dans un texte partagé par plusieurs questions, utiliser la même constante pour le texte et pour la liste d'options (RU6, RU7, LI3).
 - Les exercices d'appariement de vocabulaire (`match`) sont interdits : ils reposent sur la liste de mots du TOEIC. Les phrases à remettre en ordre (`order`) sont autorisées.
+
+## Examen blanc complet
+
+Le format, partie par partie, est décrit dans `docs/multi-examens/b2-60h.md`. Les items RU1, RU2, RU3, RU5, RU6 et RU7 partagent un seul texte par partie, et les items LI2, LI3 et LI4 un seul enregistrement. Les 8 extraits LI1 sont tous différents. Le contrôle automatique le vérifie.
 
 ## Unité
 
